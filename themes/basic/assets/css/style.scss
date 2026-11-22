@@ -456,8 +456,9 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 .race-list { list-style: none; padding: 0; }
 .race-list li {
   display: grid;
-  grid-template-columns: 6em 1fr auto;
-  grid-template-areas: "date name time" "date detail time";
+  grid-template-columns: 52px 1fr auto;
+  grid-template-areas: "route date time" "route name time" "route detail time";
+  align-items: center;
   column-gap: 1em;
   padding: 0.45em 0;
   border-bottom: 1px solid var(--border-color);
@@ -469,8 +470,8 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 .strava-credit { margin-top: 2em; }
 @media only screen and (max-width: 600px) {
   .race-list li {
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "date date" "name time" "detail time";
+    grid-template-columns: 44px 1fr auto;
+    grid-template-areas: "route date time" "route name time" "route detail detail";
   }
   .run-tile-value { font-size: 1.5em; }
 }
@@ -478,8 +479,8 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 .gear-list { list-style: none; padding: 0; margin: 0.5em 0 1.5em; }
 .gear {
   display: grid;
-  grid-template-columns: minmax(10em, 16em) 1fr 5em;
-  grid-template-areas: "name bar km" "meta bar km";
+  grid-template-columns: 52px minmax(10em, 16em) 1fr 5em;
+  grid-template-areas: "photo name bar km" "photo meta bar km";
   column-gap: 1em;
   align-items: center;
   padding: 0.3em 0;
@@ -504,7 +505,7 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
   vertical-align: middle;
 }
 @media only screen and (max-width: 600px) {
-  .gear { grid-template-columns: 1fr 4.5em; grid-template-areas: "name km" "bar bar" "meta meta"; }
+  .gear { grid-template-columns: 52px 1fr 4.5em; grid-template-areas: "photo name km" "photo bar bar" "photo meta meta"; }
 }
 .race-groups { display: grid; gap: 0.5rem; }
 .race-group h4 { margin: 1em 0 0.2em; font-weight: 500; color: var(--text-color-heading); }
@@ -514,3 +515,19 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
   .chart-tick { font-size: 22px; }
   .chart-value { font-size: 22px; }
 }
+.race-route { grid-area: route; width: 44px; height: 44px; }
+.race-route svg { width: 100%; height: 100%; display: block; }
+.race-route path { fill: none; stroke: var(--chart-color); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.gear-photo { grid-area: photo; width: 44px; height: 44px; }
+.gear-photo img { width: 44px; height: 44px; object-fit: cover; border-radius: 6px; }
+.gear-photo svg { width: 44px; height: 44px; fill: var(--border-color); }
+.run-photos {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  margin: 1em 0;
+  scroll-snap-type: x mandatory;
+}
+.run-photos figure { margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
+.run-photos img { height: 180px; width: auto; border-radius: 6px; display: block; }
+.run-photos figcaption { font-size: 0.75em; margin: 0.3em 0 0; font-style: normal; color: var(--text-color); text-align: left; }

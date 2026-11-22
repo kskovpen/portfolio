@@ -1,0 +1,39 @@
+# Official website and published course for each race, keyed by the event name used on the Run page.
+# course_label: "GPX" for a direct GPX file, otherwise "Course map" (default).
+# Course files are for the organiser's current edition and may differ from the year I ran.
+
+"Sofico Gent Marathon":
+  website: "https://soficogentmarathon.com/en/"
+  course: "https://soficogentmarathon.com/en/course/"
+"Geneva Marathon":
+  website: "https://www.generaligenevemarathon.com/en/marathon"
+  course: "https://512763f9-e0e1-4531-92c1-a627ccca8323.filesusr.com/ugd/eee0dc_9a39b6defaf64e62a57b20761a005c1e.gpx?dn=Marathon"
+  course_label: "GPX"
+"Brussels Airport Brussels Marathon":
+  website: "https://brusselsmarathon.be/en/"
+"Brussels Airport Half Marathon":
+  website: "https://brusselsmarathon.be/en/"
+"20 km de Bruxelles":
+  website: "https://www.20kmdebruxelles.be/en/"
+  course: "https://www.20kmdebruxelles.be/en/route/"
+"Nevers Half Marathon":
+  website: "https://www.neversmarathon.com"
+  course: "https://www.neversmarathon.com/les-parcours/parcours-du-semi-marathon/"
+"20 km de Paris":
+  website: "https://harmonie-mutuelle.20kmparis.com/"
+  course: "https://www.strava.com/routes/3214288922247213198"
+"10 km de l'ULB":
+  website: "https://10kmulb.com/"
+  course: "https://www.komoot.com/fr-fr/tour/1022080786?share_token=aDrtuWiDkNFOJ5Cr2hhFtg3nl6FgMDQSQBkJ1c2W1eXUI49NGh&ref=wtd"
+"Castle Trail La Hulpe":
+  website: "https://runbxl.com/bxl-run-series/castle-trail-la-hulpe/en"
+"Trail de Bruxelles":
+  website: "https://runbxl.com/trailrunbe/trail-de-bruxelles/en"
+  course: "https://tracedetrail.fr/en/trace/336764"
+"Marathon Sonian Forest":
+  website: "https://runbxl.com/bxl-run-series/marathon-zonienwoud/en"
+  course: "https://tracedetrail.fr/en/trace/318747"
+"EcoTrail Brussels":
+  website: "https://www.ecotrailbrussels.com/"
+"North C Trail":
+  website: "https://trailrun.be/northc-challenge/north-c-trail/en"

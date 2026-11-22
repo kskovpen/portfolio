@@ -8,7 +8,9 @@ no maps or start locations are written.
 Usage: python3 scripts/fetch_strava.py data/running.json
 """
 import json
+import math
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -113,6 +115,67 @@ def gear_summary(acts, token):
     return gear
 
 
+def decode_polyline(encoded):
+    """Google encoded polyline -> list of (lat, lon)."""
+    coords, index, lat, lon = [], 0, 0, 0
+    while index < len(encoded):
+        for i in range(2):
+            shift = result = 0
+            while True:
+                b = ord(encoded[index]) - 63
+                index += 1
+                result |= (b & 0x1F) << shift
+                shift += 5
+                if b < 0x20:
+                    break
+            delta = ~(result >> 1) if result & 1 else result >> 1
+            if i == 0:
+                lat += delta
+            else:
+                lon += delta
+        coords.append((lat / 1e5, lon / 1e5))
+    return coords
+
+
+def route_path(encoded, size=100.0, pad=4.0):
+    """Route outline as an SVG path in a size x size box (aspect preserved, north up)."""
+    pts = decode_polyline(encoded or "")
+    if len(pts) < 2:
+        return ""
+    k = math.cos(math.radians(sum(p[0] for p in pts) / len(pts)))
+    xs = [p[1] * k for p in pts]
+    ys = [-p[0] for p in pts]
+    span = max(max(xs) - min(xs), max(ys) - min(ys)) or 1
+    scale = (size - 2 * pad) / span
+    ox = pad + ((size - 2 * pad) - (max(xs) - min(xs)) * scale) / 2
+    oy = pad + ((size - 2 * pad) - (max(ys) - min(ys)) * scale) / 2
+    out = [f"{ox + (x - min(xs)) * scale:.1f},{oy + (y - min(ys)) * scale:.1f}" for x, y in zip(xs, ys)]
+    return "M" + "L".join(out)
+
+
+def race_routes(runs, races_file="data/races.yaml", utmb_file="data/utmb.json"):
+    """Route outlines only for races: Strava ids listed in races.yaml, and runs on UTMB race dates.
+    Training runs (which start from home) never get a route."""
+    ids = set()
+    try:
+        ids = {int(x) for x in re.findall(r"^\s*-?\s*strava:\s*(\d+)", open(races_file).read(), re.M)}
+    except OSError:
+        pass
+    dates = set()
+    try:
+        dates = {r["date"] for r in json.load(open(utmb_file))["results"]}
+    except (OSError, ValueError, KeyError):
+        pass
+    longest_on = {}
+    for a in runs:
+        d = a["start_date_local"][:10]
+        if d in dates and a["distance"] > longest_on.get(d, (0, None))[0]:
+            longest_on[d] = (a["distance"], a["id"])
+    ids |= {i for _, i in longest_on.values()}
+    return {str(a["id"]): route_path((a.get("map") or {}).get("summary_polyline"))
+            for a in runs if a["id"] in ids}
+
+
 def summarize(acts, athlete):
     runs = [a for a in acts
             if (a.get("sport_type") or a.get("type")) in RUN_TYPES
@@ -144,6 +207,7 @@ def summarize(acts, athlete):
         "months": months,
         "races": races,
         # Every public run (compact), so data/races.yaml can refer to races by Strava id
+        "routes": race_routes(runs),
         "runs": [{k: v for k, v in run_entry(a, use_elapsed=True).items() if k not in ("name", "pace")} for a in runs],
     }
 

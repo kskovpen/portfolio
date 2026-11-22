@@ -2,20 +2,32 @@
   <h2>{{ .Title }}</h2>
   {{ .Content }}
 
+  {{- /* Own race photos: static/run/photos/*.jpg|png|webp, file name = caption.
+         Shoe photos: static/run/shoes/<shoe-name-lowercased-with-dashes>.jpg */}}
+  {{- if fileExists "static/run/photos" }}{{ with readDir "static/run/photos" }}
+  {{- $photos := where . "IsDir" false }}
+  {{- with $photos }}
+  <div class="run-photos">
+    {{- range . }}{{ if findRE `(?i)\.(jpe?g|png|webp)$` .Name }}
+    {{- $cap := replaceRE `(?i)\.(jpe?g|png|webp)$` "" .Name }}
+    <figure><img src="{{ printf "run/photos/%s" .Name | relURL }}" alt="{{ $cap }}" loading="lazy"><figcaption>{{ $cap }}</figcaption></figure>
+    {{- end }}{{ end }}
+  </div>
+  {{- end }}{{ end }}{{ end }}
   {{- $r := site.Data.running }}
   {{- $u := site.Data.utmb }}
 
   {{- /* Races: UTMB results (trail, fetched) + official races from data/races.yaml (times from Strava) */}}
   {{- $races := slice }}
   {{- with $u }}{{ range .results }}{{ if not .dnf }}
-    {{- $strava := "" }}{{ with $r }}{{ end }}
-    {{- $d := .date }}{{ with $r }}{{ range first 1 (sort (where .runs "date" $d) "distance_km" "desc") }}{{ $strava = .url }}{{ end }}{{ end }}
-    {{- $races = $races | append (dict "date" .date "name" .event "km" .distance_km "elev" .elevation_m "time" .time "seconds" .seconds "rank" .rank "total" .total "type" "trail" "strava" $strava "utmb" $u.profile_url) }}
+    {{- $strava := "" }}{{ $sid := 0 }}
+    {{- $d := .date }}{{ with $r }}{{ range first 1 (sort (where .runs "date" $d) "distance_km" "desc") }}{{ $strava = .url }}{{ $sid = .id }}{{ end }}{{ end }}
+    {{- $races = $races | append (dict "date" .date "name" .event "km" .distance_km "elev" .elevation_m "time" .time "seconds" .seconds "rank" .rank "total" .total "type" "trail" "strava" $strava "sid" $sid "utmb" $u.profile_url) }}
   {{- end }}{{ end }}{{ end }}
   {{- with $r }}
     {{- range site.Data.races }}{{ $e := . }}
       {{- range where $r.runs "id" .strava }}
-        {{- $races = $races | append (dict "date" .date "name" $e.event "km" (float ($e.km | default .distance_km)) "elev" .elevation_m "time" .time "seconds" .seconds "rank" nil "total" nil "type" ($e.type | default "road") "strava" .url "utmb" "") }}
+        {{- $races = $races | append (dict "date" .date "name" $e.event "km" (float ($e.km | default .distance_km)) "elev" .elevation_m "time" .time "seconds" .seconds "rank" nil "total" nil "type" ($e.type | default "road") "strava" .url "sid" .id "utmb" "") }}
       {{- end }}
     {{- end }}
   {{- end }}
@@ -106,6 +118,11 @@
     {{- range . }}
     {{- $current := and (not .retired) ((time .last_used).After $recent) }}
     <li class="gear{{ if .retired }} gear-retired{{ end }}">
+      {{- $img := printf "run/shoes/%s.jpg" (urlize .name) }}
+      <span class="gear-photo">
+        {{- if fileExists (printf "static/%s" $img) }}<img src="{{ $img | relURL }}" alt="{{ .name }}" width="64" height="64" loading="lazy">
+        {{- else }}<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40c0-6 3-14 6-18 2-2 5-2 7 0l5 6c3 3 7 4 11 4h7c6 0 11 4 12 10v2H8z"/><path d="M8 42h48v4c0 2-2 4-4 4H12c-2 0-4-2-4-4z"/></svg>{{ end -}}
+      </span>
       <span class="gear-name">{{ .name }}{{ if $current }} <span class="gear-tag">current</span>{{ else if .retired }} <span class="gear-tag">retired</span>{{ end }}</span>
       <span class="gear-bar" aria-hidden="true"><span style="{{ printf "width: %.1f%%" (mul 100 (div (float .distance_km) $maxKm)) | safeCSS }}"></span></span>
       <span class="gear-km">{{ lang.FormatNumber 0 .distance_km }} km</span>

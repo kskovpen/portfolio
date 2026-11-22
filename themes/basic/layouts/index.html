@@ -21,6 +21,11 @@
     <li>{{ partial "blink.html" }} <span class="latest-label">Talk</span>
       <a href="{{ "talks/" | relURL }}">{{ .title }}</a> <span class="meta">{{ .event }}{{ with .date }}, {{ (time .).Format "January 2006" }}{{ end }}</span></li>
     {{- end }}{{ end }}
+    {{- with site.Data.running }}
+    <li>{{ partial "blink.html" }} <span class="latest-label">Running</span>
+      <a href="{{ "run/" | relURL }}">{{ lang.FormatNumber 0 .this_year.distance_km }} km in {{ .this_year.year }}</a>
+      {{- with site.Data.utmb }}{{ with index .results 0 }} <span class="meta">latest race: {{ .event }}, {{ (time .date).Format "January 2006" }}</span>{{ end }}{{ end }}</li>
+    {{- end }}
     {{- with where site.Pages "Layout" "project" }}{{ with index . 0 }}
     <li>{{ partial "blink.html" }} <span class="latest-label">Research</span>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>

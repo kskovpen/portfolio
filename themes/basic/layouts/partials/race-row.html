@@ -1,11 +1,16 @@
-{{- /* One race row. Website and course GPX come from data/race_events.yaml, keyed by event name. */ -}}
+{{- /* One race row: route sketch (from the GPS track), name, links, time.
+       Website and course come from data/race_events.yaml, keyed by event name. */ -}}
 {{- $ev := index (site.Data.race_events | default dict) .name }}
+{{- $route := "" }}{{ with site.Data.running }}{{ with .routes }}{{ $route = index . (string $.sid) }}{{ end }}{{ end }}
 <li>
+  <span class="race-route" aria-hidden="true">
+    {{- with $route }}<svg viewBox="0 0 100 100"><path d="{{ . }}"/></svg>{{ end -}}
+  </span>
   <span class="race-date meta">{{ (time .date).Format "Jan 2006" }}</span>
   <span class="race-name">{{ with and $ev $ev.website }}<a href="{{ . }}">{{ $.name }}</a>{{ else }}{{ .name }}{{ end }}</span>
   <span class="race-detail meta">
     {{- if lt .km 30.0 }}{{ lang.FormatNumber 1 .km | replaceRE `\.0$` "" }}{{ else }}{{ math.Round .km }}{{ end }} km{{ with .elev }} · D+ {{ . }} m{{ end }}
-    {{- with and $ev $ev.gpx }} · <a href="{{ . }}">Course GPX</a>{{ end }}
+    {{- with and $ev $ev.course }} · <a href="{{ . }}">{{ $ev.course_label | default "Course map" }}</a>{{ end }}
     {{- with .strava }} · <a href="{{ . }}">My run</a>{{ end }}
     {{- with .utmb }} · <a href="{{ . }}">UTMB</a>{{ end -}}
   </span>

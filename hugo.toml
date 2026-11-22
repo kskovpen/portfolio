@@ -7,11 +7,11 @@ pygmentsUseClasses = true
 [params]
   author = 'Kirill Skovpen'
   # Used for the meta description and link previews
-  description = 'Particle physicist at Ghent University working on top-quark physics with the CMS experiment at CERN.'
+  description = 'Physicist at Ghent University working with data from the Large Hadron Collider at CERN. Runner, tinkerer.'
   # One-line role shown under the name on the home page
-  role = 'Particle physicist · Ghent University · CMS experiment at CERN'
+  role = 'Physicist · Ghent University · CERN'
   # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
-  photo = ''
+  photo = 'images/me.jpg'
   cv = ''
   # GitHub user whose public repositories are listed on the Software page
   gh_user = 'kskovpen'
@@ -25,9 +25,6 @@ pygmentsUseClasses = true
   [[params.profiles]]
     name = 'LinkedIn'
     url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
-  [[params.profiles]]
-    name = 'X (Twitter)'
-    url = 'https://twitter.com/kirillskovpen'
 
 [menus]
   [[menus.main]]

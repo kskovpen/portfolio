@@ -4,13 +4,15 @@ date = 2024-01-01T16:40:09+01:00
 layout = 'about'
 +++
 
-I am a particle physicist at [Ghent University](https://www.ugent.be), Belgium, and a member of the [CMS Collaboration](https://cms.cern) at CERN.
+I'm a physicist at [Ghent University](https://www.ugent.be) in Belgium and a member of the [CMS experiment](https://cms.cern) at CERN's Large Hadron Collider.
 
-Most of my work is on top-quark physics: searches for flavour-changing neutral currents, effective-field-theory interpretations of top-quark processes, kinematic reconstruction of top-quark decays, and the [observation of four-top-quark production](/science/top-quark/four-tops/). Alongside physics analysis I develop analysis software and have worked on computing infrastructure for high-energy physics.
+My research is about the top quark, the heaviest elementary particle we know of. Because it is so heavy, it is a good place to look for signs of physics that the current theory doesn't explain. I was part of the team that [observed four top quarks produced together](/science/top-quark/four-tops/), and I also write software for analysing collider data.
+
+When I'm not doing physics I [run](/run/) (road marathons and trail races) and tinker with electronics.
 
 ## Career
 
 - **Ghent University**, Belgium: senior researcher (current); previously postdoctoral researcher
 - **Vrije Universiteit Brussel**, Belgium
 - **IPHC Strasbourg**, France
-- **Budker Institute of Nuclear Physics**, Novosibirsk, Russia: PhD (2012) on a search for a right-handed W boson and heavy neutrino with the ATLAS detector
+- **Budker Institute of Nuclear Physics**, Novosibirsk, Russia: PhD (2012), searching for new particles with the ATLAS experiment at CERN
