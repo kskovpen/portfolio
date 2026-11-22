@@ -15,6 +15,9 @@ pygmentsUseClasses = true
   soundcloud_user_id = 1402515
 
   [[params.profiles]]
+    name = 'UGent EPPG'
+    url = 'https://eppg.ugent.be/'
+  [[params.profiles]]
     name = 'INSPIRE-HEP'
     url = 'https://inspirehep.net/authors/1066490'
   [[params.profiles]]
