@@ -1,14 +1,7 @@
-<article>
+<article class="post-summary">
   <header>
-    <h3>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h3>
-    <time>
-      {{ .Date | dateFormat "January" }}
-      {{ .Date | dateFormat "2" }}
-    </time>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <time datetime="{{ .Date.Format "2006-01-02" }}" class="meta">{{ .Date.Format "January 2, 2006" }}</time>
   </header>
-  
   {{ .Summary }}
-  
 </article>

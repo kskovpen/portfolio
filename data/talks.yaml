@@ -1,0 +1,73 @@
+# Talks, newest first. Fields: date (YYYY-MM-DD, may be empty), title, event, place;
+# optional: slides (path under static/, e.g. talks/aachen-2024.pdf), proceedings (URL), url (event page).
+# If a PNG with the same name as the slides PDF exists (convert_images.sh makes one), it is shown as a thumbnail.
+
+- date: "2024-01-23"
+  title: "Seminar"
+  event: "Physics seminar"
+  place: "Aachen, Germany"
+
+- date: ""
+  title: "Seminar"
+  event: "Physics seminar"
+  place: "Brussels, Belgium"
+
+- date: "2023-08-21"
+  title: "Particles in a pocket"
+  event: "2023 European Physical Society Conference on High Energy Physics (EPS-HEP2023)"
+  place: "Hamburg, Germany"
+  proceedings: "https://arxiv.org/abs/2310.17656"
+
+- date: "2020-05-25"
+  title: "Search for new phenomena in top quark interactions"
+  event: "8th Large Hadron Collider Physics Conference (LHCP2020)"
+  place: "Online"
+  proceedings: "https://arxiv.org/abs/2008.06303"
+
+- date: "2019-07-10"
+  title: "The EFT and FCNC interpretations in the processes with top quarks at CMS"
+  event: "2019 European Physical Society Conference on High Energy Physics (EPS-HEP2019)"
+  place: "Ghent, Belgium"
+  proceedings: "https://arxiv.org/abs/1910.04224"
+
+- date: "2019-03-16"
+  title: "Rare top quark production and decays at ATLAS and CMS"
+  event: "54th Rencontres de Moriond on Electroweak Interactions and Unified Theories (Moriond EW 2019)"
+  place: "La Thuile, Italy"
+  proceedings: "https://arxiv.org/abs/1905.08324"
+
+- date: "2018-09-16"
+  title: "First observation of the tt̄H process at CMS"
+  event: "11th International Workshop on Top Quark Physics (TOP2018)"
+  place: "Bad Neuenahr, Germany"
+  proceedings: "https://arxiv.org/abs/1810.05715"
+
+- date: "2017-09-17"
+  title: "Search for flavour-changing neutral currents with top quarks"
+  event: "10th International Workshop on Top Quark Physics (TOP2017)"
+  place: "Braga, Portugal"
+  proceedings: "https://arxiv.org/abs/1711.01852"
+
+- date: "2017-05-28"
+  title: "Search for the standard model deviations in top quark precision studies at CMS"
+  event: "29th Rencontres de Blois on Particle Physics and Cosmology"
+  place: "Blois, France"
+  proceedings: "https://arxiv.org/abs/1711.02153"
+
+- date: "2016-06-13"
+  title: "Single top production and properties at hadron colliders"
+  event: "4th Large Hadron Collider Physics Conference (LHCP 2016)"
+  place: "Lund, Sweden"
+  proceedings: "https://doi.org/10.22323/1.276.0039"
+
+- date: "2015-09-14"
+  title: "Searches for FCNC with top quarks"
+  event: "8th International Workshop on Top Quark Physics (TOP2015)"
+  place: "Ischia, Italy"
+  proceedings: "https://doi.org/10.22323/1.257.0048"
+
+- date: "2015-03-01"
+  title: "Top quark properties and single top at CMS"
+  event: "29th Rencontres de Physique de La Vallée d'Aoste"
+  place: "La Thuile, Italy"
+  proceedings: "https://doi.org/10.1393/ncc/i2015-15144-8"

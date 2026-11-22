@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  {{- /* Public, non-fork repositories, fetched from the GitHub API at build time.
+         Optional: set HUGO_GITHUB_TOKEN to avoid GitHub's anonymous rate limit. */}}
+  {{- $user := site.Params.gh_user }}
+  {{- $url := printf "https://api.github.com/users/%s/repos?per_page=100&sort=pushed" $user }}
+  {{- $headers := dict "Accept" "application/vnd.github+json" }}
+  {{- with getenv "HUGO_GITHUB_TOKEN" }}{{ $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) }}{{ end }}
+  {{- $repos := slice }}
+  {{- with try (resources.GetRemote $url (dict "headers" $headers)) }}
+    {{- if .Err }}
+      {{- warnf "Software page: could not fetch GitHub repositories: %s" .Err }}
+    {{- else if .Value }}
+      {{- $repos = where (where (.Value | transform.Unmarshal) "fork" false) "archived" false }}
+    {{- end }}
+  {{- end }}
+  {{- with $repos }}
+  <div class="repos">
+    {{- range . }}
+    <article class="repo">
+      <h3><a href="{{ .html_url }}">{{ .name }}</a></h3>
+      {{ with .description }}<p>{{ . }}</p>{{ end }}
+      <p class="meta">
+        {{- with .language }}{{ . }} · {{ end }}
+        {{- if gt .stargazers_count 0 }}★ {{ .stargazers_count }} · {{ end -}}
+        updated {{ (time .pushed_at).Format "2006" }}
+      </p>
+    </article>
+    {{- end }}
+  </div>
+  {{- end }}
+  <p>All repositories: <a href="https://github.com/{{ $user }}">github.com/{{ $user }}</a></p>
+{{ end }}

@@ -1,0 +1,8 @@
+<ul class="profiles">
+  {{- range site.Params.profiles }}
+  <li><a href="{{ .url }}" rel="me">{{ .name }}</a></li>
+  {{- end }}
+  {{- with site.Params.cv }}
+  <li><a href="{{ . | relURL }}">CV (PDF)</a></li>
+  {{- end }}
+</ul>

@@ -6,19 +6,66 @@ pygmentsUseClasses = true
 
 [params]
   author = 'Kirill Skovpen'
-  description = 'My portfolio site'
-  
-  gh_url = 'https://api.github.com/users'
+  # Used for the meta description and link previews
+  description = 'Particle physicist at Ghent University working on top-quark physics with the CMS experiment at CERN.'
+  # One-line role shown under the name on the home page
+  role = 'Particle physicist · Ghent University · CMS experiment at CERN'
+  # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
+  photo = ''
+  cv = ''
+  # GitHub user whose public repositories are listed on the Software page
   gh_user = 'kskovpen'
 
+  [[params.profiles]]
+    name = 'INSPIRE-HEP'
+    url = 'https://inspirehep.net/authors/1066490'
+  [[params.profiles]]
+    name = 'GitHub'
+    url = 'https://github.com/kskovpen'
+  [[params.profiles]]
+    name = 'LinkedIn'
+    url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
+  [[params.profiles]]
+    name = 'X (Twitter)'
+    url = 'https://twitter.com/kirillskovpen'
+
+[menus]
+  [[menus.main]]
+    name = 'Research'
+    pageRef = '/science'
+    weight = 10
+  [[menus.main]]
+    name = 'Talks'
+    pageRef = '/talks'
+    weight = 20
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 30
+  [[menus.main]]
+    name = 'Software'
+    pageRef = '/opensource'
+    weight = 40
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 50
+  # Uncomment once these sections have content (content/run/_index.md, content/sound/_index.md)
+  # [[menus.main]]
+  #   name = 'Run'
+  #   pageRef = '/run'
+  #   weight = 35
+  # [[menus.main]]
+  #   name = 'Sound'
+  #   pageRef = '/sound'
+  #   weight = 36
+
 [permalinks]
-  posts = "posts/:year/:month/:slug/"
-  year = "posts/:slug/"
-  month = "posts/:slug/"
-  science = "science/:slug/"
-  
+  posts = '/posts/:year/:slugorcontentbasename/'
+
 [taxonomies]
-  year = "year"
-  month = "month"
-  tag = "tags"
-  category = "categories"
+  tag = 'tags'
+
+# GitHub repository list for the Software page is re-fetched at most once a day locally
+[caches.getresource]
+  maxAge = '24h'

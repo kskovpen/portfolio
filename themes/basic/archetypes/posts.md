@@ -1,16 +1,12 @@
 +++
-title = "{{ replace .Name "-" " " | title }}"
+title = "{{ replace .File.ContentBaseName "-" " " | title }}"
 date = "{{ .Date }}"
-draft = false
-author = "Kirill Skovpen"
-year = "{{ dateFormat "2006" .Date }}"
-month = "{{ dateFormat "2006/01" .Date }}"
-categories = ["Personal", "Thoughts"]
-tags = ["software", "html"]
+draft = true
+tags = []
 +++
 
-Draft post text.
+Summary paragraph shown in post lists.
 
 <!--more-->
 
-Here is more text to read.
+Rest of the post.

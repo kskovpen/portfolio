@@ -1,6 +1,0 @@
-{{ define "main" }}
-  {{ $css := resources.Get "css/info.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-/*  {{ .Content }}*/
-  TESTTEST
-{{ end }}

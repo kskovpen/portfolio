@@ -1,5 +1,4 @@
 {{ $image := $.Page.Resources.GetMatch (.Get 0)}}
-{{- warnf "%v" $.Page.Resources -}}
 {{ $smallImage := $image.Resize "1024x" }}
 
 <figure class="post-figure">

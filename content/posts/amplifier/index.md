@@ -1,12 +1,8 @@
 +++
-title = "20240301 Electronics Amplifier"
+title = "Amplifier notes"
 date = "2024-03-01T21:11:16+01:00"
 draft = false
-author = "Kirill Skovpen"
-year = "2024"
-month = "2024/03"
-categories = ["Personal", "Thoughts"]
-tags = ["software", "html"]
+tags = ["electronics"]
 +++
 
 Draft post text.

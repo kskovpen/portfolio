@@ -1,0 +1,20 @@
+{{- /* Renders publications by key from data/publications.yaml.
+       Usage: partial "publications.html" (dict "keys" .Params.publications "heading" "Selected publications") */ -}}
+{{- with .keys }}
+<section class="publications">
+  <h3>{{ $.heading | default "Publications" }}</h3>
+  <ul class="pub-list">
+    {{- range . }}
+      {{- with index site.Data.publications . }}
+      <li>
+        <span class="pub-title">{{ .title }}</span><br>
+        <span class="meta">{{ .authors }}{{ with .journal }}, <em>{{ . }}</em>{{ end }}</span><br>
+        {{ partial "pub-links.html" . }}
+      </li>
+      {{- else }}
+        {{- warnf "publications: unknown key %q (see data/publications.yaml)" . }}
+      {{- end }}
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

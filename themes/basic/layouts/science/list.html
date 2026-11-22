@@ -1,11 +1,13 @@
 {{ define "main" }}
-  {{ $css := resources.Get "css/cards.scss" | resources.ExecuteAsTemplate "css/cards.scss" . | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  <div class="cards container">
-    {{ range .Pages }}
-      <a class="cards card" href="{{ .RelPermalink }}">
-        <p>{{ .Title }}</p>
-      </a>
-    {{ end }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  <div class="cards">
+    {{- range .Sections }}
+      {{- /* Topics without pages, text or publications stay hidden until they have content */}}
+      {{- if or .Pages .Content .Params.publications }}
+        {{- $style := printf "--card-img: url('%s'); --card-img-hover: url('%s');" (.Params.image_default | relURL) (.Params.image_hover | default .Params.image_default | relURL) }}
+        <a class="card" href="{{ .RelPermalink }}" style="{{ $style | safeCSS }}"><span>{{ .Title }}</span></a>
+      {{- end }}
+    {{- end }}
   </div>
 {{ end }}

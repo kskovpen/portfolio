@@ -1,0 +1,62 @@
+# Publications referenced from research pages by key, e.g. publications = ["four-tops-2023"]
+# Full list: https://inspirehep.net/authors/1066490
+
+four-tops-2023:
+  title: "Observation of four top quark production in proton-proton collisions at √s = 13 TeV"
+  authors: "CMS Collaboration"
+  journal: "Phys.Lett.B 847 (2023) 138290"
+  arxiv: "2305.13439"
+  doi: "10.1016/j.physletb.2023.138290"
+  inspire: 2661880
+
+fcnc-scalar-2022:
+  title: "Flavour-Changing Neutral Scalar Interactions of the Top Quark"
+  authors: "N. Castro, K. Skovpen"
+  journal: "Universe 8 (2022) 609"
+  arxiv: "2210.09641"
+  doi: "10.3390/universe8110609"
+  inspire: 2166752
+
+photon-radiation-2021:
+  title: "Photon radiation effects in kinematic reconstruction of top quarks"
+  authors: "D. Dobur, J. Knolle, G. Mestdach, K. Skovpen"
+  journal: "JINST 16 (2021) P12001"
+  arxiv: "2107.07586"
+  doi: "10.1088/1748-0221/16/12/P12001"
+  inspire: 1886383
+
+pythia8-tune-2026:
+  title: "A Pythia8 tune for open charm and beauty production in fixed-target collisions"
+  authors: "M. Climescu, D. Dobur, K. Skovpen"
+  journal: "Eur.Phys.J.C 86 (2026) 1316"
+  arxiv: "2608.29076"
+  doi: "10.1140/epjc/s10052-026-16548-5"
+  inspire: 3197874
+
+power9-cms-2026:
+  title: "Supporting multiple hardware architectures at CMS: the integration and validation of POWER9"
+  authors: "T. Boccali, S. Haleem, D. Hufnagel et al."
+  journal: "J.Phys.Conf.Ser. 3206 (2026) 012044"
+  doi: "10.1088/1742-6596/3206/1/012044"
+  inspire: 3156972
+
+hpc-nsc-chep-2012:
+  title: "Evolution of the virtualized HPC infrastructure of Novosibirsk Scientific Center"
+  authors: "A. Adakin, A. Anisenkov, S. Belov et al."
+  journal: "J.Phys.Conf.Ser. 396 (2012) 042064"
+  doi: "10.1088/1742-6596/396/4/042064"
+  inspire: 1211454
+
+hpc-nsc-isgc-2012:
+  title: "Use of the virtualized HPC infrastructure of the Novosibirsk Scientific Center for running production analysis for HEP experiments at BINP"
+  authors: "S. Belov, V. Kaplin, K. Skovpen et al."
+  journal: "PoS ISGC2012 (2012) 012"
+  doi: "10.22323/1.153.0012"
+  inspire: 1185920
+
+phd-thesis-2012:
+  title: "Search for the W_R boson and heavy neutrino with the ATLAS detector"
+  original_title: "Поиск W_R-бозона и тяжелого нейтрино на детекторе ATLAS"
+  authors: "K. Skovpen"
+  journal: "PhD thesis, Budker Institute of Nuclear Physics, Novosibirsk (2012)"
+  inspire: 1231271

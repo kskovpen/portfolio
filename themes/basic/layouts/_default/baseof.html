@@ -9,7 +9,7 @@
         {{ partial "nav.html" . }}
         <br>
       </div>
-      <main{{ if and .IsPage (ne .Layout "search") }} data-pagefind-body{{ end }}>
+      <main{{ if and (or .IsPage (in (slice "science" "talks") .Section)) (ne .Layout "search") }} data-pagefind-body data-pagefind-meta="title:{{ .Title }}"{{ end }}>
       <div id="content">
         {{ block "main" . }}{{ end }}
       </div>
