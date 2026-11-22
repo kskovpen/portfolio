@@ -24,6 +24,9 @@ pygmentsUseClasses = true
     name = 'SoundCloud'
     url = 'https://soundcloud.com/kirillskovpenmusic'
   [[params.profiles]]
+    name = 'Instagram'
+    url = 'https://www.instagram.com/kirillskovpen/'
+  [[params.profiles]]
     name = 'LinkedIn'
     url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
 
