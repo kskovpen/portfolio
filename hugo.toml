@@ -13,6 +13,9 @@ pygmentsUseClasses = true
   # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
   photo = 'images/me.jpg'
   cv = ''
+  # SoundCloud profile shown as a player on the Music page
+  soundcloud = 'https://soundcloud.com/kirillskovpenmusic'
+  soundcloud_user_id = 1402515
   # GitHub user whose other public repositories are listed at the bottom of the Projects page
   gh_user = 'kskovpen'
 
@@ -22,6 +25,9 @@ pygmentsUseClasses = true
   [[params.profiles]]
     name = 'GitHub'
     url = 'https://github.com/kskovpen'
+  [[params.profiles]]
+    name = 'SoundCloud'
+    url = 'https://soundcloud.com/kirillskovpenmusic'
   [[params.profiles]]
     name = 'LinkedIn'
     url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
@@ -44,8 +50,6 @@ pygmentsUseClasses = true
     name = 'Music'
     pageRef = '/music'
     weight = 40
-    [menus.main.params]
-      needsPages = true
   [[menus.main]]
     name = 'Travel'
     pageRef = '/travel'
