@@ -1,0 +1,73 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+
+  {{- with site.Data.running }}
+  {{- $r := . }}
+  <section class="run-stats">
+    {{- range slice (dict "label" (printf "%s so far" $r.this_year.year) "t" $r.this_year) (dict "label" "All time" "t" $r.all_time) }}
+    <div class="run-stat">
+      <h3>{{ .label }}</h3>
+      <p class="run-big">{{ lang.FormatNumber 0 .t.distance_km }} km</p>
+      <p class="meta">{{ .t.count }} runs · {{ .t.hours }} h · {{ lang.FormatNumber 0 .t.elevation_m }} m climbed</p>
+    </div>
+    {{- end }}
+  </section>
+
+  {{- with $r.personal_bests }}
+  <h3>Race personal bests</h3>
+  <table class="run-table">
+    <thead><tr><th>Distance</th><th>Time</th><th>Race</th><th>Date</th></tr></thead>
+    <tbody>
+    {{- range . }}
+      <tr><td>{{ .distance }}</td><td>{{ .time }}</td><td><a href="{{ .url }}">{{ .name }}</a></td><td>{{ (time .date).Format "Jan 2006" }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{- end }}
+
+  {{- with $r.races }}
+  <h3>Races</h3>
+  <table class="run-table">
+    <thead><tr><th>Date</th><th>Race</th><th>Distance</th><th>Time</th><th>Pace</th></tr></thead>
+    <tbody>
+    {{- range . }}
+      <tr><td>{{ (time .date).Format "Jan 2, 2006" }}</td><td><a href="{{ .url }}">{{ .name }}</a></td><td>{{ .distance_km }} km</td><td>{{ .time }}</td><td>{{ .pace }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{- end }}
+
+  {{- with $r.years }}
+  <h3>By year</h3>
+  <table class="run-table">
+    <thead><tr><th>Year</th><th>Runs</th><th>Distance</th><th>Time</th><th>Elevation</th></tr></thead>
+    <tbody>
+    {{- range . }}
+      <tr><td>{{ .year }}</td><td>{{ .count }}</td><td>{{ lang.FormatNumber 0 .distance_km }} km</td><td>{{ .hours }} h</td><td>{{ lang.FormatNumber 0 .elevation_m }} m</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{- end }}
+
+  {{- with $r.longest }}
+  <p><strong>Longest run:</strong> <a href="{{ .url }}">{{ .name }}</a>, {{ .distance_km }} km in {{ .time }} ({{ (time .date).Format "January 2006" }})</p>
+  {{- end }}
+
+  {{- with $r.recent }}
+  <h3>Recent runs</h3>
+  <ul class="run-recent">
+    {{- range . }}
+    <li><span class="meta">{{ (time .date).Format "Jan 2" }}</span> <a href="{{ .url }}">{{ .name }}</a>: {{ .distance_km }} km in {{ .time }} ({{ .pace }})</li>
+    {{- end }}
+  </ul>
+  {{- end }}
+
+  <p class="meta strava-credit">
+    <a href="{{ $r.athlete_url }}">Follow me on Strava</a> · Powered by <a href="https://www.strava.com">Strava</a>
+    · updated {{ (time $r.updated).Format "January 2, 2006" }}
+  </p>
+  {{- else }}
+  <p class="meta">Running stats are temporarily unavailable.</p>
+  {{- end }}
+{{ end }}

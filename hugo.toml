@@ -50,11 +50,11 @@ pygmentsUseClasses = true
     name = 'About'
     pageRef = '/about'
     weight = 50
-  # Uncomment once these sections have content (content/run/_index.md, content/sound/_index.md)
-  # [[menus.main]]
-  #   name = 'Run'
-  #   pageRef = '/run'
-  #   weight = 35
+  [[menus.main]]
+    name = 'Run'
+    pageRef = '/run'
+    weight = 35
+  # Uncomment once this section has content (content/sound/_index.md)
   # [[menus.main]]
   #   name = 'Sound'
   #   pageRef = '/sound'

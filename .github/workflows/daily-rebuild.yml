@@ -1,0 +1,17 @@
+# Rebuilds the Netlify site once a day so the Run page picks up new Strava activities.
+# Needs the repository secret NETLIFY_BUILD_HOOK (a Netlify build hook URL).
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # 04:17 UTC every day
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: curl -fsS -X POST -d '{}' "$HOOK" > /dev/null

@@ -13,3 +13,8 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Strava credentials and generated Run data
+.env.strava
+/data/running.json
+__pycache__/

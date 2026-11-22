@@ -400,3 +400,28 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
   --pagefind-ui-border: var(--border-color);
   --pagefind-ui-font: inherit;
 }
+
+/* ---- Running ---- */
+.run-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5em 0;
+}
+.run-stat {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.6em 1em;
+}
+.run-stat h3 { margin: 0.2em 0; font-size: 1em; }
+.run-big { font-size: 2em; margin: 0.1em 0; color: var(--attention-color); }
+.run-stat .meta { margin: 0.2em 0; }
+.run-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5em; font-size: 0.9em; }
+.run-table th, .run-table td { text-align: left; padding: 0.3em 0.6em 0.3em 0; border-bottom: 1px solid var(--border-color); }
+.run-table th { color: var(--text-color-heading); font-weight: 500; }
+@media only screen and (max-width: 600px) {
+  .run-table { display: block; overflow-x: auto; }
+}
+.run-recent { list-style: none; padding: 0; }
+.run-recent li { margin: 0.3em 0; }
+.strava-credit { margin-top: 2em; }
