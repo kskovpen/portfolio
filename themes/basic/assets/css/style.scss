@@ -506,3 +506,11 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 @media only screen and (max-width: 600px) {
   .gear { grid-template-columns: 1fr 4.5em; grid-template-areas: "name km" "bar bar" "meta meta"; }
 }
+.race-groups { display: grid; gap: 0.5rem; }
+.race-group h4 { margin: 1em 0 0.2em; font-weight: 500; color: var(--text-color-heading); }
+.race-more summary { font-size: 0.85em; cursor: pointer; color: var(--attention-color); margin: 0.4em 0; }
+.race-name { color: var(--text-color-heading); }
+@media only screen and (max-width: 600px) {
+  .chart-tick { font-size: 22px; }
+  .chart-value { font-size: 22px; }
+}

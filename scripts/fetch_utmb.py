@@ -30,7 +30,7 @@ def main():
         for r in props["results"]["results"]:
             results.append({
                 "date": r["dateIso"],
-                "event": r["eventName"].strip(),
+                "event": re.sub(r"\s*\(ex [^)]*\)", "", r["eventName"]).strip(),
                 "race": r["raceName"].strip(),
                 "distance_km": float(r["distance"]),
                 "elevation_m": r.get("elevationGain"),

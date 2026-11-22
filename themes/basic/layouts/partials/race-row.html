@@ -1,0 +1,13 @@
+{{- /* One race row. Website and course GPX come from data/race_events.yaml, keyed by event name. */ -}}
+{{- $ev := index (site.Data.race_events | default dict) .name }}
+<li>
+  <span class="race-date meta">{{ (time .date).Format "Jan 2006" }}</span>
+  <span class="race-name">{{ with and $ev $ev.website }}<a href="{{ . }}">{{ $.name }}</a>{{ else }}{{ .name }}{{ end }}</span>
+  <span class="race-detail meta">
+    {{- if lt .km 30.0 }}{{ lang.FormatNumber 1 .km | replaceRE `\.0$` "" }}{{ else }}{{ math.Round .km }}{{ end }} km{{ with .elev }} · D+ {{ . }} m{{ end }}
+    {{- with and $ev $ev.gpx }} · <a href="{{ . }}">Course GPX</a>{{ end }}
+    {{- with .strava }} · <a href="{{ . }}">My run</a>{{ end }}
+    {{- with .utmb }} · <a href="{{ . }}">UTMB</a>{{ end -}}
+  </span>
+  <span class="race-time">{{ .time }}{{ with .rank }} <span class="meta">· {{ . }}/{{ $.total }}</span>{{ end }}</span>
+</li>

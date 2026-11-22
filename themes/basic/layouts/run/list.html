@@ -5,20 +5,27 @@
   {{- $r := site.Data.running }}
   {{- $u := site.Data.utmb }}
 
-  {{- /* Races: UTMB results (trail, fetched) + road races from data/races.yaml (times from Strava) */}}
+  {{- /* Races: UTMB results (trail, fetched) + official races from data/races.yaml (times from Strava) */}}
   {{- $races := slice }}
   {{- with $u }}{{ range .results }}{{ if not .dnf }}
-    {{- $races = $races | append (dict "date" .date "name" .event "detail" .race "km" .distance_km "elev" .elevation_m "time" .time "seconds" .seconds "rank" .rank "total" .total "type" "trail" "url" $u.profile_url) }}
+    {{- $strava := "" }}{{ with $r }}{{ end }}
+    {{- $d := .date }}{{ with $r }}{{ range first 1 (sort (where .runs "date" $d) "distance_km" "desc") }}{{ $strava = .url }}{{ end }}{{ end }}
+    {{- $races = $races | append (dict "date" .date "name" .event "km" .distance_km "elev" .elevation_m "time" .time "seconds" .seconds "rank" .rank "total" .total "type" "trail" "strava" $strava "utmb" $u.profile_url) }}
   {{- end }}{{ end }}{{ end }}
   {{- with $r }}
     {{- range site.Data.races }}{{ $e := . }}
-      {{- range where $r.long_runs "id" .strava }}
-        {{- $races = $races | append (dict "date" .date "name" $e.event "detail" "" "km" .distance_km "elev" .elevation_m "time" .time "seconds" .seconds "rank" nil "total" nil "type" ($e.type | default "road") "url" .url) }}
+      {{- range where $r.runs "id" .strava }}
+        {{- $races = $races | append (dict "date" .date "name" $e.event "km" (float ($e.km | default .distance_km)) "elev" .elevation_m "time" .time "seconds" .seconds "rank" nil "total" nil "type" ($e.type | default "road") "strava" .url "utmb" "") }}
       {{- end }}
     {{- end }}
   {{- end }}
-  {{- $marathons := where $races "km" "ge" 41.5 }}
-  {{- $roadMarathons := where $marathons "type" "road" }}
+  {{- $road := where $races "type" "road" }}
+  {{- $roadMarathons := where $road "km" "ge" 41.0 }}
+  {{- $groups := slice
+      (dict "title" "Marathons" "items" $roadMarathons)
+      (dict "title" "Half marathons & 20 km" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
+      (dict "title" "10 km & shorter" "items" (where $road "km" "lt" 19.0))
+      (dict "title" "Trail races" "items" (where $races "type" "trail")) }}
 
   <section class="run-tiles">
     {{- with $r }}
@@ -37,7 +44,7 @@
     <div class="run-tile">
       <p class="run-tile-label">Marathon PB</p>
       <p class="run-tile-value">{{ .time }}</p>
-      <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }} · {{ len $marathons }} marathons</p>
+      <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }} · {{ len $roadMarathons }} road marathons</p>
     </div>
     {{- end }}{{ end }}
     {{- with $u }}{{ with .index }}
@@ -69,22 +76,28 @@
   {{- end }}
 
   {{- with $races }}
-  {{- $main := first 8 (sort (where . "km" "ge" 30.0) "date" "desc") }}
-  <h3>Main races</h3>
-  <ul class="race-list">
-    {{- range $main }}{{ $x := . }}
-    <li>
-      <span class="race-date meta">{{ (time .date).Format "Jan 2006" }}</span>
-      <span class="race-name"><a href="{{ .url }}">{{ .name }}</a></span>
-      <span class="race-detail meta">{{ math.Round .km }} km{{ with .elev }} · D+ {{ . }} m{{ end }}</span>
-      <span class="race-time">{{ .time }}{{ with $x.rank }} <span class="meta">· {{ . }}/{{ $x.total }}</span>{{ end }}</span>
-    </li>
-    {{- end }}
-  </ul>
-  {{- with $u }}<p class="meta">All trail results on <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
+  <h3>Races</h3>
+  <div class="race-groups">
+  {{- range $g := $groups }}{{ with $g.items }}
+    {{- $sorted := sort . "date" "desc" }}
+    <section class="race-group">
+      <h4>{{ $g.title }} <span class="meta">({{ len . }})</span></h4>
+      <ul class="race-list">
+        {{- range first 5 $sorted }}{{ partial "race-row.html" . }}{{ end }}
+      </ul>
+      {{- if gt (len $sorted) 5 }}
+      <details class="race-more">
+        <summary>Show all {{ len $sorted }}</summary>
+        <ul class="race-list">
+          {{- range after 5 $sorted }}{{ partial "race-row.html" . }}{{ end }}
+        </ul>
+      </details>
+      {{- end }}
+    </section>
+  {{- end }}{{ end }}
+  </div>
+  {{- with $u }}<p class="meta">Trail results and rankings from <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
   {{- end }}
-
-
   {{- with $r }}{{ with .gear }}
   {{- $maxKm := 1.0 }}{{ range . }}{{ $maxKm = math.Max $maxKm (float .distance_km) }}{{ end }}
   {{- $recent := now.AddDate 0 -2 0 }}

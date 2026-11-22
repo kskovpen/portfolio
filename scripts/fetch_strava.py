@@ -143,8 +143,8 @@ def summarize(acts, athlete):
         "years": [{"year": y, **totals(by_year[y])} for y in sorted(by_year)],
         "months": months,
         "races": races,
-        # Marathon-distance and longer runs, so data/races.yaml can refer to them by Strava id
-        "long_runs": [run_entry(a, use_elapsed=True) for a in runs if a["distance"] >= 40000],
+        # Every public run (compact), so data/races.yaml can refer to races by Strava id
+        "runs": [{k: v for k, v in run_entry(a, use_elapsed=True).items() if k not in ("name", "pace")} for a in runs],
     }
 
 

@@ -1,22 +1,76 @@
-# Road races recorded on Strava (UTMB trail results are fetched automatically).
-# Each entry points to a Strava activity by id; time and distance come from Strava.
-# For a race without a usable Strava recording, give date, km and time instead of strava.
-# Fields: strava (activity id) | date + km + time, event (name shown), type (road | trail)
+# Official races recorded on Strava (UTMB trail results are fetched automatically).
+# Each entry points to a Strava activity by id; the time comes from Strava.
+# Fields:
+#   strava  Strava activity id
+#   event   name shown on the site
+#   km      official distance (optional; otherwise the recorded GPS distance)
+#   type    road | trail
+# Groups on the Run page follow from type and km: marathons, half marathons & 20 km,
+# 10 km & shorter (road), trail races.
+
+# Marathons
 - strava: 20332045284   # 2026-03-29
   event: "Sofico Gent Marathon"
+  km: 42.195
   type: road
 - strava: 20332346529   # 2025-05-11
   event: "Geneva Marathon"
+  km: 42.195
   type: road
 - strava: 20332360016   # 2025-03-30
   event: "Sofico Gent Marathon"
+  km: 42.195
   type: road
-- strava: 20332495626   # 2024-11-03 (Garmin event: Brussels Airport Brussels Marathon & Half Marathon)
+- strava: 20332495626   # 2024-11-03
   event: "Brussels Airport Brussels Marathon"
+  km: 42.195
   type: road
-- strava: 11029300278   # 2024-03-24 (Garmin event: Ghent Marathon)
+- strava: 11029300278   # 2024-03-24
   event: "Sofico Gent Marathon"
+  km: 42.195
   type: road
 - strava: 9955213278    # 2023-10-01
   event: "Brussels Airport Brussels Marathon"
+  km: 42.195
+  type: road
+
+# Half marathons and 20 km (from Garmin's past events)
+- strava: 20332716788   # 2024-05-26
+  event: "20 km de Bruxelles"
+  km: 20
+  type: road
+- strava: 9155111686    # 2023-05-28
+  event: "20 km de Bruxelles"
+  km: 20
+  type: road
+- strava: 8174450326    # 2022-11-27
+  event: "Nevers Half Marathon"
+  km: 21.1
+  type: road
+- strava: 7934877789    # 2022-10-09
+  event: "20 km de Paris"
+  km: 20
+  type: road
+- strava: 7898870246    # 2022-10-02
+  event: "Brussels Airport Half Marathon"
+  km: 21.1
+  type: road
+
+# Trail races not on UTMB
+- strava: 8110842644    # 2022-11-13
+  event: "Naturarun La Hulpe"
+  type: trail
+
+# 10 km and shorter
+- strava: 20332355320   # 2025-04-13
+  event: "10 km de l'ULB"
+  km: 10
+  type: road
+- strava: 11229496171   # 2024-04-21
+  event: "10 km de l'ULB"
+  km: 10
+  type: road
+- strava: 8941372179    # 2023-04-23
+  event: "10 km de l'ULB"
+  km: 10
   type: road
