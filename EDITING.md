@@ -11,6 +11,20 @@ Stop it with Ctrl+C.
 
 ## 2. Add or change things
 
+### With the editor (easiest)
+With ./dev.sh running, open http://localhost:1313/admin/ in Chrome and click
+**Work with Local Repository**, then choose the `~/Sites/portfolio` folder (Chrome asks once
+for permission to edit it). Ignore the GitHub sign-in buttons.
+
+- **Blog posts / Projects / Trips**: click **New**, fill in the fields, drag in photos, **Save**.
+  The language switcher at the top of the form edits the EN / FR / NL / RU versions.
+- **Lists → Talks**: add or edit talks.
+- New posts and trips start as drafts: visible in the preview, not on the public site.
+  Untick **Draft** when they are ready.
+- Saving only changes files on this Mac. Publish with step 3 when you are done.
+
+### By hand
+
 | What | How |
 |---|---|
 | Blog post | `hugo new posts/my-topic/index.md`, write, set `draft = false` |

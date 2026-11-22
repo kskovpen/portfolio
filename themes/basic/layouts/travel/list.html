@@ -5,7 +5,7 @@
   <div class="cards-grid">
     {{- range .Pages.ByDate.Reverse }}
     <a class="project-card" href="{{ .RelPermalink }}">
-      {{ with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x400 smart webp" }}<div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>{{ end }}
+      {{ with partial "bundle-image.html" (dict "page" . "key" "cover") }}{{ $img := .Fill "600x400 smart webp" }}<div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>{{ end }}
       <div class="project-body">
         <span class="meta">{{ time.Format "January 2006" .Date }}{{ with .Params.places }} · {{ range $i, $p := first 3 . }}{{ if $i }}, {{ end }}{{ $p.name }}{{ end }}{{ end }}</span>
         <h3>{{ .Title }}</h3>

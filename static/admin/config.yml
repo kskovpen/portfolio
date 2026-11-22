@@ -1,0 +1,126 @@
+# Local editor for this site (Sveltia CMS).
+# Use: run ./dev.sh, open http://localhost:1313/admin/ in Chrome, click "Work with Local Repository"
+# and choose the ~/Sites/portfolio folder. Saving writes the files on this Mac; nothing is published
+# until you commit and push. (The GitHub backend below is only used to name the repository.)
+backend:
+  name: github
+  repo: kskovpen/portfolio
+  branch: main
+site_url: http://localhost:1313
+logo_url: /favicon.svg
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+i18n:
+  structure: multiple_files
+  locales: [en, fr, nl, ru]
+  default_locale: en
+  omit_default_locale_from_filename: true
+
+collections:
+  - name: posts
+    label: Blog posts
+    label_singular: Blog post
+    folder: content/posts
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    format: toml-frontmatter
+    extension: md
+    i18n: true
+    sortable_fields: [date, title]
+    summary: '{{title}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Date, name: date, widget: datetime, i18n: duplicate }
+      - { label: Draft (only visible in the local preview), name: draft, widget: boolean, default: true, i18n: duplicate }
+      - { label: Tags, name: tags, widget: list, required: false, i18n: duplicate }
+      - label: Text
+        name: body
+        widget: markdown
+        i18n: true
+        hint: 'The part above a line containing <!--more--> is the summary shown in post lists. Images you insert are saved in the post folder.'
+
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: content/projects
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    format: toml-frontmatter
+    extension: md
+    i18n: true
+    summary: '{{title}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Category, name: category, widget: select, options: [games, electronics, software], default: games, i18n: duplicate }
+      - { label: Year, name: year, widget: number, value_type: int, i18n: duplicate }
+      - { label: One-line summary (shown on the card), name: summary, widget: string, i18n: true }
+      - { label: Cover image (wide, optional), name: cover, widget: image, required: false, i18n: duplicate }
+      - { label: App icon (square, optional), name: icon, widget: image, required: false, i18n: duplicate }
+      - { label: Gallery, name: gallery, widget: image, multiple: true, required: false, i18n: duplicate }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        i18n: true
+        fields:
+          - { label: Text, name: name, widget: string }
+          - { label: URL, name: url, widget: string }
+      - { label: Order (lower comes first), name: weight, widget: number, value_type: int, default: 100, i18n: duplicate }
+      - { label: Description, name: body, widget: markdown, i18n: true }
+
+  - name: travel
+    label: Trips
+    label_singular: Trip
+    folder: content/travel
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    format: toml-frontmatter
+    extension: md
+    i18n: true
+    sortable_fields: [date, title]
+    summary: '{{title}}'
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - { label: Date, name: date, widget: datetime, i18n: duplicate }
+      - { label: Draft (only visible in the local preview), name: draft, widget: boolean, default: true, i18n: duplicate }
+      - { label: One-line summary (shown on the card), name: summary, widget: string, required: false, i18n: true }
+      - label: Places (for the map)
+        name: places
+        widget: list
+        i18n: duplicate
+        hint: 'Decimal coordinates, e.g. Geneva 46.204, 6.143. The map image is drawn the next time ./dev.sh starts.'
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Latitude, name: lat, widget: number, value_type: float }
+          - { label: Longitude, name: lon, widget: number, value_type: float }
+      - { label: Cover photo, name: cover, widget: image, required: false, i18n: duplicate }
+      - { label: Gallery, name: gallery, widget: image, multiple: true, required: false, i18n: duplicate }
+      - { label: Story, name: body, widget: markdown, required: false, i18n: true }
+
+  - name: data
+    label: Lists
+    files:
+      - name: talks
+        label: Talks
+        file: data/talks.yaml
+        fields:
+          - name: talks
+            label: Talks (newest first)
+            widget: list
+            root: true
+            summary: '{{fields.date}} · {{fields.title}}'
+            fields:
+              - { label: Date (YYYY-MM-DD), name: date, widget: string, required: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Event, name: event, widget: string }
+              - { label: Place, name: place, widget: string, required: false }
+              - { label: Slides (path under static/), name: slides, widget: string, required: false }
+              - { label: Proceedings URL, name: proceedings, widget: string, required: false }
+              - { label: Event URL, name: url, widget: string, required: false }

@@ -1,0 +1,6 @@
+{{- /* Image resource of a page bundle: the file named in front matter (.Params.<key>, set by the editor),
+       otherwise a file called <key>.* in the bundle. Params: dict "page" "key" ("cover" | "icon"). */ -}}
+{{- $r := false }}
+{{- with index .page.Params .key }}{{ $r = $.page.Resources.Get (path.Base .) }}{{ end }}
+{{- if not $r }}{{ $r = .page.Resources.GetMatch (printf "%s.*" .key) }}{{ end }}
+{{- return $r }}

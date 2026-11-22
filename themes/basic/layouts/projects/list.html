@@ -11,9 +11,9 @@
   <div class="cards-grid">
     {{- range .Pages.ByWeight }}
     <a class="project-card" href="{{ .RelPermalink }}" data-category="{{ .Params.category | urlize }}">
-      {{- with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x400 smart webp" }}
+      {{- with partial "bundle-image.html" (dict "page" . "key" "cover") }}{{ $img := .Fill "600x400 smart webp" }}
       <div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>
-      {{- else }}{{ with .Resources.GetMatch "icon.*" }}{{ $ic := .Fill "240x240 webp" }}
+      {{- else }}{{ with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "240x240 webp" }}
       <div class="project-cover project-icon"><img src="{{ $ic.RelPermalink }}" width="120" height="120" alt="" loading="lazy"></div>
       {{- end }}{{ end }}
       <div class="project-body">
