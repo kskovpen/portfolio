@@ -1,0 +1,314 @@
+:root {
+  --background-color: #FFF;
+  --text-color: #484848;
+  --text-color-heading: #000000;
+  --attention-color: #00838d;
+  --border-color: #ddd;
+  --tag-bg-color: rgba(0, 131, 141, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #14181b;
+    --text-color: #c7c7c7;
+    --text-color-heading: #f5f5f5;
+    --attention-color: #4dd0d9;
+    --border-color: #333;
+    --tag-bg-color: rgba(77, 208, 217, 0.15);
+  }
+}
+
+:root[data-theme="dark"] {
+  --background-color: #14181b;
+  --text-color: #c7c7c7;
+  --text-color-heading: #f5f5f5;
+  --attention-color: #4dd0d9;
+  --border-color: #333;
+  --tag-bg-color: rgba(77, 208, 217, 0.15);
+}
+
+:root[data-theme="light"] {
+  --background-color: #FFF;
+  --text-color: #484848;
+  --text-color-heading: #000000;
+  --attention-color: #00838d;
+  --border-color: #ddd;
+  --tag-bg-color: rgba(0, 131, 141, 0.12);
+}
+
+html, body, .container, .top, nav, footer, #content {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.top {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+.theme-toggle {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--attention-color);
+  padding: 0.25em 0.75em;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+.tagline {
+  text-align: center;
+  color: var(--text-color);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--attention-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--attention-color);
+}
+
+.hashtag-symbol {
+  color: var(--attention-color);
+  font-size: 15px;
+}
+
+.latest-blink-carousel {
+  animation: color-animation 10s ease infinite;
+}
+
+.latest-blink-carousel-1 {
+  --color-1: var(--attention-color);
+  --color-2: var(--background-color);
+  --color-3: var(--background-color);
+  --color-4: var(--text-color-heading);
+}
+
+.latest-blink-carousel-2 {
+  --color-1: var(--background-color);
+  --color-2: var(--attention-color);
+  --color-3: var(--background-color);
+  --color-4: var(--text-color-heading);
+}
+
+.latest-blink-carousel-3 {
+  --color-1: var(--background-color);
+  --color-2: var(--background-color);
+  --color-3: var(--attention-color);
+  --color-4: var(--text-color-heading);
+}
+
+@keyframes color-animation {
+  0%   {color: var(--color-4)}
+  10%    {color: var(--color-1)}
+  20%   {color: var(--color-2)}
+  35%   {color: var(--color-3)}
+  50%   {color: var(--color-4)}
+}
+
+html {
+  background-color: var(--background-color);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant Garamond&display=swap");
+
+body {
+  font-family: "Cormorant Garamond";
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.header-space {
+  position: fixed;
+}
+
+.post-figure {
+  margin: 0;
+}
+
+.post-figurecaption {
+  margin-left: 0;
+  margin-top: 0.5em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#content {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+#postheader {
+  background-color: var(--background-color);
+  display: flex;
+  text-align: left;
+  max-width: 100%;
+  font-size: 25px;
+}
+
+#postdata {
+  text-align: left;
+  overflow-wrap: anywhere;
+  max-width: 70%;
+  color: var(--text-color-heading);
+}
+
+#posttags {
+  flex: 1;
+  text-align: right;
+  overflow-wrap: anywhere;
+  width: 30%;
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  background-color: var(--background-color);
+  color: var(--attention-color);
+  font-size: 25px;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 15px;
+  text-align: center;
+}
+
+@import 'navbar';
+
+@media only screen and (min-width: 768px) {
+  .project-container { display: flex; }
+  .project-container .project-list { width: 20%; }
+  .project-container .project { flex: 1; }
+  .presentation-container { display: flex; }
+  .presentation-container .presentation-list { width: 20%; }
+  .presentation-container .presentation { flex: 1; }
+  .pagination {
+    width: 30%;
+  }
+}
+
+.oss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.oss article {
+  border: 1px solid var(--border-color);
+  box-shadow: 3px 3px 3px var(--border-color);
+  margin: 0.5%;
+  padding: 0.5%;
+  width: 30%;
+}
+
+a.link-header, a.link {
+  text-decoration: none;
+}
+
+a.link-header:hover, a.link:hover {
+  text-decoration: underline;
+}
+
+a.tag {
+  background-color: var(--tag-bg-color);
+  color: var(--attention-color);
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 1em;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+a.tag:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 1em auto;
+  padding: 0;
+}
+
+.pagination > .page-item {
+  border: 1px solid var(--border-color);
+  flex: 1;
+  text-align: center;
+  width: 5em;
+}
+
+.pagination > .page-link {
+  display: block;
+  color: var(--text-color-heading);
+  text-decoration: none;
+}
+
+.pagination > .page-item.active {
+  background-color: var(--attention-color);
+}
+
+.pagination > .page-item.active > .page-link {
+  color: var(--background-color);
+}
+
+.pagination > .page-item.disabled > .page-link {
+  color: var(--border-color);
+}
+
+figure img {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin: 1em;
+  text-align: left;
+  font-size: smaller;
+  font-style: italic;
+  color: var(--text-color-heading);
+}

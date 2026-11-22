@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{ $css := resources.Get "css/info.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <table class="info-list">  
+  {{ range .Pages }}
+    <div class="info-sheet">
+      <tr>
+      <td style="width:20%;">{{ partial "add_preview" (dict "project" .Page "image" "images/preview.png" ) }}</td>
+      <td style="width:55%;"><div><a class="link" href="{{ .RelPermalink }}">{{ .Params.title }}</a></div>
+      <div style="line-height:50%;">
+      </div>
+      <p></p>
+      <div class="desc">{{ .Params.summary }}</div></td>
+      <td style="width:25%;">
+      {{ with .Params.journal }}
+        <a class="link" href="{{ index . 1 }}">{{ index . 0 }}</a><br>
+      {{ end }}
+      {{ with .Params.preprint }}
+        <a class="link" href="{{ index . 1 }}">{{ index . 0 }}</a>
+      {{ end }}
+      </td>
+      </tr>
+    </div>
+  {{ end }}
+  </table>
+{{ end }}

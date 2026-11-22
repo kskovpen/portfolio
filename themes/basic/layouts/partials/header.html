@@ -1,0 +1,8 @@
+<header>
+  <h1 align="center"><a href="/">{{ .Site.Title }}</a></h1>
+  {{ if .IsHome }}
+    {{ with .Site.Params.description }}
+      <p class="tagline">{{ . }}</p>
+    {{ end }}
+  {{ end }}
+</header>

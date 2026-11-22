@@ -1,0 +1,38 @@
+{{ define "main" }}
+<!--  <div id="main">
+    <div id="lefttab"></div>
+    <div id="maintab">-->
+      {{ range first 1 (where .Site.RegularPages "Type" "in" "posts").ByDate.Reverse }}
+        <div id="postheader">
+	  <div id="postdata">
+	    <span class="latest-blink-carousel latest-blink-carousel-1">&#10095;</span><span class="latest-blink-carousel latest-blink-carousel-2">&#10095;</span><span class="latest-blink-carousel latest-blink-carousel-3">&#10095;</span>
+	    Recent posting: {{ .Title }}, published on {{ .Date.Format "Jan 02, 2006 3:04 PM" }}
+	  </div>
+	  <div id="posttags">
+	    {{ range .Params.tags }}
+	      <span class="hashtag-symbol">#<a href="/tags/{{ . | urlize }}">{{ . }}</a></span>
+	    {{ end }}
+	  </div>
+	</div>
+        {{ .Content }}
+      {{ end }}
+      <span class="hashtag" style="font-size:15px;">&#10095;&#10095;&#10095; <a href="/posts">See all posts</a></span>
+<!--    </div>
+    <div id="righttab"></div>
+  </div> -->
+    
+<!--  {{ .Content }}-->
+  
+<!--  {{ range first 1 (where .Site.RegularPages "Type" "in" "projects").ByDate.Reverse }}
+    <h3>This is my latest project: <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>  
+  {{ end }}
+
+  {{ range first 1 (where .Site.RegularPages "Type" "in" "presentations").ByDate.Reverse }}
+    <h3>This is my latest presentation: <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>  
+  {{ end }}-->
+
+<!--  {{ range first 5 (where .Site.RegularPages "Type" "in" "posts").ByDate.Reverse }}
+    {{ .Content }}
+  {{ end }}-->
+
+{{ end }}

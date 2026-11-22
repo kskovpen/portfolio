@@ -1,0 +1,12 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Pagefind index generated for local dev
+/static/pagefind/
+
+# Node (legacy)
+node_modules/
+
+.DS_Store

@@ -1,0 +1,4 @@
+{{ $img := .project.Resources.Get .image }}
+{{ $smallImage := $img.Resize "240x" }}
+<img style="display:block;" width="100%" src="{{ $smallImage.RelPermalink }}">
+

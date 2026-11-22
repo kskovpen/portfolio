@@ -1,0 +1,15 @@
+<table class="info-list"><tr>
+{{ range .Page.Params.figures }}
+  {{ $image := $.Page.Resources.GetMatch . }}
+  {{ if gt $image.Width 500 }}
+    {{ $image = $image.Resize "500x Lanczos" }}
+  {{ end }}
+  <td width="33%"><figure>
+      <img width="250" src="{{ $image.RelPermalink }}">
+  </figure></td>
+{{ end }}</tr><tr>
+{{ range .Page.Params.captions }}
+  <td>{{ . }}</td>
+{{ end }}
+</tr>
+</table>

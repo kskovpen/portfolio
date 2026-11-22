@@ -1,0 +1,40 @@
+<head>
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+  <title>
+  {{- if .Page.IsHome -}}
+    {{- .Site.Title -}}
+  {{- else -}}
+    {{ .Site.Title }}: {{ .Title }}
+  {{- end -}}
+  </title>
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="description" content="
+  {{- with .Page.Description -}}
+    {{ . }}
+  {{- else -}}
+    {{ .Site.Params.description }}
+  {{- end -}}">
+  {{ $css := resources.Get "css/style.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  
+  {{ range .AlternativeOutputFormats -}}
+    {{- $link := `<link rel="%s" type="%s" href="%s" title="%s">` -}}
+    {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
+    
+    {{- if $.Page.IsHome -}}
+      {{ $title = $.Site.Title }}
+    {{- end -}}
+    
+    {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
+    {{- end }}
+    
+</head>

@@ -1,0 +1,12 @@
+{ "accounts" :
+  [
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/kirillskovpen"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/kirill-skovpen-1464a4253"
+    }
+  ]
+}
