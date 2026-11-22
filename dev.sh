@@ -8,4 +8,4 @@ python3 scripts/fetch_strava.py data/running.json
 python3 scripts/map_snapshots.py || echo "map snapshots skipped (needs Pillow)"
 hugo --quiet
 npx -y pagefind@1.6.0 --site public --output-path static/pagefind
-hugo server --disableFastRender
+hugo server --disableFastRender --renderToMemory
