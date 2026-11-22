@@ -2,7 +2,7 @@
 <article class="project-page">
   <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
   <h2 class="project-title">{{ with .Resources.GetMatch "icon.*" }}{{ $ic := .Fill "160x160 webp" }}<img class="title-icon" src="{{ $ic.RelPermalink }}" width="56" height="56" alt="">{{ end }}{{ .Title }}</h2>
-  <p class="meta">{{ .Params.category | title }}{{ with .Params.year }} · {{ . }}{{ end }}</p>
+  <p class="meta">{{ with .Params.category }}{{ T (printf "cat_%s" .) | default (. | title) }}{{ end }}{{ with .Params.year }} · {{ . }}{{ end }}</p>
   {{ partial "cover.html" (dict "page" . "size" "1200x700 smart webp") }}
   {{ .Content }}
   {{- with .Params.links }}

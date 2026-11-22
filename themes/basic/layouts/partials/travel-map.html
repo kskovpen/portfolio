@@ -2,6 +2,6 @@
 {{- with .src }}
 <figure class="map-snapshot">
   <img src="{{ . }}" alt="{{ $.alt }}" loading="lazy" width="1200" height="640">
-  <figcaption>Map &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</figcaption>
+  <figcaption>{{ T "map_credit" }} &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</figcaption>
 </figure>
 {{- end }}

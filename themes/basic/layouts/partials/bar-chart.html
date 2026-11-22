@@ -50,9 +50,9 @@
     <line class="chart-axis" x1="{{ $padL }}" x2="{{ sub $W $padR }}" y1="{{ $base }}" y2="{{ $base }}"/>
   </svg>
   <details class="chart-table">
-    <summary>Show as table</summary>
+    <summary>{{ T "show_as_table" }}</summary>
     <table class="run-table">
-      <thead><tr><th>{{ .labelHeader | default "Period" }}</th><th>{{ .valueHeader | default "Value" }} ({{ $unit }})</th></tr></thead>
+      <thead><tr><th>{{ .labelHeader }}</th><th>{{ .valueHeader }} ({{ $unit }})</th></tr></thead>
       <tbody>{{ range .bars }}<tr><td>{{ .label }}</td><td>{{ lang.FormatNumber 0 (float .value) }}</td></tr>{{ end }}</tbody>
     </table>
   </details>

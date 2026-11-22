@@ -35,34 +35,34 @@
   {{- $roadMarathons := where $road "km" "ge" 41.0 }}
   {{- $trails := where $races "type" "trail" }}
   {{- $groups := slice
-      (dict "title" "Trail races" "items" $trails)
-      (dict "title" "Marathons" "items" $roadMarathons)
-      (dict "title" "Half marathons & 20 km" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
-      (dict "title" "10 km & shorter" "items" (where $road "km" "lt" 19.0)) }}
+      (dict "key" "group_trail" "items" $trails)
+      (dict "key" "group_marathons" "items" $roadMarathons)
+      (dict "key" "group_halves" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
+      (dict "key" "group_short" "items" (where $road "km" "lt" 19.0)) }}
 
   <section class="run-tiles">
     {{- with $u }}{{ with .index }}
     <div class="run-tile">
-      <p class="run-tile-label">UTMB index</p>
+      <p class="run-tile-label">{{ T "utmb_index" }}</p>
       <p class="run-tile-value">{{ . }}</p>
-      <p class="meta"><a href="{{ $u.profile_url }}">{{ len $trails }} trail races</a>{{ with $trails }}{{ with index (sort . "km" "desc") 0 }} · longest {{ math.Round .km }} km{{ end }}{{ end }}</p>
+      <p class="meta"><a href="{{ $u.profile_url }}">{{ T "trail_races_n" (len $trails) }}</a>{{ with $trails }}{{ with index (sort . "km" "desc") 0 }} · {{ T "longest" }} {{ math.Round .km }} km{{ end }}{{ end }}</p>
     </div>
     {{- end }}{{ end }}
     {{- with $r }}
     <div class="run-tile">
-      <p class="run-tile-label">Climbed in {{ .this_year.year }}</p>
+      <p class="run-tile-label">{{ T "climbed_in" .this_year.year }}</p>
       <p class="run-tile-value">{{ lang.FormatNumber 0 .this_year.elevation_m }} m</p>
-      <p class="meta">{{ lang.FormatNumber 0 .this_year.distance_km }} km · {{ .this_year.count }} runs</p>
+      <p class="meta">{{ lang.FormatNumber 0 .this_year.distance_km }} km · {{ T "runs" (int .this_year.count) }}</p>
     </div>
     <div class="run-tile">
-      <p class="run-tile-label">Climbed since {{ .all_time.since }}</p>
+      <p class="run-tile-label">{{ T "climbed_since" .all_time.since }}</p>
       <p class="run-tile-value">{{ lang.FormatNumber 0 .all_time.elevation_m }} m</p>
-      <p class="meta">{{ lang.FormatNumber 0 .all_time.distance_km }} km · {{ .all_time.count }} runs</p>
+      <p class="meta">{{ lang.FormatNumber 0 .all_time.distance_km }} km · {{ T "runs" (int .all_time.count) }}</p>
     </div>
     {{- end }}
     {{- with $roadMarathons }}{{ with index (sort . "seconds") 0 }}
     <div class="run-tile">
-      <p class="run-tile-label">Marathon PB</p>
+      <p class="run-tile-label">{{ T "marathon_pb" }}</p>
       <p class="run-tile-value">{{ .time }}</p>
       <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }}</p>
     </div>
@@ -77,31 +77,31 @@
     {{- end }}
     {{- $last := sub (len .years) 1 }}
     <div class="run-charts">
-      {{ partial "bar-chart.html" (dict "title" "Climb per year (m)" "bars" $bars "unit" "m" "labels" (slice $maxI $last) "labelHeader" "Year" "valueHeader" "Climb") }}
+      {{ partial "bar-chart.html" (dict "title" (T "climb_per_year") "bars" $bars "unit" "m" "labels" (slice $maxI $last) "labelHeader" (T "year") "valueHeader" (T "climb")) }}
       {{- $mbars := slice }}
       {{- range .months }}
         {{- $t := time (printf "%s-01" .month) }}
-        {{- $xl := cond (in (slice 1 4 7 10) (int ($t.Format "1"))) (cond (eq ($t.Format "1") "1") ($t.Format "Jan 06") ($t.Format "Jan")) "" }}
-        {{- $mbars = $mbars | append (dict "label" ($t.Format "January 2006") "xlabel" $xl "value" .distance_km) }}
+        {{- $xl := cond (in (slice 1 4 7 10) (int ($t.Format "1"))) (cond (eq ($t.Format "1") "1") ((time.Format "Jan 06" $t)) ((time.Format "Jan" $t))) "" }}
+        {{- $mbars = $mbars | append (dict "label" ((time.Format "January 2006" $t)) "xlabel" $xl "value" .distance_km) }}
       {{- end }}
-      {{ partial "bar-chart.html" (dict "title" "Distance per month, last 24 months (km)" "bars" $mbars "unit" "km" "labelHeader" "Month" "valueHeader" "Distance") }}
+      {{ partial "bar-chart.html" (dict "title" (T "distance_per_month") "bars" $mbars "unit" "km" "labelHeader" (T "month") "valueHeader" (T "distance")) }}
     </div>
   {{- end }}
 
   {{- with $races }}
-  <h3>Races</h3>
+  <h3>{{ T "races" }}</h3>
   <div class="race-groups">
   {{- range $g := $groups }}{{ with $g.items }}
     {{- $sorted := sort . "date" "desc" }}
     <section class="race-group">
-      <h4>{{ $g.title }} <span class="meta">({{ len . }})</span></h4>
+      <h4>{{ T $g.key }} <span class="meta">({{ len . }})</span></h4>
       <ul class="race-list">
-        {{- $n := cond (eq $g.title "Trail races") 6 4 }}
+        {{- $n := cond (eq $g.key "group_trail") 6 4 }}
         {{- range first $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
       </ul>
       {{- if gt (len $sorted) $n }}
       <details class="race-more">
-        <summary>Show all {{ len $sorted }}</summary>
+        <summary>{{ T "show_all" (len $sorted) }}</summary>
         <ul class="race-list">
           {{- range after $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
         </ul>
@@ -110,12 +110,12 @@
     </section>
   {{- end }}{{ end }}
   </div>
-  {{- with $u }}<p class="meta">Trail results and rankings from <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
+  {{- with $u }}<p class="meta">{{ T "utmb_credit" }} <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
   {{- end }}
   {{- with $r }}{{ with .gear }}
   {{- $maxKm := 1.0 }}{{ range . }}{{ $maxKm = math.Max $maxKm (float .distance_km) }}{{ end }}
   {{- $recent := now.AddDate 0 -2 0 }}
-  <h3>Shoes</h3>
+  <h3>{{ T "shoes" }}</h3>
   <ul class="gear-list">
     {{- range . }}
     {{- $current := and (not .retired) ((time .last_used).After $recent) }}
@@ -125,10 +125,10 @@
         {{- if fileExists (printf "static/%s" $img) }}<img src="{{ $img | relURL }}" alt="{{ .name }}" width="64" height="64" loading="lazy">
         {{- else }}<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40c0-6 3-14 6-18 2-2 5-2 7 0l5 6c3 3 7 4 11 4h7c6 0 11 4 12 10v2H8z"/><path d="M8 42h48v4c0 2-2 4-4 4H12c-2 0-4-2-4-4z"/></svg>{{ end -}}
       </span>
-      <span class="gear-name">{{ .name }}{{ if $current }} <span class="gear-tag">current</span>{{ else if .retired }} <span class="gear-tag">retired</span>{{ end }}</span>
+      <span class="gear-name">{{ .name }}{{ if $current }} <span class="gear-tag">{{ T "current" }}</span>{{ else if .retired }} <span class="gear-tag">{{ T "retired" }}</span>{{ end }}</span>
       <span class="gear-bar" aria-hidden="true"><span style="{{ printf "width: %.1f%%" (mul 100 (div (float .distance_km) $maxKm)) | safeCSS }}"></span></span>
       <span class="gear-km">{{ lang.FormatNumber 0 .distance_km }} km</span>
-      <span class="gear-meta meta">{{ (time .first_used).Format "2006" }}{{ if ne ((time .first_used).Format "2006") ((time .last_used).Format "2006") }}–{{ (time .last_used).Format "2006" }}{{ end }} · {{ .activities }} activities</span>
+      <span class="gear-meta meta">{{ (time .first_used).Format "2006" }}{{ if ne ((time .first_used).Format "2006") ((time .last_used).Format "2006") }}–{{ (time .last_used).Format "2006" }}{{ end }} · {{ T "activities" (int .activities) }}</span>
     </li>
     {{- end }}
   </ul>
@@ -136,10 +136,10 @@
 
   {{- with $r }}
   <p class="meta strava-credit">
-    <a href="{{ .athlete_url }}">Follow me on Strava</a> · Powered by <a href="https://www.strava.com">Strava</a>
-    · updated {{ (time .updated).Format "January 2, 2006" }}
+    <a href="{{ .athlete_url }}">{{ T "follow_strava" }}</a> · Powered by <a href="https://www.strava.com">Strava</a>
+    · {{ T "updated" (time.Format ":date_long" .updated) }}
   </p>
   {{- else }}
-  <p class="meta">Running stats are temporarily unavailable.</p>
+  <p class="meta">{{ T "run_unavailable" }}</p>
   {{- end }}
 {{ end }}

@@ -3,7 +3,7 @@
   <header>
     <h2>{{ .Title }}</h2>
     <p class="meta">
-      {{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read
+      {{ time.Format ":date_long" .Date }} · {{ T "min_read" .ReadingTime }}
       {{- with .GetTerms "tags" }} ·
         {{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}
       {{- end }}
@@ -16,7 +16,7 @@
 
   {{- with .Site.RegularPages.Related . | first 5 }}
   <section class="related">
-    <h3>Related pages</h3>
+    <h3>{{ T "related" }}</h3>
     <ul>
       {{- range . }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>

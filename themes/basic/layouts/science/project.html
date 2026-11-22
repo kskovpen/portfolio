@@ -3,6 +3,6 @@
   <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
   <h2>{{ .Title }}</h2>
   {{ .Content }}
-  {{ partial "publications.html" (dict "keys" .Params.publications "heading" "Publication") }}
+  {{ partial "publications.html" (dict "keys" .Params.publications "heading" (T "publication")) }}
 </article>
 {{ end }}

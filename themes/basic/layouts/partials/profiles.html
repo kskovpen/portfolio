@@ -3,6 +3,6 @@
   <li><a href="{{ .url }}" rel="me">{{ .name }}</a></li>
   {{- end }}
   {{- with site.Params.cv }}
-  <li><a href="{{ . | relURL }}">CV (PDF)</a></li>
+  <li><a href="{{ . | relURL }}">{{ T "cv_pdf" }}</a></li>
   {{- end }}
 </ul>

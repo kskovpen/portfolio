@@ -6,9 +6,9 @@ layout = 'about'
 
 I'm a physicist at [Ghent University](https://www.ugent.be) in Belgium and a member of the [CMS experiment](https://cms.cern) at CERN's Large Hadron Collider.
 
-My research is about the top quark, the heaviest elementary particle we know of. Because it is so heavy, it is a good place to look for signs of physics that the current theory doesn't explain. I was part of the team that [observed four top quarks produced together](/science/top-quark/four-tops/), and I also write software for analysing collider data.
+My research is about the top quark, the heaviest elementary particle we know of. Because it is so heavy, it is a good place to look for signs of physics that the current theory doesn't explain. I was part of the team that [observed four top quarks produced together]({{< relref "/science/top-quark/four-tops" >}}), and I also write software for analysing collider data.
 
-When I'm not doing physics I [run](/run/) (road marathons and trail races) and tinker with electronics.
+When I'm not doing physics I [run]({{< relref "/run" >}}) (road marathons and trail races) and tinker with electronics.
 
 ## Career
 

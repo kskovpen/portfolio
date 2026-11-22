@@ -1,7 +1,7 @@
 <footer>
   <small>
     &copy; {{ now.Year }} {{ site.Params.author }}
-    · Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    · {{ T "license" }} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
     {{- with site.GetPage "/posts" }}{{ with .OutputFormats.Get "rss" }}
     · <a href="{{ .RelPermalink }}">RSS</a>
     {{- end }}{{ end }}

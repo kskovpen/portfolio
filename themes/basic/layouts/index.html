@@ -11,23 +11,23 @@
 </section>
 
 <section class="latest">
-  <h2>Latest</h2>
+  <h2>{{ T "latest" }}</h2>
   <ul class="latest-list">
-    {{- with (where site.RegularPages "Type" "posts").ByDate.Reverse }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">Blog</span>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ .Date.Format "January 2006" }}</span></li>
+    {{- with partial "all-posts.html" . }}{{ with index . 0 }}
+    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_blog" }}</span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ time.Format "January 2006" .Date }}</span></li>
     {{- end }}{{ end }}
     {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">Talk</span>
-      <a href="{{ "talks/" | relURL }}">{{ .title }}</a> <span class="meta">{{ .event }}{{ with .date }}, {{ (time .).Format "January 2006" }}{{ end }}</span></li>
+    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_talk" }}</span>
+      <a href="{{ "talks/" | relLangURL }}">{{ .title }}</a> <span class="meta">{{ .event }}{{ with .date }}, {{ (time.Format "January 2006" .) }}{{ end }}</span></li>
     {{- end }}{{ end }}
     {{- with site.Data.running }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">Running</span>
-      <a href="{{ "run/" | relURL }}">{{ lang.FormatNumber 0 .this_year.distance_km }} km in {{ .this_year.year }}</a>
-      {{- with site.Data.utmb }}{{ with index .results 0 }} <span class="meta">latest race: {{ .event }}, {{ (time .date).Format "January 2006" }}</span>{{ end }}{{ end }}</li>
+    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_running" }}</span>
+      <a href="{{ "run/" | relLangURL }}">{{ T "km_in_year" (dict "km" (lang.FormatNumber 0 .this_year.distance_km) "year" .this_year.year) }}</a>
+      {{- with site.Data.utmb }}{{ with index .results 0 }} <span class="meta">{{ T "latest_race" }} {{ .event }}, {{ (time.Format "January 2006" .date) }}</span>{{ end }}{{ end }}</li>
     {{- end }}
     {{- with where site.Pages "Layout" "project" }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">Research</span>
+    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_research" }}</span>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{- end }}{{ end }}
   </ul>

@@ -2,7 +2,7 @@
        Usage: partial "publications.html" (dict "keys" .Params.publications "heading" "Selected publications") */ -}}
 {{- with .keys }}
 <section class="publications">
-  <h3>{{ $.heading | default "Publications" }}</h3>
+  <h3>{{ $.heading | default (T "publications") }}</h3>
   <ul class="pub-list">
     {{- range . }}
       {{- with index site.Data.publications . }}

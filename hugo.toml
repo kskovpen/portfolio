@@ -1,23 +1,18 @@
 baseURL = 'https://kskovpen.netlify.app/'
-languageCode = 'en-us'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
 title = 'Kirill Skovpen'
 theme = 'basic'
 pygmentsUseClasses = true
 
 [params]
   author = 'Kirill Skovpen'
-  # Used for the meta description and link previews
-  description = 'Physicist at Ghent University working with data from the Large Hadron Collider at CERN. Runner, tinkerer.'
-  # One-line role shown under the name on the home page
-  role = 'Physicist · Ghent University · CERN'
   # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
   photo = 'images/me.jpg'
   cv = ''
   # SoundCloud profile shown as a player on the Music page
   soundcloud = 'https://soundcloud.com/kirillskovpenmusic'
   soundcloud_user_id = 1402515
-  # GitHub user whose other public repositories are listed at the bottom of the Projects page
-  gh_user = 'kskovpen'
 
   [[params.profiles]]
     name = 'INSPIRE-HEP'
@@ -32,49 +27,249 @@ pygmentsUseClasses = true
     name = 'LinkedIn'
     url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
 
-[menus]
-  # Entries with params.needsPages = true stay hidden until their section has at least one page.
-  [[menus.main]]
-    name = 'Research'
-    pageRef = '/science'
-    weight = 10
-  [[menus.main]]
-    name = 'Talks'
-    pageRef = '/talks'
-    weight = 20
-  [[menus.main]]
-    name = 'Projects'
-    pageRef = '/projects'
-    weight = 30
-  [[menus.main]]
-    name = 'Music'
-    pageRef = '/music'
-    weight = 40
-  [[menus.main]]
-    name = 'Travel'
-    pageRef = '/travel'
-    weight = 50
-    [menus.main.params]
-      needsPages = true
-  [[menus.main]]
-    name = 'Running'
-    pageRef = '/run'
-    weight = 60
-  [[menus.main]]
-    name = 'Blog'
-    pageRef = '/posts'
-    weight = 70
-  [[menus.main]]
-    name = 'About'
-    pageRef = '/about'
-    weight = 80
-
 [permalinks]
   posts = '/posts/:year/:slugorcontentbasename/'
 
 [taxonomies]
   tag = 'tags'
 
-# GitHub repository list for the Projects page is re-fetched at most once a day locally
-[caches.getresource]
-  maxAge = '24h'
+# ---- Languages ----
+# English is served at /, the others at /fr/, /nl/, /ru/. Page translations are files with a
+# language suffix next to the English one (about.fr.md, index.ru.md, ...); interface text is in themes/basic/i18n/.
+# Menu entries with params.needsPages = true stay hidden until their section has at least one page.
+
+[languages.en]
+  languageName = 'English'
+  languageCode = 'en'
+  weight = 1
+  [languages.en.params]
+    description = "Physicist at Ghent University working with data from the Large Hadron Collider at CERN. Runner, tinkerer."
+    role = 'Physicist · Ghent University · CERN'
+
+  [[languages.en.menus.main]]
+    identifier = 'research'
+    name = 'Research'
+    pageRef = '/science'
+    weight = 10
+
+  [[languages.en.menus.main]]
+    identifier = 'talks'
+    name = 'Talks'
+    pageRef = '/talks'
+    weight = 20
+
+  [[languages.en.menus.main]]
+    identifier = 'projects'
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 30
+
+  [[languages.en.menus.main]]
+    identifier = 'music'
+    name = 'Music'
+    pageRef = '/music'
+    weight = 40
+
+  [[languages.en.menus.main]]
+    identifier = 'travel'
+    name = 'Travel'
+    pageRef = '/travel'
+    weight = 50
+
+    [languages.en.menus.main.params]
+      needsPages = true
+
+  [[languages.en.menus.main]]
+    identifier = 'running'
+    name = 'Running'
+    pageRef = '/run'
+    weight = 60
+
+  [[languages.en.menus.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 70
+
+  [[languages.en.menus.main]]
+    identifier = 'about'
+    name = 'About'
+    pageRef = '/about'
+    weight = 80
+
+[languages.fr]
+  languageName = 'Français'
+  languageCode = 'fr'
+  weight = 2
+  [languages.fr.params]
+    description = "Physicien à l'Université de Gand, je travaille sur les données du Grand collisionneur de hadrons du CERN. Coureur et bricoleur."
+    role = 'Physicien · Université de Gand · CERN'
+
+  [[languages.fr.menus.main]]
+    identifier = 'research'
+    name = 'Recherche'
+    pageRef = '/science'
+    weight = 10
+
+  [[languages.fr.menus.main]]
+    identifier = 'talks'
+    name = 'Exposés'
+    pageRef = '/talks'
+    weight = 20
+
+  [[languages.fr.menus.main]]
+    identifier = 'projects'
+    name = 'Projets'
+    pageRef = '/projects'
+    weight = 30
+
+  [[languages.fr.menus.main]]
+    identifier = 'music'
+    name = 'Musique'
+    pageRef = '/music'
+    weight = 40
+
+  [[languages.fr.menus.main]]
+    identifier = 'travel'
+    name = 'Voyages'
+    pageRef = '/travel'
+    weight = 50
+
+    [languages.fr.menus.main.params]
+      needsPages = true
+
+  [[languages.fr.menus.main]]
+    identifier = 'running'
+    name = 'Course à pied'
+    pageRef = '/run'
+    weight = 60
+
+  [[languages.fr.menus.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 70
+
+  [[languages.fr.menus.main]]
+    identifier = 'about'
+    name = 'À propos'
+    pageRef = '/about'
+    weight = 80
+
+[languages.nl]
+  languageName = 'Nederlands'
+  languageCode = 'nl'
+  weight = 3
+  [languages.nl.params]
+    description = "Fysicus aan de Universiteit Gent die werkt met data van de Large Hadron Collider op CERN. Hardloper en knutselaar."
+    role = 'Fysicus · Universiteit Gent · CERN'
+
+  [[languages.nl.menus.main]]
+    identifier = 'research'
+    name = 'Onderzoek'
+    pageRef = '/science'
+    weight = 10
+
+  [[languages.nl.menus.main]]
+    identifier = 'talks'
+    name = 'Lezingen'
+    pageRef = '/talks'
+    weight = 20
+
+  [[languages.nl.menus.main]]
+    identifier = 'projects'
+    name = 'Projecten'
+    pageRef = '/projects'
+    weight = 30
+
+  [[languages.nl.menus.main]]
+    identifier = 'music'
+    name = 'Muziek'
+    pageRef = '/music'
+    weight = 40
+
+  [[languages.nl.menus.main]]
+    identifier = 'travel'
+    name = 'Reizen'
+    pageRef = '/travel'
+    weight = 50
+
+    [languages.nl.menus.main.params]
+      needsPages = true
+
+  [[languages.nl.menus.main]]
+    identifier = 'running'
+    name = 'Hardlopen'
+    pageRef = '/run'
+    weight = 60
+
+  [[languages.nl.menus.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 70
+
+  [[languages.nl.menus.main]]
+    identifier = 'about'
+    name = 'Over mij'
+    pageRef = '/about'
+    weight = 80
+
+[languages.ru]
+  languageName = 'Русский'
+  languageCode = 'ru'
+  weight = 4
+  [languages.ru.params]
+    description = "Физик в Гентском университете, работаю с данными Большого адронного коллайдера в ЦЕРН. Бегаю, мастерю."
+    role = 'Физик · Гентский университет · ЦЕРН'
+
+  [[languages.ru.menus.main]]
+    identifier = 'research'
+    name = 'Исследования'
+    pageRef = '/science'
+    weight = 10
+
+  [[languages.ru.menus.main]]
+    identifier = 'talks'
+    name = 'Доклады'
+    pageRef = '/talks'
+    weight = 20
+
+  [[languages.ru.menus.main]]
+    identifier = 'projects'
+    name = 'Проекты'
+    pageRef = '/projects'
+    weight = 30
+
+  [[languages.ru.menus.main]]
+    identifier = 'music'
+    name = 'Музыка'
+    pageRef = '/music'
+    weight = 40
+
+  [[languages.ru.menus.main]]
+    identifier = 'travel'
+    name = 'Путешествия'
+    pageRef = '/travel'
+    weight = 50
+
+    [languages.ru.menus.main.params]
+      needsPages = true
+
+  [[languages.ru.menus.main]]
+    identifier = 'running'
+    name = 'Бег'
+    pageRef = '/run'
+    weight = 60
+
+  [[languages.ru.menus.main]]
+    identifier = 'blog'
+    name = 'Блог'
+    pageRef = '/posts'
+    weight = 70
+
+  [[languages.ru.menus.main]]
+    identifier = 'about'
+    name = 'Обо мне'
+    pageRef = '/about'
+    weight = 80

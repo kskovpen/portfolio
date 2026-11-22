@@ -3,23 +3,25 @@
   {{ .Content }}
   {{- $cats := slice }}{{ range .Pages }}{{ with .Params.category }}{{ if not (in $cats .) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}{{ end }}
   {{- if gt (len $cats) 1 }}
-  <div class="filters" role="group" aria-label="Filter projects">
-    <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
-    {{- range sort $cats }}<button type="button" class="filter" data-filter="{{ . | urlize }}" aria-pressed="false">{{ . | title }}</button>{{ end }}
+  <div class="filters" role="group" aria-label="{{ T "filter_projects" }}">
+    <button type="button" class="filter active" data-filter="all" aria-pressed="true">{{ T "filter_all" }}</button>
+    {{- range sort $cats }}<button type="button" class="filter" data-filter="{{ . | urlize }}" aria-pressed="false">{{ T (printf "cat_%s" .) | default (. | title) }}</button>{{ end }}
   </div>
   {{- end }}
   <div class="cards-grid">
     {{- range .Pages.ByWeight }}
     <a class="project-card" href="{{ .RelPermalink }}" data-category="{{ .Params.category | urlize }}">
-      {{ with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x400 smart webp" }}<div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>{{ else }}{{ with .Resources.GetMatch "icon.*" }}{{ $ic := .Fill "240x240 webp" }}<div class="project-cover project-icon"><img src="{{ $ic.RelPermalink }}" width="120" height="120" alt="" loading="lazy"></div>{{ end }}{{ end }}
+      {{- with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x400 smart webp" }}
+      <div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>
+      {{- else }}{{ with .Resources.GetMatch "icon.*" }}{{ $ic := .Fill "240x240 webp" }}
+      <div class="project-cover project-icon"><img src="{{ $ic.RelPermalink }}" width="120" height="120" alt="" loading="lazy"></div>
+      {{- end }}{{ end }}
       <div class="project-body">
-        <span class="meta">{{ .Params.category | title }}{{ with .Params.year }} · {{ . }}{{ end }}</span>
+        <span class="meta">{{ with .Params.category }}{{ T (printf "cat_%s" .) | default (. | title) }}{{ end }}{{ with .Params.year }} · {{ . }}{{ end }}</span>
         <h3>{{ .Title }}</h3>
         {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
       </div>
     </a>
     {{- end }}
   </div>
-  {{- $featured := slice }}{{ range .Pages }}{{ with .Params.github }}{{ $featured = $featured | append (path.Base .) }}{{ end }}{{ end }}
-  {{ partial "github-repos.html" (dict "exclude" $featured) }}
 {{ end }}

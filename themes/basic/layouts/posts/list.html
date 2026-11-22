@@ -1,10 +1,9 @@
 {{ define "main" }}
   <h2>{{ .Title }}</h2>
-
-  {{ range (.Paginator 10).Pages }}
+  {{ .Content }}
+  {{- $posts := partial "all-posts.html" . }}
+  {{- range (.Paginate $posts 10).Pages }}
     {{ partial "post_summary.html" . }}
-  {{ end }}
-
+  {{- end }}
   {{ template "_internal/pagination.html" . }}
-  
 {{ end }}

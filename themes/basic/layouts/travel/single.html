@@ -2,7 +2,7 @@
 <article class="project-page">
   <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
   <h2>{{ .Title }}</h2>
-  <p class="meta">{{ .Date.Format "January 2006" }}{{ with .Params.places }} · {{ range $i, $p := . }}{{ if $i }}, {{ end }}{{ $p.name }}{{ end }}{{ end }}</p>
+  <p class="meta">{{ time.Format "January 2006" .Date }}{{ with .Params.places }} · {{ range $i, $p := . }}{{ if $i }}, {{ end }}{{ $p.name }}{{ end }}{{ end }}</p>
   {{ partial "cover.html" (dict "page" . "size" "1200x700 smart webp") }}
   {{ .Content }}
   {{ with .Resources.GetMatch "map.jpg" }}{{ partial "travel-map.html" (dict "src" .RelPermalink "alt" (printf "Map of %s" $.Title)) }}{{ end }}

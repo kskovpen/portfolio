@@ -1,6 +1,6 @@
 {{- /* Links for one publication entry from data/publications.yaml */ -}}
 <span class="pub-links">
   {{- with .arxiv }}<a href="https://arxiv.org/abs/{{ . }}">arXiv:{{ . }}</a>{{ end }}
-  {{- with .doi }} <a href="https://doi.org/{{ . }}">Journal</a>{{ end }}
+  {{- with .doi }} <a href="https://doi.org/{{ . }}">{{ T "journal" }}</a>{{ end }}
   {{- with .inspire }} <a href="https://inspirehep.net/literature/{{ . }}">INSPIRE</a>{{ end -}}
 </span>

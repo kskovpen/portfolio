@@ -1,0 +1,13 @@
+{{- /* Blog posts for the current language, plus posts that exist only in other languages
+       (shown with a language badge), newest first. Returns a page collection. */ -}}
+{{- $lang := site.Language.Lang }}
+{{- $out := where site.RegularPages "Type" "posts" }}
+{{- $keys := slice }}{{ range $out }}{{ $keys = $keys | append .TranslationKey }}{{ end }}
+{{- range site.Sites }}{{ if ne .Language.Lang $lang }}
+  {{- range where .RegularPages "Type" "posts" }}
+    {{- if not (in $keys .TranslationKey) }}
+      {{- $out = $out | append . }}{{ $keys = $keys | append .TranslationKey }}
+    {{- end }}
+  {{- end }}
+{{- end }}{{ end }}
+{{- return sort $out "Date" "desc" }}
