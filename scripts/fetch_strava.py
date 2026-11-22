@@ -88,6 +88,31 @@ def totals(runs):
     }
 
 
+def gear_summary(acts, token):
+    """Shoes and other gear used on activities, with Strava's total distance per item."""
+    used = defaultdict(list)
+    for a in acts:
+        if a.get("gear_id"):
+            used[a["gear_id"]].append(a["start_date_local"][:10])
+    gear = []
+    for gid, dates in used.items():
+        try:
+            g = request(f"{API}/gear/{gid}", token=token)
+        except Exception as e:
+            print(f"fetch_strava: gear {gid} skipped ({e})", file=sys.stderr)
+            continue
+        gear.append({
+            "name": g.get("name") or " ".join(filter(None, [g.get("brand_name"), g.get("model_name")])),
+            "distance_km": round((g.get("distance") or 0) / 1000),
+            "retired": bool(g.get("retired")),
+            "activities": len(dates),
+            "first_used": min(dates),
+            "last_used": max(dates),
+        })
+    gear.sort(key=lambda g: g["distance_km"], reverse=True)
+    return gear
+
+
 def summarize(acts, athlete):
     runs = [a for a in acts
             if (a.get("sport_type") or a.get("type")) in RUN_TYPES
@@ -132,7 +157,9 @@ def main():
     try:
         token = access_token()
         athlete = request(f"{API}/athlete", token=token)
-        data = summarize(all_activities(token), athlete)
+        acts = all_activities(token)
+        data = summarize(acts, athlete)
+        data["gear"] = gear_summary(acts, token)
     except Exception as e:  # never break the site build because of Strava
         print(f"fetch_strava: failed ({e}); Run page will show a fallback", file=sys.stderr)
         return 0

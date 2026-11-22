@@ -84,6 +84,24 @@
   {{- with $u }}<p class="meta">All trail results on <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
   {{- end }}
 
+
+  {{- with $r }}{{ with .gear }}
+  {{- $maxKm := 1.0 }}{{ range . }}{{ $maxKm = math.Max $maxKm (float .distance_km) }}{{ end }}
+  {{- $recent := now.AddDate 0 -2 0 }}
+  <h3>Shoes</h3>
+  <ul class="gear-list">
+    {{- range . }}
+    {{- $current := and (not .retired) ((time .last_used).After $recent) }}
+    <li class="gear{{ if .retired }} gear-retired{{ end }}">
+      <span class="gear-name">{{ .name }}{{ if $current }} <span class="gear-tag">current</span>{{ else if .retired }} <span class="gear-tag">retired</span>{{ end }}</span>
+      <span class="gear-bar" aria-hidden="true"><span style="{{ printf "width: %.1f%%" (mul 100 (div (float .distance_km) $maxKm)) | safeCSS }}"></span></span>
+      <span class="gear-km">{{ lang.FormatNumber 0 .distance_km }} km</span>
+      <span class="gear-meta meta">{{ (time .first_used).Format "2006" }}{{ if ne ((time .first_used).Format "2006") ((time .last_used).Format "2006") }}–{{ (time .last_used).Format "2006" }}{{ end }} · {{ .activities }} activities</span>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}{{ end }}
+
   {{- with $r }}
   <p class="meta strava-credit">
     <a href="{{ .athlete_url }}">Follow me on Strava</a> · Powered by <a href="https://www.strava.com">Strava</a>
