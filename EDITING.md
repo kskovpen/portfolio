@@ -1,5 +1,26 @@
 # Editing the site
 
+## Writing a blog post (the simple way)
+
+Double-click **`Write a post.command`** in the site folder (Finder). A Terminal window opens
+(keep it open) and the editor appears in your browser; a live preview of the site runs at
+http://localhost:1313 at the same time.
+
+- **Title**, **date**, then the text. Formatting buttons are above the text box.
+- **Photos**: drag them (or paste, or "Add photos…") into the text where they should appear.
+  iPhone HEIC is converted, big photos are shrunk to 2400 px and GPS data is removed.
+  `![Caption](photo.jpg)` — what you type between the brackets becomes the caption.
+- **Also show on**: tick Running, Travel, Music, … and the post is listed under
+  "From the blog" on those pages (in every language), and linked from the post itself.
+- **Tags**: optional keywords, comma-separated.
+- **Language**: EN / FR / NL / RU switch to the other versions of the same post. Write only the
+  languages you want; visitors of the others see your version with a language badge.
+- **Save** keeps it on this Mac (Draft = only visible in the preview). **Publish online**
+  (click twice) commits the post and pushes it to GitHub; Netlify updates the site in about
+  a minute. Close the Terminal window when you are done.
+
+No Claude needed for any of this. (The older `/admin` editor still works for projects, trips and talks.)
+
 ## 1. Start the preview
 ```
 cd ~/Sites/portfolio

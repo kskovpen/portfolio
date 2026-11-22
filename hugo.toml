@@ -279,3 +279,7 @@ pygmentsUseClasses = true
     name = 'Обо мне'
     pageRef = '/about'
     weight = 80
+
+[markup.goldmark.parser]
+  # lets a photo on its own line render as a <figure> (see render-image.html)
+  wrapStandAloneImageWithinParagraph = false

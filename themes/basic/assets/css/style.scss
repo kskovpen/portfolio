@@ -604,3 +604,9 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 .lang-switch .lang { padding: 0.05em 0.35em; border-radius: 4px; }
 .lang-switch .lang.current { color: var(--text-color-heading); border: 1px solid var(--border-color); }
 .lang-badge { font-size: 0.55em; vertical-align: middle; padding: 0.05em 0.4em; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); }
+
+// Photos placed in blog posts (render-image.html)
+.post-photo { margin: 1.5rem 0; }
+.post-photo img { display: block; max-width: 100%; height: auto; border-radius: 4px; }
+.post-photo figcaption { font-size: 0.9em; opacity: 0.75; margin-top: 0.4rem; }
+.section-posts { margin-top: 2.5rem; }

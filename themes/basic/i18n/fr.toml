@@ -1,3 +1,4 @@
+from_the_blog = "Sur le blog"
 latest = "Récemment"
 label_blog = "Blog"
 label_talk = "Exposé"

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Write a post</title>
+<style>
+  :root {
+    --bg: #fafaf8; --panel: #fff; --ink: #1d1d1b; --muted: #6b6b66; --line: #e2e1dc;
+    --accent: #00808b; --accent-ink: #fff; --soft: #e6f3f4; --warn: #9a5b00; --err: #b42318;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --panel: #1f1f1d; --ink: #ecebe6; --muted: #a09f98; --line: #34332f;
+            --accent: #1fa7b1; --accent-ink: #0d1516; --soft: #14302f; --warn: #e0a64a; --err: #f97066; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .app { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+  aside { border-right: 1px solid var(--line); padding: 16px; background: var(--panel); }
+  aside h1 { font-size: 15px; margin: 0 0 12px; color: var(--muted); font-weight: 600; }
+  .post-item { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit;
+               padding: 8px 10px; border-radius: 6px; cursor: pointer; font: inherit; }
+  .post-item:hover { background: var(--soft); }
+  .post-item.active { background: var(--soft); outline: 1px solid var(--accent); }
+  .post-item small { display: block; color: var(--muted); font-size: 12px; }
+  main { padding: 24px 32px 48px; max-width: 980px; width: 100%; }
+  button, .btn { font: inherit; border-radius: 6px; border: 1px solid var(--line); background: var(--panel);
+                 color: var(--ink); padding: 7px 14px; cursor: pointer; text-decoration: none; display: inline-block; }
+  button:hover, .btn:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .new { width: 100%; margin-bottom: 12px; }
+  input[type=text], input[type=date], textarea {
+    font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 6px; padding: 8px 10px; width: 100%; }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  #title { font-size: 26px; font-weight: 650; border: 0; border-bottom: 1px solid var(--line);
+           border-radius: 0; padding: 6px 0; background: transparent; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 14px 0; }
+  .label { font-size: 13px; color: var(--muted); margin-right: 4px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button { border: 0; border-radius: 0; padding: 5px 12px; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button.on { background: var(--accent); color: var(--accent-ink); }
+  .seg button.has::after { content: "•"; margin-left: 3px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+  .chip.on { background: var(--soft); border-color: var(--accent); color: var(--ink); font-weight: 600; }
+  .chip.on::before { content: "✓ "; }
+  #date { width: auto; }
+  #tags { max-width: 360px; }
+  .toolbar { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+  .toolbar button { padding: 4px 10px; font-size: 14px; }
+  .editor-wrap { position: relative; }
+  #body { min-height: 380px; resize: vertical; font: 16px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .drop-hint { position: absolute; inset: 0; border: 2px dashed var(--accent); border-radius: 6px;
+               background: color-mix(in srgb, var(--soft) 85%, transparent); display: none;
+               align-items: center; justify-content: center; font-size: 18px; pointer-events: none; }
+  .dragging .drop-hint { display: flex; }
+  .photos { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .photo { position: relative; width: 120px; }
+  .photo img { width: 120px; height: 90px; object-fit: cover; border-radius: 6px; display: block;
+               border: 1px solid var(--line); cursor: pointer; }
+  .photo span { display: block; font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .photo .del { position: absolute; top: 4px; right: 4px; padding: 0 6px; font-size: 12px; line-height: 18px; }
+  .hint { font-size: 13px; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 20px;
+             position: sticky; bottom: 0; background: var(--bg); padding: 12px 0; border-top: 1px solid var(--line); }
+  .grow { flex: 1; }
+  #status { font-size: 14px; color: var(--muted); white-space: pre-wrap; }
+  #status.err { color: var(--err); }
+  #status.ok { color: var(--accent); }
+  .badge { font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-left: 4px; color: var(--muted); }
+  .badge.draft { color: var(--warn); border-color: var(--warn); }
+  @media (max-width: 760px) { .app { grid-template-columns: 1fr; } aside { border-right: 0; border-bottom: 1px solid var(--line); } main { padding: 16px; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <button class="new primary" id="new">+ New post</button>
+    <h1>Posts</h1>
+    <div id="list"></div>
+  </aside>
+  <main>
+    <input id="title" type="text" placeholder="Title" autocomplete="off">
+    <div class="row">
+      <span><span class="label">Language</span> <span class="seg" id="langs"></span></span>
+      <span><span class="label">Date</span> <input id="date" type="date"></span>
+    </div>
+    <div class="row">
+      <span class="label">Also show on</span>
+      <div class="chips" id="rubrics"></div>
+    </div>
+    <div class="row">
+      <span class="label">Tags</span>
+      <input id="tags" type="text" list="taglist" placeholder="e.g. electronics, trail (comma-separated)">
+      <datalist id="taglist"></datalist>
+    </div>
+    <div class="toolbar">
+      <button data-md="**|**" title="Bold">B</button>
+      <button data-md="_|_" title="Italic"><i>I</i></button>
+      <button data-md="\n## |\n" title="Heading">Heading</button>
+      <button data-md="[|](https://)" title="Link">Link</button>
+      <button data-md="\n- |" title="List">• List</button>
+      <button data-md="\n<!--more-->\n|" title="Text above this line is the summary shown in post lists">Summary break</button>
+      <button id="addphoto">Add photos…</button>
+      <input type="file" id="file" accept="image/*,.heic,.heif" multiple hidden>
+    </div>
+    <div class="editor-wrap" id="wrap">
+      <textarea id="body" placeholder="Write here. Drop or paste photos straight into the text — they are placed where the cursor is. Text in [square brackets](link) becomes a link; **bold**, _italic_, ## heading."></textarea>
+      <div class="drop-hint">Drop photos to place them here</div>
+    </div>
+    <p class="hint">A photo line looks like <code>![Caption](photo.jpg)</code> — the text in brackets becomes the caption. Photos are resized and their location data removed.</p>
+    <div class="photos" id="photos"></div>
+
+    <div class="actions">
+      <label><input type="checkbox" id="draft" checked> Draft (only in the preview)</label>
+      <button id="save">Save</button>
+      <a class="btn" id="preview" target="_blank" rel="noopener">Preview ↗</a>
+      <span class="grow"></span>
+      <button class="primary" id="publish">Publish online</button>
+    </div>
+    <div id="status"></div>
+  </main>
+</div>
+<script>
+const TOKEN = "__TOKEN__";
+const $ = s => document.querySelector(s);
+let state = null, cur = null, dirty = false, armed = null;
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, { ...opts, headers: { "X-Token": TOKEN, ...(opts.headers || {}) } });
+  const j = await r.json().catch(() => ({ error: "Editor not responding — is its Terminal window still open?" }));
+  if (!r.ok || j.error) throw new Error(j.error || r.statusText);
+  return j;
+}
+function status(msg, kind = "") { const s = $("#status"); s.textContent = msg; s.className = kind; }
+
+async function loadState() {
+  state = await api("/api/state");
+  $("#taglist").innerHTML = state.tags.map(t => `<option value="${esc(t)}">`).join("");
+  $("#rubrics").innerHTML = state.rubrics.map(r =>
+    `<button type="button" class="chip" data-key="${r.key}">${esc(r.label)}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => { c.classList.toggle("on"); dirty = true; });
+  renderList();
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+
+function renderList() {
+  $("#list").innerHTML = state.posts.map(p => {
+    const l = p.langs.en || Object.values(p.langs)[0];
+    const anyDraft = Object.values(p.langs).some(x => x.draft);
+    return `<button class="post-item${cur && cur.slug === p.slug ? " active" : ""}" data-slug="${p.slug}">
+      ${esc(l.title)}${anyDraft ? '<span class="badge draft">draft</span>' : ""}
+      <small>${p.date} · ${Object.keys(p.langs).map(x => x.toUpperCase()).join(" ")}</small></button>`;
+  }).join("") || '<p class="hint">No posts yet.</p>';
+  document.querySelectorAll(".post-item").forEach(b => b.onclick = () => guard() && open(b.dataset.slug, "en"));
+}
+function renderLangs() {
+  const have = cur.slug ? Object.keys((state.posts.find(p => p.slug === cur.slug) || { langs: {} }).langs) : [];
+  $("#langs").innerHTML = state.langs.map(l =>
+    `<button type="button" class="${l === cur.lang ? "on" : ""} ${have.includes(l) ? "has" : ""}" data-l="${l}"
+      title="${have.includes(l) ? "exists" : "not written yet"}">${l.toUpperCase()}</button>`).join("");
+  document.querySelectorAll("#langs button").forEach(b => b.onclick = () => {
+    if (b.dataset.l === cur.lang) return;
+    if (!cur.slug) { cur.lang = b.dataset.l; renderLangs(); return; }
+    guard() && open(cur.slug, b.dataset.l);
+  });
+}
+function guard() { return !dirty || confirmInline(); }
+function confirmInline() {
+  status("You have unsaved changes — click Save first, or click again to discard them.", "err");
+  if (armed === "discard") { armed = null; dirty = false; return true; }
+  armed = "discard"; setTimeout(() => armed = null, 4000); return false;
+}
+
+function fill(p) {
+  cur = { slug: p.slug || "", lang: p.lang || "en", photos: p.photos || [] };
+  $("#title").value = p.title || "";
+  $("#date").value = p.date || new Date().toISOString().slice(0, 10);
+  $("#tags").value = (p.tags || []).join(", ");
+  $("#body").value = p.body || "";
+  $("#draft").checked = p.draft !== false;
+  document.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", (p.sections || []).includes(c.dataset.key)));
+  $("#preview").href = p.preview || "http://localhost:1313/posts/";
+  renderLangs(); renderPhotos(); renderList(); dirty = false;
+  if (p.slug && !p.exists) status(`No ${p.lang.toUpperCase()} version yet — write it here; date, rubrics, tags and photos are shared with the other languages.`);
+  else status("");
+}
+async function open(slug, lang) {
+  try { fill(await api(`/api/post?slug=${encodeURIComponent(slug)}&lang=${lang}`)); }
+  catch (e) { status(e.message, "err"); }
+}
+function newPost() { fill({ lang: "en", draft: true }); $("#title").focus(); }
+
+function payload() {
+  return {
+    slug: cur.slug, lang: cur.lang, title: $("#title").value, date: $("#date").value,
+    draft: $("#draft").checked, body: $("#body").value,
+    tags: $("#tags").value.split(",").map(s => s.trim()).filter(Boolean),
+    sections: [...document.querySelectorAll(".chip.on")].map(c => c.dataset.key),
+  };
+}
+async function save(quiet) {
+  const r = await api("/api/save", { method: "POST", body: JSON.stringify(payload()) });
+  cur.slug = r.slug; dirty = false; $("#preview").href = r.preview;
+  await loadState(); renderLangs();
+  if (!quiet) status(`Saved on this Mac. ${$("#draft").checked ? "Draft — visible only in the preview." : "Will go online at the next Publish."}`, "ok");
+  return r;
+}
+
+async function publish() {
+  const others = state.git.unpushed;
+  if (armed !== "publish") {
+    armed = "publish"; setTimeout(() => { if (armed === "publish") { armed = null; status(""); } }, 6000);
+    status(`Click "Publish online" again to put this post on the website${others ? ` (${others} other saved site change${others > 1 ? "s" : ""} will go online too)` : ""}.`);
+    return;
+  }
+  armed = null; $("#publish").disabled = true; status("Publishing…");
+  try {
+    const r = await api("/api/publish", { method: "POST", body: JSON.stringify(payload()) });
+    cur.slug = r.slug; dirty = false; $("#draft").checked = false;
+    await loadState(); renderLangs();
+    status(`Published. The website rebuilds in about a minute: ${r.live}`, "ok");
+  } catch (e) { status(e.message, "err"); }
+  $("#publish").disabled = false;
+}
+
+// ---- photos
+async function upload(files) {
+  files = [...files].filter(f => f.type.startsWith("image/") || /\.(heic|heif)$/i.test(f.name));
+  if (!files.length) return;
+  if (!$("#title").value.trim()) { status("Give the post a title first, then add photos.", "err"); return; }
+  try {
+    if (!cur.slug || dirty) await save(true);
+    for (const [i, f] of files.entries()) {
+      status(`Adding photo ${i + 1} of ${files.length}…`);
+      const name = f.name && f.name !== "image.png" ? f.name : `photo-${Date.now()}.png`;
+      const r = await api(`/api/upload?slug=${cur.slug}&name=${encodeURIComponent(name)}`, { method: "POST", body: f });
+      cur.photos.push(r.name);
+      insert(`\n![](${r.name})\n`);
+    }
+    renderPhotos(); await save(true);
+    status("Photos added. Type a caption between the [ ] if you like.", "ok");
+  } catch (e) { status(e.message, "err"); }
+}
+function renderPhotos() {
+  $("#photos").innerHTML = cur.photos.map(n => `<div class="photo">
+    <img src="/photo?slug=${cur.slug}&name=${encodeURIComponent(n)}&t=${TOKEN}" title="Click to place in the text" data-n="${esc(n)}" alt="">
+    <button class="del" data-n="${esc(n)}" title="Delete photo">×</button><span>${esc(n)}</span></div>`).join("");
+  document.querySelectorAll(".photo img").forEach(i => i.onclick = () => insert(`\n![](${i.dataset.n})\n`));
+  document.querySelectorAll(".photo .del").forEach(b => b.onclick = async () => {
+    if (b.textContent !== "delete?") { b.textContent = "delete?"; setTimeout(() => b.textContent = "×", 3000); return; }
+    await api("/api/delete-photo", { method: "POST", body: JSON.stringify({ slug: cur.slug, name: b.dataset.n }) });
+    cur.photos = cur.photos.filter(x => x !== b.dataset.n);
+    const ta = $("#body"); ta.value = ta.value.split("\n").filter(l => !l.includes(`](${b.dataset.n})`)).join("\n");
+    renderPhotos(); await save(true); status("Photo deleted.");
+  });
+}
+function insert(text, wrapEnd = "") {
+  const ta = $("#body"), s = ta.selectionStart, e = ta.selectionEnd, sel = ta.value.slice(s, e);
+  ta.value = ta.value.slice(0, s) + text + sel + wrapEnd + ta.value.slice(e);
+  const pos = s + text.length + sel.length; ta.focus(); ta.setSelectionRange(pos, pos); dirty = true;
+}
+
+// ---- wiring
+document.querySelectorAll("[data-md]").forEach(b => b.onclick = () => {
+  const [a, z] = b.dataset.md.replace(/\\n/g, "\n").split("|"); insert(a, z);
+});
+$("#addphoto").onclick = () => $("#file").click();
+$("#file").onchange = e => { upload(e.target.files); e.target.value = ""; };
+const wrap = $("#wrap");
+wrap.addEventListener("dragover", e => { e.preventDefault(); wrap.classList.add("dragging");
+  const ta = $("#body"); ta.focus(); });
+wrap.addEventListener("dragleave", () => wrap.classList.remove("dragging"));
+wrap.addEventListener("drop", e => { e.preventDefault(); wrap.classList.remove("dragging"); upload(e.dataTransfer.files); });
+$("#body").addEventListener("paste", e => { if (e.clipboardData.files.length) { e.preventDefault(); upload(e.clipboardData.files); } });
+["#title", "#body", "#tags", "#date"].forEach(s => $(s).addEventListener("input", () => dirty = true));
+$("#draft").onchange = () => dirty = true;
+$("#new").onclick = () => guard() && newPost();
+$("#save").onclick = () => save().catch(e => status(e.message, "err"));
+$("#publish").onclick = publish;
+document.addEventListener("keydown", e => { if ((e.metaKey || e.ctrlKey) && e.key === "s") { e.preventDefault(); save().catch(x => status(x.message, "err")); } });
+window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+
+loadState().then(newPost).catch(e => status(e.message, "err"));
+</script>
+</body>
+</html>

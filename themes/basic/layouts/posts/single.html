@@ -4,6 +4,8 @@
     <h2>{{ .Title }}</h2>
     <p class="meta">
       {{ time.Format ":date_long" .Date }} · {{ T "min_read" .ReadingTime }}
+      {{- $secs := .Params.sections | default slice }}
+      {{- range site.Menus.main }}{{ if in $secs .Identifier }} · <a class="tag" href="{{ .URL }}">{{ .Name }}</a>{{ end }}{{ end }}
       {{- with .GetTerms "tags" }} ·
         {{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}
       {{- end }}

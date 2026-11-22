@@ -1,0 +1,16 @@
+{{- /* Blog posts filed under a rubric (front matter: sections = ["running", ...]).
+       Call with (dict "key" "running"). Shown at the bottom of that section's page. */ -}}
+{{- $key := .key }}
+{{- $posts := slice }}
+{{- range partial "all-posts.html" . }}{{ if in (.Params.sections | default slice) $key }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
+{{- with $posts }}
+<section class="section-posts">
+  <h3>{{ T "from_the_blog" }}</h3>
+  <ul class="latest-list">
+    {{- range first 10 . }}
+    <li><a href="{{ .RelPermalink }}"{{ if ne .Language.Lang site.Language.Lang }} hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ end }}>{{ .Title }}</a>{{ if ne .Language.Lang site.Language.Lang }} <span class="lang-badge">{{ upper .Language.Lang }}</span>{{ end }}
+      <span class="meta">{{ time.Format ":date_long" .Date }}</span></li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

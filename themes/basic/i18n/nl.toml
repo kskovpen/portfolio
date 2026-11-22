@@ -1,3 +1,4 @@
+from_the_blog = "Op de blog"
 latest = "Recent"
 label_blog = "Blog"
 label_talk = "Lezing"

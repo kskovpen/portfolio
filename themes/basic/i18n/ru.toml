@@ -1,3 +1,4 @@
+from_the_blog = "В блоге"
 latest = "Недавнее"
 label_blog = "Блог"
 label_talk = "Доклад"

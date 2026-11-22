@@ -19,3 +19,4 @@ node_modules/
 /data/running.json
 __pycache__/
 /data/utmb.json
+*.tmp~

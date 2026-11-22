@@ -1,0 +1,11 @@
+{{- /* Photos stored next to a post are resized for the web; a photo on its own line becomes a
+       figure, with the alt text as caption. */ -}}
+{{- $u := urls.Parse .Destination }}
+{{- $r := false }}
+{{- if not $u.IsAbs }}{{ $r = .Page.Resources.Get $u.Path }}{{ end }}
+{{- if and $r (in (slice "image/jpeg" "image/png" "image/webp") $r.MediaType.Type) }}
+  {{- $img := $r }}{{ if gt $r.Width 1400 }}{{ $img = $r.Resize "1400x webp q82" }}{{ end }}
+  {{- if .IsBlock }}
+<figure class="post-photo"><a href="{{ $r.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}" loading="lazy"></a>{{ with .PlainText }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>
+  {{- else }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}" loading="lazy">{{ end }}
+{{- else }}<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ end -}}
