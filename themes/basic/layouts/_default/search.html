@@ -1,17 +1,14 @@
 {{ define "main" }}
 
   <h2>{{ .Title }}</h2>
-  
-  <input type="search" id="searchField">
-  <button id="searchButton">Search</button>
-  <input id="allwords" type="checkbox">
-  <label for="allwords">Require all words</label>
-  
-  <div id="output">
-    <p>Waiting for search input</p>
-  </div>
-  
-  {{ $js := resources.Get "js/app.js" | minify | fingerprint }}
-  <script src="{{ $js.RelPermalink }}"></script>
-  
+
+  <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+  <div id="search"></div>
+  <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      new PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+    });
+  </script>
+
 {{ end }}
