@@ -18,8 +18,6 @@ from datetime import datetime, timezone
 API = "https://www.strava.com/api/v3"
 RUN_TYPES = {"Run", "TrailRun"}
 RACE_WORKOUT_TYPE = 1  # Strava's "Race" run type
-# (label, min km, max km) for personal bests among races
-PB_DISTANCES = [("5 km", 4.9, 5.3), ("10 km", 9.8, 10.5), ("Half marathon", 20.9, 21.6), ("Marathon", 41.9, 43.0)]
 
 
 def request(url, data=None, token=None):
@@ -102,22 +100,26 @@ def summarize(acts, athlete):
         by_year[a["start_date_local"][:4]].append(a)
 
     races = [run_entry(a, use_elapsed=True) for a in runs if a.get("workout_type") == RACE_WORKOUT_TYPE]
-    pbs = []
-    for label, lo, hi in PB_DISTANCES:
-        cands = [r for r in races if lo <= r["distance_km"] <= hi]
-        if cands:
-            pbs.append({"distance": label, **min(cands, key=lambda r: r["seconds"])})
+
+    # Distance per month for the last 24 months (including empty months)
+    now = datetime.now()
+    months = []
+    for i in range(23, -1, -1):
+        y, m = divmod(now.year * 12 + now.month - 1 - i, 12)
+        key = f"{y}-{m + 1:02d}"
+        km = sum(a["distance"] for a in runs if a["start_date_local"][:7] == key) / 1000
+        months.append({"month": key, "distance_km": round(km)})
 
     return {
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "athlete_url": f"https://www.strava.com/athletes/{athlete['id']}",
         "this_year": {"year": this_year, **totals(by_year.get(this_year, []))},
-        "all_time": totals(runs),
-        "years": [{"year": y, **totals(by_year[y])} for y in sorted(by_year, reverse=True)],
-        "personal_bests": pbs,
+        "all_time": {"since": min(by_year) if by_year else this_year, **totals(runs)},
+        "years": [{"year": y, **totals(by_year[y])} for y in sorted(by_year)],
+        "months": months,
         "races": races,
-        "longest": run_entry(max(runs, key=lambda a: a["distance"])) if runs else None,
-        "recent": [run_entry(a) for a in runs[:5]],
+        # Marathon-distance and longer runs, so data/races.yaml can refer to them by Strava id
+        "long_runs": [run_entry(a, use_elapsed=True) for a in runs if a["distance"] >= 40000],
     }
 
 

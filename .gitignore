@@ -18,3 +18,4 @@ node_modules/
 .env.strava
 /data/running.json
 __pycache__/
+/data/utmb.json

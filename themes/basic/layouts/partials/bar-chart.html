@@ -1,0 +1,59 @@
+{{- /* Single-series column chart as inline SVG, with hover/focus tooltips and a table view.
+  Params (dict):
+    title   chart title (also the accessible name)
+    bars    slice of dict: label (table/tooltip), xlabel (axis label, "" to skip), value (number)
+    unit    unit suffix, e.g. "km"
+    labels  slice of bar indexes that get a value label on the cap
+*/ -}}
+{{- $W := 720.0 }}{{ $H := 220.0 }}
+{{- $padL := 44.0 }}{{ $padR := 8.0 }}{{ $padT := 18.0 }}{{ $padB := 26.0 }}
+{{- $plotW := sub (sub $W $padL) $padR }}{{ $plotH := sub (sub $H $padT) $padB }}
+{{- $base := add $padT $plotH }}
+{{- $n := len .bars }}
+{{- $max := 0.0 }}{{ range .bars }}{{ $max = math.Max $max (float .value) }}{{ end }}
+{{- /* nice axis: at most 4 ticks */ -}}
+{{- $step := 1000.0 }}
+{{- range slice 1000.0 500.0 250.0 200.0 100.0 50.0 25.0 20.0 10.0 }}{{ if le (math.Ceil (div $max .)) 4 }}{{ $step = . }}{{ end }}{{ end }}
+{{- $ymax := mul (math.Max 1 (math.Ceil (div $max $step))) $step }}
+{{- $slot := div $plotW (float $n) }}
+{{- $bw := math.Min 24.0 (sub $slot 4.0) }}
+{{- $unit := .unit }}{{ $labels := .labels | default slice }}
+<figure class="chart">
+  <figcaption class="chart-title">{{ .title }}</figcaption>
+  <svg viewBox="0 0 {{ $W }} {{ $H }}" role="img" aria-label="{{ .title }}" class="chart-svg">
+    {{- range $i, $_ := seq 0 (int (div $ymax $step)) }}
+      {{- $v := mul (float $i) $step }}
+      {{- $y := sub $base (mul (div $v $ymax) $plotH) }}
+      <line class="chart-grid" x1="{{ $padL }}" x2="{{ sub $W $padR }}" y1="{{ $y }}" y2="{{ $y }}"/>
+      <text class="chart-tick" x="{{ sub $padL 8 }}" y="{{ add $y 4 }}" text-anchor="end">{{ lang.FormatNumber 0 $v }}</text>
+    {{- end }}
+    {{- range $i, $b := .bars }}
+      {{- $v := float $b.value }}
+      {{- $h := mul (div $v $ymax) $plotH }}
+      {{- $x := add (add $padL (mul (float $i) $slot)) (div (sub $slot $bw) 2) }}
+      {{- $r := math.Min 4.0 (math.Min $h (div $bw 2)) }}
+      {{- $top := sub $base $h }}
+      <g class="chart-bar" tabindex="0" data-tip="{{ $b.label }}: {{ lang.FormatNumber 0 $v }} {{ $unit }}">
+        <title>{{ $b.label }}: {{ lang.FormatNumber 0 $v }} {{ $unit }}</title>
+        <rect class="chart-hit" x="{{ sub $x (div (sub $slot $bw) 2) }}" y="{{ $padT }}" width="{{ $slot }}" height="{{ $plotH }}"/>
+        {{- if gt $h 0 }}
+        <path class="chart-mark" d="M{{ $x }},{{ $base }}V{{ add $top $r }}Q{{ $x }},{{ $top }} {{ add $x $r }},{{ $top }}H{{ sub (add $x $bw) $r }}Q{{ add $x $bw }},{{ $top }} {{ add $x $bw }},{{ add $top $r }}V{{ $base }}Z"/>
+        {{- end }}
+        {{- if in $labels $i }}
+        <text class="chart-value" x="{{ add $x (div $bw 2) }}" y="{{ sub $top 6 }}" text-anchor="middle">{{ lang.FormatNumber 0 $v }}</text>
+        {{- end }}
+        {{- with $b.xlabel }}
+        <text class="chart-tick" x="{{ add $x (div $bw 2) }}" y="{{ add $base 18 }}" text-anchor="middle">{{ . }}</text>
+        {{- end }}
+      </g>
+    {{- end }}
+    <line class="chart-axis" x1="{{ $padL }}" x2="{{ sub $W $padR }}" y1="{{ $base }}" y2="{{ $base }}"/>
+  </svg>
+  <details class="chart-table">
+    <summary>Show as table</summary>
+    <table class="run-table">
+      <thead><tr><th>{{ .labelHeader | default "Period" }}</th><th>Distance ({{ $unit }})</th></tr></thead>
+      <tbody>{{ range .bars }}<tr><td>{{ .label }}</td><td>{{ lang.FormatNumber 0 (float .value) }}</td></tr>{{ end }}</tbody>
+    </table>
+  </details>
+</figure>

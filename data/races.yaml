@@ -1,0 +1,21 @@
+# Road races recorded on Strava (UTMB results are fetched automatically).
+# Each entry points to a Strava activity by id; time and distance come from Strava.
+# Fields: strava (activity id), event (name shown on the site), type (road | trail)
+- strava: 20332045284   # 2026-03-29
+  event: "Marathon (Ghent)"
+  type: road
+- strava: 20332346529   # 2025-05-11
+  event: "Marathon (Geneva)"
+  type: road
+- strava: 20332360016   # 2025-03-30
+  event: "Marathon (Ghent)"
+  type: road
+- strava: 20332495626   # 2024-11-03
+  event: "Marathon (Brussels)"
+  type: road
+- strava: 11029300278   # 2024-03-24
+  event: "Marathon"
+  type: road
+- strava: 9955213278    # 2023-10-01
+  event: "Marathon"
+  type: road

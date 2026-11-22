@@ -5,6 +5,8 @@
   --attention-color: #00838d;
   --border-color: #ddd;
   --tag-bg-color: rgba(0, 131, 141, 0.12);
+  --chart-color: #00909c;
+  --chart-grid: #e6e6e6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +17,8 @@
     --attention-color: #4dd0d9;
     --border-color: #333;
     --tag-bg-color: rgba(77, 208, 217, 0.15);
+  --chart-color: #1fa7b1;
+  --chart-grid: #2a3033;
   }
 }
 
@@ -25,6 +29,8 @@
   --attention-color: #4dd0d9;
   --border-color: #333;
   --tag-bg-color: rgba(77, 208, 217, 0.15);
+  --chart-color: #1fa7b1;
+  --chart-grid: #2a3033;
 }
 
 :root[data-theme="light"] {
@@ -34,6 +40,8 @@
   --attention-color: #00838d;
   --border-color: #ddd;
   --tag-bg-color: rgba(0, 131, 141, 0.12);
+  --chart-color: #00909c;
+  --chart-grid: #e6e6e6;
 }
 
 html, body, .container, .top, nav, footer, #content {
@@ -43,6 +51,7 @@ html, body, .container, .top, nav, footer, #content {
 .top {
   top: 0;
   position: sticky;
+  z-index: 10;
   width: 100%;
   background-color: var(--background-color);
 }
@@ -402,26 +411,66 @@ h1, h2, h3 { color: var(--text-color-heading); font-weight: 500; }
 }
 
 /* ---- Running ---- */
-.run-stats {
+.run-tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 1rem;
   margin: 1.5em 0;
 }
-.run-stat {
+.run-tile {
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 0.6em 1em;
+  padding: 0.5em 0.9em;
 }
-.run-stat h3 { margin: 0.2em 0; font-size: 1em; }
-.run-big { font-size: 2em; margin: 0.1em 0; color: var(--attention-color); }
-.run-stat .meta { margin: 0.2em 0; }
-.run-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5em; font-size: 0.9em; }
-.run-table th, .run-table td { text-align: left; padding: 0.3em 0.6em 0.3em 0; border-bottom: 1px solid var(--border-color); }
-.run-table th { color: var(--text-color-heading); font-weight: 500; }
-@media only screen and (max-width: 600px) {
-  .run-table { display: block; overflow-x: auto; }
+.run-tile p { margin: 0.15em 0; }
+.run-tile-label { font-size: 0.85em; color: var(--text-color); }
+.run-tile-value { font-size: 1.9em; color: var(--text-color-heading); line-height: 1.15; }
+.run-table { width: 100%; border-collapse: collapse; font-size: 0.85em; font-variant-numeric: tabular-nums; }
+.run-table th, .run-table td { text-align: left; padding: 0.2em 0.6em 0.2em 0; border-bottom: 1px solid var(--border-color); }
+.run-charts { display: grid; gap: 1.5rem; margin: 1em 0 2em; }
+.chart { margin: 0; position: relative; }
+.chart-title { font-size: 0.95em; color: var(--text-color-heading); margin-bottom: 0.3em; text-align: left; font-style: normal; }
+.chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-grid { stroke: var(--chart-grid); stroke-width: 1; }
+.chart-axis { stroke: var(--border-color); stroke-width: 1; }
+.chart-tick { fill: var(--text-color); font-size: 13px; font-variant-numeric: tabular-nums; }
+.chart-value { fill: var(--text-color-heading); font-size: 14px; }
+.chart-mark { fill: var(--chart-color); transition: opacity 0.15s; }
+.chart-hit { fill: transparent; }
+.chart-bar { outline: none; cursor: default; }
+.chart-bar:hover .chart-mark, .chart-bar:focus .chart-mark { opacity: 0.7; }
+.chart-table summary { font-size: 0.8em; cursor: pointer; color: var(--text-color); }
+.chart-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--background-color);
+  color: var(--text-color-heading);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  white-space: nowrap;
+  transform: translate(-50%, -120%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-.run-recent { list-style: none; padding: 0; }
-.run-recent li { margin: 0.3em 0; }
+.race-list { list-style: none; padding: 0; }
+.race-list li {
+  display: grid;
+  grid-template-columns: 6em 1fr auto;
+  grid-template-areas: "date name time" "date detail time";
+  column-gap: 1em;
+  padding: 0.45em 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.race-date { grid-area: date; }
+.race-name { grid-area: name; }
+.race-detail { grid-area: detail; }
+.race-time { grid-area: time; text-align: right; font-variant-numeric: tabular-nums; }
 .strava-credit { margin-top: 2em; }
+@media only screen and (max-width: 600px) {
+  .race-list li {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "date date" "name time" "detail time";
+  }
+  .run-tile-value { font-size: 1.5em; }
+}
