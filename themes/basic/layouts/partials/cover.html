@@ -1,0 +1,5 @@
+{{- /* Cover image of a page bundle (cover.*), or nothing. Param: dict "page" "size" */ -}}
+{{- with .page.Resources.GetMatch "cover.*" }}
+  {{- $img := .Fill ($.size | default "600x400 smart webp") }}
+  <img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy">
+{{- end }}

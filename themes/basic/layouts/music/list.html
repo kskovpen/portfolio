@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  <div class="cards-grid">
+    {{- range .Pages.ByDate.Reverse }}
+    <a class="project-card" href="{{ .RelPermalink }}">
+      {{ with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x600 smart webp" }}<div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>{{ end }}
+      <div class="project-body">
+        <span class="meta">{{ .Date.Format "2006" }}{{ with .Params.kind }} · {{ . }}{{ end }}</span>
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </a>
+    {{- end }}
+  </div>
+{{ end }}

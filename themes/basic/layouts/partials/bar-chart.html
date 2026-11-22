@@ -12,8 +12,8 @@
 {{- $n := len .bars }}
 {{- $max := 0.0 }}{{ range .bars }}{{ $max = math.Max $max (float .value) }}{{ end }}
 {{- /* nice axis: at most 4 ticks */ -}}
-{{- $step := 1000.0 }}
-{{- range slice 1000.0 500.0 250.0 200.0 100.0 50.0 25.0 20.0 10.0 }}{{ if le (math.Ceil (div $max .)) 4 }}{{ $step = . }}{{ end }}{{ end }}
+{{- $step := 10000.0 }}
+{{- range slice 10000.0 5000.0 2500.0 2000.0 1000.0 500.0 250.0 200.0 100.0 50.0 25.0 20.0 10.0 }}{{ if le (math.Ceil (div $max .)) 4 }}{{ $step = . }}{{ end }}{{ end }}
 {{- $ymax := mul (math.Max 1 (math.Ceil (div $max $step))) $step }}
 {{- $slot := div $plotW (float $n) }}
 {{- $bw := math.Min 24.0 (sub $slot 4.0) }}
@@ -52,7 +52,7 @@
   <details class="chart-table">
     <summary>Show as table</summary>
     <table class="run-table">
-      <thead><tr><th>{{ .labelHeader | default "Period" }}</th><th>Distance ({{ $unit }})</th></tr></thead>
+      <thead><tr><th>{{ .labelHeader | default "Period" }}</th><th>{{ .valueHeader | default "Value" }} ({{ $unit }})</th></tr></thead>
       <tbody>{{ range .bars }}<tr><td>{{ .label }}</td><td>{{ lang.FormatNumber 0 (float .value) }}</td></tr>{{ end }}</tbody>
     </table>
   </details>

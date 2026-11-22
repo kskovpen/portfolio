@@ -1,0 +1,29 @@
+{{- /* Public, non-fork GitHub repositories, fetched at build time.
+  Params: dict "exclude" (slice of repo names already shown as project cards).
+  Optional: set HUGO_GITHUB_TOKEN to avoid GitHub's anonymous rate limit. */ -}}
+{{- $user := site.Params.gh_user }}
+{{- $exclude := .exclude | default slice }}
+{{- $url := printf "https://api.github.com/users/%s/repos?per_page=100&sort=pushed" $user }}
+{{- $headers := dict "Accept" "application/vnd.github+json" }}
+{{- with getenv "HUGO_GITHUB_TOKEN" }}{{ $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) }}{{ end }}
+{{- $repos := slice }}
+{{- with try (resources.GetRemote $url (dict "headers" $headers)) }}
+  {{- if .Err }}
+    {{- warnf "Projects page: could not fetch GitHub repositories: %s" .Err }}
+  {{- else if .Value }}
+    {{- range where (where (.Value | transform.Unmarshal) "fork" false) "archived" false }}
+      {{- if not (in $exclude .name) }}{{ $repos = $repos | append . }}{{ end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+<details class="more-code">
+  <summary>More code on GitHub{{ with $repos }} ({{ len . }} repositories){{ end }}</summary>
+  {{- with $repos }}
+  <ul class="repo-list">
+    {{- range . }}
+    <li><a href="{{ .html_url }}">{{ .name }}</a>{{ with .description }}: {{ . }}{{ end }} <span class="meta">{{ with .language }}{{ . }} · {{ end }}{{ (time .pushed_at).Format "2006" }}</span></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+  <p class="meta">All repositories: <a href="https://github.com/{{ $user }}">github.com/{{ $user }}</a></p>
+</details>

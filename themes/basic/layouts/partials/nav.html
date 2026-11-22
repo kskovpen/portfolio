@@ -1,6 +1,7 @@
 <nav>
   {{- $current := . }}
   {{- range site.Menus.main }}
+    {{- if and .Params.needsPages (or (not .Page) (not .Page.RegularPagesRecursive)) }}{{ continue }}{{ end }}
     {{- $active := false }}
     {{- with .Page }}{{ $active = or (eq . $current) ($current.IsDescendant .) }}{{ end }}
     <a href="{{ .URL }}" class="nav{{ if $active }} active{{ end }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>

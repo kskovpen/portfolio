@@ -13,7 +13,7 @@ pygmentsUseClasses = true
   # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
   photo = 'images/me.jpg'
   cv = ''
-  # GitHub user whose public repositories are listed on the Software page
+  # GitHub user whose other public repositories are listed at the bottom of the Projects page
   gh_user = 'kskovpen'
 
   [[params.profiles]]
@@ -27,6 +27,7 @@ pygmentsUseClasses = true
     url = 'https://linkedin.com/in/kirill-skovpen-1464a4253'
 
 [menus]
+  # Entries with params.needsPages = true stay hidden until their section has at least one page.
   [[menus.main]]
     name = 'Research'
     pageRef = '/science'
@@ -36,26 +37,33 @@ pygmentsUseClasses = true
     pageRef = '/talks'
     weight = 20
   [[menus.main]]
-    name = 'Blog'
-    pageRef = '/posts'
+    name = 'Projects'
+    pageRef = '/projects'
     weight = 30
   [[menus.main]]
-    name = 'Software'
-    pageRef = '/opensource'
+    name = 'Music'
+    pageRef = '/music'
     weight = 40
+    [menus.main.params]
+      needsPages = true
+  [[menus.main]]
+    name = 'Travel'
+    pageRef = '/travel'
+    weight = 50
+    [menus.main.params]
+      needsPages = true
+  [[menus.main]]
+    name = 'Running'
+    pageRef = '/run'
+    weight = 60
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 70
   [[menus.main]]
     name = 'About'
     pageRef = '/about'
-    weight = 50
-  [[menus.main]]
-    name = 'Run'
-    pageRef = '/run'
-    weight = 35
-  # Uncomment once this section has content (content/sound/_index.md)
-  # [[menus.main]]
-  #   name = 'Sound'
-  #   pageRef = '/sound'
-  #   weight = 36
+    weight = 80
 
 [permalinks]
   posts = '/posts/:year/:slugorcontentbasename/'
@@ -63,6 +71,6 @@ pygmentsUseClasses = true
 [taxonomies]
   tag = 'tags'
 
-# GitHub repository list for the Software page is re-fetched at most once a day locally
+# GitHub repository list for the Projects page is re-fetched at most once a day locally
 [caches.getresource]
   maxAge = '24h'

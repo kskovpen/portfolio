@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  {{- $cats := slice }}{{ range .Pages }}{{ with .Params.category }}{{ if not (in $cats .) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}{{ end }}
+  {{- if gt (len $cats) 1 }}
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+    {{- range sort $cats }}<button type="button" class="filter" data-filter="{{ . | urlize }}" aria-pressed="false">{{ . | title }}</button>{{ end }}
+  </div>
+  {{- end }}
+  <div class="cards-grid">
+    {{- range .Pages.ByWeight }}
+    <a class="project-card" href="{{ .RelPermalink }}" data-category="{{ .Params.category | urlize }}">
+      {{ with .Resources.GetMatch "cover.*" }}{{ $img := .Fill "600x400 smart webp" }}<div class="project-cover"><img class="cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy"></div>{{ end }}
+      <div class="project-body">
+        <span class="meta">{{ .Params.category | title }}{{ with .Params.year }} · {{ . }}{{ end }}</span>
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </a>
+    {{- end }}
+  </div>
+  {{- $featured := slice }}{{ range .Pages }}{{ with .Params.github }}{{ $featured = $featured | append (path.Base .) }}{{ end }}{{ end }}
+  {{ partial "github-repos.html" (dict "exclude" $featured) }}
+{{ end }}

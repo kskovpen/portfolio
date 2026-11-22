@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="project-page">
+  <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
+  <h2>{{ .Title }}</h2>
+  <p class="meta">{{ .Date.Format "January 2006" }}{{ with .Params.kind }} · {{ . }}{{ end }}</p>
+  {{ partial "cover.html" (dict "page" . "size" "800x800 smart webp") }}
+  {{ .Content }}
+  {{- with .Params.links }}
+  <p class="project-links">{{ range . }}<a class="button-link" href="{{ .url }}">{{ .name }}</a> {{ end }}</p>
+  {{- end }}
+  {{ partial "gallery.html" . }}
+</article>
+{{ end }}

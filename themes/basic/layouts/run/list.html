@@ -33,37 +33,38 @@
   {{- end }}
   {{- $road := where $races "type" "road" }}
   {{- $roadMarathons := where $road "km" "ge" 41.0 }}
+  {{- $trails := where $races "type" "trail" }}
   {{- $groups := slice
+      (dict "title" "Trail races" "items" $trails)
       (dict "title" "Marathons" "items" $roadMarathons)
       (dict "title" "Half marathons & 20 km" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
-      (dict "title" "10 km & shorter" "items" (where $road "km" "lt" 19.0))
-      (dict "title" "Trail races" "items" (where $races "type" "trail")) }}
+      (dict "title" "10 km & shorter" "items" (where $road "km" "lt" 19.0)) }}
 
   <section class="run-tiles">
+    {{- with $u }}{{ with .index }}
+    <div class="run-tile">
+      <p class="run-tile-label">UTMB index</p>
+      <p class="run-tile-value">{{ . }}</p>
+      <p class="meta"><a href="{{ $u.profile_url }}">{{ len $trails }} trail races</a>{{ with $trails }}{{ with index (sort . "km" "desc") 0 }} · longest {{ math.Round .km }} km{{ end }}{{ end }}</p>
+    </div>
+    {{- end }}{{ end }}
     {{- with $r }}
     <div class="run-tile">
-      <p class="run-tile-label">{{ .this_year.year }} so far</p>
-      <p class="run-tile-value">{{ lang.FormatNumber 0 .this_year.distance_km }} km</p>
-      <p class="meta">{{ .this_year.count }} runs · {{ lang.FormatNumber 0 .this_year.elevation_m }} m climbed</p>
+      <p class="run-tile-label">Climbed in {{ .this_year.year }}</p>
+      <p class="run-tile-value">{{ lang.FormatNumber 0 .this_year.elevation_m }} m</p>
+      <p class="meta">{{ lang.FormatNumber 0 .this_year.distance_km }} km · {{ .this_year.count }} runs</p>
     </div>
     <div class="run-tile">
-      <p class="run-tile-label">Since {{ .all_time.since }}</p>
-      <p class="run-tile-value">{{ lang.FormatNumber 0 .all_time.distance_km }} km</p>
-      <p class="meta">{{ .all_time.count }} runs · {{ .all_time.hours }} h</p>
+      <p class="run-tile-label">Climbed since {{ .all_time.since }}</p>
+      <p class="run-tile-value">{{ lang.FormatNumber 0 .all_time.elevation_m }} m</p>
+      <p class="meta">{{ lang.FormatNumber 0 .all_time.distance_km }} km · {{ .all_time.count }} runs</p>
     </div>
     {{- end }}
     {{- with $roadMarathons }}{{ with index (sort . "seconds") 0 }}
     <div class="run-tile">
       <p class="run-tile-label">Marathon PB</p>
       <p class="run-tile-value">{{ .time }}</p>
-      <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }} · {{ len $roadMarathons }} road marathons</p>
-    </div>
-    {{- end }}{{ end }}
-    {{- with $u }}{{ with .index }}
-    <div class="run-tile">
-      <p class="run-tile-label">UTMB index</p>
-      <p class="run-tile-value">{{ . }}</p>
-      <p class="meta"><a href="{{ $u.profile_url }}">{{ len $u.results }} trail races</a></p>
+      <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }}</p>
     </div>
     {{- end }}{{ end }}
   </section>
@@ -71,19 +72,19 @@
   {{- with $r }}
     {{- $bars := slice }}{{ $maxI := 0 }}{{ $maxV := 0 }}
     {{- range $i, $y := .years }}
-      {{- $bars = $bars | append (dict "label" $y.year "xlabel" $y.year "value" $y.distance_km) }}
-      {{- if gt $y.distance_km $maxV }}{{ $maxI = $i }}{{ $maxV = $y.distance_km }}{{ end }}
+      {{- $bars = $bars | append (dict "label" $y.year "xlabel" $y.year "value" $y.elevation_m) }}
+      {{- if gt $y.elevation_m $maxV }}{{ $maxI = $i }}{{ $maxV = $y.elevation_m }}{{ end }}
     {{- end }}
     {{- $last := sub (len .years) 1 }}
     <div class="run-charts">
-      {{ partial "bar-chart.html" (dict "title" "Distance per year (km)" "bars" $bars "unit" "km" "labels" (slice $maxI $last) "labelHeader" "Year") }}
+      {{ partial "bar-chart.html" (dict "title" "Climb per year (m)" "bars" $bars "unit" "m" "labels" (slice $maxI $last) "labelHeader" "Year" "valueHeader" "Climb") }}
       {{- $mbars := slice }}
       {{- range .months }}
         {{- $t := time (printf "%s-01" .month) }}
         {{- $xl := cond (in (slice 1 4 7 10) (int ($t.Format "1"))) (cond (eq ($t.Format "1") "1") ($t.Format "Jan 06") ($t.Format "Jan")) "" }}
         {{- $mbars = $mbars | append (dict "label" ($t.Format "January 2006") "xlabel" $xl "value" .distance_km) }}
       {{- end }}
-      {{ partial "bar-chart.html" (dict "title" "Distance per month, last 24 months (km)" "bars" $mbars "unit" "km" "labelHeader" "Month") }}
+      {{ partial "bar-chart.html" (dict "title" "Distance per month, last 24 months (km)" "bars" $mbars "unit" "km" "labelHeader" "Month" "valueHeader" "Distance") }}
     </div>
   {{- end }}
 
@@ -95,13 +96,14 @@
     <section class="race-group">
       <h4>{{ $g.title }} <span class="meta">({{ len . }})</span></h4>
       <ul class="race-list">
-        {{- range first 5 $sorted }}{{ partial "race-row.html" . }}{{ end }}
+        {{- $n := cond (eq $g.title "Trail races") 6 4 }}
+        {{- range first $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
       </ul>
-      {{- if gt (len $sorted) 5 }}
+      {{- if gt (len $sorted) $n }}
       <details class="race-more">
         <summary>Show all {{ len $sorted }}</summary>
         <ul class="race-list">
-          {{- range after 5 $sorted }}{{ partial "race-row.html" . }}{{ end }}
+          {{- range after $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
         </ul>
       </details>
       {{- end }}
