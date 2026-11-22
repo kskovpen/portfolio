@@ -1,0 +1,12 @@
+[build]
+  command = "./build.sh"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.148.1"
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/pagefind/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
