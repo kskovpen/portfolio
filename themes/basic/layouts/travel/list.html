@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
   {{ if fileExists "static/travel/overview.jpg" }}{{ partial "travel-map.html" (dict "src" ("travel/overview.jpg" | relURL) "alt" "Map of places visited") }}{{ end }}
   <div class="cards-grid">

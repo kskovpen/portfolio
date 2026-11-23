@@ -1,0 +1,9 @@
+{{- /* Page title block. Section front pages share a transition name with their home tile. */ -}}
+{{- $k := partial "section-key.html" . }}
+<header class="page-head">
+  {{- if and .IsPage .Parent (not .Parent.IsHome) }}
+  <p class="eyebrow"><a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a></p>
+  {{- end }}
+  {{- $icon := false }}{{ if .IsPage }}{{ $icon = partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ end }}
+  <h1{{ with $icon }} class="with-icon"{{ end }}{{ if and .IsSection (eq .Parent.Kind "home") }} style="view-transition-name: t-{{ $k }}"{{ end }}>{{ with $icon }}{{ $ic := .Fill "160x160 webp" }}<img class="title-icon" src="{{ $ic.RelPermalink }}" width="64" height="64" alt="" style="view-transition-name: icon-{{ $.File.ContentBaseName }}">{{ end }}{{ .Title }}</h1>
+</header>

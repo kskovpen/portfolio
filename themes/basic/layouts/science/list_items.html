@@ -1,6 +1,5 @@
 {{ define "main" }}
-  <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
 
   {{- with .Pages }}

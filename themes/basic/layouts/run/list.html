@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
 
   {{- /* Own race photos: static/run/photos/*.jpg|png|webp, file name = caption.

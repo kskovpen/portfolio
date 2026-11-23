@@ -3,5 +3,5 @@
     <h3><a href="{{ .RelPermalink }}"{{ if ne .Language.Lang site.Language.Lang }} hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ end }}>{{ .Title }}</a>{{ if ne .Language.Lang site.Language.Lang }} <span class="lang-badge" title="{{ .Language.LanguageName }}">{{ upper .Language.Lang }}</span>{{ end }}</h3>
     <time datetime="{{ .Date.Format "2006-01-02" }}" class="meta">{{ time.Format ":date_long" .Date }}</time>
   </header>
-  {{ .Summary }}
+  {{ with .Summary | plainify | htmlUnescape | strings.TrimSpace }}<p>{{ truncate 240 . }}</p>{{ end }}
 </article>

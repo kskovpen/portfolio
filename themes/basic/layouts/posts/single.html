@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="post">
   <header>
-    <h2>{{ .Title }}</h2>
+    {{ partial "page-head.html" . }}
     <p class="meta">
       {{ time.Format ":date_long" .Date }} · {{ T "min_read" .ReadingTime }}
       {{- $secs := .Params.sections | default slice }}

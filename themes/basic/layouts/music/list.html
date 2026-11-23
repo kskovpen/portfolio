@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
   {{- with site.Params.soundcloud_user_id }}
   <iframe class="soundcloud-player" title="Kirill Skovpen on SoundCloud" loading="lazy" allow="autoplay"

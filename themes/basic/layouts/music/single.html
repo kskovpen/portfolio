@@ -1,7 +1,6 @@
 {{ define "main" }}
 <article class="project-page">
-  <p class="breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   <p class="meta">{{ time.Format "January 2006" .Date }}{{ with .Params.kind }} · {{ . }}{{ end }}</p>
   {{ partial "cover.html" (dict "page" . "size" "800x800 smart webp") }}
   {{ .Content }}

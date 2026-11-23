@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
   {{- $cats := slice }}{{ range .Pages }}{{ with .Params.category }}{{ if not (in $cats .) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}{{ end }}
   {{- if gt (len $cats) 1 }}

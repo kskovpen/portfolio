@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
   {{ partial "head.html" . }}
-  <body>
-    <div class="container">
-      <div class="top">
-        {{ partial "header.html" . }}
-        <br>
-        {{ partial "nav.html" . }}
-        <br>
-      </div>
-      <main{{ if and (or .IsPage (in (slice "science" "talks") .Section)) (ne .Layout "search") }} data-pagefind-body data-pagefind-meta="title:{{ .Title }}"{{ end }}>
-      <div id="content">
-        {{ block "main" . }}{{ end }}
-      </div>
-      </main>
-      <br><br>
-      {{ partial "footer.html" . }}
-    </div>
+  {{- $k := partial "section-key.html" . }}
+  <body class="s-{{ $k }}{{ if .IsHome }} is-home{{ else if .IsPage }} is-page{{ else }} is-list{{ end }}">
+    <a class="skip" href="#content">Skip to content</a>
+    {{ partial "header.html" . }}
+    <main id="content"{{ if and (or .IsPage (in (slice "science" "talks") .Section)) (ne .Layout "search") }} data-pagefind-body data-pagefind-meta="title:{{ .Title }}"{{ end }}>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
     {{ partial "head/js.html" . }}
   </body>
 </html>

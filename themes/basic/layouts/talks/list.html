@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
   <ul class="talk-list">
     {{- range sort site.Data.talks "date" "desc" }}

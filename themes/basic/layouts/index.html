@@ -1,35 +1,106 @@
 {{ define "main" }}
-<section class="hero">
-  {{- with site.Params.photo }}
-  <img class="hero-photo" src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="160" height="160">
-  {{- end }}
-  <div class="hero-text">
-    {{ with site.Params.role }}<p class="role">{{ . }}</p>{{ end }}
-    {{ .Content }}
-    {{ partial "profiles.html" . }}
-  </div>
-</section>
+{{- $m := dict }}{{ range site.Menus.main }}{{ $m = merge $m (dict .Identifier (dict "name" .Name "url" .URL "page" .Page)) }}{{ end }}
+{{- $i := 0 }}
+<div class="bento">
 
-<section class="latest">
-  <h2>{{ T "latest" }}</h2>
-  <ul class="latest-list">
-    {{- with partial "all-posts.html" . }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_blog" }}</span>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ time.Format "January 2006" .Date }}</span></li>
-    {{- end }}{{ end }}
-    {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_talk" }}</span>
-      <a href="{{ "talks/" | relLangURL }}">{{ .title }}</a> <span class="meta">{{ .event }}{{ with .date }}, {{ (time.Format "January 2006" .) }}{{ end }}</span></li>
-    {{- end }}{{ end }}
-    {{- with site.Data.running }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_running" }}</span>
-      <a href="{{ "run/" | relLangURL }}">{{ T "km_in_year" (dict "km" (lang.FormatNumber 0 .this_year.distance_km) "year" .this_year.year) }}</a>
-      {{- with site.Data.utmb }}{{ with index .results 0 }} <span class="meta">{{ T "latest_race" }} {{ .event }}, {{ (time.Format "January 2006" .date) }}</span>{{ end }}{{ end }}</li>
+  <section class="tile tile-hero" style="--i: 0">
+    <div class="hero-head">
+      {{- with site.Params.photo }}<img class="hero-photo" src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="112" height="112">{{ end }}
+      <div>
+        <h1 class="hero-name">{{ site.Params.author }}</h1>
+        {{ with site.Params.role }}<p class="role">{{ . }}</p>{{ end }}
+      </div>
+    </div>
+    <div class="hero-text">{{ .Content }}</div>
+    <div class="hero-foot">
+      {{ partial "profiles.html" . }}
+      {{ with site.GetPage "/about" }}<a class="more" href="{{ .RelPermalink }}">{{ T "more_about" }} →</a>{{ end }}
+    </div>
+  </section>
+
+  {{- with $m.research }}
+  <a class="tile tile-research s-research" href="{{ .url }}" style="--i: 1">
+    <svg class="collision" viewBox="0 0 200 200" aria-hidden="true">
+      {{- range $j, $a := slice 8 40 75 118 150 197 236 262 300 338 }}
+      {{- $len := add 50 (mod (mul $j 37) 45) }}
+      <path pathLength="1" style="--d: {{ $j }}" d="M100 100 q {{ math.Round (mul (math.Cos (mul $a 0.01745)) (div $len 2.0)) }} {{ math.Round (mul (math.Sin (mul $a 0.01745)) (div $len 1.6)) }} {{ math.Round (mul (math.Cos (mul $a 0.01745)) $len) }} {{ math.Round (mul (math.Sin (mul $a 0.01745)) $len) }}"/>
+      {{- end }}
+      <circle cx="100" cy="100" r="4"/>
+    </svg>
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-research">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <ul class="tile-list">
+      {{- with .page }}{{ range first 4 .Sections }}{{ if or .Pages .Content .Params.publications }}<li>{{ .Title }}{{ with .Summary | plainify | htmlUnescape }}<span>{{ truncate 150 . }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
+    </ul>
+  </a>
+  {{- end }}
+
+  {{- with $m.running }}{{ $r := site.Data.running }}
+  <a class="tile tile-running s-running" href="{{ .url }}" style="--i: 2">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-running">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    {{- with $r }}
+    <div class="stat-row">
+      <p class="stat"><span class="stat-value">{{ lang.FormatNumber 0 .this_year.distance_km }}</span><span class="stat-unit">km</span><span class="stat-label">{{ .this_year.year }}</span></p>
+      <p class="stat"><span class="stat-value">{{ lang.FormatNumber 0 .this_year.elevation_m }}</span><span class="stat-unit">m</span><span class="stat-label">{{ T "climbed_in" .this_year.year }}</span></p>
+    </div>
+    {{- $ms := last 12 .months }}{{ $max := 1.0 }}{{ range $ms }}{{ $max = math.Max $max (float .distance_km) }}{{ end }}
+    {{- $pts := slice }}{{ range $j, $x := $ms }}{{ $pts = $pts | append (printf "%.1f,%.1f" (mul $j (div 300.0 (sub (len $ms) 1))) (sub 58.0 (mul 54 (div (float $x.distance_km) $max)))) }}{{ end }}
+    <svg class="spark" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true">
+      <polyline class="spark-area" points="0,60 {{ delimit $pts " " }} 300,60"/>
+      <polyline class="spark-line" pathLength="1" points="{{ delimit $pts " " }}"/>
+    </svg>
+    {{- with site.Data.utmb }}{{ with index .results 0 }}<p class="tile-note">{{ T "latest_race" }} {{ .event }}</p>{{ end }}{{ end }}
     {{- end }}
-    {{- with where site.Pages "Layout" "project" }}{{ with index . 0 }}
-    <li>{{ partial "blink.html" }} <span class="latest-label">{{ T "label_research" }}</span>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  </a>
+  {{- end }}
+
+  {{- with $m.projects }}
+  <a class="tile tile-projects s-projects" href="{{ .url }}" style="--i: 3">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-projects">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <div class="app-icons">
+      {{- with .page }}{{ range first 4 .Pages.ByWeight }}
+      {{- with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "200x200 webp" }}<img src="{{ $ic.RelPermalink }}" width="84" height="84" alt="">{{ end }}
+      {{- end }}{{ end }}
+    </div>
+    <p class="tile-note">{{ with .page }}{{ range $j, $p := first 4 .Pages.ByWeight }}{{ if $j }} · {{ end }}{{ $p.Title }}{{ end }}{{ end }}</p>
+  </a>
+  {{- end }}
+
+  {{- with $m.music }}
+  <a class="tile tile-music s-music" href="{{ .url }}" style="--i: 4">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-music">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <div class="eq" aria-hidden="true">{{ range $j, $h := slice 0.45 0.8 0.6 0.95 0.5 0.7 0.35 0.85 0.55 0.75 0.4 0.9 0.6 0.5 0.8 0.3 }}<span style="--b: {{ $j }}; --h: {{ $h }}"></span>{{ end }}</div>
+    <p class="tile-note">{{ T "listen" }} · SoundCloud</p>
+  </a>
+  {{- end }}
+
+  {{- with $m.talks }}
+  <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 5">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <p class="big-count">{{ len site.Data.talks }}</p>
+    {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
+    <p class="tile-note"><strong>{{ .title }}</strong><br>{{ .event }}{{ with .date }}, {{ time.Format "2006" . }}{{ end }}</p>
     {{- end }}{{ end }}
-  </ul>
-</section>
+  </a>
+  {{- end }}
+
+  {{- with $m.blog }}
+  <a class="tile tile-blog s-blog" href="{{ .url }}" style="--i: 6">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-blog">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <ul class="tile-posts">
+      {{- range first 3 (partial "all-posts.html" $) }}
+      <li><span class="tile-post-title">{{ .Title }}</span><span class="tile-post-date">{{ time.Format "Jan 2006" .Date }}</span></li>
+      {{- end }}
+    </ul>
+  </a>
+  {{- end }}
+
+  {{- with $m.travel }}{{ with .page }}{{ if .RegularPagesRecursive }}
+  <a class="tile tile-travel s-travel" href="{{ .RelPermalink }}" style="--i: 7">
+    {{ if fileExists "static/travel/overview.jpg" }}<img class="tile-bg" src="{{ "travel/overview.jpg" | relURL }}" alt="" loading="lazy">{{ end }}
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-travel">{{ .Title }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <p class="tile-note">{{ range $j, $p := first 4 .RegularPagesRecursive.ByDate.Reverse }}{{ if $j }} · {{ end }}{{ $p.Title }}{{ end }}</p>
+  </a>
+  {{- end }}{{ end }}{{ end }}
+
+</div>
 {{ end }}

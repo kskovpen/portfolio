@@ -1,0 +1,5 @@
+{{- /* Which site section a page belongs to (drives the colour accent and page transitions). */ -}}
+{{- $map := dict "science" "research" "talks" "talks" "projects" "projects" "music" "music" "travel" "travel" "run" "running" "posts" "blog" "tags" "blog" }}
+{{- $k := index $map .Section | default "" }}
+{{- if .IsHome }}{{ $k = "home" }}{{ else if not $k }}{{ $k = cond (eq .Layout "about") "about" "page" }}{{ end }}
+{{- return $k }}

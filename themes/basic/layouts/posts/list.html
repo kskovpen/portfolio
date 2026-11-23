@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2>{{ .Title }}</h2>
+  {{ partial "page-head.html" . }}
   {{ .Content }}
   {{- $posts := partial "all-posts.html" . }}
   {{- range (.Paginate $posts 10).Pages }}
