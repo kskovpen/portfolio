@@ -3,19 +3,16 @@
 {{- $i := 0 }}
 <div class="bento">
 
-  <section class="tile tile-hero" style="--i: 0">
-    <div class="hero-head">
-      {{- with site.Params.photo }}<img class="hero-photo" src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="112" height="112">{{ end }}
-      <div>
-        <h1 class="hero-name">{{ site.Params.author }}</h1>
-        {{ with site.Params.role }}<p class="role">{{ . }}</p>{{ end }}
-      </div>
-    </div>
+  {{- with site.Params.photo }}
+  <figure class="tile tile-photo" style="--i: 0">
+    <img src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="480" height="480">
+  </figure>
+  {{- end }}
+
+  <section class="tile tile-hero" style="--i: 1">
+    <h1 class="hero-name">{{ site.Params.author }}</h1>
+    {{ with site.Params.role }}<p class="role">{{ . }}</p>{{ end }}
     <div class="hero-text">{{ .Content }}</div>
-    <div class="hero-foot">
-      {{ partial "profiles.html" . }}
-      {{ with site.GetPage "/about" }}<a class="more" href="{{ .RelPermalink }}">{{ T "more_about" }} →</a>{{ end }}
-    </div>
   </section>
 
   {{- with $m.research }}
@@ -54,7 +51,8 @@
   {{- end }}
 
   {{- with $m.projects }}
-  <a class="tile tile-projects s-projects" href="{{ .url }}" style="--i: 3">
+  <a class="tile tile-projects tile-image s-projects" href="{{ .url }}" style="--i: 3">
+    {{- with .page }}{{ with index .Pages.ByWeight 0 }}{{ with .Resources.GetMatch "screenshot-1.*" }}{{ $bg := .Fill "900x600 Center webp" }}<img class="tile-bg" src="{{ $bg.RelPermalink }}" alt="" loading="lazy">{{ end }}{{ end }}{{ end }}
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-projects">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
     <div class="app-icons">
       {{- with .page }}{{ range first 4 .Pages.ByWeight }}
@@ -94,8 +92,13 @@
   </a>
   {{- end }}
 
+  <section class="tile tile-links" style="--i: 7">
+    <div class="tile-top"><span class="tile-label">{{ T "elsewhere" }}</span></div>
+    {{ partial "profiles.html" . }}
+  </section>
+
   {{- with $m.travel }}{{ with .page }}{{ if .RegularPagesRecursive }}
-  <a class="tile tile-travel s-travel" href="{{ .RelPermalink }}" style="--i: 7">
+  <a class="tile tile-travel tile-image s-travel" href="{{ .RelPermalink }}" style="--i: 8">
     {{ if fileExists "static/travel/overview.jpg" }}<img class="tile-bg" src="{{ "travel/overview.jpg" | relURL }}" alt="" loading="lazy">{{ end }}
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-travel">{{ .Title }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
     <p class="tile-note">{{ range $j, $p := first 4 .RegularPagesRecursive.ByDate.Reverse }}{{ if $j }} · {{ end }}{{ $p.Title }}{{ end }}</p>
