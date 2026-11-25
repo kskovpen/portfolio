@@ -4,15 +4,8 @@ date = 2024-01-01T16:40:09+01:00
 layout = 'about'
 +++
 
-I'm a physicist in the [Experimental Particle Physics and Gravity group](https://eppg.ugent.be/) at [Ghent University](https://www.ugent.be) in Belgium and a member of the [CMS experiment](https://cms.cern) at CERN's Large Hadron Collider.
+I'm a particle physicist at [Ghent University](https://www.ugent.be) in Belgium. I study the smallest building blocks of matter using the Large Hadron Collider at CERN, a 27-kilometre ring near Geneva where protons collide at almost the speed of light, and I help build detectors that record what comes out of those collisions.
 
-My research is about the top quark, the heaviest elementary particle we know of. Because it is so heavy, it is a good place to look for signs of physics that the current theory doesn't explain. I was part of the team that [observed four top quarks produced together]({{< relref "/science/top-quark/four-tops" >}}), and I also write software for analysing collider data.
+My favourite particle is the top quark, the heaviest one we know. Because it is so heavy, it is a good place to look for clues to physics that today's theory can't explain. In 2023 I was one of the main people behind the [first observation of four top quarks produced at once]({{< relref "/science/top-quark/four-tops" >}}).
 
-When I'm not doing physics I [run]({{< relref "/run" >}}) (road marathons and trail races) and tinker with electronics.
-
-## Career
-
-- **Ghent University**, Belgium: senior researcher (current); previously postdoctoral researcher
-- **Vrije Universiteit Brussel**, Belgium
-- **IPHC Strasbourg**, France
-- **Budker Institute of Nuclear Physics**, Novosibirsk, Russia: PhD (2012), searching for new particles with the ATLAS experiment at CERN
+At Ghent I lead our team in SHiP, a new experiment that will look for very light, hidden particles, and I'm deputy leader of our team in the CMS experiment at CERN. Outside work I [run]({{< relref "/run" >}}) trails and marathons, [make music]({{< relref "/music" >}}) and write apps.

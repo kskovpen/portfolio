@@ -4,15 +4,8 @@ date = 2024-01-01T16:40:09+01:00
 layout = 'about'
 +++
 
-Je suis physicien au sein du [groupe Experimental Particle Physics and Gravity](https://eppg.ugent.be/) de l'[Université de Gand](https://www.ugent.be), en Belgique, et membre de l'[expérience CMS](https://cms.cern) au Grand collisionneur de hadrons (LHC) du CERN.
+Je suis physicien des particules à l'[Université de Gand](https://www.ugent.be), en Belgique. J'étudie les plus petites briques de la matière grâce au Grand collisionneur de hadrons du CERN, un anneau de 27 kilomètres près de Genève où des protons se percutent presque à la vitesse de la lumière, et j'aide à construire les détecteurs qui enregistrent ce qui sort de ces collisions.
 
-Mes recherches portent sur le quark top, la particule élémentaire la plus lourde que l'on connaisse. Comme il est très lourd, c'est un bon endroit pour chercher des signes d'une physique que la théorie actuelle n'explique pas. J'ai fait partie de l'équipe qui a [observé quatre quarks top produits ensemble]({{< relref "/science/top-quark/four-tops" >}}), et j'écris aussi des logiciels pour analyser les données des collisionneurs.
+Ma particule préférée est le quark top, la plus lourde que l'on connaisse. Comme il est si lourd, c'est un bon endroit pour chercher des indices d'une physique que la théorie actuelle n'explique pas. En 2023, j'ai été l'un des principaux artisans de la [première observation de quatre quarks top produits en même temps]({{< relref "/science/top-quark/four-tops" >}}).
 
-Quand je ne fais pas de physique, je [cours]({{< relref "/run" >}}) (marathons sur route et trails) et je bricole de l'électronique.
-
-## Parcours
-
-- **Université de Gand**, Belgique : chercheur senior (actuellement) ; auparavant chercheur postdoctoral
-- **Vrije Universiteit Brussel**, Belgique
-- **IPHC Strasbourg**, France
-- **Institut Budker de physique nucléaire**, Novossibirsk, Russie : doctorat (2012), recherche de nouvelles particules avec l'expérience ATLAS au CERN
+À Gand, je dirige notre équipe dans SHiP, une nouvelle expérience qui cherchera des particules très légères et cachées, et je suis chef adjoint de notre équipe dans l'expérience CMS au CERN. En dehors du travail, je [cours]({{< relref "/run" >}}) des trails et des marathons, je [fais de la musique]({{< relref "/music" >}}) et je crée des applications.

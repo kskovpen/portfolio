@@ -713,3 +713,40 @@ footer {
   .artist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .listen-cols { grid-template-columns: 1fr; }
 }
+
+// =====================================================================
+//  About: professional profile (data/cv.yaml), written for everyone
+// =====================================================================
+.about-intro p { font-size: 1.1em; max-width: 68ch; }
+.is-page main h2, .s-about main h2 { margin: 52px 0 18px; font-size: clamp(1.35rem, 2vw, 1.7rem); letter-spacing: -0.02em; }
+.cv-numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); margin: 36px 0 8px; }
+.cv-numbers p { margin: 0; background: var(--bg); padding: 18px 20px; }
+.cv-numbers b { display: block; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--ink);
+  font-variant-numeric: tabular-nums; }
+.cv-numbers span { display: block; margin-top: 6px; font-size: 14px; color: var(--ink-3); }
+.cv-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.cv-card { background: var(--bg); padding: 24px 24px 22px; transition: background-color 0.4s var(--ease); }
+.cv-card:hover { background: color-mix(in srgb, var(--hue) 7%, var(--bg)); }
+.cv-card h3 { margin: 14px 0 8px; font-size: 1.12rem; }
+.cv-card p { margin: 0; color: var(--ink-2); }
+.cv-icon { width: 44px; height: 44px; fill: none; stroke: var(--hue); stroke-width: 1.6; stroke-linecap: round; transition: transform 0.9s var(--ease); }
+.cv-card:hover .cv-icon { transform: rotate(30deg) scale(1.08); }
+.cv-highlights, .cv-timeline { list-style: none; padding: 0; margin: 0; }
+.cv-highlights li, .cv-timeline li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 20px; padding: 16px 0; border-top: 1px solid var(--line); }
+.cv-highlights li:last-child, .cv-timeline li:last-child { border-bottom: 1px solid var(--line); }
+.cv-highlights h3, .cv-timeline h3 { margin: 0 0 4px; font-size: 1.08rem; }
+.cv-highlights p, .cv-timeline p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.cv-timeline li:first-child .cv-year::after { content: " ●"; font-size: 0.7em; vertical-align: 2px; }
+.cv-year { font-weight: 750; color: var(--hue); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cv-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.cv-list { padding: 0; margin: 0; list-style: none; }
+.cv-list li { padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-2); }
+.cv-list li:last-child { border-bottom: 1px solid var(--line); }
+.cv-list .cv-year { display: inline-block; min-width: 3.2em; }
+.cv-langs { margin-top: 16px; color: var(--ink-2); }
+.cv-prose { max-width: 70ch; color: var(--ink-2); }
+@media (max-width: 700px) {
+  .cv-cols { grid-template-columns: 1fr; }
+  .cv-highlights li, .cv-timeline li { grid-template-columns: 1fr; }
+}
