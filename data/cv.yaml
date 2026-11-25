@@ -39,18 +39,21 @@ what_i_do:
 
 numbers:
   - since: 2007
+    link: "/science/"
     label:
       en: "years in particle physics"
       fr: "ans en physique des particules"
       nl: "jaar in de deeltjesfysica"
       ru: "лет в физике частиц"
   - value: "7"
+    link: "/science/"
     label:
       en: "PhD students supervised"
       fr: "doctorants encadrés"
       nl: "begeleide doctoraatsstudenten"
       ru: "аспирантов под руководством"
   - value: "40+"
+    link: "/talks/"
     label:
       en: "conference talks"
       fr: "exposés en conférence"
@@ -72,10 +75,10 @@ career:
       nl: "Gent, België"
       ru: "Гент, Бельгия"
     role:
-      en: "Staff researcher. Leads the Ghent team in the SHiP experiment and is deputy leader of the Ghent team in CMS."
-      fr: "Chercheur permanent. Dirige l'équipe de Gand dans l'expérience SHiP et est chef adjoint de l'équipe de Gand dans CMS."
-      nl: "Vast onderzoeker. Leidt het Gentse team in het SHiP-experiment en is adjunct-leider van het Gentse team in CMS."
-      ru: "Штатный научный сотрудник. Руководитель гентской группы в эксперименте SHiP и заместитель руководителя гентской группы в CMS."
+      en: "Permanent researcher. Leads the Ghent group in SHiP, a new experiment that will hunt for very light, hidden particles, and is deputy leader of the Ghent group in CMS, one of the two giant experiments at CERN that discovered the Higgs boson."
+      fr: "Chercheur permanent. Dirige le groupe de Gand dans SHiP, une nouvelle expérience qui traquera des particules très légères et cachées, et est chef adjoint du groupe de Gand dans CMS, l'une des deux expériences géantes du CERN qui ont découvert le boson de Higgs."
+      nl: "Vast onderzoeker. Leidt de Gentse groep in SHiP, een nieuw experiment dat zal zoeken naar zeer lichte, verborgen deeltjes, en is adjunct-leider van de Gentse groep in CMS, een van de twee reuzenexperimenten bij CERN die het higgsboson ontdekten."
+      ru: "Штатный научный сотрудник. Руководит гентской группой в SHiP — новом эксперименте, который будет искать очень лёгкие «скрытые» частицы, — и является заместителем руководителя гентской группы в CMS, одном из двух гигантских экспериментов ЦЕРН, открывших бозон Хиггса."
   - years: "2019–2023"
     place: "Ghent University"
     city:
@@ -84,10 +87,10 @@ career:
       nl: "Gent, België"
       ru: "Гент, Бельгия"
     role:
-      en: "Senior postdoctoral researcher. Coordinated the teams that check the CMS data processing, simulation and software."
-      fr: "Chercheur postdoctoral senior. A coordonné les équipes qui vérifient le traitement des données, la simulation et les logiciels de CMS."
-      nl: "Senior postdoctoraal onderzoeker. Coördineerde de teams die de dataverwerking, simulatie en software van CMS controleren."
-      ru: "Старший научный сотрудник (постдок). Координировал группы, проверяющие обработку данных, моделирование и программы CMS."
+      en: "Senior researcher on a fixed-term contract (a \"postdoc\"). Coordinated the people who check that the software and computer simulations of the CMS detector work correctly."
+      fr: "Chercheur senior en contrat à durée déterminée (« postdoc »). A coordonné les personnes qui vérifient que les logiciels et les simulations informatiques du détecteur CMS fonctionnent correctement."
+      nl: "Senior onderzoeker met een tijdelijk contract (een \"postdoc\"). Coördineerde de mensen die controleren of de software en computersimulaties van de CMS-detector correct werken."
+      ru: "Старший научный сотрудник по срочному контракту («постдок»). Координировал людей, которые проверяют, что программы и компьютерное моделирование детектора CMS работают правильно."
   - years: "2016–2019"
     place: "Vrije Universiteit Brussel"
     city:
@@ -96,22 +99,22 @@ career:
       nl: "Brussel, België"
       ru: "Брюссель, Бельгия"
     role:
-      en: "Postdoctoral fellow of the Research Foundation Flanders (FWO). Studied how the Higgs boson interacts with the top quark."
-      fr: "Chercheur postdoctoral du Fonds de la recherche scientifique flamand (FWO). A étudié comment le boson de Higgs interagit avec le quark top."
-      nl: "Postdoctoraal onderzoeker van het Fonds Wetenschappelijk Onderzoek (FWO). Onderzocht hoe het higgsboson met het top-quark wisselwerkt."
-      ru: "Постдок-стипендиат Фонда научных исследований Фландрии (FWO). Изучал, как бозон Хиггса взаимодействует с топ-кварком."
+      en: "Researcher with a personal grant from the Flemish science funding agency (FWO). Studied how the Higgs boson interacts with the top quark, the heaviest known particle."
+      fr: "Chercheur avec une bourse personnelle de l'agence flamande de financement de la recherche (FWO). A étudié comment le boson de Higgs interagit avec le quark top, la particule la plus lourde connue."
+      nl: "Onderzoeker met een persoonlijke beurs van het Vlaamse Fonds Wetenschappelijk Onderzoek (FWO). Onderzocht hoe het higgsboson inwerkt op het top-quark, het zwaarste bekende deeltje."
+      ru: "Исследователь с персональным грантом фламандского научного фонда (FWO). Изучал, как бозон Хиггса взаимодействует с топ-кварком — самой тяжёлой известной частицей."
   - years: "2013–2016"
-    place: "IPHC (CNRS)"
+    place: "Hubert Curien Institute (CNRS)"
     city:
       en: "Strasbourg, France"
       fr: "Strasbourg, France"
       nl: "Straatsburg, Frankrijk"
       ru: "Страсбург, Франция"
     role:
-      en: "Postdoctoral researcher. Joined CMS; led the team that teaches the detector to recognise particles coming from bottom quarks."
-      fr: "Chercheur postdoctoral. A rejoint CMS ; a dirigé l'équipe qui apprend au détecteur à reconnaître les particules issues de quarks bottom."
-      nl: "Postdoctoraal onderzoeker. Werd lid van CMS; leidde het team dat de detector leert deeltjes van bottom-quarks te herkennen."
-      ru: "Постдок. Присоединился к CMS; руководил группой, которая «учит» детектор распознавать частицы от b-кварков."
+      en: "Researcher on a fixed-term contract (a \"postdoc\") at a French national research lab. Joined CMS and led the team that teaches the detector to recognise particles coming from bottom quarks."
+      fr: "Chercheur en contrat à durée déterminée (« postdoc ») dans un laboratoire du CNRS. A rejoint CMS et dirigé l'équipe qui apprend au détecteur à reconnaître les particules issues de quarks bottom."
+      nl: "Onderzoeker met een tijdelijk contract (een \"postdoc\") in een Frans nationaal onderzoekslab. Werd lid van CMS en leidde het team dat de detector leert deeltjes van bottom-quarks te herkennen."
+      ru: "Исследователь по срочному контракту («постдок») во французской национальной лаборатории. Присоединился к CMS и руководил группой, которая «учит» детектор распознавать частицы от b-кварков."
   - years: "2007–2013"
     place: "Budker Institute of Nuclear Physics"
     city:
@@ -120,10 +123,10 @@ career:
       nl: "Novosibirsk, Rusland"
       ru: "Новосибирск, Россия"
     role:
-      en: "Research assistant, then junior researcher. PhD on searches for new heavy particles with the ATLAS experiment at CERN."
-      fr: "Assistant de recherche, puis jeune chercheur. Thèse sur la recherche de nouvelles particules lourdes avec l'expérience ATLAS au CERN."
-      nl: "Onderzoeksassistent, daarna junior onderzoeker. Doctoraat over de zoektocht naar nieuwe zware deeltjes met het ATLAS-experiment bij CERN."
-      ru: "Стажёр-исследователь, затем младший научный сотрудник. Кандидатская диссертация по поиску новых тяжёлых частиц в эксперименте ATLAS в ЦЕРН."
+      en: "Research assistant, then junior researcher. Doctorate (PhD) on the search for new heavy particles with ATLAS, the other giant experiment at CERN."
+      fr: "Assistant de recherche, puis jeune chercheur. Doctorat sur la recherche de nouvelles particules lourdes avec ATLAS, l'autre expérience géante du CERN."
+      nl: "Onderzoeksassistent, daarna junior onderzoeker. Doctoraat over de zoektocht naar nieuwe zware deeltjes met ATLAS, het andere reuzenexperiment bij CERN."
+      ru: "Стажёр-исследователь, затем младший научный сотрудник. Кандидатская диссертация о поиске новых тяжёлых частиц в ATLAS — другом гигантском эксперименте ЦЕРН."
 
 highlights:
   - year: "2023"
@@ -173,24 +176,30 @@ highlights:
       ru: "Руководил группой и был соавтором основополагающей статьи о том, как CMS распознаёт струи частиц от b-кварков, — этот метод используется примерно в трети всех публикаций CMS."
 
 recognition:
-  - en: "Research Foundation Flanders (FWO) postdoctoral fellowship, 2016–2019"
-    fr: "Bourse postdoctorale du Fonds de la recherche scientifique flamand (FWO), 2016–2019"
-    nl: "Postdoctoraal mandaat van het Fonds Wetenschappelijk Onderzoek (FWO), 2016–2019"
-    ru: "Постдокторская стипендия Фонда научных исследований Фландрии (FWO), 2016–2019"
-  - en: "Co-leads FLAMENCO, a Belgian–Slovenian research project (FWO, 2022–2025)"
-    fr: "Codirige FLAMENCO, un projet de recherche belgo-slovène (FWO, 2022–2025)"
-    nl: "Mede-leider van FLAMENCO, een Belgisch-Sloveens onderzoeksproject (FWO, 2022–2025)"
-    ru: "Соруководитель бельгийско-словенского исследовательского проекта FLAMENCO (FWO, 2022–2025)"
-  - en: "Represented Belgium in the European panel of early-career physicists (ECFA), 2021–2024"
-    fr: "A représenté la Belgique au panel européen des jeunes physiciens (ECFA), 2021–2024"
-    nl: "Vertegenwoordigde België in het Europese panel van jonge fysici (ECFA), 2021–2024"
-    ru: "Представлял Бельгию в европейской группе молодых физиков ECFA, 2021–2024"
+  - en: "Personal research grant from the Flemish science funding agency (FWO), 2016–2019"
+    fr: "Bourse de recherche personnelle de l'agence flamande de financement de la recherche (FWO), 2016–2019"
+    nl: "Persoonlijke onderzoeksbeurs van het Fonds Wetenschappelijk Onderzoek (FWO), 2016–2019"
+    ru: "Персональный исследовательский грант фламандского научного фонда (FWO), 2016–2019"
+  - en: "Co-leads FLAMENCO, a joint research project of Belgian and Slovenian physicists, 2022–2025"
+    fr: "Codirige FLAMENCO, un projet de recherche commun de physiciens belges et slovènes, 2022–2025"
+    nl: "Mede-leider van FLAMENCO, een gezamenlijk onderzoeksproject van Belgische en Sloveense fysici, 2022–2025"
+    ru: "Соруководитель FLAMENCO — совместного проекта бельгийских и словенских физиков, 2022–2025"
+  - en: "Represented Belgium on a European panel of young physicists that advises on the future of particle physics in Europe (ECFA), 2021–2024"
+    fr: "A représenté la Belgique dans un panel européen de jeunes physiciens qui conseille sur l'avenir de la physique des particules en Europe (ECFA), 2021–2024"
+    nl: "Vertegenwoordigde België in een Europees panel van jonge fysici dat adviseert over de toekomst van de deeltjesfysica in Europa (ECFA), 2021–2024"
+    ru: "Представлял Бельгию в европейской группе молодых физиков, которая даёт рекомендации о будущем физики частиц в Европе (ECFA), 2021–2024"
 
 teaching:
-  en: "Master's courses at the Vrije Universiteit Brussel and exercise classes at Ghent University; guest lecturer at the Belgian doctoral school in particle physics. I also explain physics to the public, for example with the iPhone apps [Higgsy](/projects/higgsy/) and [MatterBricks](/projects/matterbricks/) and school talks such as \"A Big Bang in the Lab\"."
-  fr: "Cours de master à la Vrije Universiteit Brussel et travaux dirigés à l'Université de Gand ; conférencier invité à l'école doctorale belge de physique des particules. J'explique aussi la physique au grand public, par exemple avec les applications iPhone [Higgsy](/fr/projects/higgsy/) et [MatterBricks](/fr/projects/matterbricks/) et des exposés dans les écoles comme « Un Big Bang au labo »."
-  nl: "Mastercolleges aan de Vrije Universiteit Brussel en oefeningen aan de Universiteit Gent; gastdocent aan de Belgische doctoraatsschool deeltjesfysica. Ik leg natuurkunde ook uit aan het grote publiek, bijvoorbeeld met de iPhone-apps [Higgsy](/nl/projects/higgsy/) en [MatterBricks](/nl/projects/matterbricks/) en schoolpresentaties zoals \"Een oerknal in het lab\"."
-  ru: "Магистерские курсы в Брюссельском свободном университете (VUB) и семинары в Гентском университете; приглашённый лектор бельгийской аспирантской школы по физике частиц. Рассказываю о физике широкой публике — например, в приложениях для iPhone [Higgsy](/ru/projects/higgsy/) и [MatterBricks](/ru/projects/matterbricks/) и в лекциях для школьников, таких как «Большой взрыв в лаборатории»."
+  en: "Besides research I teach: master's courses at the Vrije Universiteit Brussel, exercise classes at Ghent University, and guest lectures at the Belgian school for young researchers in particle physics. For schools and the general public I give talks such as \"A Big Bang in the Lab\"."
+  fr: "En plus de la recherche, j'enseigne : cours de master à la Vrije Universiteit Brussel, travaux dirigés à l'Université de Gand et cours invités à l'école belge des jeunes chercheurs en physique des particules. Pour les écoles et le grand public, je donne des exposés comme « Un Big Bang au labo »."
+  nl: "Naast onderzoek geef ik les: mastercolleges aan de Vrije Universiteit Brussel, oefeningen aan de Universiteit Gent en gastcolleges aan de Belgische school voor jonge onderzoekers in de deeltjesfysica. Voor scholen en het grote publiek geef ik lezingen zoals \"Een oerknal in het lab\"."
+  ru: "Помимо исследований, я преподаю: магистерские курсы в Брюссельском свободном университете (VUB), семинары в Гентском университете и гостевые лекции в бельгийской школе для молодых исследователей в физике частиц. Для школьников и широкой публики читаю лекции, например «Большой взрыв в лаборатории»."
+
+outreach:
+  en: "Two of these games explain my day job: in [Higgsy](/projects/higgsy/) you hunt for the Higgs boson like a physicist at CERN, and in [MatterBricks](/projects/matterbricks/) the smallest particles of matter become puzzle pieces."
+  fr: "Deux de ces jeux expliquent mon métier : dans [Higgsy](/fr/projects/higgsy/), vous cherchez le boson de Higgs comme un physicien du CERN, et dans [MatterBricks](/fr/projects/matterbricks/), les plus petites particules de la matière deviennent des pièces de puzzle."
+  nl: "Twee van deze games leggen mijn werk uit: in [Higgsy](/nl/projects/higgsy/) zoek je naar het higgsboson zoals een fysicus bij CERN, en in [MatterBricks](/nl/projects/matterbricks/) worden de kleinste deeltjes van materie puzzelstukjes."
+  ru: "Две из этих игр рассказывают о моей работе: в [Higgsy](/ru/projects/higgsy/) вы ищете бозон Хиггса, как физик в ЦЕРН, а в [MatterBricks](/ru/projects/matterbricks/) мельчайшие частицы материи становятся деталями головоломки."
 
 education:
   - year: "2013"
@@ -216,7 +225,7 @@ languages:
   ru: "Русский (родной), английский и французский (свободно), нидерландский (изучаю)"
 
 publications_note:
-  en: "As a member of large international collaborations of several thousand scientists, I co-author all of their papers: more than 1,100 in total. My own contributions are described on the Research page and listed on INSPIRE."
-  fr: "Comme membre de grandes collaborations internationales de plusieurs milliers de scientifiques, je cosigne tous leurs articles : plus de 1 100 au total. Mes propres contributions sont décrites sur la page Recherche et listées sur INSPIRE."
-  nl: "Als lid van grote internationale samenwerkingen van enkele duizenden wetenschappers ben ik medeauteur van al hun artikelen: in totaal meer dan 1.100. Mijn eigen bijdragen staan op de pagina Onderzoek en op INSPIRE."
-  ru: "Как участник крупных международных коллабораций из нескольких тысяч учёных, я соавтор всех их статей — в сумме более 1100. Мой собственный вклад описан в разделе «Исследования» и указан в базе INSPIRE."
+  en: "As a member of large international collaborations of several thousand scientists, I co-author all of their papers: more than 1,100 in total. The topics above describe the results I contributed to most; the full list is on [INSPIRE](https://inspirehep.net/authors/1066490), the public database of physics papers."
+  fr: "Comme membre de grandes collaborations internationales de plusieurs milliers de scientifiques, je cosigne tous leurs articles : plus de 1 100 au total. Les thèmes ci-dessus décrivent les résultats auxquels j'ai le plus contribué ; la liste complète est sur [INSPIRE](https://inspirehep.net/authors/1066490), la base de données publique des articles de physique."
+  nl: "Als lid van grote internationale samenwerkingen van enkele duizenden wetenschappers ben ik medeauteur van al hun artikelen: in totaal meer dan 1.100. De onderwerpen hierboven beschrijven de resultaten waaraan ik het meest heb bijgedragen; de volledige lijst staat op [INSPIRE](https://inspirehep.net/authors/1066490), de openbare databank van natuurkundeartikelen."
+  ru: "Как участник крупных международных коллабораций из нескольких тысяч учёных, я соавтор всех их статей — в сумме более 1100. Темы выше описывают результаты, в которые я внёс наибольший вклад; полный список — в [INSPIRE](https://inspirehep.net/authors/1066490), открытой базе статей по физике."

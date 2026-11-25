@@ -1,7 +1,8 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
-  {{ partial "glossary.html" . }}
+  {{- $top := .Parent.IsHome }}
+  {{- if $top }}{{ partial "cv.html" "what_i_do" }}<h2>{{ T "cv_results" }}</h2>{{ end }}
   <div class="cards">
     {{- range .Sections }}
       {{- /* Topics without pages, text or publications stay hidden until they have content */}}
@@ -21,5 +22,12 @@
       {{- end }}
     {{- end }}
   </div>
-  {{ if .Parent.IsHome }}{{ partial "section-posts.html" (dict "key" "research") }}{{ end }}
+  {{ partial "glossary.html" . }}
+  {{- if $top }}
+  {{ partial "cv.html" "highlights" }}
+  {{ partial "cv.html" "career" }}
+  {{ partial "cv.html" "recognition_education" }}
+  {{ partial "cv.html" "publications" }}
+  {{ partial "section-posts.html" (dict "key" "research") }}
+  {{- end }}
 {{ end }}

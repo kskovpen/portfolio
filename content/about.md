@@ -4,8 +4,6 @@ date = 2024-01-01T16:40:09+01:00
 layout = 'about'
 +++
 
-I'm a particle physicist at [Ghent University](https://www.ugent.be) in Belgium. I study the smallest building blocks of matter using the Large Hadron Collider at CERN, a 27-kilometre ring near Geneva where protons collide at almost the speed of light, and I help build detectors that record what comes out of those collisions.
+I'm a particle physicist at [Ghent University](https://www.ugent.be) in Belgium. I study the smallest building blocks of matter with the Large Hadron Collider at CERN near Geneva, and help build the detectors that photograph what happens when protons collide. [My research]({{< relref "/science" >}}) centres on the top quark, the heaviest particle we know: in 2023 I was one of the main people behind the [first observation of four top quarks produced at once]({{< relref "/science/top-quark/four-tops" >}}).
 
-My favourite particle is the top quark, the heaviest one we know. Because it is so heavy, it is a good place to look for clues to physics that today's theory can't explain. In 2023 I was one of the main people behind the [first observation of four top quarks produced at once]({{< relref "/science/top-quark/four-tops" >}}).
-
-At Ghent I lead our team in SHiP, a new experiment that will look for very light, hidden particles, and I'm deputy leader of our team in the CMS experiment at CERN. Outside work I [run]({{< relref "/run" >}}) trails and marathons, [make music]({{< relref "/music" >}}) and write apps.
+I studied and did my doctorate in Novosibirsk, then worked in Strasbourg and Brussels before settling in Ghent. I [teach and give talks]({{< relref "/talks" >}}), and I make [games]({{< relref "/projects" >}}) that explain physics to everyone. Outside work I [run]({{< relref "/run" >}}) trails and marathons and [make music]({{< relref "/music" >}}).

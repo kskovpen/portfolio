@@ -15,8 +15,18 @@
     <div class="hero-text">{{ .Content }}</div>
   </section>
 
-  {{- with $m.research }}
-  <a class="tile tile-research s-research" href="{{ .url }}" style="--i: 1">
+  {{- with $m.talks }}
+  <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 5">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <p class="big-count">{{ len site.Data.talks }}</p>
+    {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
+    <p class="tile-note"><strong>{{ .title }}</strong><br>{{ .event }}{{ with .date }}, {{ time.Format "2006" . }}{{ end }}</p>
+    {{- end }}{{ end }}
+  </a>
+  {{- end }}
+
+  {{- with $m.research }}{{ $l := site.Language.Lang }}{{ $u := .url }}
+  <section class="tile tile-research s-research" style="--i: 2">
     <svg class="collision" viewBox="0 0 200 200" aria-hidden="true">
       {{- range $j, $a := slice 8 40 75 118 150 197 236 262 300 338 }}
       {{- $len := add 50 (mod (mul $j 37) 45) }}
@@ -24,11 +34,29 @@
       {{- end }}
       <circle cx="100" cy="100" r="4"/>
     </svg>
-    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-research">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
-    <ul class="tile-list">
-      {{- with .page }}{{ range first 4 .Sections }}{{ if or .Pages .Content .Params.publications }}<li>{{ .Title }}{{ with .Summary | plainify | htmlUnescape }}<span>{{ truncate 150 . }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
-    </ul>
-  </a>
+    <div class="tile-top"><a class="tile-label" href="{{ .url }}" style="view-transition-name: t-research">{{ .name }}</a><a class="tile-arrow" href="{{ .url }}" aria-label="{{ .name }}">↗</a></div>
+    <div class="research-grid">
+      {{- with site.Data.cv.what_i_do }}
+      <div class="research-what">
+        {{- range . }}
+        <a class="research-item" href="{{ $u }}">
+          {{ partial "cv-icon.html" .icon }}
+          <h3>{{ index .title $l }}</h3>
+          <p>{{ index .text $l }}</p>
+        </a>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- with site.Data.cv.highlights }}
+      <ol class="research-highlights">
+        {{- range first 4 (sort . "year" "desc") }}
+        <li><a href="{{ relLangURL (.link | default "/science/") }}"><span class="cv-year">{{ .year }}</span> {{ index .title $l }}</a></li>
+        {{- end }}
+      </ol>
+      {{- end }}
+    </div>
+    <a class="research-more" href="{{ .url }}">{{ T "explore" }} {{ lower .name }} <span aria-hidden="true">→</span></a>
+  </section>
   {{- end }}
 
   {{- with $m.running }}{{ $r := site.Data.running }}
@@ -54,30 +82,23 @@
   <a class="tile tile-projects tile-image s-projects" href="{{ .url }}" style="--i: 3">
     {{- with .page }}{{ with index .Pages.ByWeight 0 }}{{ with .Resources.GetMatch "screenshot-1.*" }}{{ $bg := .Fill "900x600 Center webp" }}<img class="tile-bg" src="{{ $bg.RelPermalink }}" alt="" loading="lazy">{{ end }}{{ end }}{{ end }}
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-projects">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
-    <div class="app-icons">
+    <ul class="app-list">
       {{- with .page }}{{ range first 4 .Pages.ByWeight }}
-      {{- with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "200x200 webp" }}<img src="{{ $ic.RelPermalink }}" width="84" height="84" alt="">{{ end }}
+      <li>
+        {{- with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "200x200 webp" }}<img src="{{ $ic.RelPermalink }}" width="72" height="72" alt="">{{ end }}
+        <span><b>{{ .Title }}</b>{{ with .Params.summary }}<span>{{ . }}</span>{{ end }}</span>
+      </li>
       {{- end }}{{ end }}
-    </div>
-    <p class="tile-note">{{ with .page }}{{ range $j, $p := first 4 .Pages.ByWeight }}{{ if $j }} · {{ end }}{{ $p.Title }}{{ end }}{{ end }}</p>
+    </ul>
   </a>
   {{- end }}
+
 
   {{- with $m.music }}
   <a class="tile tile-music s-music" href="{{ .url }}" style="--i: 4">
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-music">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
     <div class="eq" aria-hidden="true">{{ range $j, $h := slice 0.45 0.8 0.6 0.95 0.5 0.7 0.35 0.85 0.55 0.75 0.4 0.9 0.6 0.5 0.8 0.3 }}<span style="--b: {{ $j }}; --h: {{ $h }}"></span>{{ end }}</div>
     <p class="tile-note">{{ T "listen" }} · SoundCloud</p>
-  </a>
-  {{- end }}
-
-  {{- with $m.talks }}
-  <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 5">
-    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
-    <p class="big-count">{{ len site.Data.talks }}</p>
-    {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
-    <p class="tile-note"><strong>{{ .title }}</strong><br>{{ .event }}{{ with .date }}, {{ time.Format "2006" . }}{{ end }}</p>
-    {{- end }}{{ end }}
   </a>
   {{- end }}
 

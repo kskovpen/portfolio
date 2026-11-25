@@ -251,6 +251,40 @@ a.tile:hover .tile-arrow { transform: translate(4px, -4px); color: var(--hue); }
 .collision circle { fill: var(--hue); }
 a.tile-research:hover .collision { transform: rotate(18deg) scale(1.08); }
 a.tile-research:hover .collision path { opacity: 0.8; animation: draw 0.9s var(--ease) both; animation-delay: calc(var(--d) * 45ms); }
+// home: research gets a full-width tile
+.tile-research { grid-column: span 4; }
+.tile-research .collision { right: -4%; top: -30%; width: 30%; }
+.tile-research .collision path { opacity: 0.18; }
+.tile-research:hover .collision { transform: rotate(18deg) scale(1.08); }
+.tile-research:hover .collision path { opacity: 0.8; animation: draw 0.9s var(--ease) both; animation-delay: calc(var(--d) * 45ms); }
+.tile-research .tile-label:hover { text-decoration: none; }
+.research-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1.2fr); gap: clamp(20px, 3vw, 48px); margin-top: auto; position: relative; }
+.research-what { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); }
+.research-item { display: block; color: var(--ink-2); }
+.research-item:hover { text-decoration: none; }
+.research-item .cv-icon { width: 40px; height: 40px; fill: none; stroke: var(--hue); stroke-width: 1.6; transition: transform 0.5s var(--ease); }
+.research-item:hover .cv-icon { transform: rotate(-12deg) scale(1.1); }
+.research-item h3 { margin: 10px 0 6px; font-size: 1.2rem; font-weight: 750; letter-spacing: -0.02em; color: var(--ink); }
+.research-item:hover h3 { color: var(--hue); }
+.research-item p { margin: 0; font-size: 15px; line-height: 1.5; }
+.research-highlights { list-style: none; margin: 0; padding: 0; align-self: end; }
+.research-highlights a { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink); font-weight: 600; line-height: 1.35;
+  transition: padding 0.35s var(--ease), color 0.25s; }
+.research-highlights a:hover { text-decoration: none; color: var(--hue); padding-left: 6px; }
+.research-highlights .cv-year { flex: none; width: 3em; color: var(--hue); font-variant-numeric: tabular-nums; }
+.research-more { align-self: flex-start; font-weight: 650; color: var(--hue); position: relative; }
+
+// home: projects as a wide tile with each app and what it is
+.tile-projects { grid-column: span 2; }
+.app-list { list-style: none; margin: auto 0 0; padding: 0; display: grid; gap: 14px; position: relative; }
+.app-list li { display: flex; gap: 16px; align-items: center; }
+.app-list img { width: 72px; height: 72px; border-radius: 22%; flex: none; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.6); transition: transform 0.5s var(--ease); }
+a.tile-projects:hover .app-list li:nth-child(odd) img { transform: rotate(-6deg) scale(1.05); }
+a.tile-projects:hover .app-list li:nth-child(even) img { transform: rotate(6deg) scale(1.05); }
+.app-list b { display: block; font-size: 1.25rem; color: #fff; letter-spacing: -0.02em; }
+.app-list b + span { display: block; font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, 0.85); max-width: 46ch; }
+.tile-projects::before { background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.85)) !important; }
+
 @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 
 // running: numbers + sparkline of the last 12 months
@@ -315,12 +349,14 @@ a.tile-blog:hover .tile-posts li:nth-child(3) { transition-delay: 100ms; }
 
 @media (max-width: 900px) {
   .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(calc(50vw - 2px), auto); }
-  .tile-hero, .tile-running, .tile-blog, .tile-travel { grid-column: span 2; }
+  .tile-hero, .tile-running, .tile-blog, .tile-travel, .tile-research, .tile-projects { grid-column: span 2; }
   .tile-hero, .tile-blog { grid-row: auto; }
+  .research-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .tile, .tile-hero, .tile-running, .tile-blog, .tile-travel { grid-column: auto; }
+  .tile, .tile-hero, .tile-running, .tile-blog, .tile-travel, .tile-research, .tile-projects { grid-column: auto; }
+  .research-what { grid-template-columns: 1fr; }
   .tile-photo { aspect-ratio: 1; }
   .tile-research, .tile-music, .tile-talks, .tile-projects, .tile-running { min-height: 80vw; }
 }
@@ -357,7 +393,7 @@ a.tile-blog:hover .tile-posts li:nth-child(3) { transition-delay: 100ms; }
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); }
 
 // projects / music / travel cards
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
 .project-card { @extend %card; display: flex; flex-direction: column; overflow: hidden; color: var(--ink-2); font-weight: 400; }
 .project-card:hover { @extend %card-hover; }
 .project-card[hidden] { display: none; }
@@ -724,7 +760,10 @@ footer {
 .is-page main h2, .s-about main h2 { margin: 52px 0 18px; font-size: clamp(1.35rem, 2vw, 1.7rem); letter-spacing: -0.02em; }
 .cv-numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line);
   border: 1px solid var(--line); margin: 36px 0 8px; }
-.cv-numbers p { margin: 0; background: var(--bg); padding: 18px 20px; }
+.cv-numbers p, .cv-numbers a { margin: 0; background: var(--bg); padding: 18px 20px; text-decoration: none; }
+.cv-numbers a { transition: background .2s; }
+.cv-numbers a:hover { background: var(--bg-2, var(--line)); }
+.cv-numbers a span::after { content: " →"; }
 .cv-numbers b { display: block; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--ink);
   font-variant-numeric: tabular-nums; }
 .cv-numbers span { display: block; margin-top: 6px; font-size: 14px; color: var(--ink-3); }
@@ -749,6 +788,7 @@ footer {
 .cv-list .cv-year { display: inline-block; min-width: 3.2em; }
 .cv-langs { margin-top: 16px; color: var(--ink-2); }
 .cv-prose { max-width: 70ch; color: var(--ink-2); }
+.cv-note { margin: 8px 0 24px; font-size: 1.05rem; }
 @media (max-width: 700px) {
   .cv-cols { grid-template-columns: 1fr; }
   .cv-highlights li, .cv-timeline li { grid-template-columns: 1fr; }

@@ -1,6 +1,8 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
+  {{ partial "cv.html" "teaching" }}
+  <h2>{{ T "conf_talks" }}</h2>
   {{ partial "glossary.html" . }}
   <ul class="talk-list">
     {{- range sort site.Data.talks "date" "desc" }}

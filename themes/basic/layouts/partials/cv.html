@@ -1,0 +1,94 @@
+{{- /* One block of the CV (data/cv.yaml), placed on the page where it belongs:
+       {{ partial "cv.html" "career" }}. Blocks: numbers, what_i_do, highlights, career,
+       recognition_education, teaching, outreach, publications. */ -}}
+{{- $part := . }}
+{{- $l := site.Language.Lang }}
+{{- with site.Data.cv }}{{ $cv := . }}
+
+{{- if eq $part "numbers" }}{{ with .numbers }}
+<div class="cv-numbers">
+  {{- range . }}
+  {{- $inner := printf "<b>%v</b><span>%s</span>" (cond (isset . "since") (sub now.Year (.since | default 0)) .value) (index .label $l) }}
+  {{- with .link }}<a href="{{ relLangURL . }}">{{ $inner | safeHTML }}</a>{{ else }}<p>{{ $inner | safeHTML }}</p>{{ end }}
+  {{- end }}
+</div>
+{{- end }}
+
+{{- else if eq $part "what_i_do" }}{{ with .what_i_do }}
+<h2>{{ T "cv_what_i_do" }}</h2>
+<div class="cv-cards">
+  {{- range $i, $c := . }}
+  <section class="cv-card" style="--i: {{ $i }}">
+    {{ partial "cv-icon.html" $c.icon }}
+    <h3>{{ index $c.title $l }}</h3>
+    <p>{{ index $c.text $l }}</p>
+  </section>
+  {{- end }}
+</div>
+{{- end }}
+
+{{- else if eq $part "highlights" }}{{ with .highlights }}
+<h2>{{ T "cv_highlights" }}</h2>
+<ol class="cv-highlights">
+  {{- range sort . "year" "desc" }}
+  <li>
+    <span class="cv-year">{{ .year }}</span>
+    <div>
+      <h3>{{ with .link }}<a href="{{ relLangURL . }}">{{ end }}{{ index .title $l }}{{ with .link }}</a>{{ end }}</h3>
+      <p>{{ index .text $l }}</p>
+    </div>
+  </li>
+  {{- end }}
+</ol>
+{{- end }}
+
+{{- else if eq $part "career" }}{{ with .career }}
+<h2>{{ T "cv_career" }}</h2>
+<ol class="cv-timeline">
+  {{- range . }}
+  <li>
+    <span class="cv-year">{{ .years }}</span>
+    <div>
+      <h3>{{ .place }} <span class="meta">· {{ index .city $l }}</span></h3>
+      <p>{{ index .role $l }}</p>
+    </div>
+  </li>
+  {{- end }}
+</ol>
+{{- end }}
+
+{{- else if eq $part "recognition_education" }}
+<div class="cv-cols">
+  {{- with .recognition }}
+  <section>
+    <h2>{{ T "cv_recognition" }}</h2>
+    <ul class="cv-list">{{ range . }}<li>{{ index . $l }}</li>{{ end }}</ul>
+  </section>
+  {{- end }}
+  {{- with .education }}
+  <section>
+    <h2>{{ T "cv_education" }}</h2>
+    <ul class="cv-list">{{ range . }}<li><span class="cv-year">{{ .year }}</span> {{ index . $l }}</li>{{ end }}</ul>
+  </section>
+  {{- end }}
+</div>
+
+{{- else if eq $part "teaching" }}{{ with .teaching }}
+<h2>{{ T "cv_teaching" }}</h2>
+<p class="cv-prose">{{ index . $l | markdownify }}</p>
+{{- end }}
+
+{{- else if eq $part "outreach" }}{{ with .outreach }}
+<p class="cv-prose cv-note">{{ index . $l | markdownify }}</p>
+{{- end }}
+
+{{- else if eq $part "publications" }}{{ with .publications_note }}
+<h2>{{ T "cv_publications" }}</h2>
+<p class="cv-prose">{{ index . $l | markdownify }}</p>
+{{- end }}
+
+{{- else if eq $part "languages" }}{{ with .languages }}
+<p class="cv-langs"><b>{{ T "cv_languages" }}:</b> {{ index . $l }}</p>
+{{- end }}
+{{- end }}
+{{- end }}
