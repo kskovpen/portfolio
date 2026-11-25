@@ -1,0 +1,33 @@
+# Other research topics shown next to each experiment's drawing (Research page and experiment pages).
+# f: short formula (HTML allowed: <span class="bar">t</span> draws an antiparticle bar)
+cms:
+  - f: 't<span class="bar">t</span>H'
+    link: /science/cms/top-quark/
+    label: {en: "Higgs boson with top quarks", fr: "Boson de Higgs avec des quarks top", nl: "Higgsboson met top-quarks", ru: "Бозон Хиггса с топ-кварками"}
+  - f: 't → qH'
+    link: /science/cms/top-quark/
+    label: {en: "Decays the theory almost forbids", fr: "Des désintégrations presque interdites", nl: "Bijna verboden vervallen", ru: "Почти запрещённые распады"}
+  - f: 'tZq, t<span class="bar">t</span>γ'
+    link: /science/cms/top-quark/
+    label: {en: "Rare top quark processes", fr: "Processus rares du quark top", nl: "Zeldzame top-quarkprocessen", ru: "Редкие процессы с топ-кварком"}
+  - f: 'N → ℓW'
+    label: {en: "Heavy neutral leptons", fr: "Leptons neutres lourds", nl: "Zware neutrale leptonen", ru: "Тяжёлые нейтральные лептоны"}
+  - f: 'b-tag'
+    label: {en: "Recognising bottom quarks", fr: "Reconnaître les quarks bottom", nl: "Bottom-quarks herkennen", ru: "Распознавание b-кварков"}
+atlas:
+  - f: 'LAr'
+    label: {en: "Calorimeter ready for the first collisions", fr: "Calorimètre prêt pour les premières collisions", nl: "Calorimeter klaar voor de eerste botsingen", ru: "Калориметр к первым столкновениям"}
+  - f: 'b-jets'
+    label: {en: "Bottom quarks at high energy", fr: "Quarks bottom à haute énergie", nl: "Bottom-quarks bij hoge energie", ru: "b-кварки при высоких энергиях"}
+ship:
+  - f: 'ν + N → ℓ + X'
+    label: {en: "Neutrino interactions", fr: "Interactions de neutrinos", nl: "Neutrino-interacties", ru: "Взаимодействия нейтрино"}
+  - f: 'E, θ'
+    label: {en: "A calorimeter that measures angles", fr: "Un calorimètre qui mesure les angles", nl: "Een calorimeter die hoeken meet", ru: "Калориметр, измеряющий углы"}
+  - f: 'veto'
+    label: {en: "Tagging background before it enters", fr: "Repérer le bruit de fond à l'entrée", nl: "Achtergrond markeren bij de ingang", ru: "Отсев фона на входе"}
+snd:
+  - f: 'G<sub>E</sub>, G<sub>M</sub>'
+    label: {en: "Charge and magnetism inside the neutron", fr: "Charge et magnétisme dans le neutron", nl: "Lading en magnetisme in het neutron", ru: "Заряд и магнетизм внутри нейтрона"}
+  - f: 'Δt'
+    label: {en: "Timing particles in the crystals", fr: "Chronométrer les particules dans les cristaux", nl: "Deeltjes timen in de kristallen", ru: "Время сигнала в кристаллах"}

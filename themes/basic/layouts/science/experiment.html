@@ -3,7 +3,17 @@
   {{ partial "page-head.html" . }}
   <p class="exp-meta"><b>{{ .Params.full_name }}</b> · {{ .Params.place }} · {{ .Params.years | replaceRE "–$" "" }}{{ if hasSuffix .Params.years "–" }}–{{ T "exp_now" | lower }}{{ end }}</p>
   <figure class="exp-figure">
-    {{ partial "experiment-drawing.html" .Params.drawing }}
+    <div class="exp-stage">
+      {{ partial "experiment-drawing.html" .Params.drawing }}
+      {{- with index site.Data.experiment_topics .Params.drawing }}{{ $l := site.Language.Lang }}
+      <ul class="exp-topics" aria-label="{{ T "exp_also" }}">
+        <li class="exp-topics-head">{{ T "exp_also" }}</li>
+        {{- range $i, $t := . }}
+        <li style="--i: {{ $i }}">{{ with $t.link }}<a href="{{ relLangURL . }}">{{ end }}<span class="exp-f">{{ $t.f | safeHTML }}</span><span class="exp-t">{{ index $t.label $l }}</span>{{ with $t.link }}</a>{{ end }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
     <figcaption>{{ with .Params.hint }}<span>{{ . | safeHTML }}</span>{{ end }}<span class="meta">{{ T "drawing_note" }}</span></figcaption>
   </figure>
   <div class="exp-body">{{ .Content }}</div>

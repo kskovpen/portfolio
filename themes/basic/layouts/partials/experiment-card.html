@@ -6,5 +6,8 @@
     <h3>{{ .Title }}</h3>
     <p class="meta">{{ .Params.full_name }} · {{ .Params.place }}</p>
     {{ with .Summary | plainify | htmlUnescape }}<p class="exp-card-text">{{ truncate 190 . }}</p>{{ end }}
+    {{- with index site.Data.experiment_topics .Params.drawing }}
+    <p class="exp-card-tags">{{ range . }}<span>{{ .f | safeHTML }}</span>{{ end }}</p>
+    {{- end }}
   </div>
 </a>

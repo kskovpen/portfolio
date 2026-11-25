@@ -976,3 +976,22 @@ footer {
 .exp-card-art .d-formula-small { font-size: 19px; }
 .exp-card-art .d-tag { font-size: 17px; }
 .drawing .d-bar { text-decoration: overline; }
+
+// topics overlaid next to each experiment drawing
+.exp-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); gap: 20px; align-items: center; }
+.exp-figure .exp-stage .drawing { max-width: 640px; }
+.exp-topics { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.exp-topics-head { font-size: 12px; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin-bottom: 2px; }
+.exp-topics li:not(.exp-topics-head) { animation: fade 0.8s var(--ease) both; animation-delay: calc(400ms + var(--i) * 90ms); }
+.exp-topics li > a, .exp-topics li > .exp-f { text-decoration: none; }
+.exp-topics li > a, .exp-topics li:not(.exp-topics-head):not(:has(a)) { display: grid; grid-template-columns: auto; gap: 2px; padding: 9px 12px;
+  border: 1px solid var(--line); border-left: 3px solid var(--hue); border-radius: 6px; background: color-mix(in srgb, var(--hue) 4%, var(--bg)); color: var(--ink-2);
+  transition: transform 0.35s var(--ease), border-color 0.3s; }
+.exp-topics li > a:hover { transform: translateX(4px); border-color: var(--hue); }
+.exp-f { font-weight: 700; color: var(--ink); font-size: 1.05rem; letter-spacing: 0.01em; }
+.exp-t { font-size: 13.5px; line-height: 1.35; }
+.exp-topics li > a .exp-t::after { content: " →"; color: var(--hue); }
+.bar { text-decoration: overline; }
+.exp-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
+.exp-card-tags > span { padding: 2px 9px; border: 1px solid var(--line); border-radius: 99px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+@media (max-width: 800px) { .exp-stage { grid-template-columns: 1fr; } }
