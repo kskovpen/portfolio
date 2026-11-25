@@ -7,6 +7,7 @@ set -euo pipefail
 [ -f .env.strava ] && source .env.strava
 python3 scripts/fetch_utmb.py 4820430.kirill.skovpen data/utmb.json
 python3 scripts/fetch_strava.py data/running.json
+python3 scripts/fetch_deezer.py 4092664002 data/deezer.json || true
 PREVIEW_URL=""
 [ -n "${CF_PAGES_BRANCH:-}" ] && [ "$CF_PAGES_BRANCH" != "main" ] && PREVIEW_URL="$CF_PAGES_URL/"
 hugo --cleanDestinationDir --minify ${PREVIEW_URL:+--baseURL "$PREVIEW_URL"}

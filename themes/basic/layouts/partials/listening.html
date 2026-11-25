@@ -1,0 +1,65 @@
+{{- /* Music page: listening taste from the public Deezer profile (data/deezer.json, fetched at build time
+       by scripts/fetch_deezer.py). Images are served by Deezer; every item links back to Deezer. */ -}}
+{{- with site.Data.deezer }}{{ $d := . }}
+<section class="listening">
+  <div class="band-head">
+    <h2>{{ T "listen_title" }}</h2>
+    <p class="meta">{{ T "listen_counts" $d.counts }}</p>
+  </div>
+
+  {{- with $d.genres }}
+  <div class="genre-mix">
+    <p class="tile-label">{{ T "genre_mix" }}</p>
+    <div class="genre-bar" role="img" aria-label="{{ range $i, $g := . }}{{ if $i }}, {{ end }}{{ $g.name }} {{ $g.share }}%{{ end }}">
+      {{- range $i, $g := . }}{{ if ge $g.share 3 }}<span style="flex: {{ $g.share }}; --o: {{ sub 100 (mul $i 17) }}%"><b>{{ $g.name }}</b> {{ $g.share }}%</span>{{ end }}{{ end }}
+    </div>
+  </div>
+  {{- end }}
+
+  {{- with $d.top_artists }}
+  <h3>{{ T "on_repeat" }}</h3>
+  <div class="artist-grid">
+    {{- range $i, $a := first 10 . }}
+    <a class="artist" href="{{ $a.link }}" style="--i: {{ $i }}">
+      <img src="{{ $a.picture }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
+      <span class="artist-rank">{{ add $i 1 }}</span>
+      <span class="artist-name">{{ $a.name }}</span>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  <div class="listen-cols">
+    {{- with $d.top_tracks }}
+    <div>
+      <h3>{{ T "most_played" }}</h3>
+      <ol class="track-list">
+        {{- range first 10 . }}
+        <li><a href="{{ .link }}">
+          <img src="{{ .cover }}" alt="" width="56" height="56" loading="lazy" referrerpolicy="no-referrer">
+          <span class="track-title">{{ .title }}</span>
+          <span class="track-artist">{{ .artist }}</span>
+        </a></li>
+        {{- end }}
+      </ol>
+    </div>
+    {{- end }}
+    {{- with $d.recent_albums }}
+    <div>
+      <h3>{{ T "recently_saved" }}</h3>
+      <div class="album-grid">
+        {{- range first 6 . }}
+        <a class="album" href="{{ .link }}">
+          <img src="{{ .cover }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
+          <span class="album-title">{{ .title }}</span>
+          <span class="album-artist">{{ .artist }}</span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+  </div>
+
+  <p class="meta listen-credit"><a href="{{ $d.profile_url }}">{{ T "follow_deezer" }}</a> · {{ T "deezer_credit" }} <a href="https://www.deezer.com">Deezer</a> · {{ T "updated" (time.Format ":date_long" $d.updated) }}</p>
+</section>
+{{- end }}

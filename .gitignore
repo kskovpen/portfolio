@@ -17,6 +17,7 @@ node_modules/
 /data/running.json
 __pycache__/
 /data/utmb.json
+/data/deezer.json
 *.tmp~
 
 # Personal photos: never committed (served from Cloudflare R2 later)
