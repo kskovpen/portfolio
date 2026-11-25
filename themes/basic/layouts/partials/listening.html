@@ -47,7 +47,7 @@
     {{- with $d.recent_albums }}
     <div>
       <h3>{{ T "recently_saved" }}</h3>
-      <div class="album-grid">
+      <div class="deezer-albums">
         {{- range first 6 . }}
         <a class="album" href="{{ .link }}">
           <img src="{{ .cover }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
