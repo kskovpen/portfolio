@@ -300,8 +300,7 @@
    "year": 2016,
    "duration": 681,
    "plays": 221,
-   "remixes": false,
-   "bandcamp": null
+   "remixes": false
   },
   {
    "kind": "single",
@@ -410,8 +409,7 @@
    "year": 2015,
    "duration": 298,
    "plays": 142,
-   "remixes": true,
-   "bandcamp": null
+   "remixes": true
   },
   {
    "kind": "ep",
@@ -805,8 +803,7 @@
    "year": 2013,
    "duration": 1371,
    "plays": 555,
-   "remixes": true,
-   "bandcamp": "http://kirillskovpen.bandcamp.com"
+   "remixes": true
   }
  ]
 }

@@ -90,7 +90,7 @@ def track_info(sound, me):
         "date": sound.get("release_date") or sound.get("display_date") or sound.get("created_at"),
         "artwork": big_art(sound.get("artwork_url")),
         "wave": waveform(sound["waveform_url"]) if sound.get("waveform_url") else [],
-        "extra": sound.get("description") or "",
+        "extra": "",
     }
 
 
@@ -140,10 +140,8 @@ def main(user, out):
         r["duration"] = sum(t["duration"] for t in r["tracks"])
         r["plays"] = sum(t["plays"] for t in r["tracks"])
         r["remixes"] = all(t["note"] == "remix" or (t["note"] or "").startswith("cover:") for t in r["tracks"])
-        shop = set()
         for t in r["tracks"]:
-            shop.update(re.findall(r"https?://[\w.-]+\.bandcamp\.com[^\s]*", t.pop("extra")))
-        r["bandcamp"] = sorted(shop)[0] if shop else None
+            t.pop("extra")
     releases.sort(key=lambda r: r["date"], reverse=True)
 
     data = {
