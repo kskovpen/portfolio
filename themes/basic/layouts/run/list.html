@@ -12,7 +12,7 @@
   {{- with $r }}
     {{- range site.Data.races }}{{ $e := . }}
       {{- range where $r.runs "id" .strava }}
-        {{- $races = $races | append (dict "date" .date "name" $e.event "km" (float ($e.km | default .distance_km)) "elev" .elevation_m "time" .time "seconds" .seconds "rank" nil "total" nil "type" ($e.type | default "road") "strava" .url "sid" .id "utmb" "") }}
+        {{- $races = $races | append (dict "date" .date "name" $e.event "km" (float ($e.km | default .distance_km)) "elev" .elevation_m "time" .time "seconds" .seconds "rank" $e.rank "total" $e.total "type" ($e.type | default "road") "strava" .url "sid" .id "utmb" "") }}
       {{- end }}
     {{- end }}
   {{- end }}

@@ -10,7 +10,7 @@
   <p class="tile-label">{{ time.Format "Jan 2006" $r.date }}</p>
   <div class="race-foot">
     <h3 class="race-title">{{ $r.name }}</h3>
-    <p class="race-numbers"><span class="race-clock">{{ $r.time }}</span>{{ with $r.rank }} <span class="race-rank">{{ . }}/{{ $r.total }}</span>{{ end }}</p>
+    <p class="race-numbers"><span class="race-clock">{{ $r.time }}</span>{{ with $r.rank }} <span class="race-rank">{{ lang.FormatNumber 0 . }}/{{ lang.FormatNumber 0 $r.total }}</span>{{ end }}</p>
     <p class="race-meta">
       {{- if lt $r.km 30.0 }}{{ lang.FormatNumber 1 $r.km | replaceRE `\.0$` "" }}{{ else }}{{ math.Round $r.km }}{{ end }} km{{ with $r.elev }} · D+ {{ . }} m{{ end }}
       {{- with and $ev $ev.website }} · <a href="{{ . }}">{{ T "website" }}</a>{{ end }}
