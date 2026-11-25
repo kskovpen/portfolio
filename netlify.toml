@@ -10,3 +10,17 @@
   for = "/pagefind/*"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+# Placeholder on the custom domain until the site is announced;
+# the full site stays on kskovpen.netlify.app.
+[[redirects]]
+  from = "https://www.kirillskovpen.com/*"
+  to = "/coming-soon/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://kirillskovpen.com/*"
+  to = "https://www.kirillskovpen.com/"
+  status = 301
+  force = true
