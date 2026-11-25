@@ -29,7 +29,7 @@
   </div>
   {{- end }}
 
-  <div class="listen-cols">
+  <div class="listen-tracks">
     {{- with $d.top_tracks }}
     <div>
       <h3>{{ T "most_played" }}</h3>
@@ -42,20 +42,6 @@
         </a></li>
         {{- end }}
       </ol>
-    </div>
-    {{- end }}
-    {{- with $d.recent_albums }}
-    <div>
-      <h3>{{ T "recently_saved" }}</h3>
-      <div class="deezer-albums">
-        {{- range first 6 . }}
-        <a class="album" href="{{ .link }}">
-          <img src="{{ .cover }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
-          <span class="album-title">{{ .title }}</span>
-          <span class="album-artist">{{ .artist }}</span>
-        </a>
-        {{- end }}
-      </div>
     </div>
     {{- end }}
   </div>

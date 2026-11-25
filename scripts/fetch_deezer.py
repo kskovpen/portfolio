@@ -46,12 +46,20 @@ def main():
     user, out = sys.argv[1], sys.argv[2]
     try:
         profile = get(f"/user/{user}")
-        top_artists = [artist(a) for a in get(f"/user/{user}/charts/artists?limit=20")["data"]]
+        # Most played tracks (Deezer's own ranking, best first). The artist list is derived from the
+        # same 100 tracks, weighted by position, so "On repeat" always agrees with "Most played"
+        # (Deezer's separate artist chart is computed differently and often disagrees).
+        chart = get(f"/user/{user}/charts/tracks?limit=100")["data"]
         top_tracks = [{
             "id": t["id"], "title": t["title"], "artist": t["artist"]["name"],
             "album": t["album"]["title"], "cover": t["album"].get("cover_medium") or "",
             "link": f"https://www.deezer.com/track/{t['id']}", "duration": t.get("duration", 0),
-        } for t in get(f"/user/{user}/charts/tracks?limit=20")["data"]]
+        } for t in chart[:20]]
+        score, info = Counter(), {}
+        for i, t in enumerate(chart):
+            score[t["artist"]["id"]] += len(chart) - i
+            info.setdefault(t["artist"]["id"], t["artist"])
+        top_artists = [artist(info[i]) for i, _ in score.most_common(20)]
         top_albums_raw = get(f"/user/{user}/charts/albums?limit=20")["data"]
         fav_albums_raw = sorted(get(f"/user/{user}/albums?limit=200")["data"],
                                 key=lambda a: a.get("time_add", 0), reverse=True)
@@ -85,7 +93,6 @@ def main():
         "top_artists": top_artists,
         "top_tracks": top_tracks,
         "top_albums": [album(a) for a in top_albums_raw],
-        "recent_albums": [album(a) for a in fav_albums_raw[:12]],
         "genres": genre_mix,
     }
     with open(out, "w", encoding="utf-8") as f:
