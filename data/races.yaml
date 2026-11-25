@@ -80,8 +80,11 @@
 
 # Trail races not on UTMB
 - strava: 8110842644    # 2022-11-13
-  event: "Naturarun La Hulpe"
+  event: "NaturaRun La Hulpe"
+  km: 21
   type: trail
+  rank: 111
+  total: 241
 
 # 10 km and shorter
 - strava: 20332355320   # 2025-04-13
