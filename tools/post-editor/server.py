@@ -4,7 +4,7 @@
 Start it by double-clicking "Write a post.command" in the site folder (or run
 `python3 tools/post-editor/server.py`). It opens a page in the browser where you
 write a post, drop photos and pick rubrics. "Save" writes the files on this Mac,
-"Publish" commits the post and pushes it to GitHub, after which Netlify rebuilds
+"Publish" commits the post and pushes it to GitHub, after which Cloudflare Pages rebuilds
 the site. A live preview runs at http://localhost:1313 while the editor is open.
 
 Only listens on 127.0.0.1; every API call needs the per-session token embedded in

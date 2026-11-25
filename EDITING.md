@@ -16,7 +16,7 @@ http://localhost:1313 at the same time.
 - **Language**: EN / FR / NL / RU switch to the other versions of the same post. Write only the
   languages you want; visitors of the others see your version with a language badge.
 - **Save** keeps it on this Mac (Draft = only visible in the preview). **Publish online**
-  (click twice) commits the post and pushes it to GitHub; Netlify updates the site in about
+  (click twice) commits the post and pushes it to GitHub; Cloudflare updates the site in about
   a minute. Close the Terminal window when you are done.
 
 No Claude needed for any of this. (The older `/admin` editor still works for projects, trips and talks.)
@@ -69,5 +69,5 @@ git add -A
 git commit -m "Short description of the change"
 git push
 ```
-Netlify rebuilds and publishes in about a minute: https://kirillskovpen.pages.dev
+Cloudflare Pages rebuilds and publishes in about a minute: https://kirillskovpen.pages.dev
 Batch your changes and push when a piece of work is finished.

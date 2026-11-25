@@ -4,15 +4,15 @@
 Run it in your own terminal from the site folder:  python3 scripts/strava_auth.py
 It asks for the API app's Client ID and Client Secret, opens Strava's approval page,
 catches the redirect on http://localhost:8723, and stores the three values:
-  - as Netlify environment variables (via the netlify CLI), and
   - in .env.strava (git-ignored, readable only by you) for local builds.
+Copy the same three values into Cloudflare Pages (project kirillskovpen > Settings >
+Variables and Secrets) so the online build can fetch Strava data too.
 Requested scopes: read, activity:read (public and followers activities; the site shows only public ones).
 """
 import getpass
 import http.server
 import json
 import os
-import subprocess
 import sys
 import urllib.parse
 import urllib.request
@@ -65,9 +65,8 @@ def main():
         f.writelines(f"export {k}='{v}'\n" for k, v in values.items())
     print("Saved .env.strava (local builds).")
 
-    for k, v in values.items():
-        subprocess.run(["netlify", "env:set", k, v], check=True, stdout=subprocess.DEVNULL)
-    print("Saved STRAVA_* variables in Netlify. All set.")
+    print("Now copy the three values from .env.strava into Cloudflare Pages:")
+    print("  kirillskovpen > Settings > Variables and Secrets (type: Secret).")
 
 
 if __name__ == "__main__":
