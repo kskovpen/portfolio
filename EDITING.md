@@ -2,24 +2,28 @@
 
 ## Writing a blog post (the simple way)
 
-Double-click **`Write a post.command`** in the site folder (Finder). A Terminal window opens
-(keep it open) and the editor appears in your browser; a live preview of the site runs at
-http://localhost:1313 at the same time.
+Double-click **Write a Post** on the Desktop (the app lives in ~/Applications; its source is the
+private repository github.com/kskovpen/post-editor). It opens your posts in its own window, with a
+live preview of the site.
 
-- **Title**, **date**, then the text. Formatting buttons are above the text box.
-- **Photos**: drag them (or paste, or "Add photos…") into the text where they should appear.
-  iPhone HEIC is converted, big photos are shrunk to 2400 px and GPS data is removed.
+- **Title**, **date**, then the text. Formatting buttons are above the text box; ⌘B / ⌘I / ⌘K work too.
+- **Photos**: drag them (or paste, or "Photos…") into the text where they should appear.
+  iPhone HEIC is converted, photos are shrunk and their location data removed.
   `![Caption](photo.jpg)` — what you type between the brackets becomes the caption.
+  Photos are **never stored on GitHub**: the originals stay in `photos/` on this Mac (git-ignored)
+  and web versions go to Cloudflare R2 (photos.kirillskovpen.com) when you publish.
 - **Also show on**: tick Running, Travel, Music, … and the post is listed under
   "From the blog" on those pages (in every language), and linked from the post itself.
-- **Tags**: optional keywords, comma-separated.
-- **Language**: EN / FR / NL / RU switch to the other versions of the same post. Write only the
-  languages you want; visitors of the others see your version with a language badge.
-- **Save** keeps it on this Mac (Draft = only visible in the preview). **Publish online**
-  (click twice) commits the post and pushes it to GitHub; Cloudflare updates the site in about
-  a minute. Close the Terminal window when you are done.
+- **Tags** and **Summary** are optional.
+- **Language**: EN / FR / NL / RU switch to the other versions of the same post.
+- Everything is **saved automatically** on this Mac. Drafts are only visible in the preview.
+- **Publish online** (⇧⌘P) sends exactly this post to GitHub; Cloudflare updates the site in about a
+  minute. Other unpublished changes on this Mac are not sent along.
+- **Delete…** moves a post to the Trash (and removes it from the website if it was online).
 
-No Claude needed for any of this. (The older `/admin` editor still works for projects, trips and talks.)
+First time only: **Settings** (⌘,) → connect the photo storage (the steps are listed there).
+
+No Claude needed for any of this.
 
 ## 1. Start the preview
 ```

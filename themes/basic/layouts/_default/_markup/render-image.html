@@ -1,6 +1,36 @@
-{{- /* Photos stored next to a post are resized for the web; a photo on its own line becomes a
-       figure, with the alt text as caption. */ -}}
+{{- /* Photos in posts. A photo on its own line becomes a figure, with the alt text as caption.
+       1. Photos written by the "Write a Post" app are listed in the post's photos.json and are never in git:
+          - local preview: read from the git-ignored photos/posts/<post>/ folder (mounted as assets/photos)
+          - online: served from Cloudflare R2 at params.photos_url/posts/<post>/<name>-<size>.webp
+       2. Older posts keep small images inside the page bundle; those are resized by Hugo. */ -}}
 {{- $u := urls.Parse .Destination }}
+{{- $alt := .PlainText }}
+{{- $done := false }}
+{{- if not $u.IsAbs }}
+  {{- with .Page.Resources.Get "photos.json" }}{{ $m := . | transform.Unmarshal }}
+    {{- with index $m $u.Path }}{{ $info := . }}
+      {{- $slug := $.Page.File.ContentBaseName }}{{ if eq $slug "index" }}{{ $slug = path.Base $.Page.File.Dir }}{{ end }}
+      {{- $stem := replaceRE `\.[A-Za-z0-9]+$` "" $u.Path }}
+      {{- $src := "" }}{{ $src2 := "" }}{{ $full := "" }}
+      {{- $local := resources.Get (printf "photos/posts/%s/%s-1600.webp" $slug $stem) }}
+      {{- if $local }}
+        {{- $src = $local.RelPermalink }}{{ $full = $src }}
+        {{- with resources.Get (printf "photos/posts/%s/%s-800.webp" $slug $stem) }}{{ $src2 = .RelPermalink }}{{ end }}
+      {{- else if site.Params.photos_url }}
+        {{- $base := printf "%s/posts/%s/%s" (strings.TrimSuffix "/" site.Params.photos_url) $slug $stem }}
+        {{- $src = printf "%s-1600.webp" $base }}{{ $src2 = printf "%s-800.webp" $base }}{{ $full = $src }}
+      {{- end }}
+      {{- with $src }}
+        {{- $img := printf `<img src="%s"%s width="%v" height="%v" alt="%s" loading="lazy" decoding="async">` . (cond (ne $src2 "") (printf ` srcset="%s 800w, %s 1600w" sizes="(max-width: 900px) 100vw, 860px"` $src2 .) "") $info.w $info.h ($alt | htmlEscape) }}
+        {{- if $.IsBlock }}
+<figure class="post-photo"><a href="{{ $full }}">{{ $img | safeHTML }}</a>{{ with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>
+        {{- else }}{{ $img | safeHTML }}{{ end }}
+        {{- $done = true }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- if not $done }}
 {{- $r := false }}
 {{- if not $u.IsAbs }}{{ $r = .Page.Resources.Get $u.Path }}{{ end }}
 {{- if and $r (in (slice "image/jpeg" "image/png" "image/webp") $r.MediaType.Type) }}
@@ -9,3 +39,4 @@
 <figure class="post-photo"><a href="{{ $r.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}" loading="lazy"></a>{{ with .PlainText }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>
   {{- else }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}" loading="lazy">{{ end }}
 {{- else }}<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ end -}}
+{{- end }}

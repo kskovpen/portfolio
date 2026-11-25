@@ -13,6 +13,8 @@ pygmentsUseClasses = true
   # SoundCloud profile shown as a player on the Music page
   soundcloud = 'https://soundcloud.com/kirillskovpenmusic'
   soundcloud_user_id = 1402515
+  # Personal photos are served from Cloudflare R2 (uploaded by the Write a Post app), never from git
+  photos_url = 'https://photos.kirillskovpen.com'
 
   [[params.profiles]]
     name = 'UGent EPPG'
