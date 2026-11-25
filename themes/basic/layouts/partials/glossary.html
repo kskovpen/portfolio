@@ -1,0 +1,11 @@
+{{- /* Plain-language glossary (data/glossary.yaml), collapsed by default */ -}}
+{{- with site.Data.glossary }}{{ $l := site.Language.Lang }}
+<details class="glossary">
+  <summary>{{ index .title $l }}</summary>
+  <dl>
+    {{- range .terms }}
+    <dt>{{ .term }}</dt><dd>{{ index .def $l }}</dd>
+    {{- end }}
+  </dl>
+</details>
+{{- end }}

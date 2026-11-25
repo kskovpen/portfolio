@@ -2,6 +2,7 @@
 <article class="project">
   {{ partial "page-head.html" . }}
   {{ .Content }}
+  {{ partial "glossary.html" . }}
   {{ partial "publications.html" (dict "keys" .Params.publications "heading" (T "publication")) }}
 </article>
 {{ end }}

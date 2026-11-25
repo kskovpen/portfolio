@@ -1,0 +1,73 @@
+# Plain-language glossary shown on Research, research topics and Talks.
+title:
+  en: New to particle physics? What these words mean
+  fr: Novice en physique des particules ? Ce que veulent dire ces mots
+  nl: Nieuw in de deeltjesfysica? Wat deze woorden betekenen
+  ru: Впервые слышите о физике частиц? Что значат эти слова
+terms:
+- term: LHC
+  def:
+    en: 'The Large Hadron Collider at CERN near Geneva: a 27 km underground ring where protons collide at almost the speed of light.'
+    fr: 'Le Grand collisionneur de hadrons du CERN, près de Genève : un anneau souterrain de 27 km où des protons se percutent presque à la vitesse de la lumière.'
+    nl: 'De Large Hadron Collider van CERN bij Genève: een ondergrondse ring van 27 km waarin protonen bijna met de lichtsnelheid botsen.'
+    ru: 'Большой адронный коллайдер в ЦЕРН под Женевой: подземное кольцо длиной 27 км, где протоны сталкиваются почти со скоростью света.'
+- term: CMS, ATLAS
+  def:
+    en: 'The two largest experiments at the LHC: detectors as big as a building, each run by several thousand scientists.'
+    fr: 'Les deux plus grandes expériences du LHC : des détecteurs grands comme un immeuble, chacun exploité par plusieurs milliers de scientifiques.'
+    nl: 'De twee grootste experimenten bij de LHC: detectoren zo groot als een gebouw, elk met enkele duizenden wetenschappers.'
+    ru: 'Два крупнейших эксперимента на БАК: детекторы размером с дом, в каждом работают несколько тысяч учёных.'
+- term: SHiP
+  def:
+    en: A new experiment being built at CERN to search for very light particles that interact so weakly they have escaped detection so far.
+    fr: Une nouvelle expérience en construction au CERN pour chercher des particules très légères qui interagissent si faiblement qu'elles ont échappé jusqu'ici à toute détection.
+    nl: Een nieuw experiment in aanbouw bij CERN dat zoekt naar zeer lichte deeltjes die zo zwak wisselwerken dat ze tot nu toe onopgemerkt bleven.
+    ru: Новый эксперимент, который строится в ЦЕРН для поиска очень лёгких частиц, взаимодействующих настолько слабо, что их до сих пор не удалось заметить.
+- term: Standard Model
+  def:
+    en: Our current theory of the smallest particles and the forces between them. It works extremely well, but cannot explain things like dark matter.
+    fr: Notre théorie actuelle des plus petites particules et des forces entre elles. Elle fonctionne remarquablement bien, mais n'explique pas par exemple la matière noire.
+    nl: Onze huidige theorie van de kleinste deeltjes en de krachten ertussen. Ze werkt uitstekend, maar verklaart bijvoorbeeld donkere materie niet.
+    ru: Нынешняя теория мельчайших частиц и сил между ними. Она работает исключительно хорошо, но не объясняет, например, тёмную материю.
+- term: top quark (t)
+  def:
+    en: The heaviest known elementary particle, about as heavy as a gold atom. It decays almost instantly, so we only see what it turns into.
+    fr: La particule élémentaire la plus lourde connue, à peu près aussi lourde qu'un atome d'or. Elle se désintègre presque instantanément ; on ne voit que ce en quoi elle se transforme.
+    nl: Het zwaarste bekende elementaire deeltje, ongeveer zo zwaar als een goudatoom. Het vervalt bijna meteen, dus we zien alleen waarin het verandert.
+    ru: Самая тяжёлая из известных элементарных частиц, весом примерно с атом золота. Она распадается почти мгновенно, поэтому мы видим лишь то, во что она превращается.
+- term: Higgs boson (H)
+  def:
+    en: The particle discovered at CERN in 2012, linked to how other particles get their mass.
+    fr: La particule découverte au CERN en 2012, liée à la façon dont les autres particules acquièrent leur masse.
+    nl: Het deeltje dat in 2012 bij CERN werd ontdekt en samenhangt met hoe andere deeltjes hun massa krijgen.
+    ru: Частица, открытая в ЦЕРН в 2012 году; благодаря ей другие частицы приобретают массу.
+- term: tt̄H
+  def:
+    en: A Higgs boson produced together with a top quark and its antimatter partner.
+    fr: Un boson de Higgs produit avec un quark top et son partenaire d'antimatière.
+    nl: Een higgsboson dat samen met een top-quark en zijn antimateriepartner ontstaat.
+    ru: Бозон Хиггса, рождённый вместе с топ-кварком и его античастицей.
+- term: FCNC
+  def:
+    en: '''Flavour-changing neutral currents'': a quark turning into a different, lighter quark without an electric charge being exchanged. The Standard Model almost forbids it, so seeing it would mean new physics.'
+    fr: '« Courants neutres changeant la saveur » : un quark qui se transforme en un autre quark plus léger sans échange de charge électrique. Le modèle standard l''interdit presque ; l''observer signifierait une nouvelle physique.'
+    nl: '''Smaakveranderende neutrale stromen'': een quark dat verandert in een ander, lichter quark zonder uitwisseling van elektrische lading. Het standaardmodel verbiedt dit bijna, dus het zien zou nieuwe natuurkunde betekenen.'
+    ru: '«Нейтральные токи с изменением аромата»: превращение кварка в другой, более лёгкий кварк без обмена электрическим зарядом. Стандартная модель почти запрещает такие процессы, так что их наблюдение означало бы новую физику.'
+- term: EFT
+  def:
+    en: '''Effective field theory'': a general way to describe the small effects that unknown, very heavy new particles would have on what we measure, without knowing exactly what they are.'
+    fr: '« Théorie effective des champs » : une façon générale de décrire les petits effets qu''auraient sur nos mesures de nouvelles particules très lourdes et inconnues, sans savoir exactement ce qu''elles sont.'
+    nl: '''Effectieve veldentheorie'': een algemene manier om de kleine effecten te beschrijven die onbekende, zeer zware nieuwe deeltjes op onze metingen zouden hebben, zonder precies te weten wat ze zijn.'
+    ru: '«Эффективная теория поля»: общий способ описать слабое влияние неизвестных очень тяжёлых частиц на то, что мы измеряем, не зная точно, что это за частицы.'
+- term: single top
+  def:
+    en: A top quark produced on its own rather than in a pair with its antiparticle; rarer, and sensitive to different effects.
+    fr: Un quark top produit seul plutôt qu'en paire avec son antiparticule ; plus rare, et sensible à d'autres effets.
+    nl: Een top-quark dat alleen ontstaat in plaats van in een paar met zijn antideeltje; zeldzamer en gevoelig voor andere effecten.
+    ru: Топ-кварк, рождённый в одиночку, а не в паре со своей античастицей; это реже и чувствительно к другим эффектам.
+- term: proceedings
+  def:
+    en: The short written version of a conference talk, published after the conference.
+    fr: La courte version écrite d'un exposé de conférence, publiée après la conférence (les « actes »).
+    nl: De korte geschreven versie van een conferentielezing, gepubliceerd na de conferentie.
+    ru: Краткая письменная версия доклада, публикуемая после конференции («труды»).

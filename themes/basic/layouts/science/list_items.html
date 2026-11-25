@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
+  {{ partial "glossary.html" . }}
 
   {{- with .Pages }}
   <div class="projects">
