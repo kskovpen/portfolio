@@ -1,3 +1,4 @@
+photo_albums = "Photo albums"
 explore = "Explore"
 cv_what_i_do = "What I do, in plain words"
 cv_highlights = "Highlights"
@@ -98,3 +99,6 @@ other = "{{ .Count }} trail races"
 [activities]
 one = "{{ .Count }} activity"
 other = "{{ .Count }} activities"
+[photos_n]
+one = "{{ .Count }} photo"
+other = "{{ .Count }} photos"

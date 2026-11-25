@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{ partial "page-head.html" . }}
+  {{- $ph := partial "album-photos.html" . }}{{ $slug := path.Base .File.Dir }}
+  <p class="meta album-meta">
+    {{ time.Format ":date_long" .Date }}{{ with .Params.place }} · {{ . }}{{ end }} · {{ T "photos_n" (len $ph) }}
+    {{- with .Params.sections }}{{ $secs := . }} ·
+      {{- range site.Menus.main }}{{ if in $secs .Identifier }} <a class="tag" href="{{ .URL }}">{{ .Name }}</a>{{ end }}{{ end }}
+    {{- end }}
+  </p>
+  {{ .Content }}
+  <div class="album-grid" data-album>
+    {{- range $i, $p := $ph }}{{ $s := partial "photo-src.html" (dict "kind" "albums" "slug" $slug "name" $p.name) }}
+    {{- $r := div (float $p.w) $p.h }}
+    <a href="{{ $s.big }}" data-caption="{{ $p.caption }}" style="--r: {{ $r }}">
+      <img src="{{ $s.small }}" width="{{ $p.w }}" height="{{ $p.h }}" alt="{{ $p.caption }}" loading="{{ cond (lt $i 8) "eager" "lazy" }}" decoding="async">
+    </a>
+    {{- end }}
+  </div>
+  {{- with .Parent }}<p class="album-back"><a href="{{ .RelPermalink }}">← {{ .Title }}</a></p>{{ end }}
+{{ end }}

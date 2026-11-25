@@ -1,0 +1,12 @@
+{{- /* An album as a square tile: cover photo, title, date / place / number of photos. */ -}}
+{{- $a := . }}{{ $ph := partial "album-photos.html" $a }}
+{{- $cover := index (where $ph "name" ($a.Params.cover | default "")) 0 | default (index $ph 0) }}
+<a class="album-card" href="{{ $a.RelPermalink }}">
+  {{- with $cover }}{{ $s := partial "photo-src.html" (dict "kind" "albums" "slug" (path.Base $a.File.Dir) "name" .name) }}
+  <img src="{{ $s.small }}" alt="" loading="lazy" decoding="async">
+  {{- end }}
+  <span class="album-card-text">
+    <b>{{ $a.Title }}</b>
+    <small>{{ time.Format "Jan 2006" $a.Date }}{{ with $a.Params.place }} · {{ . }}{{ end }} · {{ T "photos_n" (len $ph) }}</small>
+  </span>
+</a>

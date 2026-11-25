@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ partial "page-head.html" . }}
+  {{ .Content }}
+  <div class="album-wall">
+    {{- range .Pages.ByDate.Reverse }}{{ partial "album-card.html" . }}{{ end }}
+  </div>
+{{ end }}

@@ -1,6 +1,16 @@
 {{- /* Blog posts filed under a rubric (front matter: sections = ["running", ...]).
        Call with (dict "key" "running"). Shown at the bottom of that section's page. */ -}}
 {{- $key := .key }}
+{{- /* photo albums linked to this section (album front matter: sections = [...]) */}}
+{{- with site.GetPage "/photos" }}{{ $albums := slice }}
+  {{- range .Pages.ByDate.Reverse }}{{ if in (.Params.sections | default slice) $key }}{{ $albums = $albums | append . }}{{ end }}{{ end }}
+  {{- with $albums }}
+<section class="section-albums">
+  <h3>{{ T "photo_albums" }}</h3>
+  <div class="album-wall album-wall-small">{{ range first 8 . }}{{ partial "album-card.html" . }}{{ end }}</div>
+</section>
+  {{- end }}
+{{- end }}
 {{- $posts := slice }}
 {{- range partial "all-posts.html" . }}{{ if in (.Params.sections | default slice) $key }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
 {{- with $posts }}

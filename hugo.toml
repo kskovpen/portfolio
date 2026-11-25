@@ -94,6 +94,15 @@ pygmentsUseClasses = true
     weight = 60
 
   [[languages.en.menus.main]]
+    identifier = 'photos'
+    name = "Photos"
+    pageRef = '/photos'
+    weight = 65
+
+    [languages.en.menus.main.params]
+      needsPages = true
+
+  [[languages.en.menus.main]]
     identifier = 'blog'
     name = 'Blog'
     pageRef = '/posts'
@@ -151,6 +160,15 @@ pygmentsUseClasses = true
     name = 'Course à pied'
     pageRef = '/run'
     weight = 60
+
+  [[languages.fr.menus.main]]
+    identifier = 'photos'
+    name = "Photos"
+    pageRef = '/photos'
+    weight = 65
+
+    [languages.fr.menus.main.params]
+      needsPages = true
 
   [[languages.fr.menus.main]]
     identifier = 'blog'
@@ -212,6 +230,15 @@ pygmentsUseClasses = true
     weight = 60
 
   [[languages.nl.menus.main]]
+    identifier = 'photos'
+    name = "Foto's"
+    pageRef = '/photos'
+    weight = 65
+
+    [languages.nl.menus.main.params]
+      needsPages = true
+
+  [[languages.nl.menus.main]]
     identifier = 'blog'
     name = 'Blog'
     pageRef = '/posts'
@@ -269,6 +296,15 @@ pygmentsUseClasses = true
     name = 'Бег'
     pageRef = '/run'
     weight = 60
+
+  [[languages.ru.menus.main]]
+    identifier = 'photos'
+    name = "Фото"
+    pageRef = '/photos'
+    weight = 65
+
+    [languages.ru.menus.main.params]
+      needsPages = true
 
   [[languages.ru.menus.main]]
     identifier = 'blog'

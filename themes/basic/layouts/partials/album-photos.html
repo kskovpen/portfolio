@@ -1,0 +1,4 @@
+{{- /* The photos of an album page, in order: its photos.json (written by the Write a Post app). */ -}}
+{{- $out := slice }}
+{{- with .Resources.Get "photos.json" }}{{ $out = . | transform.Unmarshal }}{{ end }}
+{{- return $out }}

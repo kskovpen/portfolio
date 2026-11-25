@@ -1,0 +1,12 @@
+{{- /* Address of a personal photo managed by the Write a Post app (never stored in git).
+       In: (dict "kind" "albums"|"posts" "slug" <folder> "name" <file>). Out: dict with "big" (1600 px) and "small" (800 px).
+       Local preview: the git-ignored photos/<kind>/<slug>/ folder (mounted as assets/photos). Online: params.photos_url (Cloudflare R2). */ -}}
+{{- $stem := replaceRE `\.[A-Za-z0-9]+$` "" .name }}
+{{- $big := "" }}{{ $small := "" }}
+{{- with resources.Get (printf "photos/%s/%s/%s-1600.webp" .kind .slug $stem) }}{{ $big = .RelPermalink }}{{ end }}
+{{- with resources.Get (printf "photos/%s/%s/%s-800.webp" .kind .slug $stem) }}{{ $small = .RelPermalink }}{{ end }}
+{{- if and (not $big) site.Params.photos_url }}
+  {{- $base := printf "%s/%s/%s/%s" (strings.TrimSuffix "/" site.Params.photos_url) .kind .slug $stem }}
+  {{- $big = printf "%s-1600.webp" $base }}{{ $small = printf "%s-800.webp" $base }}
+{{- end }}
+{{- return (dict "big" $big "small" ($small | default $big)) }}

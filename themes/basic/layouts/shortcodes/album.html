@@ -1,0 +1,12 @@
+{{- /* Show an album inside a post: {{< album "album-folder" >}} (the Write a Post app inserts this). */ -}}
+{{- $slug := .Get 0 }}
+{{- with site.GetPage (printf "/photos/%s" $slug) }}{{ $a := . }}{{ $ph := partial "album-photos.html" $a }}
+<div class="album-embed">
+  <div class="album-grid album-grid-small" data-album>
+    {{- range $i, $p := first 8 $ph }}{{ $s := partial "photo-src.html" (dict "kind" "albums" "slug" $slug "name" $p.name) }}
+    <a href="{{ $s.big }}" data-caption="{{ $p.caption }}" style="--r: {{ div (float $p.w) $p.h }}"><img src="{{ $s.small }}" width="{{ $p.w }}" height="{{ $p.h }}" alt="{{ $p.caption }}" loading="lazy" decoding="async"></a>
+    {{- end }}
+  </div>
+  <p class="album-embed-link"><a href="{{ $a.RelPermalink }}">{{ $a.Title }} · {{ T "photos_n" (len $ph) }} →</a></p>
+</div>
+{{- else }}{{ warnf "album shortcode: no album %q (%s)" $slug .Position }}{{ end }}
