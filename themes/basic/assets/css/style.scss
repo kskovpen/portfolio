@@ -865,42 +865,42 @@ footer {
 @media (max-width: 600px) { .lightbox { grid-template-columns: 0 1fr 0; } .lb-prev, .lb-next { display: none; } }
 
 // Music: my releases, one block per EP/single, with a waveform per track
-.releases { display: grid; gap: clamp(28px, 4vw, 56px); margin: 16px 0 56px; }
-.release { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(20px, 3vw, 44px); align-items: start;
+.releases { display: grid; gap: clamp(22px, 3vw, 36px); margin: 16px 0 48px; }
+.release { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 32px); align-items: start;
   animation: fade 0.9s var(--ease) both; animation-delay: calc(var(--i, 0) * 90ms); }
 .release-cover { position: sticky; top: 84px; display: block; aspect-ratio: 1; border-radius: 6px; overflow: hidden; background: var(--line);
   box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.55); }
 .release-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
 .release-cover:hover img { transform: scale(1.04); }
 .release-kind { margin: 0; font-size: 12px; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); }
-.release-title { margin: 6px 0 4px; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.release-title { margin: 4px 0 2px; font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
 .release-title a { color: var(--ink); }
 .release-title a:hover { color: var(--hue); text-decoration: none; }
-.tracks { list-style: none; margin: 18px 0 12px; padding: 0; border-top: 1px solid var(--line); }
-.track { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); --p: 0; }
-.track-play { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center;
+.tracks { list-style: none; margin: 12px 0 8px; padding: 0; border-top: 1px solid var(--line); }
+.track { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); --p: 0; }
+.track-play { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center;
   transition: background 0.25s, border-color 0.25s, transform 0.25s var(--ease); }
 .track-play:hover { border-color: var(--hue); transform: scale(1.06); }
-.track-play span { width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent var(--ink); margin-left: 3px; }
+.track-play span { width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 10px; border-color: transparent transparent transparent var(--ink); margin-left: 3px; }
 .track.is-playing .track-play { background: var(--hue); border-color: var(--hue); }
-.track.is-playing .track-play span { width: 12px; height: 14px; border: 0; margin: 0; border-left: 4px solid var(--bg); border-right: 4px solid var(--bg); }
+.track.is-playing .track-play span { width: 10px; height: 12px; border: 0; margin: 0; border-left: 4px solid var(--bg); border-right: 4px solid var(--bg); }
 .track.is-loading .track-play { animation: pulse 0.9s ease-in-out infinite alternate; }
 @keyframes pulse { from { opacity: 0.5; } to { opacity: 1; } }
-.track-name { margin: 0 0 6px; color: var(--ink); font-weight: 600; line-height: 1.35; }
+.track-name { margin: 0 0 3px; color: var(--ink); font-weight: 600; font-size: 15px; line-height: 1.3; }
 .track-n { display: inline-block; width: 1.6em; color: var(--ink-3); font-variant-numeric: tabular-nums; font-weight: 500; }
 .track-by { color: var(--ink-2); font-weight: 400; }
 .track-tag { margin-left: 8px; padding: 1px 7px; border: 1px solid var(--line); border-radius: 99px; font-size: 12px; font-weight: 500; color: var(--ink-3); white-space: nowrap; }
 .track-time { font-size: 14px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
-.wave { display: block; width: 100%; height: 34px; cursor: pointer; }
+.wave { display: block; width: 100%; height: 22px; cursor: pointer; }
 .wave rect { fill: var(--ink-3); opacity: 0.45; transition: opacity 0.2s; }
 .track.is-playing .wave rect, .track.is-paused .wave rect, .track.is-loading .wave rect {
   fill: var(--hue); opacity: clamp(0.25, calc((var(--p) * var(--n, 80) - var(--k)) * 100), 1); }
 .track:not(.is-playing):not(.is-paused):not(.is-loading):hover .wave rect { opacity: 0.7; }
 .track.is-playing:hover .wave rect, .track.is-paused:hover .wave rect { opacity: clamp(0.35, calc((var(--p) * var(--n, 80) - var(--k)) * 100), 1); }
-.release-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; font-weight: 600; font-size: 15px; }
+.release-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; font-weight: 600; font-size: 14px; }
 .sc-hidden { position: fixed; width: 1px; height: 1px; left: -10px; bottom: 0; border: 0; opacity: 0; pointer-events: none; }
 @media (max-width: 700px) {
   .release { grid-template-columns: 1fr; }
-  .release-cover { position: static; max-width: 320px; }
+  .release-cover { position: static; max-width: 200px; }
 }
 .artist-name small { display: block; margin-top: 2px; font-size: 13px; font-weight: 500; opacity: 0.8; }
