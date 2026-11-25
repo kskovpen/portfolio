@@ -1,8 +1,39 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
-  {{ partial "cv.html" "teaching" }}
-  <h2>{{ T "conf_talks" }}</h2>
+  {{- with site.Data.teaching }}{{ $d := . }}{{ $l := site.Language.Lang }}
+  <nav class="page-toc">
+    <a href="#teaching">{{ T "tt_courses" }}</a><a href="#students">{{ T "tt_students" }}</a><a href="#schools">{{ T "tt_schools" }}</a><a href="#public">{{ T "tt_public" }}</a><a href="#talks">{{ T "conf_talks" }}</a>
+  </nav>
+
+  <h2 id="teaching">{{ T "tt_courses" }}</h2>
+  <ul class="cv-compact">
+    {{- range .courses }}
+    <li><span class="cv-year">{{ .years }}</span><span><b>{{ index .title $l }}</b> · {{ index .kind $l }} · {{ .where }}</span></li>
+    {{- end }}
+  </ul>
+
+  <h2 id="students">{{ T "tt_students" }}</h2>
+  <div class="cv-numbers">
+    {{- range .supervision }}<p><b>{{ .count }}</b><span>{{ index .label $l }}</span></p>{{ end }}
+  </div>
+  {{- with index .thesis_topics $l }}
+  <p class="tt-sub">{{ T "tt_topics" }}</p>
+  <ul class="tt-chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  {{- end }}
+
+  <h2 id="schools">{{ T "tt_schools" }}</h2>
+  <ul class="cv-compact">
+    {{- range .schools }}<li><span class="cv-year">{{ .year }}</span><span>{{ index .text $l }}</span></li>{{ end }}
+  </ul>
+
+  <h2 id="public">{{ T "tt_public" }}</h2>
+  <ul class="cv-compact">
+    {{- range .outreach }}<li><span class="cv-year">{{ .year }}</span><span>{{ with .link }}<a href="{{ relLangURL . }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
+  </ul>
+  {{- end }}
+
+  <h2 id="talks">{{ T "conf_talks" }}</h2>
   {{ partial "glossary.html" . }}
   <ul class="talk-list">
     {{- range sort site.Data.talks "date" "desc" }}

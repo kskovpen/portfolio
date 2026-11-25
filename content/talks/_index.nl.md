@@ -1,5 +1,5 @@
 +++
-title = "Lezingen"
+title = "Onderwijs & lezingen"
 +++
 
-Wetenschappers delen nieuwe resultaten op internationale conferenties, meestal in korte lezingen voor andere fysici, dus de titels hieronder zijn technisch. Van de meeste lezingen bestaat ook een geschreven versie ("proceedings"), gelinkt onder elke lezing. Is een woord onbekend, dan legt de korte woordenlijst hieronder het uit.
+Ik geef les in deeltjesfysica aan de universiteit, begeleid studenten van bachelorproject tot doctoraat, doceer op scholen voor jonge onderzoekers en leg natuurkunde uit aan het publiek. Verderop staan mijn lezingen op internationale conferenties, waar wetenschappers nieuwe resultaten met elkaar delen; de titels zijn daarom technischer. Is een woord onbekend, dan legt de korte woordenlijst daar het uit.

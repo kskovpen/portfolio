@@ -1,3 +1,8 @@
+tt_courses = "Vakken"
+tt_students = "Studenten die ik begeleid"
+tt_topics = "Enkele onderwerpen van hun thesissen"
+tt_schools = "Scholen voor jonge onderzoekers"
+tt_public = "Voor het publiek en scholen"
 exp_also = "Hier ook onderzocht"
 drawing_note = "Vereenvoudigde tekening, niet op schaal"
 exp_now = "Nu"

@@ -1,3 +1,8 @@
+tt_courses = "Courses"
+tt_students = "Students I supervise"
+tt_topics = "Some of their thesis topics"
+tt_schools = "Schools for young researchers"
+tt_public = "For the public and schools"
 exp_also = "Also studied here"
 drawing_note = "Simplified drawing, not to scale"
 exp_now = "Now"

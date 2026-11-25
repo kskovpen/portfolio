@@ -1,0 +1,62 @@
+# Teaching, supervision, schools and outreach for the "Teaching & talks" page (from the CV).
+courses:
+  - years: "2021–2022"
+    where: "VUB"
+    title: {en: "New physics beyond the Standard Model", fr: "La nouvelle physique au-delà du Modèle standard", nl: "Nieuwe fysica voorbij het Standaardmodel", ru: "Новая физика за пределами Стандартной модели"}
+    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
+  - years: "2021–2022"
+    where: "VUB"
+    title: {en: "Experimental techniques in particle physics", fr: "Techniques expérimentales en physique des particules", nl: "Experimentele technieken in de deeltjesfysica", ru: "Экспериментальные методы физики частиц"}
+    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
+  - years: "2020–2023"
+    where: "UGent"
+    title: {en: "Subatomic physics", fr: "Physique subatomique", nl: "Subatomaire fysica", ru: "Субатомная физика"}
+    kind: {en: "Exercise sessions, master's", fr: "Travaux dirigés, master", nl: "Oefeningen, master", ru: "Семинары, магистратура"}
+  - years: "2018–2019"
+    where: "VUB"
+    title: {en: "Thermodynamics and statistical physics", fr: "Thermodynamique et physique statistique", nl: "Thermodynamica en statistische fysica", ru: "Термодинамика и статистическая физика"}
+    kind: {en: "Exercise sessions, bachelor's", fr: "Travaux dirigés, licence", nl: "Oefeningen, bachelor", ru: "Семинары, бакалавриат"}
+  - years: "2017–2019"
+    where: "VUB"
+    title: {en: "Subatomic physics", fr: "Physique subatomique", nl: "Subatomaire fysica", ru: "Субатомная физика"}
+    kind: {en: "Lectures and exercises, master's", fr: "Cours et travaux dirigés, master", nl: "Colleges en oefeningen, master", ru: "Лекции и семинары, магистратура"}
+
+supervision:
+  - count: 7
+    label: {en: "PhD students", fr: "doctorants", nl: "doctoraatsstudenten", ru: "аспирантов"}
+  - count: 2
+    label: {en: "postdocs", fr: "postdocs", nl: "postdocs", ru: "постдока"}
+  - count: 9
+    label: {en: "master's theses", fr: "mémoires de master", nl: "masterproeven", ru: "магистерских работ"}
+  - count: 10
+    label: {en: "bachelor's theses", fr: "mémoires de licence", nl: "bachelorproeven", ru: "бакалаврских работ"}
+
+thesis_topics:
+  en: ["Four and three top quarks produced together at CMS", "Heavy neutrinos and new muon detectors for CMS", "Top quarks with a Z boson, and new detectors for CMS", "Detector development for SHiP", "A calorimeter that measures angles precisely, for SHiP", "Detectors for cosmic rays, radiation and even soil moisture"]
+  fr: ["Quatre et trois quarks top produits ensemble à CMS", "Neutrinos lourds et nouveaux détecteurs de muons pour CMS", "Quarks top avec un boson Z, et nouveaux détecteurs pour CMS", "Développement de détecteurs pour SHiP", "Un calorimètre qui mesure précisément les angles, pour SHiP", "Des détecteurs pour les rayons cosmiques, la radioactivité et même l'humidité des sols"]
+  nl: ["Vier en drie top-quarks die samen ontstaan bij CMS", "Zware neutrino's en nieuwe muondetectoren voor CMS", "Top-quarks met een Z-boson, en nieuwe detectoren voor CMS", "Detectorontwikkeling voor SHiP", "Een calorimeter die hoeken nauwkeurig meet, voor SHiP", "Detectoren voor kosmische straling, radioactiviteit en zelfs bodemvocht"]
+  ru: ["Рождение четырёх и трёх топ-кварков в CMS", "Тяжёлые нейтрино и новые мюонные детекторы для CMS", "Топ-кварки с Z-бозоном и новые детекторы для CMS", "Разработка детекторов для SHiP", "Калориметр, точно измеряющий углы, для SHiP", "Детекторы космических лучей, радиации и даже влажности почвы"]
+
+schools:
+  - year: "2026"
+    text: {en: "Invited lecturer, Belgian–Dutch–German graduate school in particle physics, Germany", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande de physique des particules, Allemagne", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica, Duitsland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа по физике частиц, Германия"}
+  - year: "2024"
+    text: {en: "Local organiser of the same school in Blankenberge, Belgium", fr: "Organisateur local de cette école à Blankenberge, Belgique", nl: "Lokale organisator van deze school in Blankenberge", ru: "Местный организатор этой школы в Бланкенберге, Бельгия"}
+  - year: "2023"
+    text: {en: "Exercises on particle tracking, CMS data analysis school, DESY, Germany", fr: "Exercices sur la reconstruction des traces, école d'analyse de données de CMS, DESY, Allemagne", nl: "Oefeningen over het reconstrueren van deeltjessporen, CMS-data-analyseschool, DESY, Duitsland", ru: "Практикум по восстановлению треков, школа анализа данных CMS, DESY, Германия"}
+  - year: "2022"
+    text: {en: "Invited lecturer, Belgian–Dutch–German graduate school in particle physics, the Netherlands", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande de physique des particules, Pays-Bas", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica, Nederland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа по физике частиц, Нидерланды"}
+
+outreach:
+  - year: "2023"
+    link: /projects/matterbricks/
+    text: {en: "MatterBricks, an augmented-reality puzzle game about elementary particles, shown at a public symposium and covered by RTBF and BX1", fr: "MatterBricks, un jeu de réalité augmentée sur les particules élémentaires, présenté lors d'un symposium public et couvert par la RTBF et BX1", nl: "MatterBricks, een augmented-realitygame over elementaire deeltjes, getoond op een publiek symposium en opgepikt door RTBF en BX1", ru: "MatterBricks — игра с дополненной реальностью об элементарных частицах, показанная на открытом симпозиуме; о ней рассказали RTBF и BX1"}
+  - year: "2022"
+    link: /projects/higgsy/
+    text: {en: "Higgsy, a game for the 10th anniversary of the Higgs boson discovery", fr: "Higgsy, un jeu pour les 10 ans de la découverte du boson de Higgs", nl: "Higgsy, een game voor de tiende verjaardag van de ontdekking van het higgsboson", ru: "Higgsy — игра к 10-летию открытия бозона Хиггса"}
+  - year: "2018"
+    text: {en: "Press release and public blog on the first observation of the Higgs boson with top quarks; guest scientist on VUB's Instagram from CERN", fr: "Communiqué de presse et blog grand public sur la première observation du boson de Higgs avec des quarks top ; scientifique invité sur l'Instagram de la VUB depuis le CERN", nl: "Persbericht en publieksblog over de eerste waarneming van het higgsboson met top-quarks; gastwetenschapper op de Instagram van de VUB vanuit CERN", ru: "Пресс-релиз и научно-популярный блог о первом наблюдении бозона Хиггса вместе с топ-кварками; приглашённый учёный в Instagram VUB из ЦЕРН"}
+  - year: "2017"
+    text: {en: "“A Big Bang in the Lab”, a talk for 60 secondary school pupils in Brussels", fr: "« Un Big Bang au labo », un exposé pour 60 élèves du secondaire à Bruxelles", nl: "\"Een oerknal in het lab\", een lezing voor 60 middelbare scholieren in Brussel", ru: "«Большой взрыв в лаборатории» — лекция для 60 школьников в Брюсселе"}
+  - year: "2015"
+    text: {en: "CERN Masterclasses for secondary school pupils, Strasbourg", fr: "Masterclasses du CERN pour lycéens, Strasbourg", nl: "CERN-masterclasses voor scholieren, Straatsburg", ru: "Мастер-классы ЦЕРН для школьников, Страсбург"}

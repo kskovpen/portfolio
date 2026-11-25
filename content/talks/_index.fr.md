@@ -1,5 +1,5 @@
 +++
-title = "Exposés"
+title = "Cours & exposés"
 +++
 
-Les scientifiques présentent leurs nouveaux résultats lors de conférences internationales, généralement dans des exposés courts destinés à d'autres physiciens ; les titres ci-dessous sont donc techniques. La plupart des exposés ont aussi une version écrite (les « actes »), avec un lien sous chacun. Si un mot vous est inconnu, le petit glossaire ci-dessous l'explique.
+J'enseigne la physique des particules à l'université, j'encadre des étudiants du projet de licence au doctorat, je donne des cours dans des écoles pour jeunes chercheurs et j'explique la physique au grand public. Plus bas se trouvent mes exposés lors de conférences internationales, où les scientifiques partagent leurs nouveaux résultats entre eux : leurs titres sont donc plus techniques. Si un mot vous est inconnu, le petit glossaire qui s'y trouve l'explique.

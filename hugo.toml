@@ -62,7 +62,7 @@ pygmentsUseClasses = true
 
   [[languages.en.menus.main]]
     identifier = 'talks'
-    name = 'Talks'
+    name = 'Teaching & talks'
     pageRef = '/talks'
     weight = 20
 
@@ -130,7 +130,7 @@ pygmentsUseClasses = true
 
   [[languages.fr.menus.main]]
     identifier = 'talks'
-    name = 'Exposés'
+    name = 'Cours & exposés'
     pageRef = '/talks'
     weight = 20
 
@@ -198,7 +198,7 @@ pygmentsUseClasses = true
 
   [[languages.nl.menus.main]]
     identifier = 'talks'
-    name = 'Lezingen'
+    name = 'Onderwijs & lezingen'
     pageRef = '/talks'
     weight = 20
 
@@ -266,7 +266,7 @@ pygmentsUseClasses = true
 
   [[languages.ru.menus.main]]
     identifier = 'talks'
-    name = 'Доклады'
+    name = 'Лекции и доклады'
     pageRef = '/talks'
     weight = 20
 
