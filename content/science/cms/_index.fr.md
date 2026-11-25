@@ -8,6 +8,7 @@ place = "CERN, Genève"
 years = "2013–"
 status = "now"
 website = "https://cms.cern"
+hint = "Une collision qui produit quatre quarks top. Chaque quark top se désintègre presque aussitôt : le détecteur voit donc des gerbes de particules appelées jets (en orange) et parfois un électron ou un muon (en bleu) ; le muon traverse tout le détecteur."
 +++
 
 CMS est l'un des deux détecteurs géants polyvalents du Grand collisionneur de hadrons (LHC). Il mesure 21 mètres de long, 15 mètres de haut et pèse 14 000 tonnes, plus que la tour Eiffel. Construit en couches autour du point où les protons se percutent, il peut enregistrer jusqu'à 40 millions de collisions par seconde. En 2012, CMS et ATLAS ont découvert ensemble le boson de Higgs.

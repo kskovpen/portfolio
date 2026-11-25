@@ -8,6 +8,7 @@ place = "CERN, Geneva"
 years = "2013–"
 status = "now"
 website = "https://cms.cern"
+hint = "A collision that produces four top quarks. Each top quark decays almost instantly, so the detector sees sprays of particles called jets (orange) and sometimes an electron or a muon (blue); the muon crosses the whole detector."
 +++
 
 CMS is one of the two giant general-purpose detectors at the Large Hadron Collider (LHC). It is 21 metres long, 15 metres high and weighs 14,000 tonnes, more than the Eiffel Tower. Built in layers around the point where protons collide, it can record up to 40 million collisions every second. In 2012 CMS and ATLAS together discovered the Higgs boson.

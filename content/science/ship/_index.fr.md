@@ -8,6 +8,7 @@ place = "CERN, Genève"
 years = "2024–"
 status = "now"
 website = "https://ship.web.cern.ch"
+hint = "Une particule cachée, ici un lepton neutre lourd (HNL), traverse le bouclier sans être vue (pointillés) et se désintègre dans le volume vide en un muon et un pion. Les neutrinos (ν) du faisceau laissent leur trace dans le détecteur de neutrinos."
 +++
 
 SHiP est une nouvelle expérience en préparation au CERN. Elle cherchera des particules *cachées* : si légères et interagissant si peu qu'elles auraient pu échapper à toutes les expériences jusqu'ici, y compris celles du LHC. De telles particules pourraient expliquer la matière noire, ou pourquoi l'univers contient plus de matière que d'antimatière.

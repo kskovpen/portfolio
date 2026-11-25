@@ -8,6 +8,7 @@ place = "CERN, Geneva"
 years = "2007–2013"
 status = "past"
 website = "https://atlas.cern"
+hint = "If it exists, a heavy “right-handed” W boson (W<sub>R</sub>) would decay into a lepton and a heavy neutrino (N), leaving two muons (blue) and two jets (orange): the signature I searched for in my PhD."
 +++
 
 ATLAS is the largest detector at the Large Hadron Collider: 46 metres long and 25 metres high, about half the size of Notre-Dame Cathedral in Paris. Like CMS it is a general-purpose detector, and in 2012 the two together discovered the Higgs boson. Its name comes from its eight huge **toroid magnets**, which bend the paths of muons in the outer part of the detector.

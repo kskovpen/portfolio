@@ -8,6 +8,7 @@ place = "CERN, Genève"
 years = "2007–2013"
 status = "past"
 website = "https://atlas.cern"
+hint = "Als het bestaat, zou een zwaar “rechtshandig” W-boson (W<sub>R</sub>) vervallen in een lepton en een zwaar neutrino (N), met twee muonen (blauw) en twee jets (oranje) als resultaat: de signatuur waarnaar ik in mijn doctoraat zocht."
 +++
 
 ATLAS is de grootste detector aan de Large Hadron Collider: 46 meter lang en 25 meter hoog, ongeveer half zo groot als de Notre-Dame in Parijs. Net als CMS is het een veelzijdige detector, en in 2012 ontdekten ze samen het higgsboson. De naam komt van de acht enorme **toroïdale magneten**, die de banen van muonen in het buitenste deel van de detector buigen.

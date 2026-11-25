@@ -8,6 +8,7 @@ place = "CERN, Geneva"
 years = "2024–"
 status = "now"
 website = "https://ship.web.cern.ch"
+hint = "A hidden particle, here a heavy neutral lepton (HNL), flies unseen through the shield (dotted line) and decays inside the empty volume into a muon and a pion. Neutrinos (ν) from the beam leave their mark in the neutrino detector."
 +++
 
 SHiP is a new experiment being prepared at CERN. It will look for *hidden* particles: particles so light and so weakly interacting that they could have slipped past every experiment so far, including those at the LHC. Such particles could explain dark matter, or why the universe contains more matter than antimatter.

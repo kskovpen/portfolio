@@ -8,6 +8,7 @@ place = "CERN, Genève"
 years = "2013–"
 status = "now"
 website = "https://cms.cern"
+hint = "Een botsing waarbij vier top-quarks ontstaan. Elk top-quark vervalt bijna meteen, dus de detector ziet bundels deeltjes, jets genoemd (oranje), en soms een elektron of een muon (blauw); het muon gaat door de hele detector."
 +++
 
 CMS is een van de twee reusachtige veelzijdige detectoren aan de Large Hadron Collider (LHC). Hij is 21 meter lang, 15 meter hoog en weegt 14.000 ton, meer dan de Eiffeltoren. Hij is in lagen gebouwd rond het punt waar protonen botsen en kan tot 40 miljoen botsingen per seconde vastleggen. In 2012 ontdekten CMS en ATLAS samen het higgsboson.

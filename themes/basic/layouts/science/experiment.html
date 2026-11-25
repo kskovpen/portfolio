@@ -4,7 +4,7 @@
   <p class="exp-meta"><b>{{ .Params.full_name }}</b> · {{ .Params.place }} · {{ .Params.years | replaceRE "–$" "" }}{{ if hasSuffix .Params.years "–" }}–{{ T "exp_now" | lower }}{{ end }}</p>
   <figure class="exp-figure">
     {{ partial "experiment-drawing.html" .Params.drawing }}
-    <figcaption class="meta">{{ T "drawing_note" }}</figcaption>
+    <figcaption>{{ with .Params.hint }}<span>{{ . | safeHTML }}</span>{{ end }}<span class="meta">{{ T "drawing_note" }}</span></figcaption>
   </figure>
   <div class="exp-body">{{ .Content }}</div>
   {{- with .Sections }}

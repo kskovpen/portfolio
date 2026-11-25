@@ -8,6 +8,7 @@ place = "Budker Institute of Nuclear Physics, Novosibirsk"
 years = "2003–2013"
 status = "past"
 website = "https://www.inp.nsk.su"
+hint = "An electron and a positron annihilate into a neutron (n) and an antineutron (n̄). Both are neutral, so they leave no track; the antineutron reveals itself when it annihilates in the crystals and leaves a star of energy."
 +++
 
 SND is a detector at VEPP-2000, an electron–positron collider at the Budker Institute of Nuclear Physics in Novosibirsk. When an electron meets its antiparticle, the positron, both disappear and their energy turns into new particles. At VEPP-2000's energies these are light particles such as pions and kaons and, just above the threshold, a proton or a neutron together with its antiparticle.
