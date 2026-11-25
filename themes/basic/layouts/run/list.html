@@ -89,39 +89,6 @@
     {{- end }}{{ end }}
   </div>
 
-  {{- /* ---------- Calendar: one square per day for the last 12 months ---------- */}}
-  {{- with $r }}
-  {{- $end := time (substr .updated 0 10) }}
-  {{- $back := add 364 (mod (add (int $end.Weekday) 6) 7) }}
-  {{- $start := $end.AddDate 0 0 (int (mul -1 $back)) }}
-  {{- $startS := $start.Format "2006-01-02" }}
-  {{- $day := newScratch }}{{ $tot := newScratch }}{{ $tot.Set "km" 0.0 }}{{ $tot.Set "runs" 0 }}
-  {{- range .runs }}{{ if ge .date $startS }}{{ $day.Add .date (float .distance_km) }}{{ $tot.Add "km" (float .distance_km) }}{{ $tot.Add "runs" 1 }}{{ end }}{{ end }}
-  {{- $weeks := add (div $back 7) 1 }}
-  <section class="run-band">
-    <div class="run-band-inner">
-      <div class="band-head">
-        <h2>{{ T "cal_title" }}</h2>
-        <p class="meta">{{ T "cal_summary" (dict "km" (lang.FormatNumber 0 ($tot.Get "km")) "runs" ($tot.Get "runs")) }}</p>
-      </div>
-      <div class="cal-scroll">
-      <svg class="cal" viewBox="0 0 {{ add 22 (mul $weeks 14) }} 114" role="img" aria-label="{{ T "cal_title" }}">
-        {{- range $i := seq 0 $back }}
-          {{- $d := $start.AddDate 0 0 $i }}{{ $ds := $d.Format "2006-01-02" }}
-          {{- $km := $day.Get $ds | default 0.0 }}
-          {{- $lvl := cond (eq $km 0.0) 0 (cond (lt $km 8.0) 1 (cond (lt $km 15.0) 2 (cond (lt $km 25.0) 3 4))) }}
-          {{- $x := add 22 (mul (div $i 7) 14) }}{{ $y := add 16 (mul (mod $i 7) 14) }}
-          {{- if and (le $d.Day 7) (eq (mod $i 7) 0) }}<text class="cal-month" x="{{ $x }}" y="10">{{ time.Format "Jan" $d }}</text>{{ end }}
-          <rect class="l{{ $lvl }}" x="{{ $x }}" y="{{ $y }}" width="11" height="11" style="--c: {{ div $i 7 }}"><title>{{ time.Format ":date_medium" $d }} · {{ if $km }}{{ lang.FormatNumber 1 $km }} km{{ else }}{{ T "no_run" }}{{ end }}</title></rect>
-        {{- end }}
-        {{- range $k, $lbl := slice "" (time.Format "Mon" ($start.AddDate 0 0 1)) "" (time.Format "Mon" ($start.AddDate 0 0 3)) "" (time.Format "Mon" ($start.AddDate 0 0 5)) "" }}{{ with $lbl }}<text class="cal-wd" x="0" y="{{ add 25 (mul $k 14) }}">{{ . }}</text>{{ end }}{{ end }}
-      </svg>
-      </div>
-      <p class="cal-legend meta" aria-hidden="true">{{ T "cal_less" }} <i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i> {{ T "cal_more" }}</p>
-    </div>
-  </section>
-  {{- end }}
-
   {{- /* ---------- Races: a wall of tiles, each with its route drawn large ---------- */}}
   {{- with $races }}
   {{- $groups := slice

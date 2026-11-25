@@ -6,6 +6,7 @@ set -euo pipefail
 python3 scripts/fetch_utmb.py 4820430.kirill.skovpen data/utmb.json
 python3 scripts/fetch_strava.py data/running.json
 python3 scripts/fetch_deezer.py 4092664002 data/deezer.json || true
+python3 scripts/fetch_soundcloud.py kirillskovpenmusic data/soundcloud.json || true
 python3 scripts/fetch_strava_photos.py || echo "Strava photos skipped"
 python3 scripts/map_snapshots.py || echo "map snapshots skipped (needs Pillow)"
 hugo --quiet

@@ -1,0 +1,45 @@
+{{- /* Music page: my own releases, one block per EP/single, from data/soundcloud.json
+       (scripts/fetch_soundcloud.py). Each track has its own waveform; the play buttons drive one
+       hidden SoundCloud player (see main.js), so the music still streams from SoundCloud. */ -}}
+{{- with site.Data.soundcloud }}{{ $d := . }}
+<section class="releases" data-sc-player>
+  {{- range $ri, $r := .releases }}
+  <article class="release" style="--i: {{ $ri }}">
+    <a class="release-cover" href="{{ $r.url }}">
+      {{- with $r.artwork }}<img src="{{ . }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">{{ end }}
+    </a>
+    <div class="release-body">
+      <p class="release-kind">{{ T (printf "rel_%s" $r.kind) | default ($r.kind | upper) }}{{ if and $r.remixes (ne $r.kind "single") }} · {{ T "rel_remixes" }}{{ end }} · {{ $r.year }}</p>
+      <h3 class="release-title"><a href="{{ $r.url }}">{{ $r.title }}</a></h3>
+      <p class="meta">{{ T "rel_tracks" (len $r.tracks) }} · {{ math.Round (div (float $r.duration) 60) }} min{{ with $r.genre }} · {{ . }}{{ end }} · {{ T "rel_plays" (lang.FormatNumber 0 $r.plays) }}</p>
+      <ol class="tracks">
+        {{- range $ti, $t := $r.tracks }}
+        <li class="track" data-track="{{ $t.id }}" data-url="{{ $t.url }}" data-duration="{{ $t.duration }}">
+          <button type="button" class="track-play" aria-label="{{ T "rel_play" }}: {{ $t.title }}"><span aria-hidden="true"></span></button>
+          <div class="track-main">
+            <p class="track-name">
+              {{- if gt (len $r.tracks) 1 }}<span class="track-n">{{ add $ti 1 }}</span>{{ end }}
+              <span class="track-title">{{ $t.title }}</span>
+              {{- with $t.artist }}<span class="track-by"> · {{ . }}</span>{{ end }}
+              {{- with $t.note }}{{ if eq . "remix" }}<span class="track-tag">{{ T "rel_remix" }}</span>{{ else if hasPrefix . "cover:" }}<span class="track-tag">{{ T "rel_cover" (strings.TrimPrefix "cover:" .) }}</span>{{ end }}{{ end }}
+            </p>
+            {{- with $t.wave }}
+            <svg class="wave" style="--n: {{ len . }}" viewBox="0 0 {{ mul (len .) 4 }} 40" preserveAspectRatio="none" aria-hidden="true">
+              {{- range $k, $v := . }}<rect style="--k: {{ $k }}" x="{{ mul $k 4 }}" y="{{ sub 40 (math.Max 2 (div (mul $v 40) 100)) }}" width="2.6" height="{{ math.Max 2 (div (mul $v 40) 100) }}" rx="1"/>{{ end }}
+            </svg>
+            {{- end }}
+          </div>
+          {{ $sec := int $t.duration }}<span class="track-time">{{ div $sec 60 }}:{{ printf "%02d" (mod $sec 60) }}</span>
+        </li>
+        {{- end }}
+      </ol>
+      <p class="release-links">
+        <a href="{{ $r.url }}">{{ T "rel_on_soundcloud" }} ↗</a>
+        {{- with $r.bandcamp }} <a href="{{ replace . "http://" "https://" }}">{{ T "rel_bandcamp" }} ↗</a>{{ end }}
+      </p>
+    </div>
+  </article>
+  {{- end }}
+  <p class="meta listen-credit"><a href="{{ $d.profile_url }}">{{ T "rel_follow" }}</a> · {{ T "rel_streams" }}</p>
+</section>
+{{- end }}

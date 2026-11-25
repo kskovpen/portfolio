@@ -1,11 +1,8 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
-  {{- with site.Params.soundcloud_user_id }}
-  <iframe class="soundcloud-player" title="Kirill Skovpen on SoundCloud" loading="lazy" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url={{ printf "https://api.soundcloud.com/users/%v" . | urlquery }}&amp;color=%2300909c&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
-  {{- end }}
-  {{- with site.Params.soundcloud }}<p><a class="button-link" href="{{ . }}">{{ T "all_tracks" }}</a></p>{{ end }}
+  {{- with site.Data.soundcloud }}<h2>{{ T "rel_heading" }}</h2>{{ end }}
+  {{ partial "releases.html" . }}
   {{ partial "listening.html" . }}
   <div class="cards-grid">
     {{- range .Pages.ByDate.Reverse }}
