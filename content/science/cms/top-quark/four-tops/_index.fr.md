@@ -1,4 +1,5 @@
 +++
+aliases = ['/fr/science/top-quark/four-tops/']
 title = "Observation de quatre quarks top"
 publications = ["four-tops-2023"]
 figures = ["images/CMS-TOP-22-013_Figure_001-a.png", "images/CMS-TOP-22-013_Figure_007-f.png", "images/CMS-TOP-22-013_Figure-aux_032.png"]

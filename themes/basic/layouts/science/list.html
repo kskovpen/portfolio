@@ -2,32 +2,37 @@
   {{ partial "page-head.html" . }}
   {{ .Content }}
   {{- $top := .Parent.IsHome }}
-  {{- if $top }}{{ partial "cv.html" "what_i_do" }}<h2>{{ T "cv_results" }}</h2>{{ end }}
+  {{- $exps := where .Sections "Params.layout" "experiment" }}
+  {{- if $exps }}
+  <h2>{{ T "exp_heading" }}</h2>
+  {{- range $st := slice "now" "past" }}
+  {{- with where $exps "Params.status" $st }}
+  <p class="exp-group">{{ T (printf "exp_%s" $st) }}</p>
+  <div class="exp-grid">{{ range .ByWeight }}{{ partial "experiment-card.html" . }}{{ end }}</div>
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- /* Other topics (not experiments) stay hidden until they have content */}}
+  {{- $other := where .Sections "Params.layout" "!=" "experiment" }}
+  {{- $shown := slice }}{{ range $other }}{{ if or .Pages .Content .Params.publications }}{{ $shown = $shown | append . }}{{ end }}{{ end }}
+  {{- with $shown }}
   <div class="cards">
-    {{- range .Sections }}
-      {{- /* Topics without pages, text or publications stay hidden until they have content */}}
-      {{- if or .Pages .Content .Params.publications }}
-        <a class="topic-card" href="{{ .RelPermalink }}">
-          <svg class="collision" viewBox="0 0 200 200" aria-hidden="true">
-            {{- range $j, $a := slice 8 40 75 118 150 197 236 262 300 338 }}
-            {{- $len := add 50 (mod (mul $j 37) 45) }}
-            <path pathLength="1" style="--d: {{ $j }}" d="M100 100 q {{ math.Round (mul (math.Cos (mul $a 0.01745)) (div $len 2.0)) }} {{ math.Round (mul (math.Sin (mul $a 0.01745)) (div $len 1.6)) }} {{ math.Round (mul (math.Cos (mul $a 0.01745)) $len) }} {{ math.Round (mul (math.Sin (mul $a 0.01745)) $len) }}"/>
-            {{- end }}
-            <circle cx="100" cy="100" r="4"/>
-          </svg>
-          <h2>{{ .Title }}</h2>
-          {{ with .Summary | plainify | htmlUnescape }}<p>{{ truncate 170 . }}</p>{{ end }}
-          <span class="topic-more">{{ T "explore" }} <span aria-hidden="true">→</span></span>
-        </a>
-      {{- end }}
+    {{- range . }}
+    <a class="topic-card" href="{{ .RelPermalink }}">
+      <h2>{{ .Title }}</h2>
+      {{ with .Summary | plainify | htmlUnescape }}<p>{{ truncate 170 . }}</p>{{ end }}
+      <span class="topic-more">{{ T "explore" }} <span aria-hidden="true">→</span></span>
+    </a>
     {{- end }}
   </div>
-  {{ partial "glossary.html" . }}
+  {{- end }}
   {{- if $top }}
+  {{ partial "cv.html" "what_i_do" }}
   {{ partial "cv.html" "highlights" }}
   {{ partial "cv.html" "career" }}
   {{ partial "cv.html" "recognition_education" }}
   {{ partial "cv.html" "publications" }}
-  {{ partial "section-posts.html" (dict "key" "research") }}
   {{- end }}
+  {{ partial "glossary.html" . }}
+  {{- if $top }}{{ partial "section-posts.html" (dict "key" "research") }}{{ end }}
 {{ end }}

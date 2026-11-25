@@ -2,8 +2,8 @@
 title = "Onderzoek"
 +++
 
-Alles om ons heen bestaat uit een handvol piepkleine deeltjes. Om ze te bestuderen laten natuurkundigen protonen op elkaar botsen in de Large Hadron Collider (LHC) van CERN bij Genève. Bij elke botsing wordt energie omgezet in nieuwe, vaak heel zware deeltjes die maar een fractie van een seconde bestaan, en enorme detectoren fotograferen wat ze achterlaten.
+Alles om ons heen, van sterren tot ons eigen lichaam, bestaat uit een handvol piepkleine deeltjes die door een paar krachten bij elkaar worden gehouden. Deeltjesfysica onderzoekt wat die deeltjes zijn en hoe ze zich gedragen. Het is fundamenteel onderzoek: het mikt niet op een product, en toch leverde het onderweg het World Wide Web op (uitgevonden bij CERN), medische scanners en kankertherapie met deeltjesbundels.
 
-Ik werk aan twee dingen: **het analyseren van die botsingen**, vooral die waarbij het top-quark ontstaat, het zwaarste deeltje dat we kennen, en **het bouwen van de detectoren** die de metingen mogelijk maken, voor het CMS-experiment bij CERN en voor het nieuwe SHiP-experiment.
+Om de kleinste deeltjes te bestuderen, laten fysici ze met zeer hoge energie op elkaar botsen. Bij elke botsing wordt energie omgezet in nieuwe deeltjes, vaak zware die maar een fractie van een seconde bestaan. Enorme detectoren, gebouwd als camera's rond het botsingspunt, leggen vast wat ze achterlaten.
 
-De onderwerpen hieronder leggen mijn belangrijkste resultaten uit in gewone woorden, met links naar de wetenschappelijke artikelen voor wie de details wil.
+Ik heb aan vier zulke experimenten gewerkt: **CMS** en **SHiP** bij CERN vandaag, en daarvoor **ATLAS** bij CERN en **SND** in Novosibirsk. Elke pagina hieronder toont hoe het experiment werkt, met een vereenvoudigde tekening, en wat ik er doe.

@@ -1,0 +1,10 @@
+{{- /* A card for one experiment on the Research page: drawing, name, years. */ -}}
+<a class="exp-card" href="{{ .RelPermalink }}">
+  <div class="exp-card-art">{{ partial "experiment-drawing.html" .Params.drawing }}</div>
+  <div class="exp-card-body">
+    <p class="exp-card-years">{{ .Params.years }}{{ if hasSuffix .Params.years "–" }} {{ T "exp_now" | lower }}{{ end }}</p>
+    <h3>{{ .Title }}</h3>
+    <p class="meta">{{ .Params.full_name }} · {{ .Params.place }}</p>
+    {{ with .Summary | plainify | htmlUnescape }}<p class="exp-card-text">{{ truncate 190 . }}</p>{{ end }}
+  </div>
+</a>

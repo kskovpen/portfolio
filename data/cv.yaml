@@ -68,6 +68,11 @@ numbers:
 
 career:
   - years: "2023–"
+    short:
+      en: "Permanent researcher"
+      fr: "Chercheur permanent"
+      nl: "Vast onderzoeker"
+      ru: "Штатный научный сотрудник"
     place: "Ghent University"
     city:
       en: "Ghent, Belgium"
@@ -80,6 +85,11 @@ career:
       nl: "Vast onderzoeker. Leidt de Gentse groep in SHiP, een nieuw experiment dat zal zoeken naar zeer lichte, verborgen deeltjes, en is adjunct-leider van de Gentse groep in CMS, een van de twee reuzenexperimenten bij CERN die het higgsboson ontdekten."
       ru: "Штатный научный сотрудник. Руководит гентской группой в SHiP — новом эксперименте, который будет искать очень лёгкие «скрытые» частицы, — и является заместителем руководителя гентской группы в CMS, одном из двух гигантских экспериментов ЦЕРН, открывших бозон Хиггса."
   - years: "2019–2023"
+    short:
+      en: "Senior researcher"
+      fr: "Chercheur senior"
+      nl: "Senior onderzoeker"
+      ru: "Старший научный сотрудник"
     place: "Ghent University"
     city:
       en: "Ghent, Belgium"
@@ -92,6 +102,11 @@ career:
       nl: "Senior onderzoeker met een tijdelijk contract (een \"postdoc\"). Coördineerde de mensen die controleren of de software en computersimulaties van de CMS-detector correct werken."
       ru: "Старший научный сотрудник по срочному контракту («постдок»). Координировал людей, которые проверяют, что программы и компьютерное моделирование детектора CMS работают правильно."
   - years: "2016–2019"
+    short:
+      en: "Research fellow (FWO)"
+      fr: "Chercheur boursier (FWO)"
+      nl: "Onderzoeker met FWO-beurs"
+      ru: "Исследователь, грант FWO"
     place: "Vrije Universiteit Brussel"
     city:
       en: "Brussels, Belgium"
@@ -104,6 +119,11 @@ career:
       nl: "Onderzoeker met een persoonlijke beurs van het Vlaamse Fonds Wetenschappelijk Onderzoek (FWO). Onderzocht hoe het higgsboson inwerkt op het top-quark, het zwaarste bekende deeltje."
       ru: "Исследователь с персональным грантом фламандского научного фонда (FWO). Изучал, как бозон Хиггса взаимодействует с топ-кварком — самой тяжёлой известной частицей."
   - years: "2013–2016"
+    short:
+      en: "Postdoctoral researcher"
+      fr: "Chercheur postdoctoral"
+      nl: "Postdoctoraal onderzoeker"
+      ru: "Постдок"
     place: "Hubert Curien Institute (CNRS)"
     city:
       en: "Strasbourg, France"
@@ -116,6 +136,11 @@ career:
       nl: "Onderzoeker met een tijdelijk contract (een \"postdoc\") in een Frans nationaal onderzoekslab. Werd lid van CMS en leidde het team dat de detector leert deeltjes van bottom-quarks te herkennen."
       ru: "Исследователь по срочному контракту («постдок») во французской национальной лаборатории. Присоединился к CMS и руководил группой, которая «учит» детектор распознавать частицы от b-кварков."
   - years: "2007–2013"
+    short:
+      en: "Junior researcher and PhD"
+      fr: "Jeune chercheur et doctorat"
+      nl: "Junior onderzoeker en doctoraat"
+      ru: "Младший научный сотрудник, аспирант"
     place: "Budker Institute of Nuclear Physics"
     city:
       en: "Novosibirsk, Russia"
@@ -140,8 +165,9 @@ highlights:
       fr: "L'un des principaux analystes de la première observation de quatre quarks top produits ensemble, l'un des processus les plus rares jamais observés au LHC. Je l'ai présentée au CERN."
       nl: "Een van de hoofdanalisten achter de eerste waarneming van vier samen geproduceerde top-quarks, een van de zeldzaamste processen ooit gezien bij de LHC. Ik presenteerde het resultaat bij CERN."
       ru: "Один из основных авторов анализа, впервые наблюдавшего рождение сразу четырёх топ-кварков — одного из самых редких процессов, когда-либо замеченных на БАК. Я представлял этот результат в ЦЕРН."
-    link: /science/top-quark/four-tops/
+    link: /science/cms/top-quark/four-tops/
   - year: "2018"
+    link: /science/cms/top-quark/
     title:
       en: "The Higgs boson meets the top quark"
       fr: "Le boson de Higgs rencontre le quark top"
@@ -153,6 +179,7 @@ highlights:
       nl: "Deel van het team dat voor het eerst zag hoe het higgsboson samen met top-quarks ontstaat, een direct bewijs dat het higgsboson het top-quark zijn enorme massa geeft."
       ru: "В команде, которая впервые увидела рождение бозона Хиггса вместе с топ-кварками, — прямое доказательство того, что именно Хиггс придаёт топ-кварку его огромную массу."
   - year: "2022"
+    link: /science/cms/top-quark/
     title:
       en: "Searching for forbidden decays"
       fr: "À la recherche de désintégrations interdites"
@@ -164,6 +191,7 @@ highlights:
       nl: "Startte een zoektocht naar een top-quark dat verandert in een lichter quark en een higgsboson, iets wat de huidige theorie bijna verbiedt. Die leverde destijds de strengste limieten ter wereld op."
       ru: "Инициировал поиск превращения топ-кварка в более лёгкий кварк и бозон Хиггса — процесса, почти запрещённого современной теорией. Были получены самые строгие на тот момент ограничения в мире."
   - year: "2018"
+    link: /science/cms/
     title:
       en: "Teaching the detector to spot bottom quarks"
       fr: "Apprendre au détecteur à repérer les quarks bottom"
@@ -174,6 +202,30 @@ highlights:
       fr: "A dirigé l'équipe et co-écrit l'article de référence sur la façon dont CMS reconnaît les gerbes de particules issues de quarks bottom, un outil utilisé dans environ un tiers des publications de CMS."
       nl: "Leidde het team en schreef mee aan het referentieartikel over hoe CMS deeltjesbundels van bottom-quarks herkent, een techniek die in ongeveer een derde van alle CMS-publicaties wordt gebruikt."
       ru: "Руководил группой и был соавтором основополагающей статьи о том, как CMS распознаёт струи частиц от b-кварков, — этот метод используется примерно в трети всех публикаций CMS."
+  - year: "2024"
+    link: /science/ship/
+    title:
+      en: "Building SHiP, a hunt for hidden particles"
+      fr: "Construire SHiP, à la recherche de particules cachées"
+      nl: "SHiP bouwen, op zoek naar verborgen deeltjes"
+      ru: "Создание SHiP — охота на скрытые частицы"
+    text:
+      en: "Leads the Ghent team and two detector groups in SHiP, a new experiment at CERN."
+      fr: "Dirige l'équipe de Gand et deux groupes de détecteurs dans SHiP, une nouvelle expérience au CERN."
+      nl: "Leidt het Gentse team en twee detectorgroepen in SHiP, een nieuw experiment bij CERN."
+      ru: "Руководит гентской группой и двумя детекторными группами в SHiP — новом эксперименте ЦЕРН."
+  - year: "2013"
+    link: /science/atlas/
+    title:
+      en: "Among the first searches for heavy neutrinos at the LHC"
+      fr: "Parmi les premières recherches de neutrinos lourds au LHC"
+      nl: "Een van de eerste zoektochten naar zware neutrino's bij de LHC"
+      ru: "Одни из первых поисков тяжёлых нейтрино на БАК"
+    text:
+      en: "PhD with the ATLAS experiment at CERN."
+      fr: "Doctorat avec l'expérience ATLAS au CERN."
+      nl: "Doctoraat met het ATLAS-experiment bij CERN."
+      ru: "Кандидатская диссертация в эксперименте ATLAS в ЦЕРН."
 
 recognition:
   - en: "Personal research grant from the Flemish science funding agency (FWO), 2016–2019"

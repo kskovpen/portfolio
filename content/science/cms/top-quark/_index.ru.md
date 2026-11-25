@@ -1,4 +1,5 @@
 +++
+aliases = ['/ru/science/top-quark/']
 title = "Топ-кварк"
 layout = "list_items"
 publications = ["fcnc-scalar-2022", "photon-radiation-2021"]

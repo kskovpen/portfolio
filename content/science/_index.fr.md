@@ -2,8 +2,8 @@
 title = "Recherche"
 +++
 
-Tout ce qui nous entoure est fait d'une poignée de minuscules particules. Pour les étudier, les physiciens font se percuter des protons au Grand collisionneur de hadrons (LHC) du CERN, près de Genève. À chaque collision, l'énergie se transforme en nouvelles particules, souvent très lourdes, qui ne vivent qu'une infime fraction de seconde, et d'immenses détecteurs photographient ce qu'elles laissent derrière elles.
+Tout ce qui nous entoure, des étoiles à notre propre corps, est fait d'une poignée de minuscules particules liées par quelques forces. La physique des particules cherche à savoir ce que sont ces particules et comment elles se comportent. C'est de la recherche fondamentale : elle ne vise pas un produit, et pourtant elle nous a donné en chemin le World Wide Web (inventé au CERN), les scanners médicaux et la thérapie du cancer par faisceaux de particules.
 
-Je travaille sur deux choses : **l'analyse de ces collisions**, surtout celles qui produisent le quark top, la particule la plus lourde que l'on connaisse, et **la construction des détecteurs** qui rendent ces mesures possibles, pour l'expérience CMS au CERN et pour la nouvelle expérience SHiP.
+Pour étudier les plus petites particules, les physiciens les font se percuter à très haute énergie. À chaque collision, l'énergie se transforme en nouvelles particules, souvent lourdes, qui n'existent qu'une infime fraction de seconde. D'énormes détecteurs, construits comme des appareils photo autour du point de collision, enregistrent ce qu'elles laissent derrière elles.
 
-Les thèmes ci-dessous expliquent mes principaux résultats avec des mots de tous les jours, avec des liens vers les articles scientifiques pour qui veut les détails.
+J'ai travaillé sur quatre de ces expériences : **CMS** et **SHiP** au CERN aujourd'hui, et auparavant **ATLAS** au CERN et **SND** à Novossibirsk. Chaque page ci-dessous montre comment fonctionne l'expérience, avec un dessin simplifié, et ce que j'y fais.

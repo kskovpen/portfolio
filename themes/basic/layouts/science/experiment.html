@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="experiment">
+  {{ partial "page-head.html" . }}
+  <p class="exp-meta"><b>{{ .Params.full_name }}</b> · {{ .Params.place }} · {{ .Params.years | replaceRE "–$" "" }}{{ if hasSuffix .Params.years "–" }}–{{ T "exp_now" | lower }}{{ end }}</p>
+  <figure class="exp-figure">
+    {{ partial "experiment-drawing.html" .Params.drawing }}
+    <figcaption class="meta">{{ T "drawing_note" }}</figcaption>
+  </figure>
+  <div class="exp-body">{{ .Content }}</div>
+  {{- with .Sections }}
+  <h2>{{ T "exp_results" }}</h2>
+  <div class="cards">
+    {{- range . }}
+    <a class="topic-card" href="{{ .RelPermalink }}">
+      <h2>{{ .Title }}</h2>
+      {{ with .Summary | plainify | htmlUnescape }}<p>{{ truncate 170 . }}</p>{{ end }}
+      <span class="topic-more">{{ T "explore" }} <span aria-hidden="true">→</span></span>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+  {{- with .Params.website }}<p><a class="button-link" href="{{ . }}">{{ T "exp_website" }} ↗</a></p>{{ end }}
+  {{ partial "glossary.html" . }}
+</article>
+{{ end }}

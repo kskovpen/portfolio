@@ -1,4 +1,5 @@
 +++
+aliases = ['/fr/science/top-quark/']
 title = "Le quark top"
 layout = "list_items"
 publications = ["fcnc-scalar-2022", "photon-radiation-2021"]

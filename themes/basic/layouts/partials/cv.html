@@ -29,32 +29,20 @@
 
 {{- else if eq $part "highlights" }}{{ with .highlights }}
 <h2>{{ T "cv_highlights" }}</h2>
-<ol class="cv-highlights">
+<ul class="cv-compact">
   {{- range sort . "year" "desc" }}
-  <li>
-    <span class="cv-year">{{ .year }}</span>
-    <div>
-      <h3>{{ with .link }}<a href="{{ relLangURL . }}">{{ end }}{{ index .title $l }}{{ with .link }}</a>{{ end }}</h3>
-      <p>{{ index .text $l }}</p>
-    </div>
-  </li>
+  <li><span class="cv-year">{{ .year }}</span><span>{{ with .link }}<a href="{{ relLangURL . }}">{{ end }}{{ index .title $l }}{{ with .link }}</a>{{ end }}</span></li>
   {{- end }}
-</ol>
+</ul>
 {{- end }}
 
 {{- else if eq $part "career" }}{{ with .career }}
 <h2>{{ T "cv_career" }}</h2>
-<ol class="cv-timeline">
+<ul class="cv-compact">
   {{- range . }}
-  <li>
-    <span class="cv-year">{{ .years }}</span>
-    <div>
-      <h3>{{ .place }} <span class="meta">· {{ index .city $l }}</span></h3>
-      <p>{{ index .role $l }}</p>
-    </div>
-  </li>
+  <li><span class="cv-year">{{ .years }}</span><span><b>{{ with .short }}{{ index . $l }}{{ end }}</b> · {{ .place }}, {{ index .city $l }}</span></li>
   {{- end }}
-</ol>
+</ul>
 {{- end }}
 
 {{- else if eq $part "recognition_education" }}
