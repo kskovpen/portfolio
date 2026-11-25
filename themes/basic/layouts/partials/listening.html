@@ -16,35 +16,18 @@
   </div>
   {{- end }}
 
-  {{- with $d.top_artists }}
-  <h3>{{ T "on_repeat" }}</h3>
+  {{- with $d.played_albums }}
+  <h3>{{ T "most_played_albums" }}</h3>
   <div class="artist-grid">
     {{- range $i, $a := first 10 . }}
     <a class="artist" href="{{ $a.link }}" style="--i: {{ $i }}">
-      <img src="{{ $a.picture }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
+      <img src="{{ $a.cover }}" alt="" width="500" height="500" loading="lazy" referrerpolicy="no-referrer">
       <span class="artist-rank">{{ add $i 1 }}</span>
-      <span class="artist-name">{{ $a.name }}</span>
+      <span class="artist-name">{{ $a.title }}<small>{{ $a.artist }}</small></span>
     </a>
     {{- end }}
   </div>
   {{- end }}
-
-  <div class="listen-tracks">
-    {{- with $d.top_tracks }}
-    <div>
-      <h3>{{ T "most_played" }}</h3>
-      <ol class="track-list">
-        {{- range first 10 . }}
-        <li><a href="{{ .link }}">
-          <img src="{{ .cover }}" alt="" width="56" height="56" loading="lazy" referrerpolicy="no-referrer">
-          <span class="track-title">{{ .title }}</span>
-          <span class="track-artist">{{ .artist }}</span>
-        </a></li>
-        {{- end }}
-      </ol>
-    </div>
-    {{- end }}
-  </div>
 
   <p class="meta listen-credit"><a href="{{ $d.profile_url }}">{{ T "follow_deezer" }}</a> · {{ T "deezer_credit" }} <a href="https://www.deezer.com">Deezer</a> · {{ T "updated" (time.Format ":date_long" $d.updated) }}</p>
 </section>

@@ -60,6 +60,15 @@ def main():
             score[t["artist"]["id"]] += len(chart) - i
             info.setdefault(t["artist"]["id"], t["artist"])
         top_artists = [artist(info[i]) for i, _ in score.most_common(20)]
+        # Most played albums: same weighting, grouped by the album each track comes from
+        ascore, ainfo = Counter(), {}
+        for i, t in enumerate(chart):
+            ascore[t["album"]["id"]] += len(chart) - i
+            ainfo.setdefault(t["album"]["id"], (t["album"], t["artist"]["name"]))
+        played_albums = [{"id": i, "title": ainfo[i][0]["title"], "artist": ainfo[i][1],
+                          "link": f"https://www.deezer.com/album/{i}",
+                          "cover": ainfo[i][0].get("cover_big") or ainfo[i][0].get("cover_medium") or ""}
+                         for i, _ in ascore.most_common(20)]
         top_albums_raw = get(f"/user/{user}/charts/albums?limit=20")["data"]
         fav_albums_raw = sorted(get(f"/user/{user}/albums?limit=200")["data"],
                                 key=lambda a: a.get("time_add", 0), reverse=True)
@@ -92,6 +101,7 @@ def main():
         "counts": {"artists": fav_artists.get("total", 0), "albums": len(fav_albums_raw), "tracks": fav_tracks.get("total", 0)},
         "top_artists": top_artists,
         "top_tracks": top_tracks,
+        "played_albums": played_albums,
         "top_albums": [album(a) for a in top_albums_raw],
         "genres": genre_mix,
     }
