@@ -69,5 +69,5 @@ git add -A
 git commit -m "Short description of the change"
 git push
 ```
-Netlify rebuilds and publishes in about a minute: https://kskovpen.netlify.app
+Netlify rebuilds and publishes in about a minute: https://kirillskovpen.pages.dev
 Batch your changes and push when a piece of work is finished.

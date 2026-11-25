@@ -1,5 +1,5 @@
-# Rebuilds the Netlify site once a month so the Run page picks up new Strava activities.
-# Needs the repository secret NETLIFY_BUILD_HOOK (a Netlify build hook URL).
+# Rebuilds the site on Cloudflare Pages once a month so the Run page picks up new Strava activities.
+# Needs the repository secret DEPLOY_HOOK (a Cloudflare Pages deploy hook URL).
 name: Monthly rebuild
 
 on:
@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger-netlify:
+  trigger-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Netlify build
+      - name: Trigger Cloudflare Pages build
         env:
-          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+          HOOK: ${{ secrets.DEPLOY_HOOK }}
         run: curl -fsS -X POST -d '{}' "$HOOK" > /dev/null

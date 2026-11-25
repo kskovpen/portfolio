@@ -257,7 +257,7 @@ def save(req, publish=False):
         if p.returncode:
             raise RuntimeError("Saved and committed, but pushing to GitHub failed:\n" + p.stderr.strip())
         result["published"] = True
-        result["live"] = "https://kskovpen.netlify.app" + result["preview"].split(str(HUGO_PORT), 1)[1]
+        result["live"] = "https://kirillskovpen.pages.dev" + result["preview"].split(str(HUGO_PORT), 1)[1]
     return result
 
 # ---------------------------------------------------------------- HTTP
