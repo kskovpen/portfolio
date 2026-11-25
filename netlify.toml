@@ -20,6 +20,12 @@
   force = true
 
 [[redirects]]
+  from = "http://www.kirillskovpen.com/*"
+  to = "/coming-soon/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "https://kirillskovpen.com/*"
   to = "https://www.kirillskovpen.com/"
   status = 301
