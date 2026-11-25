@@ -550,3 +550,110 @@ footer {
   .reveal { opacity: 1; transform: none; }
   @view-transition { navigation: none; }
 }
+
+// =====================================================================
+//  Running: a contact sheet of photos and numbers, a day-by-day calendar,
+//  and a wall of races with their routes drawn large
+// =====================================================================
+.s-running.is-list main { max-width: none; padding: 0; }
+.run-body, .run-band-inner { max-width: var(--page); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.run-body { padding-bottom: 64px; }
+.run-hero { justify-content: flex-end; }
+.run-hero .page-head { margin: 0 0 14px; }
+
+// photo tiles: in colour, a caption slides up on hover
+.tile-shot { padding: 0; color: #fff; }
+.tile-shot img, .shot img { width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: saturate(0.9); transition: transform 1.2s var(--ease), filter 0.8s var(--ease); }
+.tile-shot:hover img, .shot:hover img { transform: scale(1.05); filter: none; }
+.tile-shot-big { grid-column: span 2; grid-row: span 2; }
+.shot-caption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 14px; font-size: 13px; line-height: 1.4; color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); opacity: 0; transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.5s var(--ease);
+}
+.shot-caption strong { display: block; font-size: 15px; }
+.tile-shot:hover .shot-caption, .tile-shot:focus-visible .shot-caption, .shot:hover .shot-caption { opacity: 1; transform: none; }
+
+// number tiles
+.tile-stat p { margin: 0; position: relative; }
+.stat-big { margin-top: auto !important; font-size: clamp(2.6rem, 5vw, 4.6rem); font-weight: 800; letter-spacing: -0.045em; line-height: 0.95;
+  color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat-big .stat-unit { font-size: 0.38em; letter-spacing: 0; }
+.tile-stat .tile-arrow { position: absolute; top: clamp(20px, 2.4vw, 36px); right: clamp(20px, 2.4vw, 36px); }
+.peak { position: absolute; left: 0; top: 24%; width: 100%; height: 34%; z-index: -1; }
+.peak path { fill: color-mix(in srgb, var(--hue) 8%, transparent); stroke: var(--hue); stroke-width: 1.2; stroke-linejoin: round;
+  stroke-dasharray: 1; opacity: 0.6; }
+.tile-stat-everest:hover .peak path { opacity: 1; animation: draw 1.6s var(--ease) both; }
+.tile-stat-everest:hover { background: color-mix(in srgb, var(--hue) 7%, var(--bg)); }
+
+// full-width bands below the sheet
+.run-band { padding: 44px 0; border-bottom: 1px solid var(--line); }
+.band-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 22px; }
+.band-head h2 { margin: 0; font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing: -0.02em; }
+.band-head p, .band-head .filters { margin: 0; }
+
+// calendar: one square per day
+.cal-scroll { overflow-x: auto; direction: rtl; }   // starts scrolled to the latest weeks
+.cal-scroll > .cal { direction: ltr; }
+.cal { width: 100%; min-width: 720px; height: auto; display: block; }
+.cal rect, .cal-legend i { --cell: color-mix(in srgb, var(--ink) 7%, var(--bg)); }
+.cal .l1, .cal-legend .l1 { --cell: color-mix(in srgb, var(--hue) 28%, var(--bg)); }
+.cal .l2, .cal-legend .l2 { --cell: color-mix(in srgb, var(--hue) 52%, var(--bg)); }
+.cal .l3, .cal-legend .l3 { --cell: color-mix(in srgb, var(--hue) 76%, var(--bg)); }
+.cal .l4, .cal-legend .l4 { --cell: var(--hue); }
+.cal rect { fill: var(--cell); animation: fade 0.5s var(--ease) both; animation-delay: calc(var(--c) * 14ms); }
+.cal rect:hover { stroke: var(--ink); stroke-width: 1.5; }
+.cal-month, .cal-wd { font-size: 9px; fill: var(--ink-3); }
+.cal-legend { display: flex; align-items: center; justify-content: flex-end; gap: 4px; margin: 12px 0 0; font-size: 12px; }
+.cal-legend i { display: inline-block; width: 11px; height: 11px; background: var(--cell); }
+
+// race wall
+.run-band-races { padding-bottom: 28px; }
+.race-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); border-top: 1px solid var(--line); }
+.race-tile { aspect-ratio: 1; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.race-tile[hidden] { display: none; }
+.race-hit { position: absolute; inset: 0; z-index: 1; }
+.race-tile:hover { background: color-mix(in srgb, var(--hue) 7%, var(--bg)); }
+.race-tile:hover::before { opacity: 1; }
+.race-tile:hover::after { transform: scaleX(1); }
+.race-tile .tile-label { position: relative; }
+.race-route-big { position: absolute; top: 9%; right: 7%; width: 52%; height: 52%; z-index: -1;
+  transition: transform 0.9s var(--ease); }
+.race-route-big path { fill: none; stroke: var(--hue); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: 1; opacity: 0.32; transition: opacity 0.4s; }
+.race-tile:hover .race-route-big { transform: scale(1.06); }
+.race-tile:hover .race-route-big path { opacity: 0.95; animation: draw 1.6s var(--ease) both; }
+.race-foot { margin-top: auto; position: relative; }
+.race-title { margin: 0 0 4px; font-size: 1.12rem; font-weight: 750; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink); }
+.race-numbers { margin: 0; display: flex; align-items: baseline; gap: 10px; }
+.race-clock { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.race-rank { font-size: 14px; font-weight: 650; color: var(--hue); font-variant-numeric: tabular-nums; }
+.race-meta { margin: 4px 0 0; font-size: 13px; color: var(--ink-3); }
+.race-meta a { position: relative; z-index: 2; }
+.run-band-races .credit { margin-top: 14px; }
+
+// remaining photos
+.run-body > h3:first-child { margin-top: 44px; }
+.shot-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; margin: 16px 0 36px; }
+.shot { position: relative; overflow: hidden; display: block; aspect-ratio: 1; outline: 1px solid var(--line); }
+.run-body .run-charts { margin-top: 44px; }
+
+@media (max-width: 560px) {
+  .run-sheet { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .run-sheet .tile-label { letter-spacing: 0.08em; }
+  .run-sheet .tile-hero, .run-sheet .tile-shot-big { grid-column: span 2; }
+  .run-sheet .tile-shot { aspect-ratio: 1; grid-row: auto; }
+  .run-sheet .tile-stat { padding: 16px; min-height: 42vw; }
+  .run-sheet .stat-big { font-size: 2rem; }
+  .run-sheet .tile-note { font-size: 13px; }
+  .run-body, .run-band-inner { padding-left: 16px; padding-right: 16px; }
+  .race-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .race-tile { padding: 14px; }
+  .race-title { font-size: 0.95rem; }
+  .race-clock { font-size: 1.25rem; }
+  .race-meta { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cal rect { animation: none; }
+}

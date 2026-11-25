@@ -1,19 +1,4 @@
 {{ define "main" }}
-  {{ partial "page-head.html" . }}
-  {{ .Content }}
-
-  {{- /* Own race photos: static/run/photos/*.jpg|png|webp, file name = caption.
-*/}}
-  {{- if fileExists "static/run/photos" }}{{ with readDir "static/run/photos" }}
-  {{- $photos := where . "IsDir" false }}
-  {{- with $photos }}
-  <div class="run-photos">
-    {{- range . }}{{ if findRE `(?i)\.(jpe?g|png|webp)$` .Name }}
-    {{- $cap := replaceRE `(?i)\.(jpe?g|png|webp)$` "" .Name }}
-    <figure><img src="{{ printf "run/photos/%s" .Name | relURL }}" alt="{{ $cap }}" loading="lazy"><figcaption>{{ $cap }}</figcaption></figure>
-    {{- end }}{{ end }}
-  </div>
-  {{- end }}{{ end }}{{ end }}
   {{- $r := site.Data.running }}
   {{- $u := site.Data.utmb }}
 
@@ -34,40 +19,142 @@
   {{- $road := where $races "type" "road" }}
   {{- $roadMarathons := where $road "km" "ge" 41.0 }}
   {{- $trails := where $races "type" "trail" }}
-  {{- $groups := slice
-      (dict "key" "group_trail" "items" $trails)
-      (dict "key" "group_marathons" "items" $roadMarathons)
-      (dict "key" "group_halves" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
-      (dict "key" "group_short" "items" (where $road "km" "lt" 19.0)) }}
 
-  <section class="run-tiles">
+  {{- /* Own photos from Strava runs: photos/strava (git-ignored, this Mac only; see scripts/fetch_strava_photos.py) */}}
+  {{- $photos := slice }}
+  {{- with resources.Get "photos/strava/manifest.json" }}{{ $photos = . | transform.Unmarshal }}{{ end }}
+  {{- $n := len $photos }}
+  {{- $sheetN := cond (ge $n 5) 5 (cond (ge $n 4) 4 $n) }}
+  {{- $bigFirst := ge $n 5 }}
+
+  {{- /* ---------- Contact sheet: intro, photos and the headline numbers ---------- */}}
+  <div class="bento run-sheet">
+    <section class="tile tile-hero run-hero" style="--i: 0">
+      {{ partial "page-head.html" . }}
+      <div class="hero-text">{{ .Content }}</div>
+    </section>
+
+    {{- range $i, $p := first $sheetN $photos }}
+    {{- with resources.Get $p.file }}
+    {{- $big := and $bigFirst (eq $i 0) }}
+    {{- $img := .Fill (cond $big "1400x1400 Center webp q80" "800x800 Center webp q80") }}
+    <a class="tile tile-shot{{ if $big }} tile-shot-big{{ end }}" href="{{ $p.url }}" style="--i: {{ add $i 1 }}">
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $p.caption | default $p.name }}" loading="{{ cond (eq $i 0) "eager" "lazy" }}">
+      <span class="shot-caption"><strong>{{ $p.name }}</strong> {{ (time $p.date) | time.Format ":date_medium" }} · {{ $p.km }} km · D+ {{ $p.elevation_m }} m</span>
+    </a>
+    {{- end }}
+    {{- end }}
+
     {{- with $u }}{{ with .index }}
-    <div class="run-tile">
-      <p class="run-tile-label">{{ T "utmb_index" }}</p>
-      <p class="run-tile-value">{{ . }}</p>
-      <p class="meta"><a href="{{ $u.profile_url }}">{{ T "trail_races_n" (len $trails) }}</a>{{ with $trails }}{{ with index (sort . "km" "desc") 0 }} · {{ T "longest" }} {{ math.Round .km }} km{{ end }}{{ end }}</p>
-    </div>
+    <a class="tile tile-stat" href="{{ $u.profile_url }}" style="--i: 2">
+      <p class="tile-label">{{ T "utmb_index" }}</p>
+      <p class="stat-big">{{ . }}</p>
+      <p class="tile-note">{{ T "trail_races_n" (len $trails) }}{{ with $trails }}{{ with index (sort . "km" "desc") 0 }} · {{ T "longest" }} {{ math.Round .km }} km{{ end }}{{ end }}</p>
+      <span class="tile-arrow" aria-hidden="true">↗</span>
+    </a>
     {{- end }}{{ end }}
     {{- with $r }}
-    <div class="run-tile">
-      <p class="run-tile-label">{{ T "climbed_in" .this_year.year }}</p>
-      <p class="run-tile-value">{{ lang.FormatNumber 0 .this_year.elevation_m }} m</p>
-      <p class="meta">{{ lang.FormatNumber 0 .this_year.distance_km }} km · {{ T "runs" (int .this_year.count) }}</p>
-    </div>
-    <div class="run-tile">
-      <p class="run-tile-label">{{ T "climbed_since" .all_time.since }}</p>
-      <p class="run-tile-value">{{ lang.FormatNumber 0 .all_time.elevation_m }} m</p>
-      <p class="meta">{{ lang.FormatNumber 0 .all_time.distance_km }} km · {{ T "runs" (int .all_time.count) }}</p>
-    </div>
+    <section class="tile tile-stat" style="--i: 3">
+      <p class="tile-label">{{ T "climbed_in" .this_year.year }}</p>
+      <p class="stat-big">{{ lang.FormatNumber 0 .this_year.elevation_m }}<span class="stat-unit"> m</span></p>
+      <p class="tile-note">{{ T "runs" (int .this_year.count) }}</p>
+    </section>
+    <section class="tile tile-stat tile-stat-everest" style="--i: 4">
+      <svg class="peak" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0,100 L38,58 L52,70 L88,22 L104,38 L118,8 L150,52 L166,44 L200,100"/></svg>
+      <p class="tile-label">{{ T "climbed_since" .all_time.since }}</p>
+      <p class="stat-big">{{ lang.FormatNumber 0 .all_time.elevation_m }}<span class="stat-unit"> m</span></p>
+      <p class="tile-note">{{ T "everest" (lang.FormatNumber 0 (div (float .all_time.elevation_m) 8849.0)) }}</p>
+    </section>
+    <section class="tile tile-stat" style="--i: 5">
+      <p class="tile-label">{{ T "distance_in" .this_year.year }}</p>
+      <p class="stat-big">{{ lang.FormatNumber 0 .this_year.distance_km }}<span class="stat-unit"> km</span></p>
+      <p class="tile-note">{{ lang.FormatNumber 0 .all_time.distance_km }} km · {{ T "runs" (int .all_time.count) }} ({{ .all_time.since }}–)</p>
+    </section>
     {{- end }}
     {{- with $roadMarathons }}{{ with index (sort . "seconds") 0 }}
-    <div class="run-tile">
-      <p class="run-tile-label">{{ T "marathon_pb" }}</p>
-      <p class="run-tile-value">{{ .time }}</p>
-      <p class="meta">{{ .name }}, {{ (time .date).Format "2006" }}</p>
-    </div>
+    <a class="tile tile-stat" href="{{ .strava }}" style="--i: 6">
+      <p class="tile-label">{{ T "marathon_pb" }}</p>
+      <p class="stat-big">{{ .time }}</p>
+      <p class="tile-note">{{ .name }}, {{ (time .date).Format "2006" }}</p>
+      <span class="tile-arrow" aria-hidden="true">↗</span>
+    </a>
     {{- end }}{{ end }}
+    {{- with $races }}{{ with index (sort . "km" "desc") 0 }}
+    <a class="tile tile-stat" href="{{ .strava | default .utmb }}" style="--i: 7">
+      <p class="tile-label">{{ T "longest_race" }}</p>
+      <p class="stat-big">{{ math.Round .km }}<span class="stat-unit"> km</span></p>
+      <p class="tile-note">{{ .name }}, {{ (time .date).Format "2006" }}{{ with .elev }} · D+ {{ . }} m{{ end }}</p>
+      <span class="tile-arrow" aria-hidden="true">↗</span>
+    </a>
+    {{- end }}{{ end }}
+  </div>
+
+  {{- /* ---------- Calendar: one square per day for the last 12 months ---------- */}}
+  {{- with $r }}
+  {{- $end := time (substr .updated 0 10) }}
+  {{- $back := add 364 (mod (add (int $end.Weekday) 6) 7) }}
+  {{- $start := $end.AddDate 0 0 (int (mul -1 $back)) }}
+  {{- $startS := $start.Format "2006-01-02" }}
+  {{- $day := newScratch }}{{ $tot := newScratch }}{{ $tot.Set "km" 0.0 }}{{ $tot.Set "runs" 0 }}
+  {{- range .runs }}{{ if ge .date $startS }}{{ $day.Add .date (float .distance_km) }}{{ $tot.Add "km" (float .distance_km) }}{{ $tot.Add "runs" 1 }}{{ end }}{{ end }}
+  {{- $weeks := add (div $back 7) 1 }}
+  <section class="run-band">
+    <div class="run-band-inner">
+      <div class="band-head">
+        <h2>{{ T "cal_title" }}</h2>
+        <p class="meta">{{ T "cal_summary" (dict "km" (lang.FormatNumber 0 ($tot.Get "km")) "runs" ($tot.Get "runs")) }}</p>
+      </div>
+      <div class="cal-scroll">
+      <svg class="cal" viewBox="0 0 {{ add 22 (mul $weeks 14) }} 114" role="img" aria-label="{{ T "cal_title" }}">
+        {{- range $i := seq 0 $back }}
+          {{- $d := $start.AddDate 0 0 $i }}{{ $ds := $d.Format "2006-01-02" }}
+          {{- $km := $day.Get $ds | default 0.0 }}
+          {{- $lvl := cond (eq $km 0.0) 0 (cond (lt $km 8.0) 1 (cond (lt $km 15.0) 2 (cond (lt $km 25.0) 3 4))) }}
+          {{- $x := add 22 (mul (div $i 7) 14) }}{{ $y := add 16 (mul (mod $i 7) 14) }}
+          {{- if and (le $d.Day 7) (eq (mod $i 7) 0) }}<text class="cal-month" x="{{ $x }}" y="10">{{ time.Format "Jan" $d }}</text>{{ end }}
+          <rect class="l{{ $lvl }}" x="{{ $x }}" y="{{ $y }}" width="11" height="11" style="--c: {{ div $i 7 }}"><title>{{ time.Format ":date_medium" $d }} · {{ if $km }}{{ lang.FormatNumber 1 $km }} km{{ else }}{{ T "no_run" }}{{ end }}</title></rect>
+        {{- end }}
+        {{- range $k, $lbl := slice "" (time.Format "Mon" ($start.AddDate 0 0 1)) "" (time.Format "Mon" ($start.AddDate 0 0 3)) "" (time.Format "Mon" ($start.AddDate 0 0 5)) "" }}{{ with $lbl }}<text class="cal-wd" x="0" y="{{ add 25 (mul $k 14) }}">{{ . }}</text>{{ end }}{{ end }}
+      </svg>
+      </div>
+      <p class="cal-legend meta" aria-hidden="true">{{ T "cal_less" }} <i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i> {{ T "cal_more" }}</p>
+    </div>
   </section>
+  {{- end }}
+
+  {{- /* ---------- Races: a wall of tiles, each with its route drawn large ---------- */}}
+  {{- with $races }}
+  {{- $groups := slice
+      (dict "key" "group_trail" "cat" "trail" "items" $trails)
+      (dict "key" "group_marathons" "cat" "marathon" "items" $roadMarathons)
+      (dict "key" "group_halves" "cat" "half" "items" (where (where $road "km" "lt" 41.0) "km" "ge" 19.0))
+      (dict "key" "group_short" "cat" "short" "items" (where $road "km" "lt" 19.0)) }}
+  <section class="run-band run-band-races">
+    <div class="run-band-inner band-head">
+      <h2>{{ T "races" }} <span class="meta">({{ len . }})</span></h2>
+      <div class="filters" role="group" aria-label="{{ T "filter_races" }}">
+        <button type="button" class="filter active" data-filter="all" aria-pressed="true">{{ T "filter_all" }}</button>
+        {{- range $g := $groups }}{{ with $g.items }}<button type="button" class="filter" data-filter="{{ $g.cat }}" aria-pressed="false">{{ T $g.key }}</button>{{ end }}{{ end }}
+      </div>
+    </div>
+    <div class="race-wall">
+      {{- $all := slice }}{{ range $groups }}{{ $g := . }}{{ range .items }}{{ $all = $all | append (merge . (dict "cat" $g.cat)) }}{{ end }}{{ end }}
+      {{- range $i, $race := sort $all "date" "desc" }}{{ partial "race-tile.html" (dict "race" $race "i" $i) }}{{ end }}
+    </div>
+    {{- with $u }}<p class="meta run-band-inner credit">{{ T "utmb_credit" }} <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
+  </section>
+  {{- end }}
+
+  <div class="run-body">
+  {{- /* ---------- Remaining photos ---------- */}}
+  {{- with after $sheetN $photos }}
+  <h3>{{ T "on_the_trails" }}</h3>
+  <div class="shot-strip">
+    {{- range . }}{{ $p := . }}{{ with resources.Get $p.file }}{{ $img := .Fill "600x600 Center webp q78" }}
+    <a href="{{ $p.url }}" class="shot"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $p.caption | default $p.name }}" loading="lazy"><span class="shot-caption">{{ (time $p.date) | time.Format ":date_medium" }} · {{ $p.km }} km</span></a>
+    {{- end }}{{ end }}
+  </div>
+  {{- end }}
 
   {{- with $r }}
     {{- $bars := slice }}{{ $maxI := 0 }}{{ $maxV := 0 }}
@@ -88,30 +175,6 @@
     </div>
   {{- end }}
 
-  {{- with $races }}
-  <h3>{{ T "races" }}</h3>
-  <div class="race-groups">
-  {{- range $g := $groups }}{{ with $g.items }}
-    {{- $sorted := sort . "date" "desc" }}
-    <section class="race-group">
-      <h4>{{ T $g.key }} <span class="meta">({{ len . }})</span></h4>
-      <ul class="race-list">
-        {{- $n := cond (eq $g.key "group_trail") 6 4 }}
-        {{- range first $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
-      </ul>
-      {{- if gt (len $sorted) $n }}
-      <details class="race-more">
-        <summary>{{ T "show_all" (len $sorted) }}</summary>
-        <ul class="race-list">
-          {{- range after $n $sorted }}{{ partial "race-row.html" . }}{{ end }}
-        </ul>
-      </details>
-      {{- end }}
-    </section>
-  {{- end }}{{ end }}
-  </div>
-  {{- with $u }}<p class="meta">{{ T "utmb_credit" }} <a href="{{ .profile_url }}">UTMB</a>.</p>{{ end }}
-  {{- end }}
   {{- with $r }}{{ with .gear }}
   {{- $maxKm := 1.0 }}{{ range . }}{{ $maxKm = math.Max $maxKm (float .distance_km) }}{{ end }}
   {{- $recent := now.AddDate 0 -2 0 }}
@@ -138,4 +201,5 @@
   <p class="meta">{{ T "run_unavailable" }}</p>
   {{- end }}
   {{ partial "section-posts.html" (dict "key" "running") }}
+  </div>
 {{ end }}

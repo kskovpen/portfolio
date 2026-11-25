@@ -18,3 +18,6 @@ node_modules/
 __pycache__/
 /data/utmb.json
 *.tmp~
+
+# Personal photos: never committed (served from Cloudflare R2 later)
+/photos/

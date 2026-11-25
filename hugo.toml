@@ -283,3 +283,13 @@ pygmentsUseClasses = true
 [markup.goldmark.parser]
   # lets a photo on its own line render as a <figure> (see render-image.html)
   wrapStandAloneImageWithinParagraph = false
+
+# Personal photos live in the git-ignored photos/ folder (this Mac only) and are
+# read as assets/photos/...; when the folder is absent (online builds) pages skip them.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "photos"
+    target = "assets/photos"

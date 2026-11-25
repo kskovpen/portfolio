@@ -1,0 +1,21 @@
+{{- /* One race as a square tile: its route (from the GPS track) drawn large, then name, time, rank.
+       Website and course come from data/race_events.yaml, keyed by event name. */ -}}
+{{- $r := .race }}
+{{- $ev := index (site.Data.race_events | default dict) $r.name }}
+{{- $route := "" }}{{ with site.Data.running }}{{ with .routes }}{{ $route = index . (string $r.sid) }}{{ end }}{{ end }}
+{{- $main := $r.strava | default (and $ev $ev.website) | default $r.utmb }}
+<article class="tile race-tile" data-category="{{ $r.cat }}" style="--i: {{ math.Min $.i 12 }}">
+  {{- with $main }}<a class="race-hit" href="{{ . }}" aria-label="{{ $r.name }}, {{ time.Format "Jan 2006" $r.date }}"></a>{{ end }}
+  {{- with $route }}<svg class="race-route-big" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="{{ . }}"/></svg>{{ end }}
+  <p class="tile-label">{{ time.Format "Jan 2006" $r.date }}</p>
+  <div class="race-foot">
+    <h3 class="race-title">{{ $r.name }}</h3>
+    <p class="race-numbers"><span class="race-clock">{{ $r.time }}</span>{{ with $r.rank }} <span class="race-rank">{{ . }}/{{ $r.total }}</span>{{ end }}</p>
+    <p class="race-meta">
+      {{- if lt $r.km 30.0 }}{{ lang.FormatNumber 1 $r.km | replaceRE `\.0$` "" }}{{ else }}{{ math.Round $r.km }}{{ end }} km{{ with $r.elev }} · D+ {{ . }} m{{ end }}
+      {{- with and $ev $ev.website }} · <a href="{{ . }}">{{ T "website" }}</a>{{ end }}
+      {{- with and $ev $ev.course }} · <a href="{{ . }}">{{ $ev.course_label | default (T "course_map") }}</a>{{ end }}
+      {{- with $r.utmb }} · <a href="{{ . }}">UTMB</a>{{ end -}}
+    </p>
+  </div>
+</article>
