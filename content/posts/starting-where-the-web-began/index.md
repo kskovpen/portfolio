@@ -6,7 +6,7 @@ tags = ["cern", "web", "history"]
 cover = "web-plaque.jpg"
 +++
 
-This is the first post on my new website, and I wanted to start it in the right place. Yesterday at CERN I stopped in front of a small plaque in a quiet corridor. It says that in these offices all the basic technologies of the World Wide Web were developed. Every page you read here, including this one, goes back to that corridor.
+This is the first post on my new website, and I wanted to start it in the right place. I have been working on CERN experiments for more than ten years, and on my way to a meeting I often pass a small plaque in a quiet corridor. It says that in these offices all the basic technologies of the World Wide Web were developed. Yesterday I finally stopped and took a photo of it, because every page you read here, including this one, goes back to that corridor.
 
 <!--more-->
 
@@ -14,7 +14,7 @@ This is the first post on my new website, and I wanted to start it in the right 
 
 ## Why I start here
 
-I work at CERN, and for me the story of the web is the best way to explain why fundamental research matters. Nobody tried to invent a new way for the whole world to communicate. Physicists simply needed to share what they knew.
+When people ask me why fundamental research matters, this is the story I tell. Nobody at CERN set out to invent a new way for the whole world to communicate. Physicists simply needed to share what they knew, and I know that need well from my own work.
 
 In March 1989 Tim Berners-Lee, a British computer scientist at CERN, wrote a short proposal called "Information Management". Thousands of physicists from institutes all over the world worked on the same experiments, on different computers, and information kept getting lost. His boss wrote on the cover: "vague but exciting".
 
@@ -22,7 +22,7 @@ The idea was simple: put documents on computers connected to the internet and li
 
 ## The same need today
 
-Experiments at CERN are still huge worldwide teams. In [CMS](/science/cms/), the experiment I work on, several thousand people from more than 50 countries share data, code and results every day, exactly what the web was made for.
+Experiments at CERN are still huge worldwide teams. In [CMS](/science/cms/), the experiment I work on, several thousand people from more than 50 countries share data, code and results every day. My own days are full of exactly that: analyses written together with colleagues on other continents, meetings that mix people in the room and on the screen, and papers with thousands of authors. It is exactly what the web was made for.
 
 ## What comes next
 
