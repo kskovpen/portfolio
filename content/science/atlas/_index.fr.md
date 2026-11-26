@@ -9,6 +9,7 @@ years = "2007–2013"
 status = "past"
 website = "https://atlas.cern"
 hint = "S'il existe, un boson W lourd « droit » (W<sub>R</sub>) se désintégrerait en un lepton et un neutrino lourd (N), laissant deux muons (en bleu) et deux jets (en orange) : la signature que j'ai cherchée pendant mon doctorat."
+summary = "Le plus grand détecteur du Grand collisionneur de hadrons, où j'ai fait mon doctorat sur les neutrinos lourds."
 +++
 
 ATLAS est le plus grand détecteur du Grand collisionneur de hadrons : 46 mètres de long et 25 mètres de haut, environ la moitié de Notre-Dame de Paris. Comme CMS, c'est un détecteur polyvalent, et en 2012 les deux ont découvert ensemble le boson de Higgs. Son nom vient de ses huit énormes **aimants toroïdaux**, qui courbent la trajectoire des muons dans la partie extérieure du détecteur.

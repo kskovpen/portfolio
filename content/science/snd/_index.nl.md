@@ -9,6 +9,7 @@ years = "2003–2013"
 status = "past"
 website = "https://www.inp.nsk.su"
 hint = "Een elektron en een positron annihileren tot een neutron (n) en een antineutron (n̄). Beide zijn neutraal en laten geen spoor na; het antineutron verraadt zich wanneer het in de kristallen annihileert en een ster van energie achterlaat."
+summary = "Een detector aan een elektron-positronversneller in Novosibirsk, waar mijn onderzoek begon."
 +++
 
 SND is een detector aan VEPP-2000, een elektron-positronversneller van het Budker Instituut voor Kernfysica in Novosibirsk. Wanneer een elektron zijn antideeltje, het positron, ontmoet, verdwijnen ze allebei en wordt hun energie omgezet in nieuwe deeltjes. Bij de energieën van VEPP-2000 zijn dat lichte deeltjes zoals pionen en kaonen en, net boven de drempel, een proton of een neutron samen met zijn antideeltje.

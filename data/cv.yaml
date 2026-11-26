@@ -10,10 +10,10 @@ what_i_do:
       nl: "De zwaarste deeltjes bestuderen"
       ru: "Изучаю самую тяжёлую частицу"
     text:
-      en: "The top quark is the heaviest elementary particle we know, as heavy as a gold atom. I look at how it is produced and decays in proton collisions at CERN, searching for small deviations that would reveal physics beyond today's theory."
-      fr: "Le quark top est la particule élémentaire la plus lourde connue, aussi lourde qu'un atome d'or. J'étudie comment il est produit et se désintègre dans les collisions de protons au CERN, à la recherche de petits écarts qui révéleraient une physique au-delà de la théorie actuelle."
-      nl: "Het top-quark is het zwaarste elementaire deeltje dat we kennen, zo zwaar als een goudatoom. Ik bestudeer hoe het ontstaat en vervalt in protonbotsingen bij CERN, op zoek naar kleine afwijkingen die natuurkunde voorbij de huidige theorie zouden onthullen."
-      ru: "Топ-кварк — самая тяжёлая из известных элементарных частиц, весом с атом золота. Я изучаю, как он рождается и распадается в столкновениях протонов в ЦЕРН, и ищу небольшие отклонения, которые указали бы на физику за пределами нынешней теории."
+      en: "The top quark is the heaviest known particle, as heavy as a gold atom. I study it to look for cracks in today's theory."
+      fr: "Le quark top est la particule la plus lourde connue, aussi lourde qu'un atome d'or. Je l'étudie pour chercher des failles dans la théorie actuelle."
+      nl: "Het top-quark is het zwaarste bekende deeltje, zo zwaar als een goudatoom. Ik bestudeer het om barsten in de huidige theorie te vinden."
+      ru: "Топ-кварк — самая тяжёлая известная частица, тяжёлая, как атом золота. Я изучаю его, чтобы найти «трещины» в современной теории."
   - icon: detector
     title:
       en: "Building particle detectors"
@@ -21,10 +21,10 @@ what_i_do:
       nl: "Deeltjesdetectoren bouwen"
       ru: "Создаю детекторы частиц"
     text:
-      en: "Experiments are giant cameras that photograph particle collisions. I help build new parts for them, for the upgraded CMS detector at CERN and for SHiP, a new experiment that will hunt for very light, hidden particles."
-      fr: "Les expériences sont des caméras géantes qui photographient les collisions de particules. J'aide à en construire de nouvelles parties, pour le détecteur CMS modernisé au CERN et pour SHiP, une nouvelle expérience qui traquera des particules très légères et cachées."
-      nl: "Experimenten zijn reusachtige camera's die deeltjesbotsingen fotograferen. Ik help nieuwe onderdelen bouwen, voor de vernieuwde CMS-detector bij CERN en voor SHiP, een nieuw experiment dat zal zoeken naar zeer lichte, verborgen deeltjes."
-      ru: "Эксперименты — это гигантские фотокамеры, снимающие столкновения частиц. Я участвую в создании новых узлов для них: для модернизированного детектора CMS в ЦЕРН и для SHiP — нового эксперимента, который будет искать очень лёгкие «скрытые» частицы."
+      en: "Detectors are giant cameras for particle collisions. I help build new ones for CMS and for SHiP."
+      fr: "Les détecteurs sont des appareils photo géants pour les collisions. J'aide à en construire de nouveaux pour CMS et SHiP."
+      nl: "Detectoren zijn reusachtige camera's voor botsingen. Ik help nieuwe bouwen voor CMS en SHiP."
+      ru: "Детекторы — гигантские фотокамеры для столкновений. Я помогаю строить новые для CMS и SHiP."
   - icon: data
     title:
       en: "Making sure the data can be trusted"
@@ -32,10 +32,10 @@ what_i_do:
       nl: "Zorgen dat de data betrouwbaar zijn"
       ru: "Слежу, чтобы данным можно было доверять"
     text:
-      en: "The CMS detector records billions of collisions. I have led teams of scientists who check that the detector, its software and the simulations behave correctly, so that every result built on them is solid."
-      fr: "Le détecteur CMS enregistre des milliards de collisions. J'ai dirigé des équipes de scientifiques qui vérifient que le détecteur, ses logiciels et les simulations fonctionnent correctement, pour que chaque résultat qui en découle soit solide."
-      nl: "De CMS-detector registreert miljarden botsingen. Ik heb teams van wetenschappers geleid die controleren of de detector, de software en de simulaties correct werken, zodat elk resultaat dat erop steunt solide is."
-      ru: "Детектор CMS регистрирует миллиарды столкновений. Я руководил группами учёных, которые проверяют, что детектор, программы и моделирование работают правильно, — чтобы любой результат на их основе был надёжным."
+      en: "CMS records billions of collisions. I have led teams that check the detector, software and simulations, so every result is solid."
+      fr: "CMS enregistre des milliards de collisions. J'ai dirigé des équipes qui vérifient le détecteur, les logiciels et les simulations, pour des résultats solides."
+      nl: "CMS legt miljarden botsingen vast. Ik leidde teams die detector, software en simulaties controleren, zodat elk resultaat klopt."
+      ru: "CMS регистрирует миллиарды столкновений. Я руководил группами, проверяющими детектор, программы и моделирование, чтобы каждый результат был надёжным."
 
 numbers:
   - since: 2007

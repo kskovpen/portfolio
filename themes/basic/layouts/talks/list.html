@@ -45,8 +45,9 @@
         {{- end }}
       {{- end }}
       <div>
-        <span class="talk-title">{{ $t.title }}</span><br>
-        <span class="meta">{{ $t.event }}{{ with $t.place }}, {{ . }}{{ end }}{{ with $t.date }} · {{ (time.Format "January 2006" .) }}{{ else }}{{ with $t.year }} · {{ . }}{{ end }}{{ end }}</span><br>
+        <span class="talk-title">{{ with $t.about }}{{ index . site.Language.Lang }}{{ else }}{{ $t.title }}{{ end }}</span><br>
+        <span class="meta">{{ $t.short | default $t.event }}{{ with $t.place }} · {{ . }}{{ end }}{{ with $t.date }} · {{ (time.Format "January 2006" .) }}{{ else }}{{ with $t.year }} · {{ . }}{{ end }}{{ end }}</span><br>
+        {{- if and $t.about (ne $t.title "Seminar") }}<span class="talk-orig" title="{{ $t.event }}">“{{ $t.title }}”</span><br>{{ end }}
         <span class="pub-links">
           {{- with $t.slides }}<a href="{{ . | relURL }}">{{ T "slides" }}</a> {{ end }}
           {{- with $t.proceedings }}<a href="{{ . }}">{{ T "proceedings" }}</a> {{ end }}

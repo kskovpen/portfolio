@@ -1,4 +1,5 @@
 # Talks, newest first. Fields: date (YYYY-MM-DD, may be empty), title, event, place;
+# short: compact event name; about: one plain-language line per language (shown first; the title stays below).
 # optional: slides (path under static/, e.g. talks/aachen-2024.pdf), proceedings (URL), url (event page).
 # If a PNG with the same name as the slides PDF exists (convert_images.sh makes one), it is shown as a thumbnail.
 
@@ -6,74 +7,100 @@
   title: "Seminar"
   event: "Physics seminar"
   place: "Aachen, Germany"
+  short: "Seminar, RWTH Aachen University"
+  about: {en: "A seminar for physicists in Aachen", fr: "Un séminaire pour physiciens à Aix-la-Chapelle", nl: "Een seminarie voor fysici in Aken", ru: "Семинар для физиков в Ахене"}
 
 - date: ""
   title: "Seminar"
   event: "Physics seminar"
   place: "Brussels, Belgium"
+  short: "Seminar"
+  about: {en: "A seminar for physicists in Brussels", fr: "Un séminaire pour physiciens à Bruxelles", nl: "Een seminarie voor fysici in Brussel", ru: "Семинар для физиков в Брюсселе"}
 
 - date: ""
   year: "2022"
   title: "Inspiring success stories: app Higgsy"
   event: "International Particle Physics Outreach Group (IPPOG) meeting, invited talk"
   place: "CERN, Switzerland"
+  short: "IPPOG meeting"
+  about: {en: "How a mobile game brings the Higgs boson to the public", fr: "Comment un jeu mobile fait découvrir le boson de Higgs au public", nl: "Hoe een mobiele game het higgsboson bij het publiek brengt", ru: "Как мобильная игра знакомит публику с бозоном Хиггса"}
 
 - date: "2023-08-21"
   title: "Particles in a pocket"
   event: "2023 European Physical Society Conference on High Energy Physics (EPS-HEP2023)"
   place: "Hamburg, Germany"
   proceedings: "https://arxiv.org/abs/2310.17656"
+  short: "EPS-HEP 2023"
+  about: {en: "My games Higgsy and MatterBricks: explaining particle physics on a phone", fr: "Mes jeux Higgsy et MatterBricks : expliquer la physique des particules sur un téléphone", nl: "Mijn games Higgsy en MatterBricks: deeltjesfysica uitleggen op een telefoon", ru: "Мои игры Higgsy и MatterBricks: физика частиц в телефоне"}
 
 - date: "2020-05-25"
   title: "Search for new phenomena in top quark interactions"
   event: "8th Large Hadron Collider Physics Conference (LHCP2020)"
   place: "Online"
   proceedings: "https://arxiv.org/abs/2008.06303"
+  short: "LHCP 2020"
+  about: {en: "Looking for signs of new physics in how the top quark behaves", fr: "Chercher des signes de nouvelle physique dans le comportement du quark top", nl: "Zoeken naar tekenen van nieuwe fysica in het gedrag van het top-quark", ru: "Поиск признаков новой физики в поведении топ-кварка"}
 
 - date: "2019-07-10"
   title: "The EFT and FCNC interpretations in the processes with top quarks at CMS"
   event: "2019 European Physical Society Conference on High Energy Physics (EPS-HEP2019)"
   place: "Ghent, Belgium"
   proceedings: "https://arxiv.org/abs/1910.04224"
+  short: "EPS-HEP 2019"
+  about: {en: "What CMS top quark results tell us about possible new physics", fr: "Ce que les résultats de CMS sur le quark top disent d'une éventuelle nouvelle physique", nl: "Wat de top-quarkresultaten van CMS zeggen over mogelijke nieuwe fysica", ru: "Что результаты CMS по топ-кварку говорят о возможной новой физике"}
 
 - date: "2019-03-16"
   title: "Rare top quark production and decays at ATLAS and CMS"
   event: "54th Rencontres de Moriond on Electroweak Interactions and Unified Theories (Moriond EW 2019)"
   place: "La Thuile, Italy"
   proceedings: "https://arxiv.org/abs/1905.08324"
+  short: "Moriond EW 2019"
+  about: {en: "The rarest ways top quarks are made and decay, seen by ATLAS and CMS", fr: "Les façons les plus rares de produire et de désintégrer des quarks top, vues par ATLAS et CMS", nl: "De zeldzaamste manieren waarop top-quarks ontstaan en vervallen, gezien door ATLAS en CMS", ru: "Самые редкие способы рождения и распада топ-кварков в ATLAS и CMS"}
 
 - date: "2018-09-16"
   title: "First observation of the tt̄H process at CMS"
   event: "11th International Workshop on Top Quark Physics (TOP2018)"
   place: "Bad Neuenahr, Germany"
   proceedings: "https://arxiv.org/abs/1810.05715"
+  short: "TOP 2018"
+  about: {en: "First sighting of the Higgs boson produced together with top quarks", fr: "Première observation du boson de Higgs produit avec des quarks top", nl: "Eerste waarneming van het higgsboson samen met top-quarks", ru: "Первое наблюдение бозона Хиггса, рождённого вместе с топ-кварками"}
 
 - date: "2017-09-17"
   title: "Search for flavour-changing neutral currents with top quarks"
   event: "10th International Workshop on Top Quark Physics (TOP2017)"
   place: "Braga, Portugal"
   proceedings: "https://arxiv.org/abs/1711.01852"
+  short: "TOP 2017"
+  about: {en: "Hunting for top quark decays the theory almost forbids", fr: "À la recherche de désintégrations du quark top presque interdites", nl: "Op zoek naar bijna verboden vervallen van het top-quark", ru: "Поиск почти запрещённых распадов топ-кварка"}
 
 - date: "2017-05-28"
   title: "Search for the standard model deviations in top quark precision studies at CMS"
   event: "29th Rencontres de Blois on Particle Physics and Cosmology"
   place: "Blois, France"
   proceedings: "https://arxiv.org/abs/1711.02153"
+  short: "Rencontres de Blois 2017"
+  about: {en: "Precise top quark measurements: does the theory still hold?", fr: "Mesures précises du quark top : la théorie tient-elle toujours ?", nl: "Nauwkeurige top-quarkmetingen: klopt de theorie nog?", ru: "Точные измерения топ-кварка: выдерживает ли теория проверку?"}
 
 - date: "2016-06-13"
   title: "Single top production and properties at hadron colliders"
   event: "4th Large Hadron Collider Physics Conference (LHCP 2016)"
   place: "Lund, Sweden"
   proceedings: "https://doi.org/10.22323/1.276.0039"
+  short: "LHCP 2016"
+  about: {en: "Top quarks made one at a time, and what they reveal", fr: "Les quarks top produits un par un, et ce qu'ils révèlent", nl: "Top-quarks die één voor één ontstaan, en wat ze onthullen", ru: "Одиночные топ-кварки и что они рассказывают"}
 
 - date: "2015-09-14"
   title: "Searches for FCNC with top quarks"
   event: "8th International Workshop on Top Quark Physics (TOP2015)"
   place: "Ischia, Italy"
   proceedings: "https://doi.org/10.22323/1.257.0048"
+  short: "TOP 2015"
+  about: {en: "Hunting for top quark decays the theory almost forbids", fr: "À la recherche de désintégrations du quark top presque interdites", nl: "Op zoek naar bijna verboden vervallen van het top-quark", ru: "Поиск почти запрещённых распадов топ-кварка"}
 
 - date: "2015-03-01"
   title: "Top quark properties and single top at CMS"
   event: "29th Rencontres de Physique de La Vallée d'Aoste"
   place: "La Thuile, Italy"
   proceedings: "https://doi.org/10.1393/ncc/i2015-15144-8"
+  short: "La Thuile 2015"
+  about: {en: "What CMS measures about the top quark", fr: "Ce que CMS mesure sur le quark top", nl: "Wat CMS meet over het top-quark", ru: "Что CMS измеряет о топ-кварке"}

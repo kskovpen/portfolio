@@ -9,6 +9,7 @@ years = "2003–2013"
 status = "past"
 website = "https://www.inp.nsk.su"
 hint = "Un électron et un positon s'annihilent en un neutron (n) et un antineutron (n̄). Tous deux sont neutres et ne laissent pas de trace ; l'antineutron se révèle en s'annihilant dans les cristaux, où il laisse une étoile d'énergie."
+summary = "Un détecteur sur un collisionneur électron-positon à Novossibirsk, où ma recherche a commencé."
 +++
 
 SND est un détecteur installé sur VEPP-2000, un collisionneur électron-positon de l'Institut Budker de physique nucléaire à Novossibirsk. Quand un électron rencontre son antiparticule, le positon, les deux disparaissent et leur énergie se transforme en nouvelles particules. Aux énergies de VEPP-2000, ce sont des particules légères comme les pions et les kaons et, juste au-dessus du seuil, un proton ou un neutron avec son antiparticule.

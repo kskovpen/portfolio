@@ -9,6 +9,7 @@ years = "2024–"
 status = "now"
 website = "https://ship.web.cern.ch"
 hint = "Een verborgen deeltje, hier een zwaar neutraal lepton (HNL), vliegt onzichtbaar door het schild (stippellijn) en vervalt in het lege volume in een muon en een pion. Neutrino's (ν) uit de bundel laten hun sporen na in de neutrinodetector."
+summary = "Een nieuw CERN-experiment dat zal zoeken naar lichte, verborgen deeltjes die alle experimenten tot nu toe gemist kunnen hebben."
 +++
 
 SHiP is een nieuw experiment dat bij CERN wordt voorbereid. Het zal zoeken naar *verborgen* deeltjes: zo licht en met zo weinig wisselwerking dat ze aan alle experimenten tot nu toe zijn ontsnapt, ook aan die bij de LHC. Zulke deeltjes zouden donkere materie kunnen verklaren, of waarom het heelal meer materie dan antimaterie bevat.
