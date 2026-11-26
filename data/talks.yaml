@@ -12,6 +12,12 @@
   event: "Physics seminar"
   place: "Brussels, Belgium"
 
+- date: ""
+  year: "2022"
+  title: "Inspiring success stories: app Higgsy"
+  event: "International Particle Physics Outreach Group (IPPOG) meeting, invited talk"
+  place: "CERN, Switzerland"
+
 - date: "2023-08-21"
   title: "Particles in a pocket"
   event: "2023 European Physical Society Conference on High Energy Physics (EPS-HEP2023)"

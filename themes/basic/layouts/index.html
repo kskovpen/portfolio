@@ -68,6 +68,7 @@
       <a href="{{ $href }}">{{ partial "spot.html" .spot }}<b>{{ index .title $l }}</b><span>{{ index .text $l | truncate 120 }}</span></a>
       {{- end }}
     </div>
+    <p class="home-out-invite">{{ T "out_invite_short" }} {{ partial "contact.html" (dict "label" (T "out_get_in_touch") "class" "") }}</p>
   </section>
   {{- end }}
 

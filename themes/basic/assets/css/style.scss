@@ -1104,3 +1104,12 @@ h2[id] { scroll-margin-top: 80px; }
 .tt-out b { display: block; font-size: 1.35rem; color: var(--ink); }
 .tt-out small { font-size: 14px; }
 .tt-out .out-more { color: var(--h-outreach); font-size: 1.4rem; }
+.out-invite { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: clamp(18px, 3vw, 36px); align-items: center; margin: 8px 0 44px; padding: clamp(20px, 3vw, 32px);
+  border-radius: 12px; background: color-mix(in srgb, var(--hue) 9%, var(--bg)); border: 1px solid color-mix(in srgb, var(--hue) 30%, var(--bg)); }
+.out-invite h2 { margin: 0 0 8px; }
+.out-invite p { margin: 0 0 10px; max-width: 66ch; color: var(--ink-2); }
+.out-invite .button-link { margin-top: 6px; }
+.out-invite:hover .d-lepton, .out-invite:hover .d-jet-track { animation: draw 1.1s var(--ease) both; }
+.home-out-invite { margin: 18px 0 0; font-size: 15px; color: var(--ink-2); position: relative; }
+.home-out-invite a { font-weight: 650; color: var(--hue); }
+@media (max-width: 560px) { .out-invite { grid-template-columns: 1fr; } .out-invite-art { max-width: 120px; } }

@@ -9,6 +9,9 @@ pygmentsUseClasses = true
   author = 'Kirill Skovpen'
   # Optional: photo under static/ (e.g. 'images/me.jpg') and CV PDF under static/ (e.g. 'cv.pdf')
   photo = 'images/me.jpg'
+  # contact e-mail shown on the Outreach page (joined by JavaScript: user + '@' + domain)
+  contact_user = 'Kirill.Skovpen'
+  contact_domain = 'cern.ch'
   cv = ''
   # SoundCloud profile shown as a player on the Music page
   soundcloud = 'https://soundcloud.com/kirillskovpenmusic'

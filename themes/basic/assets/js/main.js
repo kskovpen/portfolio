@@ -203,3 +203,13 @@ function scPlayer() {
   });
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scPlayer); else scPlayer();
+
+// Contact links: join the address only in the browser (see partials/contact.html)
+(function() {
+  function run() {
+    document.querySelectorAll('a.contact-link[data-u]').forEach(function(a) {
+      a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();

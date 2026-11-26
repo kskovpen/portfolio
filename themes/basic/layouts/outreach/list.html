@@ -20,6 +20,16 @@
   </div>
   {{- end }}
 
+  <section class="out-invite">
+    <div class="out-invite-art">{{ partial "spot.html" "public" }}</div>
+    <div>
+      <h2>{{ T "out_invite_title" }}</h2>
+      <p>{{ T "out_invite_text" }}</p>
+      <p class="out-invite-langs meta">{{ T "out_invite_langs" }}</p>
+      {{ partial "contact.html" (dict "label" (T "out_write") "class" "button-link") }}
+    </div>
+  </section>
+
   {{- with site.Data.teaching.outreach }}
   <h2>{{ T "out_timeline" }}</h2>
   <ul class="cv-compact">

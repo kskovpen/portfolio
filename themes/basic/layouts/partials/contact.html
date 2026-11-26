@@ -1,0 +1,7 @@
+{{- /* "Write to me" link. The address is assembled by main.js from two data attributes, so it never
+       appears whole in the HTML; without JavaScript a readable "name [at] domain" is shown. */ -}}
+{{- $u := site.Params.contact_user }}{{ $d := site.Params.contact_domain }}
+{{- if and $u $d }}
+<a class="contact-link {{ .class }}" href="#" data-u="{{ $u }}" data-d="{{ $d }}">{{ .label }}</a>
+<noscript><span class="meta">{{ $u }} [at] {{ $d }}</span></noscript>
+{{- end }}
