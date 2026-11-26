@@ -8,8 +8,9 @@
 {{- if eq $part "numbers" }}{{ with .numbers }}
 <div class="cv-numbers">
   {{- range . }}
-  {{- $inner := printf "<b>%v</b><span>%s</span>" (cond (isset . "since") (sub now.Year (.since | default 0)) .value) (index .label $l) }}
-  {{- with .link }}<a href="{{ relLangURL . }}">{{ $inner | safeHTML }}</a>{{ else }}<p>{{ $inner | safeHTML }}</p>{{ end }}
+  {{- $v := .value }}{{ if reflect.IsMap $v }}{{ $v = index $v $l }}{{ end }}{{ with .since }}{{ $v = sub now.Year . }}{{ end }}
+  {{- $inner := printf "<b>%v</b><span>%s</span>" $v (index .label $l) }}
+  {{- with .link }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $inner | safeHTML }}</a>{{ else }}<p>{{ $inner | safeHTML }}</p>{{ end }}
   {{- end }}
 </div>
 {{- end }}

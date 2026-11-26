@@ -70,12 +70,13 @@ numbers:
       fr: "exposés en conférence"
       nl: "conferentiepresentaties"
       ru: "докладов на конференциях"
-  - value: "4"
+  - value: {en: "1,100+", fr: "1 100+", nl: "1.100+", ru: "1100+"}
+    link: "https://inspirehep.net/authors/1066490"
     label:
-      en: "languages spoken"
-      fr: "langues parlées"
-      nl: "talen"
-      ru: "языка"
+      en: "scientific papers"
+      fr: "articles scientifiques"
+      nl: "wetenschappelijke artikelen"
+      ru: "научных статей"
 
 career:
   - years: "2023–"
