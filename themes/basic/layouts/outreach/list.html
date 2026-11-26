@@ -1,0 +1,38 @@
+{{ define "main" }}
+  {{ partial "page-head.html" . }}
+  <div class="outreach-intro">{{ .Content }}</div>
+  {{- $l := site.Language.Lang }}
+  {{- with site.Data.outreach.featured }}
+  <div class="out-grid">
+    {{- range $i, $f := . }}
+    {{- $href := "" }}{{ with $f.link }}{{ $href = cond (hasPrefix . "http") . (relLangURL .) }}{{ end }}
+    <article class="out-card" style="--i: {{ $i }}">
+      {{- with $href }}<a class="out-hit" href="{{ . }}" aria-label="{{ index $f.title $l }}"></a>{{ end }}
+      <div class="out-art">{{ partial "spot.html" $f.spot }}</div>
+      <div class="out-body">
+        <p class="out-when">{{ index $f.when $l }}</p>
+        <h2>{{ index $f.title $l }}</h2>
+        <p>{{ index $f.text $l }}</p>
+        {{- with $href }}<span class="out-more">{{ T "explore" }} <span aria-hidden="true">→</span></span>{{ end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  {{- with site.Data.teaching.outreach }}
+  <h2>{{ T "out_timeline" }}</h2>
+  <ul class="cv-compact">
+    {{- range . }}<li><span class="cv-year">{{ if eq .year "now" }}{{ T "exp_now" }}{{ else }}{{ .year }}{{ end }}</span><span>{{ with .link }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ relLangURL . }}{{ end }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
+  </ul>
+  {{- end }}
+
+  <h2>{{ T "out_learn" }}</h2>
+  <div class="out-learn">
+    {{- with site.GetPage "/science" }}{{ range where .Sections "Params.layout" "experiment" }}
+    <a href="{{ .RelPermalink }}"><span class="out-learn-art">{{ partial "experiment-drawing.html" .Params.drawing }}</span><span><b>{{ T "out_how" .Title }}</b><small>{{ .Params.full_name }}</small></span></a>
+    {{- end }}{{ end }}
+  </div>
+  {{ partial "glossary.html" . }}
+  {{ partial "section-posts.html" (dict "key" "outreach") }}
+{{ end }}

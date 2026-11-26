@@ -1,3 +1,7 @@
+out_timeline = "Всё по годам"
+out_learn = "Как устроены эксперименты"
+out_how = "Как устроен {{ . }}"
+out_see_all = "Вся популяризация"
 photo_by = "Фото:"
 tt_courses = "Курсы"
 tt_students = "Мои студенты"

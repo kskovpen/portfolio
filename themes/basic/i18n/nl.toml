@@ -1,3 +1,7 @@
+out_timeline = "Alles tot nu toe"
+out_learn = "Ontdek hoe de experimenten werken"
+out_how = "Hoe {{ . }} werkt"
+out_see_all = "Alle outreach"
 photo_by = "Foto:"
 tt_courses = "Vakken"
 tt_students = "Studenten die ik begeleid"

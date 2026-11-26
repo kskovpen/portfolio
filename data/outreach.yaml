@@ -1,0 +1,24 @@
+# Outreach: featured projects (cards) and a full timeline. Shown on /outreach/ and on the home page.
+featured:
+  - key: astrolab
+    spot: cosmic
+    when: {en: "Now", fr: "Actuel", nl: "Nu", ru: "Сейчас"}
+    link: https://astrolab.be
+    title: {en: "Catching particles from space", fr: "Attraper des particules venues de l'espace", nl: "Deeltjes uit de ruimte vangen", ru: "Ловим частицы из космоса"}
+    text: {en: "With AstroLAB IRIS, the public observatory in Ypres, students build detectors that catch cosmic muons: particles created high in the atmosphere that pass through our bodies every second.", fr: "Avec AstroLAB IRIS, l'observatoire public d'Ypres, des étudiants construisent des détecteurs qui captent les muons cosmiques : des particules créées haut dans l'atmosphère qui traversent notre corps à chaque seconde.", nl: "Met AstroLAB IRIS, de volkssterrenwacht in Ieper, bouwen studenten detectoren die kosmische muonen opvangen: deeltjes die hoog in de atmosfeer ontstaan en elke seconde door ons lichaam gaan.", ru: "Вместе с AstroLAB IRIS — народной обсерваторией в Ипре — студенты создают детекторы, которые ловят космические мюоны: частицы, рождающиеся высоко в атмосфере и каждую секунду пролетающие сквозь наше тело."}
+  - key: games
+    spot: public
+    when: {en: "2022–2023", fr: "2022–2023", nl: "2022–2023", ru: "2022–2023"}
+    link: /projects/
+    title: {en: "Games about particles", fr: "Des jeux sur les particules", nl: "Games over deeltjes", ru: "Игры о частицах"}
+    text: {en: "Higgsy lets you hunt for the Higgs boson like a CERN physicist; in MatterBricks the smallest particles of matter become puzzle pieces. Both are free on the App Store.", fr: "Higgsy vous fait chercher le boson de Higgs comme un physicien du CERN ; dans MatterBricks, les plus petites particules deviennent des pièces de puzzle. Les deux sont gratuits sur l'App Store.", nl: "In Higgsy zoek je naar het higgsboson zoals een fysicus bij CERN; in MatterBricks worden de kleinste deeltjes puzzelstukjes. Beide zijn gratis in de App Store.", ru: "В Higgsy вы ищете бозон Хиггса, как физик ЦЕРН, а в MatterBricks мельчайшие частицы становятся деталями головоломки. Обе игры бесплатны в App Store."}
+  - key: schools
+    spot: talks
+    when: {en: "2015–", fr: "2015–", nl: "2015–", ru: "2015–"}
+    title: {en: "Talks for schools", fr: "Exposés pour les écoles", nl: "Lezingen voor scholen", ru: "Лекции для школьников"}
+    text: {en: "Talks such as “A Big Bang in the Lab” and CERN Masterclasses, where secondary school pupils analyse real collision data for a day.", fr: "Des exposés comme « Un Big Bang au labo » et les Masterclasses du CERN, où des lycéens analysent de vraies données de collisions pendant une journée.", nl: "Lezingen zoals \"Een oerknal in het lab\" en CERN-masterclasses, waar scholieren een dag lang echte botsingsdata analyseren.", ru: "Лекции вроде «Большого взрыва в лаборатории» и мастер-классы ЦЕРН, где школьники целый день анализируют настоящие данные о столкновениях."}
+  - key: media
+    spot: press
+    when: {en: "2018", fr: "2018", nl: "2018", ru: "2018"}
+    title: {en: "In the news", fr: "Dans les médias", nl: "In de media", ru: "В СМИ"}
+    text: {en: "When CMS first saw the Higgs boson produced together with top quarks, I wrote the press release and a public blog, and reported from CERN on the university's Instagram.", fr: "Quand CMS a vu pour la première fois le boson de Higgs produit avec des quarks top, j'ai écrit le communiqué de presse et un blog grand public, et j'ai raconté le CERN sur l'Instagram de l'université.", nl: "Toen CMS voor het eerst het higgsboson samen met top-quarks zag ontstaan, schreef ik het persbericht en een publieksblog, en bracht ik verslag uit vanuit CERN op de Instagram van de universiteit.", ru: "Когда CMS впервые увидел рождение бозона Хиггса вместе с топ-кварками, я написал пресс-релиз и научно-популярный блог и рассказывал о ЦЕРН в Instagram университета."}

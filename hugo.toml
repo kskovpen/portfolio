@@ -61,6 +61,12 @@ pygmentsUseClasses = true
     weight = 10
 
   [[languages.en.menus.main]]
+    identifier = 'outreach'
+    name = 'Outreach'
+    pageRef = '/outreach'
+    weight = 15
+
+  [[languages.en.menus.main]]
     identifier = 'talks'
     name = 'Teaching & talks'
     pageRef = '/talks'
@@ -127,6 +133,12 @@ pygmentsUseClasses = true
     name = 'Recherche'
     pageRef = '/science'
     weight = 10
+
+  [[languages.fr.menus.main]]
+    identifier = 'outreach'
+    name = 'Vulgarisation'
+    pageRef = '/outreach'
+    weight = 15
 
   [[languages.fr.menus.main]]
     identifier = 'talks'
@@ -197,6 +209,12 @@ pygmentsUseClasses = true
     weight = 10
 
   [[languages.nl.menus.main]]
+    identifier = 'outreach'
+    name = 'Outreach'
+    pageRef = '/outreach'
+    weight = 15
+
+  [[languages.nl.menus.main]]
     identifier = 'talks'
     name = 'Onderwijs & lezingen'
     pageRef = '/talks'
@@ -263,6 +281,12 @@ pygmentsUseClasses = true
     name = 'Исследования'
     pageRef = '/science'
     weight = 10
+
+  [[languages.ru.menus.main]]
+    identifier = 'outreach'
+    name = 'Популяризация'
+    pageRef = '/outreach'
+    weight = 15
 
   [[languages.ru.menus.main]]
     identifier = 'talks'

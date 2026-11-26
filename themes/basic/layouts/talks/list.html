@@ -27,10 +27,9 @@
     {{- range .schools }}<li><span class="cv-year">{{ .year }}</span><span>{{ index .text $l }}</span></li>{{ end }}
   </ul>
 
-  <div class="tt-head">{{ partial "spot.html" "public" }}<h2 id="public">{{ T "tt_public" }}</h2></div>
-  <ul class="cv-compact">
-    {{- range .outreach }}<li><span class="cv-year">{{ if eq .year "now" }}{{ T "exp_now" }}{{ else }}{{ .year }}{{ end }}</span><span>{{ with .link }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ relLangURL . }}{{ end }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
-  </ul>
+  {{- with site.GetPage "/outreach" }}
+  <a class="tt-out" id="public" href="{{ .RelPermalink }}">{{ partial "spot.html" "cosmic" }}<span><b>{{ .Title }}</b><small>{{ index (index site.Data.outreach.featured 0).title $l }} · {{ index (index site.Data.outreach.featured 1).title $l }} · {{ index (index site.Data.outreach.featured 2).title $l }}</small></span><span class="out-more">→</span></a>
+  {{- end }}
   {{- end }}
 
   <div class="tt-head">{{ partial "spot.html" "talks" }}<h2 id="talks">{{ T "conf_talks" }}</h2></div>

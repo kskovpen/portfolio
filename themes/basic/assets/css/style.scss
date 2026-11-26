@@ -18,6 +18,7 @@
   --h-talks: #9a6500;
   --h-blog: #bf2f63;
   --h-photos: #4a5560;
+  --h-outreach: #4b52c4;
   --chart-color: #00909c;
   --chart-grid: #e6e5e0;
 }
@@ -37,6 +38,7 @@
   --h-talks: #f2b640;
   --h-blog: #ff7eaa;
   --h-photos: #b9c4cf;
+  --h-outreach: #969cff;
   --chart-color: #1fa7b1;
   --chart-grid: #2a3033;
 }
@@ -60,6 +62,7 @@
 .s-research { --hue: var(--h-research); }
 .s-running  { --hue: var(--h-running); }
 .s-music    { --hue: var(--h-music); }
+.s-outreach { --hue: var(--h-outreach); }
 .s-projects { --hue: var(--h-projects); }
 .s-travel   { --hue: var(--h-travel); }
 .s-photos   { --hue: var(--h-photos); }
@@ -1056,3 +1059,48 @@ h2[id] { scroll-margin-top: 80px; }
 .exp-photo img { width: 100%; height: auto; max-height: 560px; object-fit: cover; border-radius: 8px; display: block; }
 .exp-photo figcaption { margin-top: 8px; font-size: 14.5px; color: var(--ink-2); }
 .exp-photo figcaption .meta { display: block; font-size: 12px; margin-top: 2px; }
+
+// Outreach
+.outreach-intro p { font-size: 1.12rem; max-width: 68ch; }
+.out-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 26px 0 40px; }
+.out-card { position: relative; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 18px; padding: 20px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); transition: border-color .3s, transform .4s var(--ease), background .3s; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 80ms); }
+.out-card:has(.out-hit):hover { border-color: var(--hue); transform: translateY(-3px); background: color-mix(in srgb, var(--hue) 5%, var(--bg)); }
+.out-hit { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.out-art { align-self: center; }
+.out-when { margin: 0; font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: var(--hue); }
+.out-card h2 { margin: 4px 0 6px !important; font-size: 1.3rem !important; color: var(--ink); }
+.out-card p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.out-more { display: inline-block; margin-top: 10px; font-weight: 650; color: var(--hue); }
+.out-card:hover .d-track, .out-card:hover .d-lepton, .out-card:hover .d-jet-track { animation: draw 1.1s var(--ease) both; }
+.out-learn { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 14px 0 26px; }
+.out-learn a { display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink-2); transition: border-color .3s; }
+.out-learn a:hover { border-color: var(--hue); text-decoration: none; }
+.out-learn-art .drawing { height: 110px; width: auto; max-width: 100%; margin: 0 auto; }
+.out-learn b { display: block; color: var(--ink); }
+.out-learn small { font-size: 13px; color: var(--ink-3); }
+.spot .s-star { fill: var(--ink-3); }
+.spot .s-paper { fill: color-mix(in srgb, var(--ink) 5%, var(--bg)); stroke: var(--ink-3); stroke-width: 1.5; }
+.spot .s-headline { fill: var(--ink-2); }
+.spot .s-photo { fill: color-mix(in srgb, #1c2a3a 90%, var(--bg)); }
+.spot .s-lines { stroke: var(--ink-3); stroke-width: 2.4; stroke-linecap: round; }
+@media (max-width: 860px) { .out-grid { grid-template-columns: 1fr; } .out-learn { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .out-card { grid-template-columns: 90px minmax(0, 1fr); gap: 12px; padding: 16px; } }
+
+// home: outreach band
+.tile-outreach { grid-column: span 4; }
+.home-out { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: auto; position: relative; }
+.home-out a { display: flex; flex-direction: column; gap: 8px; color: var(--ink-2); }
+.home-out a:hover { text-decoration: none; }
+.home-out .spot { width: 100%; max-width: 150px; }
+.home-out b { color: var(--ink); font-size: 1.1rem; letter-spacing: -0.01em; }
+.home-out a:hover b { color: var(--hue); }
+.home-out span { font-size: 14.5px; line-height: 1.45; }
+.home-out a:hover .d-track, .home-out a:hover .d-lepton { animation: draw 1.1s var(--ease) both; }
+@media (max-width: 900px) { .tile-outreach { grid-column: span 2; } .home-out { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tile-outreach { grid-column: auto; } .home-out { grid-template-columns: 1fr 1fr; } }
+.tt-out { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 18px; align-items: center; margin: 44px 0 8px; padding: 16px 20px; border: 1px solid var(--line); border-left: 4px solid var(--h-outreach); border-radius: 8px; color: var(--ink-2); }
+.tt-out:hover { text-decoration: none; border-color: var(--h-outreach); background: color-mix(in srgb, var(--h-outreach) 5%, var(--bg)); }
+.tt-out b { display: block; font-size: 1.35rem; color: var(--ink); }
+.tt-out small { font-size: 14px; }
+.tt-out .out-more { color: var(--h-outreach); font-size: 1.4rem; }

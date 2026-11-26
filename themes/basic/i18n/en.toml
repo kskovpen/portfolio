@@ -1,3 +1,7 @@
+out_timeline = "Everything so far"
+out_learn = "Learn how the experiments work"
+out_how = "How {{ . }} works"
+out_see_all = "All outreach"
 photo_by = "Photo:"
 tt_courses = "Courses"
 tt_students = "Students I supervise"

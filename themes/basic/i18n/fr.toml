@@ -1,3 +1,7 @@
+out_timeline = "Tout jusqu'ici"
+out_learn = "Découvrir comment fonctionnent les expériences"
+out_how = "Comment fonctionne {{ . }}"
+out_see_all = "Toute la vulgarisation"
 photo_by = "Photo :"
 tt_courses = "Cours"
 tt_students = "Les étudiants que j'encadre"

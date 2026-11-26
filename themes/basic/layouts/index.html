@@ -59,6 +59,18 @@
   </section>
   {{- end }}
 
+  {{- with $m.outreach }}{{ $l := site.Language.Lang }}{{ $u := .url }}
+  <section class="tile tile-outreach s-outreach" style="--i: 3">
+    <div class="tile-top"><a class="tile-label" href="{{ .url }}" style="view-transition-name: t-outreach">{{ .name }}</a><a class="tile-arrow" href="{{ .url }}" aria-label="{{ .name }}">↗</a></div>
+    <div class="home-out">
+      {{- range site.Data.outreach.featured }}
+      {{- $href := $u }}{{ with .link }}{{ $href = cond (hasPrefix . "http") . (relLangURL .) }}{{ end }}
+      <a href="{{ $href }}">{{ partial "spot.html" .spot }}<b>{{ index .title $l }}</b><span>{{ index .text $l | truncate 120 }}</span></a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
   {{- with $m.running }}{{ $r := site.Data.running }}
   <a class="tile tile-running s-running" href="{{ .url }}" style="--i: 2">
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-running">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>

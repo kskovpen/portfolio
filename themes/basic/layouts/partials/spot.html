@@ -47,6 +47,25 @@
   <circle class="s-dot" cx="{{ index $p 0 }}" cy="{{ index $p 1 }}" r="2.4"/>
   {{- end }}
   <path class="s-stand" d="M80 88 L80 110 M64 112 L96 112"/>
+{{- else if eq $k "cosmic" }}
+  {{- /* cosmic muons raining down from the sky onto a stack of detector plates */}}
+  <circle class="s-star" cx="20" cy="14" r="1.6"/><circle class="s-star" cx="58" cy="8" r="1.2"/><circle class="s-star" cx="132" cy="12" r="1.6"/><circle class="s-star" cx="100" cy="20" r="1"/>
+  <path class="d-lepton" pathLength="1" d="M40 4 L64 74"/>
+  <path class="d-lepton" pathLength="1" style="animation-delay:.2s" d="M92 2 L82 74"/>
+  <path class="d-lepton" pathLength="1" style="animation-delay:.4s" d="M140 6 L104 74"/>
+  <rect class="d-snd" x="40" y="72" width="80" height="8" rx="2"/>
+  <rect class="d-snd" x="40" y="86" width="80" height="8" rx="2"/>
+  <rect class="d-snd" x="40" y="100" width="80" height="8" rx="2"/>
+  <circle class="d-burst" cx="64" cy="76" r="2.6"/><circle class="d-burst" cx="82" cy="76" r="2.6"/><circle class="d-burst" cx="104" cy="76" r="2.6"/>
+  <path class="s-cable" d="M120 90 C 134 90 136 104 150 104"/>
+{{- else if eq $k "press" }}
+  {{- /* a newspaper with a headline photo of a collision */}}
+  <rect class="s-paper" x="18" y="12" width="124" height="96" rx="3"/>
+  <rect class="s-headline" x="28" y="22" width="104" height="9" rx="2"/>
+  <rect class="s-photo" x="28" y="38" width="56" height="44" rx="2"/>
+  <path class="d-track" pathLength="1" d="M56 60 L36 44 M56 60 L78 46 M56 60 L70 78"/>
+  <path class="d-lepton" pathLength="1" d="M56 60 L34 76"/>
+  <path class="s-lines" d="M92 42 h40 M92 50 h40 M92 58 h40 M92 66 h32 M92 74 h40 M28 92 h104 M28 99 h84"/>
 {{- else if eq $k "electronics" }}
   {{- /* a small amplifier circuit: transistor, resistors and a pulse */}}
   <path class="s-wire" d="M10 60 L40 60 M40 40 L40 80 M40 52 L58 40 L58 20 L150 20 M40 68 L58 80 L58 100 L150 100 M100 20 L100 34 M100 54 L100 100"/>
