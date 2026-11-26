@@ -8,6 +8,14 @@ featured:
     when: {en: "Now", fr: "Actuel", nl: "Nu", ru: "Сейчас"}
     title: {en: "Catching particles from space", fr: "Attraper des particules venues de l'espace", nl: "Deeltjes uit de ruimte vangen", ru: "Ловим частицы из космоса"}
     text: {en: "With AstroLAB IRIS in Ypres, students build detectors for cosmic muons: particles from space that pass through us every second.", fr: "Avec AstroLAB IRIS à Ypres, des étudiants construisent des détecteurs de muons cosmiques : des particules venues de l'espace qui nous traversent à chaque seconde.", nl: "Met AstroLAB IRIS in Ieper bouwen studenten detectoren voor kosmische muonen: deeltjes uit de ruimte die elke seconde door ons heen gaan.", ru: "Вместе с AstroLAB IRIS в Ипре студенты строят детекторы космических мюонов — частиц из космоса, каждую секунду пролетающих сквозь нас."}
+  - key: fce
+    icons: [fce]
+    spot: physics
+    home: false
+    link: /projects/fce/
+    when: {en: "2024–2026", fr: "2024–2026", nl: "2024–2026", ru: "2024–2026"}
+    title: {en: "Explore a future collider yourself", fr: "Explorer soi-même un futur collisionneur", nl: "Zelf een toekomstige versneller verkennen", ru: "Исследуйте будущий коллайдер сами"}
+    text: {en: "FCE is a free app where students and anyone curious connect building blocks on screen to explore simulated collisions at a future collider, no programming needed. I use it for student projects at a European graduate school.", fr: "FCE est une application gratuite où étudiants et curieux relient des blocs à l'écran pour explorer des collisions simulées d'un futur collisionneur, sans programmer. Je l'utilise pour des projets étudiants dans une école doctorale européenne.", nl: "FCE is een gratis app waarin studenten en nieuwsgierigen bouwblokken op het scherm verbinden om gesimuleerde botsingen bij een toekomstige versneller te verkennen, zonder te programmeren. Ik gebruik hem voor studentenprojecten op een Europese doctoraatsschool.", ru: "FCE — бесплатное приложение, в котором студенты и все желающие соединяют блоки на экране и изучают моделированные столкновения на будущем коллайдере без программирования. Я использую его в студенческих проектах европейской школы для аспирантов."}
   - key: ippog
     spot: network
     home: true
