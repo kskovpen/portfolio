@@ -10,13 +10,6 @@
   short: "Seminar, RWTH Aachen University"
   about: {en: "A seminar for physicists in Aachen", fr: "Un séminaire pour physiciens à Aix-la-Chapelle", nl: "Een seminarie voor fysici in Aken", ru: "Семинар для физиков в Ахене"}
 
-- date: ""
-  title: "Seminar"
-  event: "Physics seminar"
-  place: "Brussels, Belgium"
-  short: "Seminar"
-  about: {en: "A seminar for physicists in Brussels", fr: "Un séminaire pour physiciens à Bruxelles", nl: "Een seminarie voor fysici in Brussel", ru: "Семинар для физиков в Брюсселе"}
-
 - date: "2022-10-27"
   title: "Inspiring success stories: app Higgsy"
   event: "24th IPPOG Collaboration meeting, invited talk"
