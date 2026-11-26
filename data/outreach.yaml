@@ -10,7 +10,7 @@ featured:
     text: {en: "With AstroLAB IRIS in Ypres, students build detectors for cosmic muons: particles from space that pass through us every second.", fr: "Avec AstroLAB IRIS à Ypres, des étudiants construisent des détecteurs de muons cosmiques : des particules venues de l'espace qui nous traversent à chaque seconde.", nl: "Met AstroLAB IRIS in Ieper bouwen studenten detectoren voor kosmische muonen: deeltjes uit de ruimte die elke seconde door ons heen gaan.", ru: "Вместе с AstroLAB IRIS в Ипре студенты строят детекторы космических мюонов — частиц из космоса, каждую секунду пролетающих сквозь нас."}
   - key: ippog
     spot: network
-    home: false
+    home: true
     link: https://arxiv.org/abs/2509.17643
     when: {en: "2025", fr: "2025", nl: "2025", ru: "2025"}
     title: {en: "A worldwide outreach network", fr: "Un réseau mondial de vulgarisation", nl: "Een wereldwijd outreachnetwerk", ru: "Мировая сеть популяризаторов"}
@@ -23,15 +23,30 @@ featured:
     when: {en: "2022–2023", fr: "2022–2023", nl: "2022–2023", ru: "2022–2023"}
     title: {en: "Games about particles", fr: "Des jeux sur les particules", nl: "Games over deeltjes", ru: "Игры о частицах"}
     text: {en: "Hunt for the Higgs boson in Higgsy, made for its 10th anniversary, or build particles from bricks in MatterBricks, featured on RTBF and BX1. Both are free; I presented them in an invited talk at IPPOG (CERN) and at the EPS-HEP 2023 conference.", fr: "Cherchez le boson de Higgs dans Higgsy, créé pour ses 10 ans, ou assemblez des particules dans MatterBricks, présenté sur la RTBF et BX1. Les deux sont gratuits ; je les ai présentés lors d'un exposé invité à l'IPPOG (CERN) et à la conférence EPS-HEP 2023.", nl: "Zoek het higgsboson in Higgsy, gemaakt voor zijn tiende verjaardag, of bouw deeltjes met blokjes in MatterBricks, te zien op RTBF en BX1. Beide zijn gratis; ik stelde ze voor in een uitgenodigde lezing bij IPPOG (CERN) en op de conferentie EPS-HEP 2023.", ru: "Ищите бозон Хиггса в Higgsy, созданной к 10-летию его открытия, или собирайте частицы из кирпичиков в MatterBricks — о ней рассказали RTBF и BX1. Обе игры бесплатны; я представил их в приглашённом докладе на IPPOG (ЦЕРН) и на конференции EPS-HEP 2023."}
-  - key: media
-    spot: press
-    home: true
-    when: {en: "2018", fr: "2018", nl: "2018", ru: "2018"}
-    title: {en: "In the news", fr: "Dans les médias", nl: "In de media", ru: "В СМИ"}
-    text: {en: "Press release, public blog and Instagram from CERN on the first sighting of the Higgs boson with top quarks.", fr: "Communiqué de presse, blog grand public et Instagram depuis le CERN sur la première observation du boson de Higgs avec des quarks top.", nl: "Persbericht, publieksblog en Instagram vanuit CERN over de eerste waarneming van het higgsboson met top-quarks.", ru: "Пресс-релиз, научно-популярный блог и Instagram из ЦЕРН о первом наблюдении бозона Хиггса вместе с топ-кварками."}
   - key: schools
     spot: talks
     home: true
     when: {en: "2015–2017", fr: "2015–2017", nl: "2015–2017", ru: "2015–2017"}
     title: {en: "Talks for schools", fr: "Exposés pour les écoles", nl: "Lezingen voor scholen", ru: "Лекции для школьников"}
     text: {en: "“A Big Bang in the Lab” for secondary school pupils in Brussels, and CERN Masterclasses in Strasbourg, where pupils analyse real collision data.", fr: "« Un Big Bang au labo » pour des lycéens à Bruxelles, et les Masterclasses du CERN à Strasbourg, où des élèves analysent de vraies collisions.", nl: "\"Een oerknal in het lab\" voor scholieren in Brussel, en CERN-masterclasses in Straatsburg, waar leerlingen echte botsingsdata analyseren.", ru: "«Большой взрыв в лаборатории» для школьников в Брюсселе и мастер-классы ЦЕРН в Страсбурге, где школьники анализируют настоящие столкновения."}
+
+# Articles about my work that are still online (Outreach page, "In the news").
+news:
+  - date: "2018-06-20"
+    outlet: "IIHE (ULB–VUB), Brussels"
+    lang: en
+    url: https://iihe.ac.be/top-footprints-in-the-higgs-field/
+    title: "Top Footprints In The Higgs Field"
+    about: {en: "A public blog article on how the top quark leaves its footprints in the Higgs field.", fr: "Un article de blog grand public sur les empreintes que le quark top laisse dans le champ de Higgs.", nl: "Een publieksblog over de voetafdrukken die het top-quark in het higgsveld achterlaat.", ru: "Научно-популярная статья о том, какие «следы» топ-кварк оставляет в поле Хиггса."}
+  - date: "2018-06-04"
+    outlet: "IIHE (ULB–VUB), Brussels"
+    lang: en
+    url: https://iihe.ac.be/direct-coupling-of-the-higgs-boson-to-the-top-quark-observed/
+    title: "Direct coupling of the Higgs boson to the top quark observed"
+    about: {en: "Press release on the first sighting of the Higgs boson with top quarks; part of the analysis was done by me in Brussels.", fr: "Communiqué de presse sur la première observation du boson de Higgs avec des quarks top ; une partie de l'analyse a été faite par moi à Bruxelles.", nl: "Persbericht over de eerste waarneming van het higgsboson met top-quarks; een deel van de analyse deed ik in Brussel.", ru: "Пресс-релиз о первом наблюдении бозона Хиггса вместе с топ-кварками; часть анализа я выполнил в Брюсселе."}
+  - date: "2013-02-05"
+    outlet: "Sib.fm, Novosibirsk"
+    lang: ru
+    url: https://sib.fm/news/2013/02/05/pjat-novosibirskikh-fizikov-stali-soavtorami-otkrytija-bozona
+    title: "Пять новосибирских физиков стали соавторами открытия бозона Хиггса"
+    about: {en: "Five Novosibirsk physicists, me among them, as co-authors of the Higgs boson discovery.", fr: "Cinq physiciens de Novossibirsk, dont moi, coauteurs de la découverte du boson de Higgs.", nl: "Vijf fysici uit Novosibirsk, onder wie ik, als medeauteurs van de ontdekking van het higgsboson.", ru: "Пять новосибирских физиков, и я среди них, — соавторы открытия бозона Хиггса."}

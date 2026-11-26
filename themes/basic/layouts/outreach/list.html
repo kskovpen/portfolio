@@ -23,6 +23,22 @@
   </div>
   {{- end }}
 
+  {{- with site.Data.outreach.news }}
+  <h2>{{ T "out_news" }}</h2>
+  <div class="out-blocks">
+    {{- range $i, $n := sort . "date" "desc" }}
+    <article class="out-block" style="--i: {{ $i }}">
+      <a class="out-hit" href="{{ $n.url }}" aria-label="{{ $n.title }}"></a>
+      <div class="out-block-art">{{ partial "spot.html" "press" }}</div>
+      <p class="out-when">{{ time.Format ":date_long" $n.date }}{{ if ne $n.lang $l }} · <span class="lang-badge">{{ upper $n.lang }}</span>{{ end }}</p>
+      <p class="out-news-title" lang="{{ $n.lang }}">“{{ $n.title }}”</p>
+      <p class="out-block-text">{{ index $n.about $l }}</p>
+      <p class="meta out-news-outlet">{{ $n.outlet }} <span aria-hidden="true">↗</span></p>
+    </article>
+    {{- end }}
+  </div>
+  {{- end }}
+
   <section class="out-invite">
     <div class="out-invite-art">{{ partial "spot.html" "public" }}</div>
     <div>
