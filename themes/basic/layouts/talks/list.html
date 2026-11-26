@@ -23,9 +23,30 @@
   {{- end }}
 
   <div class="tt-head">{{ partial "spot.html" "schools" }}<h2 id="schools">{{ T "tt_schools" }}</h2></div>
-  <ul class="cv-compact">
-    {{- range .schools }}<li><span class="cv-year">{{ .year }}</span><span>{{ index .text $l }}</span></li>{{ end }}
-  </ul>
+  <div class="schools">
+    {{- range .schools }}{{ $sc := . }}
+    <section class="school">
+      <header class="school-head">
+        <span class="cv-year">{{ .year }}</span>
+        <div>
+          <h3>{{ with .url }}<a href="{{ . }}">{{ end }}{{ with .name }}{{ index . $l }}{{ end }}{{ with .url }} ↗</a>{{ end }}</h3>
+          <p class="meta">{{ .place }} · {{ index .text $l }}</p>
+        </div>
+      </header>
+      {{- with .lectures }}
+      <div class="lectures">
+        {{- range . }}
+        <a class="lecture" href="{{ .url }}">
+          <span class="lecture-img">{{ with .image }}{{ with resources.Get . }}{{ $im := .Resize "480x webp q80" }}<img src="{{ $im.RelPermalink }}" width="{{ $im.Width }}" height="{{ $im.Height }}" alt="" loading="lazy">{{ end }}{{ else }}<b>{{ .title }}</b>{{ end }}</span>
+          <span class="lecture-title">{{ .title }}</span>
+          <span class="lecture-about">{{ index .about $l }}</span>
+        </a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </section>
+    {{- end }}
+  </div>
 
   {{- with site.GetPage "/outreach" }}
   <a class="tt-out" id="public" href="{{ .RelPermalink }}">{{ partial "spot.html" "cosmic" }}<span><b>{{ .Title }}</b><small>{{ index (index site.Data.outreach.featured 0).title $l }} · {{ index (index site.Data.outreach.featured 1).title $l }} · {{ index (index site.Data.outreach.featured 2).title $l }}</small></span><span class="out-more">→</span></a>

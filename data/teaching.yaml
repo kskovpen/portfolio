@@ -36,13 +36,59 @@ thesis_topics:
   fr: ["Quatre et trois quarks top produits ensemble à CMS", "Neutrinos lourds et nouveaux détecteurs de muons pour CMS", "Quarks top avec un boson Z, et nouveaux détecteurs pour CMS", "Développement de détecteurs pour SHiP", "Un calorimètre qui mesure précisément les angles, pour SHiP", "Des détecteurs pour les rayons cosmiques, la radioactivité et même l'humidité des sols"]
   nl: ["Vier en drie top-quarks die samen ontstaan bij CMS", "Zware neutrino's en nieuwe muondetectoren voor CMS", "Top-quarks met een Z-boson, en nieuwe detectoren voor CMS", "Detectorontwikkeling voor SHiP", "Een calorimeter die hoeken nauwkeurig meet, voor SHiP", "Detectoren voor kosmische straling, radioactiviteit en zelfs bodemvocht"]
   ru: ["Рождение четырёх и трёх топ-кварков в CMS", "Тяжёлые нейтрино и новые мюонные детекторы для CMS", "Топ-кварки с Z-бозоном и новые детекторы для CMS", "Разработка детекторов для SHiP", "Калориметр, точно измеряющий углы, для SHiP", "Детекторы космических лучей, радиации и даже влажности почвы"]
-
 schools:
   - year: "2026"
-    text: {en: "Invited lecturer, Belgian–Dutch–German graduate school, Germany", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande, Allemagne", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool, Duitsland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа, Германия"}
+    name: {en: "Belgian–Dutch–German graduate school in particle physics", fr: "École doctorale belgo-néerlando-allemande de physique des particules", nl: "Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica", ru: "Бельгийско-нидерландско-германская школа по физике частиц"}
+    place: "Heimbach, Germany"
+    url: https://indico.global/event/17239/
+    text: {en: "Invited lecturer and student project", fr: "Conférencier invité et projet étudiant", nl: "Gastdocent en studentenproject", ru: "Приглашённый лектор и студенческий проект"}
+    lectures:
+      - title: "Physics on target: Structure of matter"
+        image: images/lectures/bnd2026-target-1.jpg
+        url: https://indico.global/event/17239/contributions/164021/attachments/75952/147421/LectureFT1.pdf
+        about: {en: "What experiments that shoot beams at a fixed target teach us about the inside of matter", fr: "Ce que les expériences sur cible fixe nous apprennent sur l'intérieur de la matière", nl: "Wat experimenten met een vast doelwit ons leren over de binnenkant van materie", ru: "Что эксперименты на фиксированной мишени рассказывают о строении материи"}
+      - title: "Physics on target: Rare processes and hidden sectors"
+        image: images/lectures/bnd2026-target-2.jpg
+        url: https://indico.global/event/17239/contributions/164022/attachments/75953/147424/LectureFT2.pdf
+        about: {en: "Hunting rare processes and hidden particles, as SHiP will do", fr: "Traquer des processus rares et des particules cachées, comme le fera SHiP", nl: "Jagen op zeldzame processen en verborgen deeltjes, zoals SHiP zal doen", ru: "Поиск редких процессов и скрытых частиц — как это будет делать SHiP"}
+      - title: "Forging top quarks"
+        image: images/lectures/bnd2026-top.jpg
+        url: https://indico.global/event/17239/contributions/164023/attachments/76022/147538/LectureTop.pdf
+        about: {en: "How the heaviest particle is made and studied at the LHC", fr: "Comment la particule la plus lourde est produite et étudiée au LHC", nl: "Hoe het zwaarste deeltje wordt gemaakt en bestudeerd bij de LHC", ru: "Как самую тяжёлую частицу рождают и изучают на БАК"}
+      - title: "Towards a future collider"
+        image: images/lectures/bnd2026-future-collider.jpg
+        url: https://indico.global/event/17239/contributions/164027/attachments/75991/147572/FutureColliders.pdf
+        about: {en: "Student project with an advanced and improved FCE studio: designing measurements for a future collider", fr: "Projet étudiant avec une version avancée et améliorée de FCE : concevoir des mesures pour un futur collisionneur", nl: "Studentenproject met een geavanceerde en verbeterde FCE-studio: metingen ontwerpen voor een toekomstige versneller", ru: "Студенческий проект с расширенной и улучшенной версией FCE: планирование измерений на будущем коллайдере"}
   - year: "2024"
-    text: {en: "Local organiser, Belgian–Dutch–German graduate school, Blankenberge", fr: "Organisateur local, école doctorale belgo-néerlando-allemande, Blankenberge", nl: "Lokale organisator, Belgisch-Nederlands-Duitse doctoraatsschool, Blankenberge", ru: "Местный организатор, бельгийско-нидерландско-германская школа, Бланкенберге"}
+    name: {en: "Belgian–Dutch–German graduate school in particle physics", fr: "École doctorale belgo-néerlando-allemande de physique des particules", nl: "Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica", ru: "Бельгийско-нидерландско-германская школа по физике частиц"}
+    place: "Blankenberge, Belgium"
+    url: https://indico.ugent.be/event/32/
+    text: {en: "Local organiser and student project", fr: "Organisateur local et projet étudiant", nl: "Lokale organisator en studentenproject", ru: "Местный организатор и студенческий проект"}
+    lectures:
+      - title: "Towards a future collider"
+        image: images/lectures/bnd2024-future-collider.jpg
+        url: https://indico.ugent.be/event/32/contributions/670/attachments/250/293/kskovpenFutureCollider.pdf
+        about: {en: "Student project with my FCE studio app: what could we measure at the next big collider?", fr: "Projet étudiant avec mon application FCE : que pourrait-on mesurer au prochain grand collisionneur ?", nl: "Studentenproject met mijn FCE-app: wat zouden we kunnen meten bij de volgende grote versneller?", ru: "Студенческий проект с моим приложением FCE: что можно было бы измерить на следующем большом коллайдере?"}
   - year: "2023"
-    text: {en: "Exercises on particle tracking, CMS data analysis school, DESY", fr: "Exercices sur les traces de particules, école d'analyse de CMS, DESY", nl: "Oefeningen over deeltjessporen, CMS-analyseschool, DESY", ru: "Практикум по трекам частиц, школа анализа данных CMS, DESY"}
+    name: {en: "CMS data analysis school", fr: "École d'analyse de données de CMS", nl: "CMS-data-analyseschool", ru: "Школа анализа данных CMS"}
+    place: "DESY, Hamburg, Germany"
+    url: https://indico.desy.de/event/38207/
+    text: {en: "Exercises for PhD students", fr: "Exercices pour doctorants", nl: "Oefeningen voor doctoraatsstudenten", ru: "Практикум для аспирантов"}
+    lectures:
+      - title: "Tracking & Vertexing"
+        image: images/lectures/podas2023-tracking.jpg
+        url: https://indico.desy.de/event/38207/contributions/152482/attachments/85841/114133/Tracking.pdf
+        about: {en: "Hands-on: reconstructing the paths of particles and where they came from", fr: "Pratique : reconstruire les trajectoires des particules et leur point d'origine", nl: "Praktijk: de banen van deeltjes reconstrueren en waar ze vandaan komen", ru: "Практика: восстановление траекторий частиц и точек их рождения"}
   - year: "2022"
-    text: {en: "Invited lecturer, Belgian–Dutch–German graduate school, the Netherlands", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande, Pays-Bas", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool, Nederland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа, Нидерланды"}
+    name: {en: "Belgian–Dutch–German graduate school in particle physics", fr: "École doctorale belgo-néerlando-allemande de physique des particules", nl: "Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica", ru: "Бельгийско-нидерландско-германская школа по физике частиц"}
+    place: "Callantsoog, the Netherlands"
+    url: https://indico.nikhef.nl/event/3109/
+    text: {en: "Invited lecturer", fr: "Conférencier invité", nl: "Gastdocent", ru: "Приглашённый лектор"}
+    lectures:
+      - title: "The Rise of the Penguins"
+        url: https://indico.nikhef.nl/event/3109/contributions/11881/attachments/6217/8043/kskovpenFCNC.pdf
+        about: {en: "“Penguin” processes: rare decays the theory almost forbids", fr: "Les processus « pingouins » : des désintégrations rares presque interdites", nl: "\"Pinguïn\"-processen: zeldzame vervallen die bijna verboden zijn", ru: "«Пингвинные» процессы: редкие, почти запрещённые распады"}
+      - title: "Effective Field Theory in experiment"
+        image: images/lectures/bnd2022-eft.jpg
+        url: https://indico.nikhef.nl/event/3109/contributions/11887/attachments/6218/8044/kskovpenEFT.pdf
+        about: {en: "Searching for new physics without knowing exactly what it looks like", fr: "Chercher une nouvelle physique sans savoir exactement à quoi elle ressemble", nl: "Zoeken naar nieuwe fysica zonder precies te weten hoe ze eruitziet", ru: "Как искать новую физику, не зная точно, как она выглядит"}

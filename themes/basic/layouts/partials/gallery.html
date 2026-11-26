@@ -12,10 +12,11 @@
 {{- with $imgs }}
 <div class="gallery">
   {{- range . }}
-  {{- $thumb := cond (gt .Height .Width) (.Fit "300x400 webp") (.Fill "400x300 smart webp") }}
+  {{- $wide := ge (div (float .Width) .Height) 1.45 }}
+  {{- $thumb := cond (gt .Height .Width) (.Fit "300x400 webp") (cond $wide (.Resize "1400x webp q82") (.Fill "400x300 smart webp")) }}
   {{- $full := .Fit "1800x1800" }}
   {{- $cap := path.BaseName .Name | replaceRE `[-_]` " " }}
-  <figure>
+  <figure{{ if $wide }} class="wide"{{ end }}>
     <a href="{{ $full.RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $cap }}" loading="lazy"></a>
     {{ if not (findRE `(?i)^(screenshot|img|dsc|photo|r\d)[ _-]?\d*` (path.BaseName .Name)) }}<figcaption>{{ $cap }}</figcaption>{{ end }}
   </figure>
