@@ -1,18 +1,10 @@
 # Teaching, supervision, schools and outreach for the "Teaching & talks" page (from the CV).
 courses:
-  - years: "2026–2028"
+  - years: ["2026–2028", "2021–2022"]
     where: "VUB"
     title: {en: "New physics beyond the Standard Model", fr: "La nouvelle physique au-delà du Modèle standard", nl: "Nieuwe fysica voorbij het Standaardmodel", ru: "Новая физика за пределами Стандартной модели"}
     kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
-  - years: "2026–2028"
-    where: "VUB"
-    title: {en: "Experimental techniques in particle physics", fr: "Techniques expérimentales en physique des particules", nl: "Experimentele technieken in de deeltjesfysica", ru: "Экспериментальные методы физики частиц"}
-    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
-  - years: "2021–2022"
-    where: "VUB"
-    title: {en: "New physics beyond the Standard Model", fr: "La nouvelle physique au-delà du Modèle standard", nl: "Nieuwe fysica voorbij het Standaardmodel", ru: "Новая физика за пределами Стандартной модели"}
-    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
-  - years: "2021–2022"
+  - years: ["2026–2028", "2021–2022"]
     where: "VUB"
     title: {en: "Experimental techniques in particle physics", fr: "Techniques expérimentales en physique des particules", nl: "Experimentele technieken in de deeltjesfysica", ru: "Экспериментальные методы физики частиц"}
     kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}

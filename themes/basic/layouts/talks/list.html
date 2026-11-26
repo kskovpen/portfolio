@@ -9,7 +9,7 @@
   <div class="tt-head">{{ partial "spot.html" "courses" }}<h2 id="teaching">{{ T "tt_courses" }}</h2></div>
   <ul class="cv-compact">
     {{- range .courses }}
-    <li><span class="cv-year">{{ .years }}</span><span><b>{{ index .title $l }}</b> · {{ index .kind $l }} · {{ .where }}</span></li>
+    <li><span class="cv-year">{{ if reflect.IsSlice .years }}{{ delimit .years "<br>" | safeHTML }}{{ else }}{{ .years }}{{ end }}</span><span><b>{{ index .title $l }}</b> · {{ index .kind $l }} · {{ .where }}</span></li>
     {{- end }}
   </ul>
 
