@@ -1235,3 +1235,16 @@ h2[id] { scroll-margin-top: 80px; }
 .places-list .dot { width: 8px; height: 8px; }
 .pm-tip { position: absolute; pointer-events: none; background: var(--bg); color: var(--ink); border: 1px solid var(--line); padding: 6px 10px; font-size: 13px; max-width: 260px; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 5; }
 .places { position: relative; }
+
+.places-views { display: inline-flex; border: 1px solid var(--line); margin-bottom: 12px; }
+.places-views button { font: inherit; font-size: 14px; font-weight: 650; padding: 6px 16px; border: 0; background: var(--bg); color: var(--ink-2); cursor: pointer; }
+.places-views button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.places-map[hidden] { display: none; }
+.places-map[data-view="world"] .pm-label { font-size: 13px; }
+.places-map[data-view="world"] .pm-place .pm-dot { stroke-width: 1; }
+.places-map[data-view="world"] .pm-place:hover .pm-dot { r: 6; }
+.pm-zoom { cursor: zoom-in; outline: none; }
+.pm-zoom rect { fill: color-mix(in srgb, var(--h-travel) 8%, transparent); stroke: var(--h-travel); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.pm-zoom:hover rect, .pm-zoom:focus rect { fill: color-mix(in srgb, var(--h-travel) 18%, transparent); }
+.pm-zoom text { font-size: 13px; font-weight: 700; fill: var(--h-travel); }
+.pm-place.in-frame { pointer-events: none; }

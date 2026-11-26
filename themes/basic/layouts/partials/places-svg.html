@@ -1,0 +1,29 @@
+{{- /* One view of the places map. In: dict "map" (data/map_<view>.json) "places" "view" ("world"|"europe") "eu" (europe map, for its frame). */ -}}
+{{- $m := .map }}{{ $view := .view }}{{ $eu := .eu }}{{ $world := eq $view "world" }}
+<svg class="places-map" data-view="{{ $view }}" viewBox="0 0 {{ $m.w }} {{ $m.h }}" role="img" aria-label="{{ T "places_title" }} ({{ T (printf "view_%s" $view) }})"{{ if not $world }} hidden{{ end }}>
+  <rect class="pm-sea" width="{{ $m.w }}" height="{{ $m.h }}"/>
+  {{- range $m.countries }}<path class="pm-land" d="{{ . }}"/>{{ end }}
+  {{- if $world }}
+  {{- $x0 := mul (sub $eu.lon_min $m.lon_min) $m.kx }}{{ $y0 := mul (sub $m.lat_max $eu.lat_max) $m.scale }}
+  {{- $x1 := mul (sub (add $eu.lon_min (div $eu.w $eu.kx)) $m.lon_min) $m.kx }}{{ $y1 := mul (sub $m.lat_max (sub $eu.lat_max (div $eu.h $eu.scale))) $m.scale }}
+  <g class="pm-zoom" role="button" tabindex="0" data-goto="europe" aria-label="{{ T "view_europe" }}">
+    <rect x="{{ $x0 }}" y="{{ $y0 }}" width="{{ sub $x1 $x0 }}" height="{{ sub $y1 $y0 }}" rx="3"/>
+    <text x="{{ $x0 }}" y="{{ sub $y0 6 }}">{{ T "view_europe" }} ⤢</text>
+  </g>
+  {{- end }}
+  {{- range sort .places "lat" }}
+  {{- $x := mul (sub (float .lon) $m.lon_min) $m.kx }}{{ $y := mul (sub $m.lat_max (float .lat)) $m.scale }}
+  {{- $far := and (not $world) (gt $x (sub (float $m.w) 14)) }}{{ if $far }}{{ $x = sub (float $m.w) 14 }}{{ end }}
+  {{- $inEU := and (ge (float .lon) $eu.lon_min) (le (float .lon) (add $eu.lon_min (div $eu.w $eu.kx))) (le (float .lat) $eu.lat_max) (ge (float .lat) (sub $eu.lat_max (div $eu.h $eu.scale))) }}
+  {{- $k := index .kinds 0 }}{{ $home := in .kinds "home" }}
+  {{- $label := and $home (or (not $world) (not $inEU)) }}
+  {{- $r := cond $world (cond $home 4.5 3.2) (cond $home 7 5) }}
+  <g class="pm-place k-{{ $k }}{{ if $home }} is-home{{ end }}{{ if and $world $inEU }} in-frame{{ end }}" data-kinds="{{ delimit .kinds " " }}"{{ if not (and $world $inEU) }} tabindex="0"{{ end }}>
+    <title>{{ .name }}: {{ .what }}</title>
+    {{- if gt (len .kinds) 1 }}<circle class="pm-ring" cx="{{ $x }}" cy="{{ $y }}" r="{{ add $r 4 }}"/>{{ end }}
+    <circle class="pm-dot" cx="{{ $x }}" cy="{{ $y }}" r="{{ $r }}"/>
+    {{- if $label }}{{ $pos := .label | default (cond $far "left" "right") }}{{ if $world }}{{ $pos = "right" }}{{ end }}
+    <text class="pm-label" x="{{ cond (eq $pos "left") (sub $x 12) (cond (eq $pos "right") (add $x 10) $x) }}" y="{{ cond (eq $pos "below") (add $y 24) (cond (eq $pos "above") (sub $y 14) (add $y 5)) }}" text-anchor="{{ cond (eq $pos "left") "end" (cond (eq $pos "right") "start" "middle") }}">{{ .name }}{{ if $far }} →{{ end }}</text>{{ end }}
+  </g>
+  {{- end }}
+</svg>

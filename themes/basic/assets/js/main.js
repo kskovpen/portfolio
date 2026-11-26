@@ -249,3 +249,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Places map: World / Europe switch (buttons, or click the Europe frame on the world map).
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-places]").forEach((box) => {
+    const btns = [...box.querySelectorAll(".places-views button")];
+    const show = (v) => {
+      box.querySelectorAll(".places-map").forEach((s) => s.toggleAttribute("hidden", s.dataset.view !== v));
+      btns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === v)));
+    };
+    btns.forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+    box.querySelectorAll("[data-goto]").forEach((z) => {
+      z.addEventListener("click", () => show(z.dataset.goto));
+      z.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(z.dataset.goto); } });
+    });
+  });
+});

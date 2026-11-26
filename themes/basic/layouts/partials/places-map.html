@@ -1,33 +1,23 @@
 {{- /* Map of the places I have lived, worked, spoken, taught, run and travelled (data/places.yaml),
-       drawn on an outline of Europe (data/map_europe.json, made by scripts/places_map.py from
-       Natural Earth, public domain). Places east of the window sit at its edge with an arrow.
+       drawn on outlines of the world and of Europe (data/map_world.json, data/map_europe.json, made by
+       scripts/places_map.py from Natural Earth, public domain). World first; the Europe frame or the
+       switch opens the detailed view, where places east of it sit at its edge with an arrow.
        Chips above the map filter by kind (main.js: [data-places]). */ -}}
-{{- $m := site.Data.map_europe }}{{ $places := site.Data.places }}
-{{- with and $m $places }}
+{{- $m := site.Data.map_europe }}{{ $w := site.Data.map_world }}{{ $places := site.Data.places }}
+{{- with and $m $w $places }}
 {{- $kinds := slice "home" "talk" "school" "race" "outreach" "trip" }}
 {{- $used := slice }}{{ range $places }}{{ range .kinds }}{{ $used = $used | append . }}{{ end }}{{ end }}
 <section class="places" data-places>
+  <div class="places-views" role="group" aria-label="{{ T "places_title" }}">
+    <button type="button" data-view="world" aria-pressed="true">{{ T "view_world" }}</button><button type="button" data-view="europe" aria-pressed="false">{{ T "view_europe" }}</button>
+  </div>
   <div class="places-chips" role="group" aria-label="{{ T "places_filter" }}">
     {{- range $kinds }}{{ if in $used . }}
     <button type="button" class="chip k-{{ . }}" data-kind="{{ . }}" aria-pressed="true"><span class="dot" aria-hidden="true"></span>{{ T (printf "kind_%s" .) }}</button>
     {{- end }}{{ end }}
   </div>
-  <svg class="places-map" viewBox="0 0 {{ $m.w }} {{ $m.h }}" role="img" aria-label="{{ T "places_title" }}">
-    <rect class="pm-sea" width="{{ $m.w }}" height="{{ $m.h }}"/>
-    {{- range $m.countries }}<path class="pm-land" d="{{ . }}"/>{{ end }}
-    {{- range sort $places "lat" }}
-    {{- $x := mul (sub (float .lon) $m.lon_min) $m.kx }}{{ $y := mul (sub $m.lat_max (float .lat)) $m.scale }}
-    {{- $far := gt $x (sub (float $m.w) 14) }}{{ if $far }}{{ $x = sub (float $m.w) 14 }}{{ end }}
-    {{- $k := index .kinds 0 }}{{ $home := in .kinds "home" }}
-    <g class="pm-place k-{{ $k }}{{ if $home }} is-home{{ end }}" data-kinds="{{ delimit .kinds " " }}" tabindex="0">
-      <title>{{ .name }}: {{ .what }}</title>
-      {{- if gt (len .kinds) 1 }}<circle class="pm-ring" cx="{{ $x }}" cy="{{ $y }}" r="{{ cond $home 11 8 }}"/>{{ end }}
-      <circle class="pm-dot" cx="{{ $x }}" cy="{{ $y }}" r="{{ cond $home 7 5 }}"/>
-      {{- if $home }}{{ $pos := .label | default (cond $far "left" "right") }}
-      <text class="pm-label" x="{{ cond (eq $pos "left") (sub $x 12) (cond (eq $pos "right") (add $x 12) $x) }}" y="{{ cond (eq $pos "below") (add $y 24) (cond (eq $pos "above") (sub $y 14) (add $y 5)) }}" text-anchor="{{ cond (eq $pos "left") "end" (cond (eq $pos "right") "start" "middle") }}">{{ .name }}{{ if $far }} →{{ end }}</text>{{ end }}
-    </g>
-    {{- end }}
-  </svg>
+  {{ partial "places-svg.html" (dict "map" $w "places" $places "view" "world" "eu" $m) }}
+  {{ partial "places-svg.html" (dict "map" $m "places" $places "view" "europe" "eu" $m) }}
   <p class="meta places-note">{{ T "places_note" }} · {{ T "map_outline" }}: <a href="https://www.naturalearthdata.com">Natural Earth</a></p>
   <details class="places-list">
     <summary>{{ T "places_all" (len $places) }}</summary>

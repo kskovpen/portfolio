@@ -1,3 +1,5 @@
+view_world = "Monde"
+view_europe = "Europe"
 places_title = "Lieux sur mon chemin"
 places_filter = "Afficher les lieux par type"
 kind_home = "J'y ai vécu et travaillé"
