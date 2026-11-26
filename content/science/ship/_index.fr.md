@@ -21,3 +21,11 @@ Au lieu de faire se percuter deux faisceaux, SHiP envoie un faisceau intense de 
 - Je dirige l'équipe de l'Université de Gand dans SHiP et je suis membre des conseils de collaboration et technique de l'expérience.
 - Je dirige le groupe qui construit le calorimètre du détecteur de neutrinos (le « Scattering and Neutrino Detector ») et le groupe qui construit le marqueur de bruit de fond en amont, qui signale les particules entrant dans le volume de désintégration depuis l'extérieur pour qu'on ne les prenne pas pour une découverte.
 - Avec des étudiants et de jeunes chercheurs à Gand, nous concevons et testons des prototypes de détecteurs pour les deux.
+
+## Dans notre labo à Gand : lumière, fibres et SiPM
+
+Les détecteurs que nous construisons pour SHiP fonctionnent avec de la lumière. Un **scintillateur plastique** émet un minuscule éclair quand une particule chargée le traverse. Des **fibres optiques** placées dans ou le long du plastique captent cette lumière et la guident vers un **photomultiplicateur en silicium (SiPM)** : une puce de quelques millimètres, si sensible qu'elle peut compter les photons un par un.
+
+De nombreuses couches de scintillateur, lues chacune par des fibres et des SiPM, forment un calorimètre qui mesure l'énergie et la direction des particules produites par les neutrinos lorsqu'ils frappent le détecteur. Les mêmes ingrédients servent au détecteur de bruit de fond.
+
+À Gand, nous étalonnons et caractérisons des SiPM, testons scintillateurs et fibres avec des muons cosmiques et des faisceaux de particules, concevons une électronique de lecture rapide et développons un calorimètre capable de dire très précisément d'où viennent les particules. Une grande partie de ce travail se fait avec des étudiants de master et de bachelier.

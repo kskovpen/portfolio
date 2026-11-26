@@ -32,10 +32,10 @@ what_i_do:
       nl: "Deeltjesdetectoren bouwen"
       ru: "Создаю детекторы частиц"
     text:
-      en: "Detectors are giant cameras for particle collisions. I help build new ones for CMS and for SHiP."
-      fr: "Les détecteurs sont des appareils photo géants pour les collisions. J'aide à en construire de nouveaux pour CMS et SHiP."
-      nl: "Detectoren zijn reusachtige camera's voor botsingen. Ik help nieuwe bouwen voor CMS en SHiP."
-      ru: "Детекторы — гигантские фотокамеры для столкновений. Я помогаю строить новые для CMS и SHiP."
+      en: "Detectors are giant cameras for particle collisions. In our lab in Ghent we build gas detectors for CMS, and detectors made of scintillators, optical fibres and SiPMs for SHiP."
+      fr: "Les détecteurs sont des appareils photo géants pour les collisions. Dans notre labo à Gand, nous construisons des détecteurs à gaz pour CMS, et des détecteurs à scintillateurs, fibres optiques et SiPM pour SHiP."
+      nl: "Detectoren zijn reusachtige camera's voor botsingen. In ons lab in Gent bouwen we gasdetectoren voor CMS, en detectoren met scintillatoren, optische vezels en SiPM's voor SHiP."
+      ru: "Детекторы — гигантские фотокамеры для столкновений. В нашей лаборатории в Генте мы строим газовые детекторы для CMS и детекторы из сцинтилляторов, оптических волокон и SiPM для SHiP."
   - icon: data
     title:
       en: "Making sure the data can be trusted"

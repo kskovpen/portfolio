@@ -21,3 +21,11 @@ Instead of colliding two beams, SHiP fires an intense beam of protons into a hea
 - I lead the Ghent University team in SHiP and am a member of the experiment's collaboration and technical boards.
 - I lead the group building the calorimeter of the neutrino detector (the "Scattering and Neutrino Detector"), and the group building the upstream background tagger, which flags particles that enter the decay volume from outside so they are not mistaken for a discovery.
 - With students and young researchers in Ghent, we design and test prototype detectors for both.
+
+## In our lab in Ghent: light, fibres and SiPMs
+
+The detectors we build for SHiP work with light. A **plastic scintillator** gives off a tiny flash when a charged particle crosses it. **Optical fibres** inside or along the plastic catch this light and guide it to a **silicon photomultiplier (SiPM)**: a chip a few millimetres wide that is so sensitive it can count single photons.
+
+Many layers of scintillator, each read out by fibres and SiPMs, make a calorimeter that measures the energy and direction of the particles that neutrinos produce when they hit the detector. The same ingredients serve for the background tagger.
+
+In Ghent we calibrate and characterise SiPMs, test scintillators and fibres with muons from cosmic rays and with particle beams, design fast readout electronics, and develop a calorimeter that can tell very precisely the direction particles come from. Much of this work is done together with master's and bachelor's students.

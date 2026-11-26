@@ -71,3 +71,21 @@ terms:
     fr: La courte version écrite d'un exposé de conférence, publiée après la conférence (les « actes »).
     nl: De korte geschreven versie van een conferentielezing, gepubliceerd na de conferentie.
     ru: Краткая письменная версия доклада, публикуемая после конференции («труды»).
+- term: RPC, GEM
+  def:
+    en: 'Two kinds of gas detectors. A charged particle frees electrons in a thin layer of gas, and a strong electric field multiplies them into a signal. CMS uses them to catch muons.'
+    fr: "Deux sortes de détecteurs à gaz. Une particule chargée libère des électrons dans une fine couche de gaz, et un fort champ électrique les multiplie en un signal. CMS les utilise pour attraper les muons."
+    nl: 'Twee soorten gasdetectoren. Een geladen deeltje maakt elektronen vrij in een dun laagje gas, en een sterk elektrisch veld vermenigvuldigt ze tot een signaal. CMS gebruikt ze om muonen te vangen.'
+    ru: 'Два вида газовых детекторов. Заряженная частица выбивает электроны в тонком слое газа, а сильное электрическое поле размножает их до сигнала. CMS ловит ими мюоны.'
+- term: scintillator
+  def:
+    en: 'A material, often a plastic, that gives off a tiny flash of light when a charged particle crosses it.'
+    fr: "Un matériau, souvent un plastique, qui émet un minuscule éclair de lumière quand une particule chargée le traverse."
+    nl: 'Een materiaal, vaak plastic, dat een piepklein lichtflitsje geeft als er een geladen deeltje door vliegt.'
+    ru: 'Материал, часто пластик, который даёт крошечную вспышку света, когда через него пролетает заряженная частица.'
+- term: SiPM
+  def:
+    en: 'Silicon photomultiplier: a chip a few millimetres wide that turns light into an electric signal and is sensitive enough to count single photons.'
+    fr: "Photomultiplicateur en silicium : une puce de quelques millimètres qui transforme la lumière en signal électrique, assez sensible pour compter les photons un par un."
+    nl: 'Siliciumfotomultiplicator: een chip van een paar millimeter die licht omzet in een elektrisch signaal en gevoelig genoeg is om afzonderlijke fotonen te tellen.'
+    ru: 'Кремниевый фотоумножитель: чип в несколько миллиметров, превращающий свет в электрический сигнал; он настолько чувствителен, что считает отдельные фотоны.'

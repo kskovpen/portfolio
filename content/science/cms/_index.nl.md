@@ -21,4 +21,13 @@ Elke laag heeft een eigen taak. Vlak bij de botsing volgt een **siliciumspoorvol
 - **Top-quark en higgsboson.** Ik bestudeer het zwaarste bekende deeltje, het [top-quark]({{< relref "/science/cms/top-quark" >}}): ik was een van de drijvende krachten achter de [eerste waarneming van vier top-quarks die tegelijk ontstaan]({{< relref "/science/cms/top-quark/four-tops" >}}), werkte mee aan de eerste waarneming van het higgsboson samen met top-quarks, en zocht naar vervallen van het top-quark die de theorie bijna verbiedt.
 - **Zware neutrale leptonen.** Ik zoek naar hypothetische zware neven van het neutrino, die zouden kunnen verklaren waarom neutrino's überhaupt massa hebben.
 - **De detector laten werken.** Ik leidde de teams die CMS leren deeltjes van bottom-quarks te herkennen (2015–2019), die de data verwerken en de computersimulaties maken (2021–2023), en die meten hoe goed de spoorvolger deeltjesbanen reconstrueert (2023–2025).
-- **De volgende CMS bouwen.** Voor de High-Luminosity LHC, die vanaf het einde van dit decennium tien keer meer botsingen levert, bouwen en testen we in Gent siliciummodules voor de nieuwe spoorvolger en nieuwe muondetectoren.
+- **De volgende CMS bouwen.** Voor de High-Luminosity LHC, die vanaf het einde van dit decennium tien keer meer botsingen levert, bouwen en testen we in Gent siliciummodules voor de nieuwe spoorvolger en nieuwe gasdetectoren voor het muonsysteem (zie hieronder).
+
+## In ons lab in Gent: gasdetectoren voor CMS
+
+De muonkamers van CMS zijn **gasdetectoren**. Een geladen deeltje dat door een dun laagje gas vliegt, slaat elektronen uit de atomen; een sterk elektrisch veld vermenigvuldigt ze tot een lawine die groot genoeg is voor een elektrisch signaal. Voor de High-Luminosity LHC krijgt CMS nieuwe kamers aan de uiteinden van de detector, dicht bij de bundel, waar de deeltjes het snelst aankomen. In Gent bouwen en testen we er twee soorten van.
+
+- **Verbeterde Resistive Plate Chambers (iRPC).** Twee platen van een sterk resistief materiaal met ongeveer een millimeter gas ertussen. Ze reageren binnen een nanoseconde, zodat CMS ze kan gebruiken om in real time te beslissen welke botsingen het bewaart.
+- **Gas Electron Multipliers (GEM).** Dunne plastic folies met een laagje koper en miljoenen microscopische gaatjes. In elk gaatje is het elektrische veld zo sterk dat een paar elektronen er duizenden worden.
+
+De Universiteit Gent heeft de volledige infrastructuur om deze detectoren te ontwikkelen en klaar te maken voor CMS: gassystemen, hoogspannings- en uitleeselektronica, en teststanden waar muonen uit kosmische straling, die voortdurend op ons neerregenen, door elke kamer vliegen. Elke kamer moet deze controles doorstaan voor ze naar CERN vertrekt.

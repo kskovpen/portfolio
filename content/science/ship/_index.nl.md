@@ -21,3 +21,11 @@ In plaats van twee bundels te laten botsen, schiet SHiP een intense protonenbund
 - Ik leid het team van de Universiteit Gent in SHiP en ben lid van de collaboratie- en technische raad van het experiment.
 - Ik leid de groep die de calorimeter van de neutrinodetector bouwt (de "Scattering and Neutrino Detector") en de groep die de upstream background tagger bouwt, die deeltjes markeert die het vervalvolume van buitenaf binnenkomen, zodat ze niet voor een ontdekking worden aangezien.
 - Met studenten en jonge onderzoekers in Gent ontwerpen en testen we prototypes van detectoren voor beide.
+
+## In ons lab in Gent: licht, vezels en SiPM's
+
+De detectoren die we voor SHiP bouwen, werken met licht. Een **plastic scintillator** geeft een piepklein flitsje als er een geladen deeltje door vliegt. **Optische vezels** in of langs het plastic vangen dat licht op en leiden het naar een **siliciumfotomultiplicator (SiPM)**: een chip van een paar millimeter die zo gevoelig is dat hij afzonderlijke fotonen kan tellen.
+
+Veel lagen scintillator, elk uitgelezen met vezels en SiPM's, vormen een calorimeter die de energie en richting meet van de deeltjes die neutrino's maken als ze de detector raken. Dezelfde ingrediënten dienen voor de achtergronddetector.
+
+In Gent kalibreren en karakteriseren we SiPM's, testen we scintillatoren en vezels met muonen uit kosmische straling en met deeltjesbundels, ontwerpen we snelle uitleeselektronica en ontwikkelen we een calorimeter die heel precies kan zien uit welke richting deeltjes komen. Veel van dit werk doen we samen met master- en bachelorstudenten.

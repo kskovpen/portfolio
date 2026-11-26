@@ -22,6 +22,11 @@ ship:
 
 cms:
   - year: 2025
+    title: "CMS RPC performance and operation in LHC Run 3"
+    ref: "Nucl. Instrum. Meth. A 1076 (2025) 170467"
+    url: "https://doi.org/10.1016/j.nima.2025.170467"
+    about: {en: "How well the gas detectors that catch muons in CMS work during the current run of the LHC", fr: "Le fonctionnement des détecteurs à gaz qui attrapent les muons dans CMS pendant l'actuelle période du LHC", nl: "Hoe goed de gasdetectoren die muonen vangen in CMS werken tijdens de huidige run van de LHC", ru: "Как работают газовые детекторы, ловящие мюоны в CMS, в текущем сеансе LHC"}
+  - year: 2025
     title: "Search for long-lived heavy neutral leptons in proton-proton collision events with a lepton-jet pair associated with a secondary vertex at √s = 13 TeV"
     ref: "JHEP 02 (2025) 036"
     url: "https://doi.org/10.1007/JHEP02(2025)036"
