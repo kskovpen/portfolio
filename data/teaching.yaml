@@ -1,5 +1,13 @@
 # Teaching, supervision, schools and outreach for the "Teaching & talks" page (from the CV).
 courses:
+  - years: "2026–2028"
+    where: "VUB"
+    title: {en: "New physics beyond the Standard Model", fr: "La nouvelle physique au-delà du Modèle standard", nl: "Nieuwe fysica voorbij het Standaardmodel", ru: "Новая физика за пределами Стандартной модели"}
+    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
+  - years: "2026–2028"
+    where: "VUB"
+    title: {en: "Experimental techniques in particle physics", fr: "Techniques expérimentales en physique des particules", nl: "Experimentele technieken in de deeltjesfysica", ru: "Экспериментальные методы физики частиц"}
+    kind: {en: "Lectures, master's", fr: "Cours magistraux, master", nl: "Hoorcolleges, master", ru: "Лекции, магистратура"}
   - years: "2021–2022"
     where: "VUB"
     title: {en: "New physics beyond the Standard Model", fr: "La nouvelle physique au-delà du Modèle standard", nl: "Nieuwe fysica voorbij het Standaardmodel", ru: "Новая физика за пределами Стандартной модели"}
@@ -41,7 +49,7 @@ schools:
   - year: "2026"
     text: {en: "Invited lecturer, Belgian–Dutch–German graduate school in particle physics, Germany", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande de physique des particules, Allemagne", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica, Duitsland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа по физике частиц, Германия"}
   - year: "2024"
-    text: {en: "Local organiser of the same school in Blankenberge, Belgium", fr: "Organisateur local de cette école à Blankenberge, Belgique", nl: "Lokale organisator van deze school in Blankenberge", ru: "Местный организатор этой школы в Бланкенберге, Бельгия"}
+    text: {en: "Local organiser, Belgian–Dutch–German graduate school in particle physics, Blankenberge, Belgium", fr: "Organisateur local, école doctorale belgo-néerlando-allemande de physique des particules, Blankenberge, Belgique", nl: "Lokale organisator, Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica, Blankenberge, België", ru: "Местный организатор, бельгийско-нидерландско-германская школа по физике частиц, Бланкенберге, Бельгия"}
   - year: "2023"
     text: {en: "Exercises on particle tracking, CMS data analysis school, DESY, Germany", fr: "Exercices sur la reconstruction des traces, école d'analyse de données de CMS, DESY, Allemagne", nl: "Oefeningen over het reconstrueren van deeltjessporen, CMS-data-analyseschool, DESY, Duitsland", ru: "Практикум по восстановлению треков, школа анализа данных CMS, DESY, Германия"}
   - year: "2022"
