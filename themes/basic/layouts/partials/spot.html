@@ -66,6 +66,13 @@
   <path class="d-track" pathLength="1" d="M56 60 L36 44 M56 60 L78 46 M56 60 L70 78"/>
   <path class="d-lepton" pathLength="1" d="M56 60 L34 76"/>
   <path class="s-lines" d="M92 42 h40 M92 50 h40 M92 58 h40 M92 66 h32 M92 74 h40 M28 92 h104 M28 99 h84"/>
+{{- else if eq $k "network" }}
+  {{- /* a globe with linked points: a worldwide network of people */}}
+  <circle class="s-globe" cx="80" cy="60" r="46"/>
+  <ellipse class="s-meridian" cx="80" cy="60" rx="20" ry="46"/>
+  <path class="s-meridian" d="M34 60 H126 M40 36 H120 M40 84 H120"/>
+  <path class="d-track" pathLength="1" d="M52 40 Q 80 20 110 44 M110 44 Q 118 70 92 92 M92 92 Q 60 96 52 40 M52 40 L92 92"/>
+  <circle class="d-burst" cx="52" cy="40" r="4"/><circle class="d-burst" cx="110" cy="44" r="4"/><circle class="d-burst" cx="92" cy="92" r="4"/><circle class="d-point" cx="70" cy="64" r="3"/>
 {{- else if eq $k "electronics" }}
   {{- /* a small amplifier circuit: transistor, resistors and a pulse */}}
   <path class="s-wire" d="M10 60 L40 60 M40 40 L40 80 M40 52 L58 40 L58 20 L150 20 M40 68 L58 80 L58 100 L150 100 M100 20 L100 34 M100 54 L100 100"/>

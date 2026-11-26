@@ -1114,3 +1114,15 @@ h2[id] { scroll-margin-top: 80px; }
 .home-out-invite a { font-weight: 650; color: var(--hue); }
 @media (max-width: 560px) { .out-invite { grid-template-columns: 1fr; } .out-invite-art { max-width: 120px; } }
 .talk-orig { font-size: 13px; color: var(--ink-3); font-style: italic; }
+.out-blocks { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin: 16px 0 40px; }
+.out-block { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); transition: border-color .3s, transform .4s var(--ease), background .3s; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 60ms); }
+.out-block:has(.out-hit):hover { border-color: var(--hue); transform: translateY(-3px); background: color-mix(in srgb, var(--hue) 5%, var(--bg)); }
+.out-block-art { height: 84px; display: flex; align-items: center; margin-bottom: 4px; }
+.out-block-art .spot { height: 84px; width: auto; }
+.out-app { width: 72px; height: 72px; border-radius: 22%; box-shadow: 0 8px 20px -8px rgba(0,0,0,.5); }
+.out-block-text { margin: 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.out-block .out-more { margin-top: auto; padding-top: 4px; }
+.out-block:hover .d-track, .out-block:hover .d-lepton, .out-block:hover .d-jet-track { animation: draw 1.1s var(--ease) both; }
+.spot .s-globe { fill: color-mix(in srgb, var(--hue) 10%, var(--bg)); stroke: color-mix(in srgb, var(--ink) 30%, var(--bg)); stroke-width: 1.5; }
+.spot .s-meridian { fill: none; stroke: color-mix(in srgb, var(--ink) 22%, var(--bg)); stroke-width: 1.2; }

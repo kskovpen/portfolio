@@ -32,9 +32,21 @@
 
   {{- with site.Data.teaching.outreach }}
   <h2>{{ T "out_timeline" }}</h2>
-  <ul class="cv-compact">
-    {{- range . }}<li><span class="cv-year">{{ if eq .year "now" }}{{ T "exp_now" }}{{ else }}{{ .year }}{{ end }}</span><span>{{ with .link }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ relLangURL . }}{{ end }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
-  </ul>
+  <div class="out-blocks">
+    {{- range $i, $o := . }}
+    {{- $href := "" }}{{ with $o.link }}{{ $href = cond (hasPrefix . "http") . (relLangURL .) }}{{ end }}
+    <article class="out-block" style="--i: {{ $i }}">
+      {{- with $href }}<a class="out-hit" href="{{ . }}" aria-label="{{ index $o.text $l }}"></a>{{ end }}
+      <div class="out-block-art">
+        {{- with $o.icon }}{{ with site.GetPage (printf "/projects/%s" .) }}{{ with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "160x160 webp" }}<img class="out-app" src="{{ $ic.RelPermalink }}" width="80" height="80" alt="">{{ end }}{{ end }}
+        {{- else }}{{ partial "spot.html" ($o.spot | default "generic") }}{{ end }}
+      </div>
+      <p class="out-when">{{ if eq $o.year "now" }}{{ T "exp_now" }}{{ else }}{{ $o.year }}{{ end }}</p>
+      <p class="out-block-text">{{ index $o.text $l }}</p>
+      {{- with $href }}<span class="out-more" aria-hidden="true">→</span>{{ end }}
+    </article>
+    {{- end }}
+  </div>
   {{- end }}
 
   <h2>{{ T "out_learn" }}</h2>
