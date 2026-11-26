@@ -64,8 +64,8 @@
     <div class="tile-top"><a class="tile-label" href="{{ .url }}" style="view-transition-name: t-outreach">{{ .name }}</a><a class="tile-arrow" href="{{ .url }}" aria-label="{{ .name }}">↗</a></div>
     <div class="home-out">
       {{- range where site.Data.outreach.featured "home" true }}
-      {{- $href := $u }}{{ with .link }}{{ $href = cond (hasPrefix . "http") . (relLangURL .) }}{{ end }}
-      <a href="{{ $href }}">{{ partial "spot.html" .spot }}<b>{{ index .title $l }}</b><span>{{ index .text $l | truncate 120 }}</span></a>
+      {{- $href := $u }}{{ with .link }}{{ $href = cond (hasPrefix . "http") . (cond (strings.Contains . ".") (relURL .) (relLangURL .)) }}{{ end }}
+      <a href="{{ $href }}">{{ with .image }}{{ with resources.Get . }}{{ $im := .Resize "360x webp q80" }}<img class="out-photo" src="{{ $im.RelPermalink }}" width="{{ $im.Width }}" height="{{ $im.Height }}" alt="">{{ end }}{{ else }}{{ partial "spot.html" .spot }}{{ end }}<b>{{ index .title $l }}</b><span>{{ index .text $l | truncate 120 }}</span></a>
       {{- end }}
     </div>
     <p class="home-out-invite">{{ T "out_invite_short" }} {{ partial "contact.html" (dict "label" (T "out_get_in_touch") "class" "") }}</p>

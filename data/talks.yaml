@@ -17,12 +17,11 @@
   short: "Seminar"
   about: {en: "A seminar for physicists in Brussels", fr: "Un séminaire pour physiciens à Bruxelles", nl: "Een seminarie voor fysici in Brussel", ru: "Семинар для физиков в Брюсселе"}
 
-- date: ""
-  year: "2022"
+- date: "2022-10-27"
   title: "Inspiring success stories: app Higgsy"
-  event: "International Particle Physics Outreach Group (IPPOG) meeting, invited talk"
+  event: "24th IPPOG Collaboration meeting, invited talk"
   place: "CERN, Switzerland"
-  short: "IPPOG meeting"
+  short: "IPPOG 2022"
   about: {en: "How a mobile game brings the Higgs boson to the public", fr: "Comment un jeu mobile fait découvrir le boson de Higgs au public", nl: "Hoe een mobiele game het higgsboson bij het publiek brengt", ru: "Как мобильная игра знакомит публику с бозоном Хиггса"}
 
 - date: "2023-08-21"
@@ -104,3 +103,17 @@
   proceedings: "https://doi.org/10.1393/ncc/i2015-15144-8"
   short: "La Thuile 2015"
   about: {en: "What CMS measures about the top quark", fr: "Ce que CMS mesure sur le quark top", nl: "Wat CMS meet over het top-quark", ru: "Что CMS измеряет о топ-кварке"}
+
+- date: "2024-11-27"
+  title: "Outreach activities in Belgium"
+  event: "28th IPPOG meeting (with G. Wilberts De Wasseige, on behalf of the Belgian particle physics, astrophysics and gravitational-wave communities)"
+  place: "CERN, Switzerland"
+  short: "IPPOG 2024"
+  about: {en: "How Belgian physicists share their science with the public", fr: "Comment les physiciens belges partagent leur science avec le public", nl: "Hoe Belgische fysici hun wetenschap delen met het publiek", ru: "Как бельгийские физики рассказывают о своей науке публике"}
+
+- date: "2024-11-27"
+  title: "Future Collider Experiment"
+  event: "28th IPPOG meeting"
+  place: "CERN, Switzerland"
+  short: "IPPOG 2024"
+  about: {en: "FCE, my app for exploring a future collider without programming", fr: "FCE, mon application pour explorer un futur collisionneur sans programmer", nl: "FCE, mijn app om een toekomstige versneller te verkennen zonder te programmeren", ru: "FCE — моё приложение для изучения будущего коллайдера без программирования"}

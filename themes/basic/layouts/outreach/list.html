@@ -5,12 +5,12 @@
   {{- with site.Data.outreach.featured }}
   <div class="out-grid">
     {{- range $i, $f := . }}
-    {{- $href := "" }}{{ with $f.link }}{{ $href = cond (hasPrefix . "http") . (relLangURL .) }}{{ end }}
+    {{- $href := "" }}{{ with $f.link }}{{ $href = cond (hasPrefix . "http") . (cond (strings.Contains . ".") (relURL .) (relLangURL .)) }}{{ end }}
     <article class="out-card" style="--i: {{ $i }}">
       {{- with $href }}<a class="out-hit" href="{{ . }}" aria-label="{{ index $f.title $l }}"></a>{{ end }}
       <div class="out-art">
         {{- with $f.icons }}<div class="out-icons">{{ range . }}{{ with site.GetPage (printf "/projects/%s" .) }}{{ with partial "bundle-image.html" (dict "page" . "key" "icon") }}{{ $ic := .Fill "160x160 webp" }}<img class="out-app" src="{{ $ic.RelPermalink }}" width="72" height="72" alt="">{{ end }}{{ end }}{{ end }}</div>
-        {{- else }}{{ partial "spot.html" $f.spot }}{{ end }}
+        {{- else }}{{ with $f.image }}{{ with resources.Get . }}{{ $im := .Resize "360x webp q80" }}<img class="out-photo" src="{{ $im.RelPermalink }}" width="{{ $im.Width }}" height="{{ $im.Height }}" alt="">{{ end }}{{ else }}{{ partial "spot.html" $f.spot }}{{ end }}{{ end }}
       </div>
       <div class="out-body">
         <p class="out-when">{{ index $f.when $l }}</p>
