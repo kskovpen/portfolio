@@ -1,0 +1,16 @@
+# Introduction on the home page, one paragraph per line (Markdown links allowed).
+# Edited in Write a Post: Site data → Home page → Introduction.
+
+intro:
+  en:
+  - I'm a physicist at Ghent University in Belgium. I work with data from the Large Hadron Collider at CERN, the world's largest particle accelerator, where I study the top quark, the heaviest elementary particle we know of. In 2023 our experiment observed four top quarks being produced at once, the heaviest combination of particles ever seen at the collider.
+  - I also run marathons and trail races, make music, build electronics and write software.
+  fr:
+  - Je suis physicien à l'Université de Gand, en Belgique. Je travaille avec les données du Grand collisionneur de hadrons (LHC) du CERN, le plus grand accélérateur de particules au monde, où j'étudie le quark top, la particule élémentaire la plus lourde que l'on connaisse. En 2023, notre expérience a observé la production simultanée de quatre quarks top, la combinaison de particules la plus lourde jamais vue au collisionneur.
+  - Je cours aussi des marathons et des trails, je fais de la musique, je fabrique de l'électronique et j'écris des logiciels.
+  nl:
+  - Ik ben natuurkundige aan de Universiteit Gent in België. Ik werk met data van de Large Hadron Collider (LHC) van CERN, de grootste deeltjesversneller ter wereld, waar ik de topquark bestudeer, het zwaarste elementaire deeltje dat we kennen. In 2023 zag ons experiment vier topquarks die tegelijk ontstonden, de zwaarste combinatie van deeltjes die ooit bij de versneller is waargenomen.
+  - Ik loop ook marathons en trailruns, maak muziek, bouw elektronica en schrijf software.
+  ru:
+  - Я физик в Гентском университете (Бельгия). Я работаю с данными Большого адронного коллайдера (БАК) в ЦЕРНе, крупнейшего в мире ускорителя частиц, и изучаю топ-кварк — самую тяжёлую из известных нам элементарных частиц. В 2023 году наш эксперимент зарегистрировал одновременное рождение четырёх топ-кварков — самую тяжёлую комбинацию частиц, когда-либо наблюдавшуюся на коллайдере.
+  - А ещё я бегаю марафоны и трейлы, занимаюсь музыкой, собираю электронику и пишу программы.

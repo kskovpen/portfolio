@@ -12,7 +12,7 @@
   <section class="tile tile-hero" style="--i: 1">
     <h1 class="hero-name">{{ site.Params.author }}</h1>
     {{ with site.Params.role }}<p class="role">{{ . }}</p>{{ end }}
-    <div class="hero-text">{{ .Content }}</div>
+    <div class="hero-text">{{ with index (site.Data.home.intro | default dict) site.Language.Lang }}{{ range . }}<p>{{ . | markdownify }}</p>{{ end }}{{ else }}{{ .Content }}{{ end }}</div>
   </section>
 
   {{- with $m.blog }}{{ $b := . }}{{ with index (partial "all-posts.html" $) 0 }}{{ $cover := partial "post-cover.html" (dict "page" . "w" 900 "h" 900) }}
