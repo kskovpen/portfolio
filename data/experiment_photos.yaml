@@ -1,0 +1,22 @@
+# One real photo per experiment page, all openly licensed (credit shown under the photo).
+cms:
+  file: images/experiments/cms.jpg
+  author: "Simon Waldherr"
+  licence: "CC BY-SA 4.0"
+  licence_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+  source: "https://commons.wikimedia.org/wiki/File:CERN_LHC_CMS_11.jpg"
+  caption: {en: "The CMS detector opened up for maintenance, 100 metres underground.", fr: "Le détecteur CMS ouvert pour maintenance, à 100 mètres sous terre.", nl: "De CMS-detector opengemaakt voor onderhoud, 100 meter onder de grond.", ru: "Детектор CMS, раскрытый для обслуживания, на глубине 100 метров."}
+atlas:
+  file: images/experiments/atlas.jpg
+  author: "Simon Waldherr"
+  licence: "CC BY-SA 4.0"
+  licence_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+  source: "https://commons.wikimedia.org/wiki/File:CERN_LHC_ATLAS_Detector.jpg"
+  caption: {en: "The ATLAS detector in its underground cavern at CERN.", fr: "Le détecteur ATLAS dans sa caverne souterraine au CERN.", nl: "De ATLAS-detector in zijn ondergrondse grot bij CERN.", ru: "Детектор ATLAS в подземном зале ЦЕРН."}
+snd:
+  file: images/experiments/snd.jpg
+  author: "Eto shorcy"
+  licence: "CC BY-SA 4.0"
+  licence_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+  source: "https://commons.wikimedia.org/wiki/File:VEPP-2000_electron-positron_collider.jpg"
+  caption: {en: "The VEPP-2000 collider in Novosibirsk, where SND records electron–positron collisions.", fr: "Le collisionneur VEPP-2000 à Novossibirsk, où SND enregistre les collisions électron-positon.", nl: "De VEPP-2000-versneller in Novosibirsk, waar SND elektron-positronbotsingen vastlegt.", ru: "Коллайдер ВЭПП-2000 в Новосибирске, где СНД регистрирует электрон-позитронные столкновения."}

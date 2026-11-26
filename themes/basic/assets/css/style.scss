@@ -1052,3 +1052,7 @@ h2[id] { scroll-margin-top: 80px; }
 .post-thumb .spot { width: 88%; }
 .post-summary:hover .d-track, .post-summary:hover .d-lepton, .post-summary:hover .d-jet-track { animation: draw 1.1s var(--ease) both; }
 @media (max-width: 520px) { .post-summary { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; } .post-thumb { width: 84px; } }
+.exp-photo { margin: 28px 0; }
+.exp-photo img { width: 100%; height: auto; max-height: 560px; object-fit: cover; border-radius: 8px; display: block; }
+.exp-photo figcaption { margin-top: 8px; font-size: 14.5px; color: var(--ink-2); }
+.exp-photo figcaption .meta { display: block; font-size: 12px; margin-top: 2px; }

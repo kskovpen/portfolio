@@ -17,6 +17,13 @@
     <figcaption>{{ with .Params.hint }}<span>{{ . | safeHTML }}</span>{{ end }}<span class="meta">{{ T "drawing_note" }}</span></figcaption>
   </figure>
   <div class="exp-body">{{ .Content }}</div>
+  {{- with index site.Data.experiment_photos .Params.drawing }}{{ $ph := . }}
+  {{- with resources.Get .file }}{{ $big := .Resize "1400x webp q80" }}{{ $small := .Resize "800x webp q78" }}
+  <figure class="exp-photo">
+    <img src="{{ $big.RelPermalink }}" srcset="{{ $small.RelPermalink }} 800w, {{ $big.RelPermalink }} 1400w" sizes="(max-width: 900px) 100vw, 1100px" width="{{ $big.Width }}" height="{{ $big.Height }}" alt="{{ index $ph.caption site.Language.Lang }}" loading="lazy">
+    <figcaption>{{ index $ph.caption site.Language.Lang }} <span class="meta">{{ T "photo_by" }} <a href="{{ $ph.source }}">{{ $ph.author }}</a>, <a href="{{ $ph.licence_url }}">{{ $ph.licence }}</a></span></figcaption>
+  </figure>
+  {{- end }}{{ end }}
   {{- with .Sections }}
   <h2>{{ T "exp_results" }}</h2>
   <div class="cards">
