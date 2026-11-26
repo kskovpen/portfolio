@@ -1,0 +1,92 @@
+# Key papers per experiment (shown on /science/<experiment>/), newest first.
+# Fields: year, title (original, English), ref (journal or preprint), url (DOI or arXiv link),
+# about: one plain-language line per language, mentioning my part where useful.
+# Source: ~/Work/CV/vub/cv.tex "Notable publications" and INSPIRE (author 1066490); references checked on INSPIRE.
+
+ship:
+  - year: 2026
+    title: "Sensitivity of the SHiP experiment at CERN to sterile-neutrino-induced oscillations"
+    ref: "arXiv:2611.18824"
+    url: "https://arxiv.org/abs/2611.18824"
+    about: {en: "How well SHiP could spot neutrinos changing type because of a new, hidden neutrino", fr: "À quel point SHiP pourrait voir des neutrinos changer de type à cause d'un nouveau neutrino caché", nl: "Hoe goed SHiP neutrino's zou kunnen zien die van soort veranderen door een nieuw, verborgen neutrino", ru: "Насколько хорошо SHiP сможет заметить, как нейтрино меняют тип из-за нового, скрытого нейтрино"}
+  - year: 2026
+    title: "A Pythia8 tune for open charm and beauty production in fixed-target collisions"
+    ref: "Eur. Phys. J. C 86 (2026) 1316"
+    url: "https://doi.org/10.1140/epjc/s10052-026-16548-5"
+    about: {en: "Our own tuning of a widely used simulation program, so it predicts better how many charm and beauty particles, and the neutrinos they produce, SHiP will see", fr: "Notre réglage d'un programme de simulation très utilisé, pour mieux prédire combien de particules charmées et belles, et les neutrinos qu'elles produisent, SHiP verra", nl: "Onze eigen afstelling van een veelgebruikt simulatieprogramma, zodat het beter voorspelt hoeveel charm- en beauty-deeltjes, en de neutrino's die ze maken, SHiP zal zien", ru: "Наша настройка широко используемой программы моделирования, чтобы точнее предсказать, сколько очарованных и прелестных частиц и рождённых ими нейтрино увидит SHiP"}
+  - year: 2026
+    title: "Measurement of di-muons from 400 GeV/c protons interacting in a thick molybdenum/tungsten target"
+    ref: "Eur. Phys. J. C 86 (2026) 1231"
+    url: "https://doi.org/10.1140/epjc/s10052-026-16148-3"
+    about: {en: "A test with a SHiP-like target: how many muon pairs come out when the beam hits a thick block of metal", fr: "Un test avec une cible comme celle de SHiP : combien de paires de muons sortent quand le faisceau frappe un épais bloc de métal", nl: "Een test met een doelwit zoals dat van SHiP: hoeveel muonparen eruit komen als de bundel een dik blok metaal raakt", ru: "Тест с мишенью, как у SHiP: сколько пар мюонов вылетает, когда пучок бьёт в толстый металлический блок"}
+
+cms:
+  - year: 2025
+    title: "Search for long-lived heavy neutral leptons in proton-proton collision events with a lepton-jet pair associated with a secondary vertex at √s = 13 TeV"
+    ref: "JHEP 02 (2025) 036"
+    url: "https://doi.org/10.1007/JHEP02(2025)036"
+    about: {en: "A hunt for heavy neutrinos that fly a short distance before decaying; I supervised a PhD student on it", fr: "Une chasse aux neutrinos lourds qui parcourent une courte distance avant de se désintégrer ; j'y ai encadré un doctorant", nl: "Een jacht op zware neutrino's die een kort stukje vliegen voor ze vervallen; ik begeleidde er een doctoraatsstudent bij", ru: "Поиск тяжёлых нейтрино, пролетающих небольшое расстояние перед распадом; я руководил аспирантом в этой работе"}
+  - year: 2023
+    title: "Observation of four top quark production in proton-proton collisions at √s = 13 TeV"
+    ref: "Phys. Lett. B 847 (2023) 138290"
+    url: "https://doi.org/10.1016/j.physletb.2023.138290"
+    about: {en: "Four top quarks made at once, seen for the first time; I was one of the main analysts", fr: "Quatre quarks top produits d'un coup, observés pour la première fois ; j'étais l'un des principaux analystes", nl: "Vier top-quarks tegelijk, voor het eerst waargenomen; ik was een van de hoofdanalisten", ru: "Впервые увидели рождение сразу четырёх топ-кварков; я был одним из основных авторов анализа"}
+  - year: 2022
+    title: "Search for flavor-changing neutral current interactions of the top quark and Higgs boson in final states with two photons in proton-proton collisions at √s = 13 TeV"
+    ref: "Phys. Rev. Lett. 129 (2022) 032001"
+    url: "https://doi.org/10.1103/PhysRevLett.129.032001"
+    about: {en: "A search for a 'forbidden' decay of the top quark into a Higgs boson; I started this analysis, and it gave the strongest limits at the time", fr: "Une recherche d'une désintégration « interdite » du quark top en boson de Higgs ; j'ai lancé cette analyse, qui a donné les limites les plus fortes de l'époque", nl: "Een zoektocht naar een 'verboden' verval van het top-quark naar een higgsboson; ik startte deze analyse, die de sterkste limieten van dat moment gaf", ru: "Поиск «запрещённого» распада топ-кварка с бозоном Хиггса; я начал этот анализ, давший самые сильные ограничения на тот момент"}
+  - year: 2022
+    title: "Measurement of the inclusive and differential tt̄γ cross sections in the dilepton channel and effective field theory interpretation in proton-proton collisions at √s = 13 TeV"
+    ref: "JHEP 05 (2022) 091"
+    url: "https://doi.org/10.1007/JHEP05(2022)091"
+    about: {en: "How often top quark pairs come with a photon, measured to 4%; I led the analysis team", fr: "La fréquence des paires de quarks top accompagnées d'un photon, mesurée à 4 % près ; j'ai dirigé l'équipe d'analyse", nl: "Hoe vaak top-quarkparen samen met een foton ontstaan, gemeten tot op 4%; ik leidde het analyseteam", ru: "Как часто пары топ-кварков рождаются вместе с фотоном — с точностью 4 %; я руководил группой анализа"}
+  - year: 2022
+    title: "Search for long-lived heavy neutral leptons with displaced vertices in proton-proton collisions at √s = 13 TeV"
+    ref: "JHEP 07 (2022) 081"
+    url: "https://doi.org/10.1007/JHEP07(2022)081"
+    about: {en: "Heavy neutrinos that decay away from the collision point; I studied a key background and was an editor of the paper", fr: "Des neutrinos lourds qui se désintègrent loin du point de collision ; j'ai étudié un bruit de fond clé et co-rédigé l'article", nl: "Zware neutrino's die ver van het botsingspunt vervallen; ik bestudeerde een belangrijke achtergrond en was redacteur van het artikel", ru: "Тяжёлые нейтрино, распадающиеся вдали от точки столкновения; я изучил важный фон и был редактором статьи"}
+  - year: 2020
+    title: "Beam test performance of prototype silicon detectors for the Outer Tracker for the Phase-2 Upgrade of CMS"
+    ref: "JINST 15 (2020) P03014"
+    url: "https://doi.org/10.1088/1748-0221/15/03/P03014"
+    about: {en: "First beam tests of the silicon sensors for the future CMS tracker; I led the analysis of the test data", fr: "Premiers tests en faisceau des capteurs en silicium du futur trajectographe de CMS ; j'ai dirigé l'analyse des données", nl: "Eerste bundeltests van de siliciumsensoren voor de toekomstige CMS-tracker; ik leidde de analyse van de testdata", ru: "Первые испытания на пучке кремниевых датчиков для будущего трекера CMS; я руководил анализом данных"}
+  - year: 2018
+    title: "Search for the flavor-changing neutral current interactions of the top quark and the Higgs boson which decays into a pair of b quarks at √s = 13 TeV"
+    ref: "JHEP 06 (2018) 102"
+    url: "https://doi.org/10.1007/JHEP06(2018)102"
+    about: {en: "Another search for the 'forbidden' top–Higgs link, which I proposed, with a new way to reconstruct top quarks", fr: "Une autre recherche du lien « interdit » entre top et Higgs, que j'ai proposée, avec une nouvelle façon de reconstruire les quarks top", nl: "Nog een zoektocht naar de 'verboden' top-higgsverbinding, die ik voorstelde, met een nieuwe manier om top-quarks te reconstrueren", ru: "Ещё один поиск «запрещённой» связи топ-кварка и бозона Хиггса — по моему предложению, с новым способом восстановления топ-кварков"}
+  - year: 2018
+    title: "Identification of heavy-flavour jets with the CMS detector in pp collisions at 13 TeV"
+    ref: "JINST 13 (2018) P05011"
+    url: "https://doi.org/10.1088/1748-0221/13/05/P05011"
+    about: {en: "How CMS recognises sprays of particles from bottom quarks, a tool used in about a third of CMS papers; written while I coordinated this team", fr: "Comment CMS reconnaît les gerbes de particules issues de quarks b, un outil utilisé dans environ un tiers des articles de CMS ; écrit quand je coordonnais cette équipe", nl: "Hoe CMS deeltjesbundels van bottom-quarks herkent, een hulpmiddel in ongeveer een derde van de CMS-artikelen; geschreven toen ik dit team coördineerde", ru: "Как CMS распознаёт струи частиц от b-кварков — инструмент примерно трети статей CMS; написано, когда я координировал эту группу"}
+
+atlas:
+  - year: 2012
+    title: "Search for heavy neutrinos and right-handed W bosons in events with two leptons and jets in pp collisions at √s = 7 TeV with the ATLAS detector"
+    ref: "Eur. Phys. J. C 72 (2012) 2056"
+    url: "https://doi.org/10.1140/epjc/s10052-012-2056-4"
+    about: {en: "The main result of my PhD: among the first searches for heavy neutrinos at the LHC", fr: "Le résultat principal de ma thèse : parmi les premières recherches de neutrinos lourds au LHC", nl: "Het hoofdresultaat van mijn doctoraat: een van de eerste zoektochten naar zware neutrino's bij de LHC", ru: "Главный результат моей диссертации: один из первых поисков тяжёлых нейтрино на LHC"}
+  - year: 2010
+    title: "Performance of the electronic readout of the ATLAS liquid argon calorimeters"
+    ref: "JINST 5 (2010) P09003"
+    url: "https://doi.org/10.1088/1748-0221/5/09/P09003"
+    about: {en: "Getting the ATLAS calorimeter electronics ready for the first LHC data; I built its online monitoring", fr: "Préparer l'électronique du calorimètre d'ATLAS pour les premières données du LHC ; j'ai développé sa surveillance en ligne", nl: "De elektronica van de ATLAS-calorimeter klaarmaken voor de eerste LHC-data; ik bouwde de online monitoring", ru: "Подготовка электроники калориметра ATLAS к первым данным LHC; я разработал её онлайн-мониторинг"}
+
+snd:
+  - year: 2012
+    title: "First results on the nucleon form factors from SND"
+    ref: "Nucl. Phys. B Proc. Suppl. 225–227 (2012) 201"
+    url: "https://doi.org/10.1016/j.nuclphysbps.2012.02.042"
+    about: {en: "First SND results on protons and neutrons made in electron–positron collisions", fr: "Premiers résultats de SND sur les protons et neutrons produits dans les collisions électron–positon", nl: "Eerste SND-resultaten over protonen en neutronen gemaakt in elektron-positronbotsingen", ru: "Первые результаты SND по протонам и нейтронам, рождённым в электрон-позитронных столкновениях"}
+  - year: 2009
+    title: "The project of using the SND NaI(Tl) calorimeter as an antineutron detector"
+    ref: "Nucl. Instrum. Meth. A 598 (2009) 264"
+    url: "https://doi.org/10.1016/j.nima.2008.08.093"
+    about: {en: "How the SND crystals can catch antineutrons, which leave no track, by timing their signals", fr: "Comment les cristaux de SND peuvent attraper les antineutrons, qui ne laissent pas de trace, en chronométrant leurs signaux", nl: "Hoe de SND-kristallen antineutronen, die geen spoor achterlaten, kunnen vangen door hun signalen te timen", ru: "Как кристаллы SND могут поймать антинейтроны, не оставляющие треков, по времени их сигналов"}
+  - year: 2009
+    title: "Project for measuring the neutron electromagnetic form factor in the reaction e+e− → nn̄ at the VEPP-2000 collider"
+    ref: "Phys. Atom. Nucl. 72 (2009) 662"
+    url: "https://doi.org/10.1134/S1063778809040115"
+    about: {en: "The plan for my measurement: how electric charge and magnetism are spread inside the neutron", fr: "Le plan de ma mesure : comment la charge électrique et le magnétisme se répartissent dans le neutron", nl: "Het plan voor mijn meting: hoe elektrische lading en magnetisme verdeeld zijn in het neutron", ru: "План моего измерения: как распределены электрический заряд и магнетизм внутри нейтрона"}

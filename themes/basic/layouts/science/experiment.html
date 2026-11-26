@@ -36,6 +36,24 @@
     {{- end }}
   </div>
   {{- end }}
+  {{- with index site.Data.key_papers .Params.drawing }}{{ $l := site.Language.Lang }}
+  <section class="key-papers">
+    <h2>{{ T "key_papers" }}</h2>
+    <ol class="paper-list">
+      {{- range . }}
+      <li>
+        <span class="paper-year">{{ .year }}</span>
+        <div>
+          <a class="paper-about" href="{{ .url }}">{{ index .about $l | default .about.en }}</a>
+          <p class="talk-orig" lang="en">{{ .title }}</p>
+          <p class="meta">{{ .ref }}</p>
+        </div>
+      </li>
+      {{- end }}
+    </ol>
+    <p class="meta">{{ T "key_papers_all" | safeHTML }}</p>
+  </section>
+  {{- end }}
   {{- with .Params.website }}<p><a class="button-link" href="{{ . }}">{{ T "exp_website" }} ↗</a></p>{{ end }}
   {{ partial "glossary.html" . }}
 </article>

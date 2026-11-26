@@ -1198,3 +1198,11 @@ h2[id] { scroll-margin-top: 80px; }
 /* Home: latest blog post tile, title readable over any photo */
 .tile-latest.tile-image::before { background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35) 35%, rgba(0, 0, 0, 0.85)); }
 .tile-latest .tile-latest-title { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); }
+
+/* Key papers on experiment pages */
+.key-papers { margin-top: 48px; }
+.paper-list { list-style: none; padding: 0; margin: 0 0 12px; border-top: 1px solid var(--line); }
+.paper-list li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.paper-year { font-weight: 800; color: var(--hue); font-variant-numeric: tabular-nums; }
+.paper-about { font-weight: 650; color: var(--ink); line-height: 1.35; }
+.paper-list p { margin: 4px 0 0; }
