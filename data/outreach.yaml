@@ -1,24 +1,37 @@
-# Outreach: featured projects (cards) and a full timeline. Shown on /outreach/ and on the home page.
+# Outreach activities, one card each (Outreach page; cards with home: true also appear on the home page).
+# icons: app icons from the Projects page (e.g. higgsy, matterbricks); otherwise spot: a drawing from partials/spot.html.
 featured:
   - key: astrolab
     spot: cosmic
-    when: {en: "Now", fr: "Actuel", nl: "Nu", ru: "Сейчас"}
+    home: true
     link: https://astrolab.be
+    when: {en: "Now", fr: "Actuel", nl: "Nu", ru: "Сейчас"}
     title: {en: "Catching particles from space", fr: "Attraper des particules venues de l'espace", nl: "Deeltjes uit de ruimte vangen", ru: "Ловим частицы из космоса"}
     text: {en: "With AstroLAB IRIS in Ypres, students build detectors for cosmic muons: particles from space that pass through us every second.", fr: "Avec AstroLAB IRIS à Ypres, des étudiants construisent des détecteurs de muons cosmiques : des particules venues de l'espace qui nous traversent à chaque seconde.", nl: "Met AstroLAB IRIS in Ieper bouwen studenten detectoren voor kosmische muonen: deeltjes uit de ruimte die elke seconde door ons heen gaan.", ru: "Вместе с AstroLAB IRIS в Ипре студенты строят детекторы космических мюонов — частиц из космоса, каждую секунду пролетающих сквозь нас."}
   - key: games
+    icons: [higgsy, matterbricks]
     spot: public
-    when: {en: "2022–2023", fr: "2022–2023", nl: "2022–2023", ru: "2022–2023"}
+    home: true
     link: /projects/
+    when: {en: "2022–2023", fr: "2022–2023", nl: "2022–2023", ru: "2022–2023"}
     title: {en: "Games about particles", fr: "Des jeux sur les particules", nl: "Games over deeltjes", ru: "Игры о частицах"}
-    text: {en: "Hunt for the Higgs boson in Higgsy, or build particles from bricks in MatterBricks. Both are free.", fr: "Cherchez le boson de Higgs dans Higgsy ou assemblez des particules dans MatterBricks. Les deux sont gratuits.", nl: "Zoek het higgsboson in Higgsy of bouw deeltjes met blokjes in MatterBricks. Beide zijn gratis.", ru: "Ищите бозон Хиггса в Higgsy или собирайте частицы из кирпичиков в MatterBricks. Обе игры бесплатны."}
+    text: {en: "Hunt for the Higgs boson in Higgsy, made for its 10th anniversary, or build particles from bricks in MatterBricks, featured on RTBF and BX1. Both are free; I presented them in an invited talk at IPPOG (CERN) and at the EPS-HEP 2023 conference.", fr: "Cherchez le boson de Higgs dans Higgsy, créé pour ses 10 ans, ou assemblez des particules dans MatterBricks, présenté sur la RTBF et BX1. Les deux sont gratuits ; je les ai présentés lors d'un exposé invité à l'IPPOG (CERN) et à la conférence EPS-HEP 2023.", nl: "Zoek het higgsboson in Higgsy, gemaakt voor zijn tiende verjaardag, of bouw deeltjes met blokjes in MatterBricks, te zien op RTBF en BX1. Beide zijn gratis; ik stelde ze voor in een uitgenodigde lezing bij IPPOG (CERN) en op de conferentie EPS-HEP 2023.", ru: "Ищите бозон Хиггса в Higgsy, созданной к 10-летию его открытия, или собирайте частицы из кирпичиков в MatterBricks — о ней рассказали RTBF и BX1. Обе игры бесплатны; я представил их в приглашённом докладе на IPPOG (ЦЕРН) и на конференции EPS-HEP 2023."}
   - key: schools
     spot: talks
-    when: {en: "2015–", fr: "2015–", nl: "2015–", ru: "2015–"}
+    home: true
+    when: {en: "2015–2017", fr: "2015–2017", nl: "2015–2017", ru: "2015–2017"}
     title: {en: "Talks for schools", fr: "Exposés pour les écoles", nl: "Lezingen voor scholen", ru: "Лекции для школьников"}
-    text: {en: "Talks in schools and CERN Masterclasses, where pupils analyse real collision data.", fr: "Des exposés dans les écoles et les Masterclasses du CERN, où des élèves analysent de vraies collisions.", nl: "Lezingen op scholen en CERN-masterclasses, waar leerlingen echte botsingsdata analyseren.", ru: "Лекции в школах и мастер-классы ЦЕРН, где школьники анализируют настоящие столкновения."}
+    text: {en: "“A Big Bang in the Lab” for secondary school pupils in Brussels, and CERN Masterclasses in Strasbourg, where pupils analyse real collision data.", fr: "« Un Big Bang au labo » pour des lycéens à Bruxelles, et les Masterclasses du CERN à Strasbourg, où des élèves analysent de vraies collisions.", nl: "\"Een oerknal in het lab\" voor scholieren in Brussel, en CERN-masterclasses in Straatsburg, waar leerlingen echte botsingsdata analyseren.", ru: "«Большой взрыв в лаборатории» для школьников в Брюсселе и мастер-классы ЦЕРН в Страсбурге, где школьники анализируют настоящие столкновения."}
   - key: media
     spot: press
+    home: true
     when: {en: "2018", fr: "2018", nl: "2018", ru: "2018"}
     title: {en: "In the news", fr: "Dans les médias", nl: "In de media", ru: "В СМИ"}
-    text: {en: "The press release and a public blog about the first sighting of the Higgs boson with top quarks.", fr: "Le communiqué de presse et un blog grand public sur la première observation du boson de Higgs avec des quarks top.", nl: "Het persbericht en een publieksblog over de eerste waarneming van het higgsboson met top-quarks.", ru: "Пресс-релиз и научно-популярный блог о первом наблюдении бозона Хиггса вместе с топ-кварками."}
+    text: {en: "Press release, public blog and Instagram from CERN on the first sighting of the Higgs boson with top quarks.", fr: "Communiqué de presse, blog grand public et Instagram depuis le CERN sur la première observation du boson de Higgs avec des quarks top.", nl: "Persbericht, publieksblog en Instagram vanuit CERN over de eerste waarneming van het higgsboson met top-quarks.", ru: "Пресс-релиз, научно-популярный блог и Instagram из ЦЕРН о первом наблюдении бозона Хиггса вместе с топ-кварками."}
+  - key: ippog
+    spot: network
+    home: false
+    link: https://arxiv.org/abs/2509.17643
+    when: {en: "2025", fr: "2025", nl: "2025", ru: "2025"}
+    title: {en: "A worldwide outreach network", fr: "Un réseau mondial de vulgarisation", nl: "Een wereldwijd outreachnetwerk", ru: "Мировая сеть популяризаторов"}
+    text: {en: "Co-author of the paper on IPPOG, the International Particle Physics Outreach Group, which brings particle physics to schools and the public all over the world.", fr: "Coauteur de l'article sur l'IPPOG, le groupe international de vulgarisation de la physique des particules, qui fait découvrir cette science aux écoles et au public du monde entier.", nl: "Medeauteur van het artikel over IPPOG, de International Particle Physics Outreach Group, die deeltjesfysica wereldwijd naar scholen en het publiek brengt.", ru: "Соавтор статьи об IPPOG — Международной группе по популяризации физики частиц, которая знакомит с этой наукой школьников и публику по всему миру."}
