@@ -111,13 +111,14 @@
   slides: "https://indico.global/event/7292/contributions/68152/attachments/32878/61891/kskovpenTOP2015v4Final.pdf"
   url: "https://indico.global/event/7292/contributions/68152/"
 
-- date: "2015-03-01"
+- date: "2015-03-05"
   title: "Top quark properties and single top at CMS"
   event: "29th Rencontres de Physique de La Vallée d'Aoste"
   place: "La Thuile, Italy"
   proceedings: "https://doi.org/10.1393/ncc/i2015-15144-8"
   short: "La Thuile 2015"
   about: {en: "What CMS measures about the top quark", fr: "Ce que CMS mesure sur le quark top", nl: "Wat CMS meet over het top-quark", ru: "Что CMS измеряет о топ-кварке"}
+  slides: "talks/la-thuile-2015.pdf"
 
 - date: "2024-11-26"
   title: "Outreach activities in Belgium"

@@ -3,6 +3,7 @@
 # about: one plain-language line per language (only when there is a title).
 - year: 2024
   host: "RWTH Aachen University"
+  slides: "talks/aachen-2024-multi-tops.pdf"
   place: "Aachen, Germany"
   title: "Multi-tops"
   about: {en: "Top quarks made three and four at a time", fr: "Des quarks top produits par trois et par quatre", nl: "Top-quarks die per drie en per vier ontstaan", ru: "Топ-кварки, рождающиеся по три и по четыре"}
@@ -28,6 +29,7 @@
   url: "https://agenda.irmp.ucl.ac.be/event/3265/"
 - year: 2018
   host: "Institut de Physique Nucléaire de Lyon (IPNL)"
+  slides: "talks/lyon-2018-seminar.pdf"
   place: "Lyon, France"
 - year: 2018
   host: "Laboratoire de Physique de Clermont (LPC)"
