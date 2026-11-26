@@ -48,6 +48,9 @@ schools:
     text: {en: "Invited lecturer, Belgian–Dutch–German graduate school in particle physics, the Netherlands", fr: "Conférencier invité, école doctorale belgo-néerlando-allemande de physique des particules, Pays-Bas", nl: "Gastdocent, Belgisch-Nederlands-Duitse doctoraatsschool deeltjesfysica, Nederland", ru: "Приглашённый лектор, бельгийско-нидерландско-германская школа по физике частиц, Нидерланды"}
 
 outreach:
+  - year: "now"
+    link: https://astrolab.be
+    text: {en: "Projects with students at AstroLAB IRIS, the public observatory in Ypres: building detectors that catch cosmic muons, particles from space that rain down on us all the time", fr: "Des projets avec des étudiants à AstroLAB IRIS, l'observatoire public d'Ypres : construire des détecteurs qui captent les muons cosmiques, des particules venues de l'espace qui nous tombent dessus en permanence", nl: "Projecten met studenten bij AstroLAB IRIS, de volkssterrenwacht in Ieper: detectoren bouwen die kosmische muonen opvangen, deeltjes uit de ruimte die voortdurend op ons neerregenen", ru: "Проекты со студентами в AstroLAB IRIS — народной обсерватории в Ипре: создаём детекторы, которые ловят космические мюоны — частицы из космоса, постоянно падающие на нас"}
   - year: "2023"
     link: /projects/matterbricks/
     text: {en: "MatterBricks, an augmented-reality puzzle game about elementary particles, shown at a public symposium and covered by RTBF and BX1", fr: "MatterBricks, un jeu de réalité augmentée sur les particules élémentaires, présenté lors d'un symposium public et couvert par la RTBF et BX1", nl: "MatterBricks, een augmented-realitygame over elementaire deeltjes, getoond op een publiek symposium en opgepikt door RTBF en BX1", ru: "MatterBricks — игра с дополненной реальностью об элементарных частицах, показанная на открытом симпозиуме; о ней рассказали RTBF и BX1"}

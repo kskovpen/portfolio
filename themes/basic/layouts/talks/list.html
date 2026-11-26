@@ -29,7 +29,7 @@
 
   <div class="tt-head">{{ partial "spot.html" "public" }}<h2 id="public">{{ T "tt_public" }}</h2></div>
   <ul class="cv-compact">
-    {{- range .outreach }}<li><span class="cv-year">{{ .year }}</span><span>{{ with .link }}<a href="{{ relLangURL . }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
+    {{- range .outreach }}<li><span class="cv-year">{{ if eq .year "now" }}{{ T "exp_now" }}{{ else }}{{ .year }}{{ end }}</span><span>{{ with .link }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ relLangURL . }}{{ end }}">{{ end }}{{ index .text $l }}{{ with .link }}</a>{{ end }}</span></li>{{ end }}
   </ul>
   {{- end }}
 
