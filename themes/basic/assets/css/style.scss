@@ -1206,3 +1206,32 @@ h2[id] { scroll-margin-top: 80px; }
 .paper-year { font-weight: 800; color: var(--hue); font-variant-numeric: tabular-nums; }
 .paper-about { font-weight: 650; color: var(--ink); line-height: 1.35; }
 .paper-list p { margin: 4px 0 0; }
+
+/* Places map (Travel page) */
+.places { margin: 24px 0 40px; --k-home: var(--ink); --k-talk: var(--h-talks); --k-school: var(--h-projects); --k-race: var(--h-running); --k-outreach: var(--h-outreach); --k-trip: var(--h-travel); }
+.places .k-home { --k: var(--k-home); } .places .k-talk { --k: var(--k-talk); } .places .k-school { --k: var(--k-school); }
+.places .k-race { --k: var(--k-race); } .places .k-outreach { --k: var(--k-outreach); } .places .k-trip { --k: var(--k-trip); }
+.places-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.places-chips .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); font: inherit; font-size: 14px; cursor: pointer; }
+.places-chips .chip[aria-pressed="false"] { opacity: .45; }
+.places-chips .chip[aria-pressed="false"] .dot { background: transparent; box-shadow: inset 0 0 0 2px var(--k); }
+.places .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--k); display: inline-block; }
+.places-map { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+.pm-sea { fill: color-mix(in srgb, #4f8df5 10%, var(--bg)); }
+.pm-land { fill: color-mix(in srgb, var(--ink) 9%, var(--bg)); stroke: color-mix(in srgb, var(--ink) 22%, var(--bg)); stroke-width: .6; stroke-linejoin: round; }
+.pm-place { cursor: pointer; outline: none; }
+.pm-place .pm-dot { fill: var(--k); stroke: var(--bg); stroke-width: 1.5; transition: r .2s var(--ease); }
+.pm-place .pm-ring { fill: none; stroke: var(--k); stroke-width: 1.5; opacity: .6; }
+.pm-place:hover .pm-dot, .pm-place:focus .pm-dot { r: 9; }
+.pm-place.is-home .pm-dot { fill: var(--ink); }
+.pm-arrow { fill: none; stroke: var(--ink-2); stroke-width: 1.6; }
+.pm-label { font-size: 14px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; }
+.pm-place[hidden], .places-list li[hidden] { display: none; }
+.places-note { margin-top: 8px; }
+.places-list summary { cursor: pointer; font-weight: 650; }
+.places-list ul { list-style: none; padding: 0; columns: 2 320px; column-gap: 32px; }
+.places-list li { break-inside: avoid; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.places-list .dots { display: inline-flex; gap: 3px; margin-right: 8px; }
+.places-list .dot { width: 8px; height: 8px; }
+.pm-tip { position: absolute; pointer-events: none; background: var(--bg); color: var(--ink); border: 1px solid var(--line); padding: 6px 10px; font-size: 13px; max-width: 260px; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 5; }
+.places { position: relative; }

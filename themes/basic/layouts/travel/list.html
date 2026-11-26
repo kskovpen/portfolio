@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
   {{ .Content }}
-  {{ if fileExists "static/travel/overview.jpg" }}{{ partial "travel-map.html" (dict "src" ("travel/overview.jpg" | relURL) "alt" "Map of places visited") }}{{ end }}
+  {{ partial "places-map.html" . }}
   <div class="cards-grid">
     {{- range .Pages.ByDate.Reverse }}
     <a class="project-card" href="{{ .RelPermalink }}">

@@ -3,12 +3,23 @@
 # optional: slides (path under static/, e.g. talks/aachen-2024.pdf), proceedings (URL), url (event page).
 # If a PNG with the same name as the slides PDF exists (convert_images.sh makes one), it is shown as a thumbnail.
 
+- date: "2023-08-23"
+  title: "New results on ttW and 4-top with CMS"
+  event: "2023 European Physical Society Conference on High Energy Physics (EPS-HEP2023)"
+  place: "Hamburg, Germany"
+  short: "EPS-HEP 2023"
+  about: {en: "New CMS results on top quark pairs made with a W boson, and on four top quarks at once", fr: "Nouveaux résultats de CMS sur les paires de quarks top produites avec un boson W, et sur quatre quarks top d'un coup", nl: "Nieuwe CMS-resultaten over top-quarkparen met een W-boson, en over vier top-quarks tegelijk", ru: "Новые результаты CMS о парах топ-кварков с W-бозоном и о рождении сразу четырёх топ-кварков"}
+  slides: "https://indico.desy.de/event/34916/contributions/149606/attachments/84243/111566/kskovpenTTWandFourTops.pdf"
+  url: "https://indico.desy.de/event/34916/contributions/149606/"
+
 - date: "2022-10-27"
   title: "Inspiring success stories: app Higgsy"
   event: "24th IPPOG Collaboration meeting, invited talk"
   place: "CERN, Switzerland"
   short: "IPPOG 2022"
   about: {en: "How a mobile game brings the Higgs boson to the public", fr: "Comment un jeu mobile fait découvrir le boson de Higgs au public", nl: "Hoe een mobiele game het higgsboson bij het publiek brengt", ru: "Как мобильная игра знакомит публику с бозоном Хиггса"}
+  slides: "https://indico.cern.ch/event/1185824/contributions/5025521/attachments/2536325/4365198/Higgsy.pdf"
+  url: "https://indico.cern.ch/event/1185824/contributions/5025521/"
 
 - date: "2023-08-21"
   title: "Particles in a pocket"
@@ -17,70 +28,88 @@
   proceedings: "https://arxiv.org/abs/2310.17656"
   short: "EPS-HEP 2023"
   about: {en: "My games Higgsy and MatterBricks: explaining particle physics on a phone", fr: "Mes jeux Higgsy et MatterBricks : expliquer la physique des particules sur un téléphone", nl: "Mijn games Higgsy en MatterBricks: deeltjesfysica uitleggen op een telefoon", ru: "Мои игры Higgsy и MatterBricks: физика частиц в телефоне"}
+  slides: "https://indico.desy.de/event/34916/contributions/147168/attachments/83871/110992/kskovpenHiggsyMatterBricks.pdf"
+  url: "https://indico.desy.de/event/34916/contributions/147168/"
 
-- date: "2020-05-25"
+- date: "2020-05-29"
   title: "Search for new phenomena in top quark interactions"
   event: "8th Large Hadron Collider Physics Conference (LHCP2020)"
   place: "Online"
   proceedings: "https://arxiv.org/abs/2008.06303"
   short: "LHCP 2020"
   about: {en: "Looking for signs of new physics in how the top quark behaves", fr: "Chercher des signes de nouvelle physique dans le comportement du quark top", nl: "Zoeken naar tekenen van nieuwe fysica in het gedrag van het top-quark", ru: "Поиск признаков новой физики в поведении топ-кварка"}
+  slides: "https://indico.cern.ch/event/856696/contributions/3742189/attachments/2047316/3430502/kskovpenLHCP2020Final.pdf"
+  url: "https://indico.cern.ch/event/856696/contributions/3742189/"
 
-- date: "2019-07-10"
+- date: "2019-07-11"
   title: "The EFT and FCNC interpretations in the processes with top quarks at CMS"
   event: "2019 European Physical Society Conference on High Energy Physics (EPS-HEP2019)"
   place: "Ghent, Belgium"
   proceedings: "https://arxiv.org/abs/1910.04224"
   short: "EPS-HEP 2019"
   about: {en: "What CMS top quark results tell us about possible new physics", fr: "Ce que les résultats de CMS sur le quark top disent d'une éventuelle nouvelle physique", nl: "Wat de top-quarkresultaten van CMS zeggen over mogelijke nieuwe fysica", ru: "Что результаты CMS по топ-кварку говорят о возможной новой физике"}
+  slides: "https://indico.cern.ch/event/577856/contributions/3420372/attachments/1878276/3093729/kskovpenEPS2019.pdf"
+  url: "https://indico.cern.ch/event/577856/contributions/3420372/"
 
-- date: "2019-03-16"
+- date: "2019-03-17"
   title: "Rare top quark production and decays at ATLAS and CMS"
   event: "54th Rencontres de Moriond on Electroweak Interactions and Unified Theories (Moriond EW 2019)"
   place: "La Thuile, Italy"
   proceedings: "https://arxiv.org/abs/1905.08324"
   short: "Moriond EW 2019"
   about: {en: "The rarest ways top quarks are made and decay, seen by ATLAS and CMS", fr: "Les façons les plus rares de produire et de désintégrer des quarks top, vues par ATLAS et CMS", nl: "De zeldzaamste manieren waarop top-quarks ontstaan en vervallen, gezien door ATLAS en CMS", ru: "Самые редкие способы рождения и распада топ-кварков в ATLAS и CMS"}
+  slides: "https://web.archive.org/web/20240708010942/https://moriond.in2p3.fr/2019/EW/slides/1_Sunday/2_afternoon/1_Skovpen.pdf"
+  url: "https://moriond.in2p3.fr/2019/EW/prgmEW19.html"
 
-- date: "2018-09-16"
+- date: "2018-09-20"
   title: "First observation of the tt̄H process at CMS"
   event: "11th International Workshop on Top Quark Physics (TOP2018)"
   place: "Bad Neuenahr, Germany"
   proceedings: "https://arxiv.org/abs/1810.05715"
   short: "TOP 2018"
   about: {en: "First sighting of the Higgs boson produced together with top quarks", fr: "Première observation du boson de Higgs produit avec des quarks top", nl: "Eerste waarneming van het higgsboson samen met top-quarks", ru: "Первое наблюдение бозона Хиггса, рождённого вместе с топ-кварками"}
+  slides: "https://indico.cern.ch/event/690229/contributions/3019884/attachments/1716767/2769959/kskovpenTOP2018.pdf"
+  url: "https://indico.cern.ch/event/690229/contributions/3019884/"
 
-- date: "2017-09-17"
+- date: "2017-09-21"
   title: "Search for flavour-changing neutral currents with top quarks"
   event: "10th International Workshop on Top Quark Physics (TOP2017)"
   place: "Braga, Portugal"
   proceedings: "https://arxiv.org/abs/1711.01852"
   short: "TOP 2017"
   about: {en: "Hunting for top quark decays the theory almost forbids", fr: "À la recherche de désintégrations du quark top presque interdites", nl: "Op zoek naar bijna verboden vervallen van het top-quark", ru: "Поиск почти запрещённых распадов топ-кварка"}
+  slides: "https://indico.global/event/8962/contributions/86406/attachments/40307/75005/kskovpenTOP2017.pdf"
+  url: "https://indico.global/event/8962/contributions/86406/"
 
-- date: "2017-05-28"
+- date: "2017-05-31"
   title: "Search for the standard model deviations in top quark precision studies at CMS"
   event: "29th Rencontres de Blois on Particle Physics and Cosmology"
   place: "Blois, France"
   proceedings: "https://arxiv.org/abs/1711.02153"
   short: "Rencontres de Blois 2017"
   about: {en: "Precise top quark measurements: does the theory still hold?", fr: "Mesures précises du quark top : la théorie tient-elle toujours ?", nl: "Nauwkeurige top-quarkmetingen: klopt de theorie nog?", ru: "Точные измерения топ-кварка: выдерживает ли теория проверку?"}
+  slides: "https://indico.cern.ch/event/572795/contributions/2573959/attachments/1467214/2268683/kskovpenBlois2017.pdf"
+  url: "https://indico.cern.ch/event/572795/contributions/2573959/"
 
-- date: "2016-06-13"
+- date: "2016-06-17"
   title: "Single top production and properties at hadron colliders"
   event: "4th Large Hadron Collider Physics Conference (LHCP 2016)"
   place: "Lund, Sweden"
   proceedings: "https://doi.org/10.22323/1.276.0039"
   short: "LHCP 2016"
   about: {en: "Top quarks made one at a time, and what they reveal", fr: "Les quarks top produits un par un, et ce qu'ils révèlent", nl: "Top-quarks die één voor één ontstaan, en wat ze onthullen", ru: "Одиночные топ-кварки и что они рассказывают"}
+  slides: "https://indico.cern.ch/event/442390/contributions/1095979/attachments/1291931/1924647/kskovpenLHCP2016v6.pdf"
+  url: "https://indico.cern.ch/event/442390/contributions/1095979/"
 
-- date: "2015-09-14"
+- date: "2015-09-17"
   title: "Searches for FCNC with top quarks"
   event: "8th International Workshop on Top Quark Physics (TOP2015)"
   place: "Ischia, Italy"
   proceedings: "https://doi.org/10.22323/1.257.0048"
   short: "TOP 2015"
   about: {en: "Hunting for top quark decays the theory almost forbids", fr: "À la recherche de désintégrations du quark top presque interdites", nl: "Op zoek naar bijna verboden vervallen van het top-quark", ru: "Поиск почти запрещённых распадов топ-кварка"}
+  slides: "https://indico.global/event/7292/contributions/68152/attachments/32878/61891/kskovpenTOP2015v4Final.pdf"
+  url: "https://indico.global/event/7292/contributions/68152/"
 
 - date: "2015-03-01"
   title: "Top quark properties and single top at CMS"
@@ -90,12 +119,14 @@
   short: "La Thuile 2015"
   about: {en: "What CMS measures about the top quark", fr: "Ce que CMS mesure sur le quark top", nl: "Wat CMS meet over het top-quark", ru: "Что CMS измеряет о топ-кварке"}
 
-- date: "2024-11-27"
+- date: "2024-11-26"
   title: "Outreach activities in Belgium"
   event: "28th IPPOG meeting (with G. Wilberts De Wasseige, on behalf of the Belgian particle physics, astrophysics and gravitational-wave communities)"
   place: "CERN, Switzerland"
   short: "IPPOG 2024"
   about: {en: "How Belgian physicists share their science with the public", fr: "Comment les physiciens belges partagent leur science avec le public", nl: "Hoe Belgische fysici hun wetenschap delen met het publiek", ru: "Как бельгийские физики рассказывают о своей науке публике"}
+  slides: "https://indico.cern.ch/event/1419411/contributions/6157476/attachments/2974286/5235236/BEOutreach.pdf"
+  url: "https://indico.cern.ch/event/1419411/contributions/6157476/"
 
 - date: "2024-11-27"
   title: "Future Collider Experiment"
@@ -103,3 +134,6 @@
   place: "CERN, Switzerland"
   short: "IPPOG 2024"
   about: {en: "FCE, my app for exploring a future collider without programming", fr: "FCE, mon application pour explorer un futur collisionneur sans programmer", nl: "FCE, mijn app om een toekomstige versneller te verkennen zonder te programmeren", ru: "FCE — моё приложение для изучения будущего коллайдера без программирования"}
+  slides: "https://indico.cern.ch/event/1419411/contributions/6157424/attachments/2974912/5236616/FCEproject.pdf"
+  url: "https://indico.cern.ch/event/1419411/contributions/6157424/"
+

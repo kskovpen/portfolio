@@ -213,3 +213,39 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+
+// Places map (Travel): filter chips by kind, and a small tooltip on hover/tap/focus.
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-places]").forEach((box) => {
+    const chips = [...box.querySelectorAll(".chip[data-kind]")];
+    const items = [...box.querySelectorAll("[data-kinds]")];
+    const apply = () => {
+      const on = new Set(chips.filter((c) => c.getAttribute("aria-pressed") === "true").map((c) => c.dataset.kind));
+      items.forEach((el) => el.toggleAttribute("hidden", !el.dataset.kinds.split(" ").some((k) => on.has(k))));
+    };
+    chips.forEach((c) => c.addEventListener("click", () => {
+      c.setAttribute("aria-pressed", c.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      apply();
+    }));
+    const tip = document.createElement("div");
+    tip.className = "pm-tip"; tip.hidden = true; box.appendChild(tip);
+    box.querySelectorAll(".pm-place").forEach((g) => {
+      const t = g.querySelector("title");
+      const text = t ? t.textContent : "";
+      if (t) { g.setAttribute("aria-label", text); t.remove(); }
+      const show = () => {
+        const r = g.querySelector(".pm-dot").getBoundingClientRect(), b = box.getBoundingClientRect();
+        const [name, ...rest] = text.split(": ");
+        tip.innerHTML = ""; const s = document.createElement("b"); s.textContent = name;
+        tip.append(s, document.createElement("br"), rest.join(": "));
+        tip.hidden = false;
+        const x = Math.min(r.left - b.left + 12, b.width - tip.offsetWidth - 4);
+        tip.style.left = Math.max(4, x) + "px"; tip.style.top = (r.top - b.top - tip.offsetHeight - 8) + "px";
+      };
+      const hide = () => { tip.hidden = true; };
+      g.addEventListener("mouseenter", show); g.addEventListener("focus", show);
+      g.addEventListener("mouseleave", hide); g.addEventListener("blur", hide);
+      g.addEventListener("click", show);
+    });
+  });
+});
