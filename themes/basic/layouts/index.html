@@ -15,15 +15,14 @@
     <div class="hero-text">{{ .Content }}</div>
   </section>
 
-  {{- with $m.talks }}
-  <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 5">
-    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
-    <p class="big-count">{{ len site.Data.talks }}</p>
-    {{- with sort site.Data.talks "date" "desc" }}{{ with index . 0 }}
-    <p class="tile-note"><strong>{{ .title }}</strong><br>{{ .event }}{{ with .date }}, {{ time.Format "2006" . }}{{ end }}</p>
-    {{- end }}{{ end }}
+  {{- with $m.blog }}{{ $b := . }}{{ with index (partial "all-posts.html" $) 0 }}{{ $cover := partial "post-cover.html" (dict "page" . "w" 900 "h" 900) }}
+  <a class="tile tile-latest s-blog{{ if $cover }} tile-image{{ end }}" href="{{ .RelPermalink }}" style="--i: 5">
+    {{- with $cover }}<img class="tile-bg" src="{{ . }}" alt="" loading="lazy">{{ end }}
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-blog">{{ $b.name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <p class="tile-latest-title">{{ .Title }}</p>
+    <p class="tile-note">{{ T "latest_post" }} · {{ time.Format ":date_medium" .Date }}</p>
   </a>
-  {{- end }}
+  {{- end }}{{ end }}
 
   {{- with $m.research }}{{ $l := site.Language.Lang }}{{ $u := .url }}
   <section class="tile tile-research s-research" style="--i: 2">
@@ -115,14 +114,17 @@
   </a>
   {{- end }}
 
-  {{- with $m.blog }}
-  <a class="tile tile-blog s-blog" href="{{ .url }}" style="--i: 6">
-    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-blog">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
-    <ul class="tile-posts">
-      {{- range first 3 (partial "all-posts.html" $) }}
-      <li><span class="tile-post-title">{{ .Title }}</span><span class="tile-post-date">{{ time.Format "Jan 2006" .Date }}</span></li>
-      {{- end }}
-    </ul>
+  {{- with $m.talks }}{{ $l := site.Language.Lang }}
+  <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 6">
+    <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
+    <div class="tile-talks-body">
+      <p class="big-count">{{ len site.Data.talks }}</p>
+      <ul class="tile-posts">
+        {{- range first 3 (sort (where site.Data.talks "date" "ne" "") "date" "desc") }}
+        <li><span class="tile-post-title">{{ (index (.about | default dict) $l) | default .title }}</span><span class="tile-post-date">{{ .short | default .event }}, {{ time.Format "2006" .date }}</span></li>
+        {{- end }}
+      </ul>
+    </div>
   </a>
   {{- end }}
 

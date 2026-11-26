@@ -1,0 +1,10 @@
+{{- /* Cover image of a blog post: a bundle image, or a photo managed by the Write a Post app (listed in photos.json).
+       In: page, width/height for bundle images ("w" "h"). Out: URL or "". */ -}}
+{{- $p := .page }}{{ $out := "" }}
+{{- with partial "bundle-image.html" (dict "page" $p "key" "cover") }}{{ $out = (.Fill (printf "%dx%d smart webp" $.w $.h)).RelPermalink }}
+{{- else }}
+  {{- with $p.Params.cover }}{{ $name := path.Base . }}{{ with $p.Resources.Get "photos.json" }}{{ if index (. | transform.Unmarshal) $name }}
+    {{- $out = (partial "photo-src.html" (dict "kind" "posts" "slug" (path.Base $p.File.Dir) "name" $name)).small }}
+  {{- end }}{{ end }}{{ end }}
+{{- end }}
+{{- return $out }}

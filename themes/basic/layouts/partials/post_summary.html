@@ -1,5 +1,4 @@
-{{- /* Blog list entry: the post's cover image if it has one (a bundle image, or a photo managed by the
-       Write a Post app and listed in photos.json), otherwise an illustration picked from its tags. */ -}}
+{{- /* Blog list entry: the post's cover image if it has one (partials/post-cover.html), otherwise an illustration picked from its tags. */ -}}
 {{- $tags := .Params.tags | default slice }}
 {{- $key := "generic" }}
 {{- range slice (slice "electronics" "electronics") (slice "seminar" "talks") (slice "talk" "talks") (slice "conference" "talks") (slice "topquark" "physics") (slice "physics" "physics") (slice "cern" "physics") (slice "run" "running") (slice "running" "running") (slice "trail" "running") (slice "music" "music") }}
@@ -7,14 +6,8 @@
 {{- end }}
 <article class="post-summary">
   <div class="post-thumb">
-    {{- with partial "bundle-image.html" (dict "page" . "key" "cover") }}{{ $img := .Fill "240x180 smart webp" }}<img src="{{ $img.RelPermalink }}" width="120" height="90" alt="" loading="lazy">
-    {{- else }}
-      {{- $photo := "" }}
-      {{- with .Params.cover }}{{ $name := path.Base . }}{{ with $.Resources.Get "photos.json" }}{{ if index (. | transform.Unmarshal) $name }}
-        {{- $slug := path.Base $.File.Dir }}{{ $photo = (partial "photo-src.html" (dict "kind" "posts" "slug" $slug "name" $name)).small }}
-      {{- end }}{{ end }}{{ end }}
-      {{- with $photo }}<img src="{{ . }}" alt="" loading="lazy">{{ else }}{{ partial "spot.html" $key }}{{ end }}
-    {{- end }}
+    {{- with partial "post-cover.html" (dict "page" . "w" 240 "h" 180) }}<img src="{{ . }}" width="120" height="90" alt="" loading="lazy">
+    {{- else }}{{ partial "spot.html" $key }}{{ end }}
   </div>
   <div>
   <header>
