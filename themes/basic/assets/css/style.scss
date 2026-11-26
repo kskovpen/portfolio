@@ -1158,3 +1158,40 @@ h2[id] { scroll-margin-top: 80px; }
 @media (max-width: 560px) { .school-head { grid-template-columns: 1fr; gap: 2px; } }
 .out-photo { width: 100%; height: auto; border-radius: 6px; display: block; box-shadow: 0 8px 20px -10px rgba(0,0,0,.6); }
 .home-out .out-photo { max-width: 150px; aspect-ratio: 4 / 3; object-fit: cover; }
+
+// Research: CERN photo band and LHC map
+.cern-band { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 10px 0 28px; }
+.cern-band figure { position: relative; margin: 0; overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 3; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 80ms); }
+.cern-band img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
+.cern-band figure:hover img { transform: scale(1.05); }
+.cern-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 8px; font-size: 13px; line-height: 1.3; color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.78)); }
+.cern-band figcaption small { display: block; font-size: 10.5px; opacity: .75; margin-top: 2px; }
+.cern-band figcaption a { color: #fff; }
+.cern-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(18px, 3vw, 40px); align-items: center; margin: 34px 0 10px;
+  padding: clamp(16px, 2.5vw, 28px); border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--hue) 4%, var(--bg)); }
+.cern-map h2 { margin-top: 0; }
+.cern-map p { color: var(--ink-2); }
+.lhc-map .m-jura { fill: color-mix(in srgb, var(--ink) 7%, transparent); }
+.lhc-map .m-lake { fill: color-mix(in srgb, #4f8df5 30%, var(--bg)); }
+.lhc-map .m-border { fill: none; stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.lhc-map .m-ring { fill: none; stroke: var(--hue); stroke-width: 6; opacity: .85; }
+.lhc-map .m-sps { fill: none; stroke: color-mix(in srgb, var(--hue) 60%, var(--ink-3)); stroke-width: 3.5; }
+.lhc-map .m-line { stroke: var(--ink-3); stroke-width: 2; }
+.lhc-map .m-particle { fill: #f5d14a; filter: drop-shadow(0 0 6px #f5d14a); }
+.lhc-map .m-exp { fill: var(--bg); stroke: var(--ink-2); stroke-width: 3; }
+.lhc-map .m-mine { fill: #f08a3c; stroke: var(--bg); }
+.lhc-map .m-exp-label { font-size: 15px; font-weight: 650; fill: var(--ink-2); }
+.lhc-map .m-mine-label { fill: var(--ink); font-weight: 800; }
+.lhc-map .m-ringlabel { font-size: 22px; font-weight: 800; fill: var(--hue); }
+.lhc-map .m-sps-label { font-size: 13px; }
+.lhc-map .m-small { font-size: 12px; fill: var(--ink-3); }
+.lhc-map .m-country { font-size: 13px; letter-spacing: .25em; fill: var(--ink-3); font-weight: 600; }
+.lhc-map .m-region, .lhc-map .m-water { font-size: 12px; fill: var(--ink-3); font-style: italic; }
+.lhc-map .m-city { fill: var(--ink); }
+.lhc-map .m-place { font-size: 14px; font-weight: 650; fill: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .lhc-map .m-particle { display: none; } }
+@media (max-width: 800px) {
+  .cern-band { grid-template-columns: 1fr 1fr; }
+  .cern-map { grid-template-columns: 1fr; }
+}

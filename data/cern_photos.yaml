@@ -1,0 +1,25 @@
+# Photo band on the Research page. All openly licensed; credit shown under each photo.
+- file: images/cern/tunnel.jpg
+  author: "Maximilien Brice (CERN)"
+  licence: "CC BY-SA 3.0"
+  licence_url: "https://creativecommons.org/licenses/by-sa/3.0/"
+  source: "https://commons.wikimedia.org/wiki/File:Views_of_the_LHC_tunnel_sector_3-4,_tirage_2.jpg"
+  caption: {en: "The LHC tunnel: 27 km of magnets, 100 m underground", fr: "Le tunnel du LHC : 27 km d'aimants, à 100 m sous terre", nl: "De LHC-tunnel: 27 km magneten, 100 m onder de grond", ru: "Тоннель БАК: 27 км магнитов на глубине 100 м"}
+- file: images/cern/cms.jpg
+  author: "Suaudeau"
+  licence: "CC BY-SA 4.0"
+  licence_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+  source: "https://commons.wikimedia.org/wiki/File:CERN_LHC_Compact_Muon_Solenoid_3.jpg"
+  caption: {en: "The CMS detector, where I work", fr: "Le détecteur CMS, où je travaille", nl: "De CMS-detector, waar ik werk", ru: "Детектор CMS, в котором я работаю"}
+- file: images/cern/cavern.jpg
+  author: "Simon Waldherr"
+  licence: "CC BY 4.0"
+  licence_url: "https://creativecommons.org/licenses/by/4.0/"
+  source: "https://commons.wikimedia.org/wiki/File:CERN_OpenDays_@_LHC_-_CMS_Controls.jpg"
+  caption: {en: "Visitors next to CMS during CERN's Open Days", fr: "Des visiteurs près de CMS lors des journées portes ouvertes du CERN", nl: "Bezoekers naast CMS tijdens de opendeurdagen van CERN", ru: "Посетители рядом с CMS в дни открытых дверей ЦЕРН"}
+- file: images/cern/globe.jpg
+  author: "Simon Cobb"
+  licence: "CC0"
+  licence_url: "https://creativecommons.org/publicdomain/zero/1.0/"
+  source: "https://commons.wikimedia.org/wiki/File:CERN_Globe_at_night_2019-07-03_(1).jpg"
+  caption: {en: "CERN's Globe of Science and Innovation at night", fr: "Le Globe de la science et de l'innovation du CERN, la nuit", nl: "De Globe of Science and Innovation van CERN 's nachts", ru: "Глобус науки и инноваций ЦЕРН ночью"}
