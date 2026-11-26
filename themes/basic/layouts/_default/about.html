@@ -1,6 +1,9 @@
 {{ define "main" }}
   {{ partial "page-head.html" . }}
-  <div class="about-intro">{{ .Content }}</div>
+  <div class="about-top">
+    {{- with site.Params.photo }}<figure class="about-photo"><img src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="480" height="480"></figure>{{ end }}
+    <div class="about-intro">{{ .Content }}</div>
+  </div>
   {{ partial "cv.html" "numbers" }}
   {{ partial "cv.html" "languages" }}
   <h2>{{ T "elsewhere" }}</h2>
