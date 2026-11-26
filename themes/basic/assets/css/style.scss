@@ -255,7 +255,7 @@ a.tile-research:hover .collision path { opacity: 0.8; animation: draw 0.9s var(-
 .tile-research:hover .collision path { opacity: 0.8; animation: draw 0.9s var(--ease) both; animation-delay: calc(var(--d) * 45ms); }
 .tile-research .tile-label:hover { text-decoration: none; }
 .research-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1.2fr); gap: clamp(20px, 3vw, 48px); margin-top: auto; position: relative; }
-.research-what { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); }
+.research-what { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); }
 .research-item { display: block; color: var(--ink-2); }
 .research-item:hover { text-decoration: none; }
 .research-item .cv-icon { width: 40px; height: 40px; fill: none; stroke: var(--hue); stroke-width: 1.6; transition: transform 0.5s var(--ease); }

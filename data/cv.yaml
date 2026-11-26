@@ -14,6 +14,17 @@ what_i_do:
       fr: "Le quark top est la particule la plus lourde connue, aussi lourde qu'un atome d'or. Je l'étudie pour chercher des failles dans la théorie actuelle."
       nl: "Het top-quark is het zwaarste bekende deeltje, zo zwaar als een goudatoom. Ik bestudeer het om barsten in de huidige theorie te vinden."
       ru: "Топ-кварк — самая тяжёлая известная частица, тяжёлая, как атом золота. Я изучаю его, чтобы найти «трещины» в современной теории."
+  - icon: search
+    title:
+      en: "Searching for new physics"
+      fr: "Chercher une nouvelle physique"
+      nl: "Zoeken naar nieuwe fysica"
+      ru: "Ищу новую физику"
+    text:
+      en: "Today's theory cannot explain dark matter or why the universe is made of matter. I look for new particles and forbidden processes, at the LHC and with SHiP."
+      fr: "La théorie actuelle n'explique ni la matière noire ni pourquoi l'univers est fait de matière. Je cherche de nouvelles particules et des processus interdits, au LHC et avec SHiP."
+      nl: "De huidige theorie verklaart donkere materie niet, en ook niet waarom het heelal uit materie bestaat. Ik zoek naar nieuwe deeltjes en verboden processen, bij de LHC en met SHiP."
+      ru: "Современная теория не объясняет тёмную материю и то, почему Вселенная состоит из вещества. Я ищу новые частицы и запрещённые процессы на LHC и в эксперименте SHiP."
   - icon: detector
     title:
       en: "Building particle detectors"
