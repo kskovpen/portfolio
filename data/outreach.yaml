@@ -38,7 +38,7 @@ featured:
     home: true
     when: {en: "2015–2017", fr: "2015–2017", nl: "2015–2017", ru: "2015–2017"}
     title: {en: "Talks for schools", fr: "Exposés pour les écoles", nl: "Lezingen voor scholen", ru: "Лекции для школьников"}
-    text: {en: "“A Big Bang in the Lab” for 60 secondary school pupils in Brussels (the slides are here), and CERN Masterclasses in Strasbourg, where pupils analyse real collision data.", fr: "« Un Big Bang au labo » pour 60 lycéens à Bruxelles (les diapositives sont ici), et les Masterclasses du CERN à Strasbourg, où des élèves analysent de vraies collisions.", nl: "\"Een oerknal in het lab\" voor 60 scholieren in Brussel (de slides staan hier), en CERN-masterclasses in Straatsburg, waar leerlingen echte botsingsdata analyseren.", ru: "«Большой взрыв в лаборатории» для 60 школьников в Брюсселе (слайды здесь) и мастер-классы ЦЕРН в Страсбурге, где школьники анализируют настоящие столкновения."}
+    text: {en: "“A Big Bang in the Lab” for secondary school pupils in Brussels (the slides are here), and CERN Masterclasses in Strasbourg, where pupils analyse real collision data.", fr: "« Un Big Bang au labo » pour des lycéens à Bruxelles (les diapositives sont ici), et les Masterclasses du CERN à Strasbourg, où des élèves analysent de vraies collisions.", nl: "\"Een oerknal in het lab\" voor scholieren in Brussel (de slides staan hier), en CERN-masterclasses in Straatsburg, waar leerlingen echte botsingsdata analyseren.", ru: "«Большой взрыв в лаборатории» для школьников в Брюсселе (слайды здесь) и мастер-классы ЦЕРН в Страсбурге, где школьники анализируют настоящие столкновения."}
 
 # Articles about my work that are still online (Outreach page, "In the news").
 news:
