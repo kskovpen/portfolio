@@ -3,13 +3,6 @@
 # optional: slides (path under static/, e.g. talks/aachen-2024.pdf), proceedings (URL), url (event page).
 # If a PNG with the same name as the slides PDF exists (convert_images.sh makes one), it is shown as a thumbnail.
 
-- date: "2024-01-23"
-  title: "Seminar"
-  event: "Physics seminar"
-  place: "Aachen, Germany"
-  short: "Seminar, RWTH Aachen University"
-  about: {en: "A seminar for physicists in Aachen", fr: "Un séminaire pour physiciens à Aix-la-Chapelle", nl: "Een seminarie voor fysici in Aken", ru: "Семинар для физиков в Ахене"}
-
 - date: "2022-10-27"
   title: "Inspiring success stories: app Higgsy"
   event: "24th IPPOG Collaboration meeting, invited talk"

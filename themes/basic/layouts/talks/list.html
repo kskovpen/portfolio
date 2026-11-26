@@ -3,7 +3,7 @@
   {{ .Content }}
   {{- with site.Data.teaching }}{{ $d := . }}{{ $l := site.Language.Lang }}
   <nav class="page-toc">
-    <a href="#teaching">{{ T "tt_courses" }}</a><a href="#students">{{ T "tt_students" }}</a><a href="#schools">{{ T "tt_schools" }}</a><a href="#public">{{ T "tt_public" }}</a><a href="#talks">{{ T "conf_talks" }}</a>
+    <a href="#teaching">{{ T "tt_courses" }}</a><a href="#students">{{ T "tt_students" }}</a><a href="#schools">{{ T "tt_schools" }}</a><a href="#public">{{ T "tt_public" }}</a><a href="#seminars">{{ T "seminars" }}</a><a href="#talks">{{ T "conf_talks" }}</a>
   </nav>
 
   <div class="tt-head">{{ partial "spot.html" "courses" }}<h2 id="teaching">{{ T "tt_courses" }}</h2></div>
@@ -51,6 +51,22 @@
   {{- with site.GetPage "/outreach" }}
   <a class="tt-out" id="public" href="{{ .RelPermalink }}">{{ partial "spot.html" "cosmic" }}<span><b>{{ .Title }}</b><small>{{ index (index site.Data.outreach.featured 0).title $l }} · {{ index (index site.Data.outreach.featured 1).title $l }} · {{ index (index site.Data.outreach.featured 2).title $l }}</small></span><span class="out-more">→</span></a>
   {{- end }}
+  {{- end }}
+
+  {{- with site.Data.seminars }}{{ $l := site.Language.Lang }}
+  <div class="tt-head">{{ partial "spot.html" "physics" }}<h2 id="seminars">{{ T "seminars" }}</h2></div>
+  <p class="meta">{{ T "seminars_intro" }}</p>
+  <ul class="talk-list">
+    {{- range . }}
+    <li class="talk">
+      <div>
+        <span class="talk-title">{{ with .about }}{{ index . $l }}{{ else }}{{ T "seminar" }}{{ end }}</span><br>
+        <span class="meta">{{ .host }} · {{ .place }} · {{ .year }}</span>
+        {{- with .title }}<br><span class="talk-orig">“{{ . }}”</span>{{ end }}
+      </div>
+    </li>
+    {{- end }}
+  </ul>
   {{- end }}
 
   <div class="tt-head">{{ partial "spot.html" "talks" }}<h2 id="talks">{{ T "conf_talks" }}</h2></div>

@@ -1,0 +1,37 @@
+# Invited seminars (from ~/Work/CV/vub/cv.tex, "Invited seminars"), newest first.
+# Fields: year, host (institute, in its own language), place, title (original; empty if the CV has none),
+# about: one plain-language line per language (only when there is a title).
+- year: 2024
+  host: "RWTH Aachen University"
+  place: "Aachen, Germany"
+  title: "Multi-tops"
+  about: {en: "Top quarks made three and four at a time", fr: "Des quarks top produits par trois et par quatre", nl: "Top-quarks die per drie en per vier ontstaan", ru: "Топ-кварки, рождающиеся по три и по четыре"}
+- year: 2023
+  host: "CERN LHC Seminar"
+  place: "CERN, Geneva"
+  title: "Observation of tt̄tt̄ production by the CMS Collaboration"
+  about: {en: "Presenting at CERN the first observation of four top quarks produced at once", fr: "Présenter au CERN la première observation de quatre quarks top produits d'un coup", nl: "Bij CERN de eerste waarneming voorstellen van vier top-quarks tegelijk", ru: "Представление в ЦЕРН первого наблюдения рождения сразу четырёх топ-кварков"}
+- year: 2022
+  host: "CERN Collider Cross Talk"
+  place: "CERN, Geneva"
+  title: "EFT in the top sector (CMS/theory)"
+  about: {en: "A dialogue between experiment and theory on how top quarks reveal tiny deviations from today's theory", fr: "Un dialogue entre expérience et théorie : comment les quarks top révèlent de minuscules écarts à la théorie actuelle", nl: "Een dialoog tussen experiment en theorie over hoe top-quarks kleine afwijkingen van de huidige theorie verraden", ru: "Диалог эксперимента и теории о том, как топ-кварки выдают малейшие отклонения от современной теории"}
+- year: 2019
+  host: "Université catholique de Louvain (UCLouvain)"
+  place: "Louvain-la-Neuve, Belgium"
+  title: "Standard model rangers: Top & Higgs"
+  about: {en: "How the top quark and the Higgs boson put today's theory to the test", fr: "Comment le quark top et le boson de Higgs mettent la théorie actuelle à l'épreuve", nl: "Hoe het top-quark en het higgsboson de huidige theorie op de proef stellen", ru: "Как топ-кварк и бозон Хиггса проверяют современную теорию"}
+- year: 2018
+  host: "Institut de Physique Nucléaire de Lyon (IPNL)"
+  place: "Lyon, France"
+- year: 2018
+  host: "Laboratoire de Physique de Clermont (LPC)"
+  place: "Clermont-Ferrand, France"
+- year: 2016
+  host: "Laboratoire d'Annecy de Physique des Particules (LAPP)"
+  place: "Annecy-le-Vieux, France"
+  title: "B-tagging and Higgs associated production with top quarks at ATLAS and CMS"
+  about: {en: "Recognising particles from bottom quarks, and the Higgs boson produced together with top quarks", fr: "Reconnaître les particules issues de quarks b, et le boson de Higgs produit avec des quarks top", nl: "Deeltjes van bottom-quarks herkennen, en het higgsboson dat samen met top-quarks ontstaat", ru: "Распознавание частиц от b-кварков и бозон Хиггса, рождённый вместе с топ-кварками"}
+- year: 2016
+  host: "Laboratoire Leprince-Ringuet (LLR), École polytechnique"
+  place: "Palaiseau, France"

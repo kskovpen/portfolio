@@ -1,3 +1,6 @@
+seminars = "Invited seminars"
+seminars_intro = "Talks I was invited to give at universities and research centres."
+seminar = "Seminar"
 key_papers = "Key papers"
 key_papers_all = 'Large collaborations sign all their papers together; these are the ones I contributed to most. All of them are on <a href="https://inspirehep.net/authors/1066490">INSPIRE</a>.'
 lhc_map = "Simplified map of the LHC near Geneva"
