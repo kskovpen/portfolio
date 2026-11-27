@@ -118,7 +118,6 @@
   <a class="tile tile-talks s-talks" href="{{ .url }}" style="--i: 6">
     <div class="tile-top"><span class="tile-label" style="view-transition-name: t-talks">{{ .name }}</span><span class="tile-arrow" aria-hidden="true">↗</span></div>
     <div class="tile-talks-body">
-      <p class="big-count">{{ add (len site.Data.talks) (len (site.Data.seminars | default slice)) }}</p>
       <ul class="tile-posts">
         {{- range first 3 (sort (where site.Data.talks "date" "ne" "") "date" "desc") }}
         <li><span class="tile-post-title">{{ (index (.about | default dict) $l) | default .title }}</span><span class="tile-post-date">{{ .short | default .event }}, {{ time.Format "2006" .date }}</span></li>
