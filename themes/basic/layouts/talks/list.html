@@ -70,8 +70,9 @@
   <div class="tt-head">{{ partial "spot.html" "talks" }}<h2 id="talks">{{ T "conf_talks" }}</h2></div>
   {{ partial "glossary.html" . }}
   <ul class="talk-cards">
-    {{- range sort site.Data.talks "date" "desc" }}
-    {{- $t := . }}
+    {{- $talks := slice }}{{ range site.Data.talks }}{{ $talks = $talks | append (dict "k" (.date | default (printf "%v-00" .year)) "t" .) }}{{ end }}
+    {{- range sort $talks "k" "desc" }}
+    {{- $t := .t }}
     <li class="tcard">
       <div class="tcard-top"><b class="tcard-event" title="{{ $t.event }}">{{ $t.short | default $t.event }}</b><span class="tcard-date">{{ with $t.date }}{{ time.Format "Jan 2006" . }}{{ else }}{{ $t.year }}{{ end }}</span></div>
       {{- with $t.place }}<span class="tcard-place">{{ . }}</span>{{ end }}

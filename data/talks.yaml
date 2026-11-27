@@ -138,3 +138,155 @@
   slides: "https://indico.cern.ch/event/1419411/contributions/6157424/attachments/2974912/5236616/FCEproject.pdf"
   url: "https://indico.cern.ch/event/1419411/contributions/6157424/"
 
+
+
+- date: "2024-09-16"
+  title: "Top-quark physics at future colliders"
+  event: "Fundamental Interactions at Future Colliders (LFC2024), invited talk"
+  place: "SISSA, Trieste, Italy"
+  short: "LFC 2024"
+  about: {en: "What the next big colliders could teach us about the top quark", fr: "Ce que les prochains grands collisionneurs pourraient nous apprendre sur le quark top", nl: "Wat de volgende grote versnellers ons over de topquark kunnen leren", ru: "Что следующие большие коллайдеры смогут рассказать о топ-кварке"}
+  url: "https://agenda.infn.it/event/41113/"
+
+- date: "2023-08-31"
+  title: "Save the EFT: a primer for the ATLAS+CMS combination in the top sector"
+  event: "8th LHC Reinterpretation Forum, invited talk"
+  place: "IPPP, Durham, United Kingdom"
+  short: "Reinterpretation Forum 2023"
+  about: {en: "How ATLAS and CMS can combine their top quark results to look for new physics together", fr: "Comment ATLAS et CMS peuvent combiner leurs résultats sur le quark top pour chercher ensemble une nouvelle physique", nl: "Hoe ATLAS en CMS hun topquarkresultaten kunnen combineren om samen naar nieuwe fysica te zoeken", ru: "Как ATLAS и CMS могут объединить свои результаты по топ-кварку для совместного поиска новой физики"}
+  slides: "https://conference.ippp.dur.ac.uk/event/1178/contributions/6434/attachments/5022/6446/kskovpenSaveEFT.pdf"
+  url: "https://conference.ippp.dur.ac.uk/event/1178/contributions/6434/"
+
+- date: "2023-07-25"
+  title: "Calibrations of heavy flavor jets in CMS"
+  event: "To b or not to b: CMS BTV workshop 2023, invited talk"
+  place: "VUB, Brussels, Belgium"
+  short: "BTV workshop 2023"
+  about: {en: "How CMS checks that it recognises particle sprays from bottom and charm quarks correctly", fr: "Comment CMS vérifie qu'il reconnaît correctement les gerbes de particules issues des quarks b et c", nl: "Hoe CMS controleert dat het deeltjesbundels van bottom- en charmquarks juist herkent", ru: "Как CMS проверяет, что правильно распознаёт струи частиц от b- и c-кварков"}
+  slides: "https://indico.cern.ch/event/1274182/contributions/5458333/attachments/2690118/4668048/kskovpenBTV20230725.pdf"
+  url: "https://indico.cern.ch/event/1274182/contributions/5458333/"
+
+- date: "2023-06-20"
+  title: "EFT interpretations of top measurements"
+  event: "Higgs and Effective Field Theories workshop (HEFT 2023), invited talk"
+  place: "Manchester, United Kingdom"
+  short: "HEFT 2023"
+  about: {en: "An overview of how the LHC experiments use the top quark to search for hints of new physics", fr: "Un panorama de la façon dont les expériences du LHC utilisent le quark top pour chercher des indices de nouvelle physique", nl: "Een overzicht van hoe de LHC-experimenten de topquark gebruiken om sporen van nieuwe fysica te zoeken", ru: "Обзор того, как эксперименты на БАК используют топ-кварк в поисках признаков новой физики"}
+  slides: "https://indico.cern.ch/event/1234517/contributions/5424962/attachments/2669049/4626080/kskovpenTOPEFT.pdf"
+  url: "https://indico.cern.ch/event/1234517/contributions/5424962/"
+
+- date: "2023-03-09"
+  title: "A H boson story: H and top quark interplay"
+  event: "A Decade of Discoveries in High Energy Physics symposium, invited talk"
+  place: "Brussels Town Hall, Belgium"
+  short: "Decade of Discoveries 2023"
+  about: {en: "The Higgs boson and the top quark: why the two heaviest particles are best studied together", fr: "Le boson de Higgs et le quark top : pourquoi étudier ensemble les deux particules les plus lourdes", nl: "Het higgsboson en de topquark: waarom de twee zwaarste deeltjes best samen bestudeerd worden", ru: "Бозон Хиггса и топ-кварк: почему две самые тяжёлые частицы лучше изучать вместе"}
+  slides: "https://agenda.irmp.ucl.ac.be/event/4816/contributions/11959/attachments/3211/4311/HBosonStory_DODiscoveries.pdf"
+  url: "https://agenda.irmp.ucl.ac.be/event/4816/contributions/11959/"
+
+- date: "2022-12-13"
+  title: "Statistical model conversion between HistFactory and CMS Combine"
+  event: "7th LHC Reinterpretation Forum, invited talk"
+  place: "CERN, Switzerland"
+  short: "Reinterpretation Forum 2022"
+  about: {en: "Translating statistical models between ATLAS and CMS software so that results can be reused", fr: "Traduire les modèles statistiques entre les logiciels d'ATLAS et de CMS pour pouvoir réutiliser les résultats", nl: "Statistische modellen vertalen tussen de software van ATLAS en CMS zodat resultaten herbruikbaar worden", ru: "Перевод статистических моделей между программами ATLAS и CMS, чтобы результаты можно было использовать повторно"}
+  slides: "https://indico.cern.ch/event/1197680/contributions/5160808/attachments/2565763/4423325/CombinePyhf.pdf"
+  url: "https://indico.cern.ch/event/1197680/contributions/5160808/"
+
+- date: "2022-10-21"
+  title: "Searches for Left-Right Symmetric Models at the LHC"
+  event: "Rabi-Fest: conference on the occasion of Rabi Mohapatra's retirement, invited talk"
+  place: "University of Maryland, USA (online)"
+  short: "Rabi-Fest 2022"
+  about: {en: "Searching at the LHC for a mirror symmetry of nature between left and right", fr: "Chercher au LHC une symétrie miroir de la nature entre la gauche et la droite", nl: "Zoeken aan de LHC naar een spiegelsymmetrie van de natuur tussen links en rechts", ru: "Поиск на БАК зеркальной симметрии природы между левым и правым"}
+  slides: "https://indico.global/event/870/contributions/25629/attachments/12839/19186/kskovpenLRSM.pdf"
+  url: "https://indico.global/event/870/contributions/25629/"
+
+- date: "2022-07-06"
+  title: "Studies of top associated productions with vector bosons and heavy flavor quarks in CMS"
+  event: "41st International Conference on High Energy Physics (ICHEP 2022)"
+  place: "Bologna, Italy"
+  short: "ICHEP 2022"
+  about: {en: "Top quarks produced together with other heavy particles: new CMS measurements", fr: "Des quarks top produits avec d'autres particules lourdes : nouvelles mesures de CMS", nl: "Topquarks die samen met andere zware deeltjes ontstaan: nieuwe metingen van CMS", ru: "Топ-кварки, рождённые вместе с другими тяжёлыми частицами: новые измерения CMS"}
+  url: "https://agenda.infn.it/event/28874/"
+
+- date: "2021-04-22"
+  title: "EFT exploration with the LHC Run 3 data"
+  event: "Korean Physical Society Pioneer Symposium, invited talk"
+  place: "Online"
+  short: "KPS Pioneer Symposium 2021"
+  about: {en: "How the next LHC data can be used to look for hints of new physics", fr: "Comment les prochaines données du LHC peuvent servir à chercher des indices de nouvelle physique", nl: "Hoe de volgende LHC-data kunnen helpen om sporen van nieuwe fysica te vinden", ru: "Как новые данные БАК помогут искать признаки новой физики"}
+  slides: "https://indico.cern.ch/event/1030966/contributions/4329042/attachments/2230787/3779876/KPS21.pdf"
+  url: "https://indico.cern.ch/event/1030966/contributions/4329042/"
+
+- date: "2018-07-02"
+  title: "First observation of the ttH process at CMS"
+  event: "21st High-Energy Physics International Conference in Quantum Chromodynamics (QCD18)"
+  place: "Montpellier, France"
+  short: "QCD 2018"
+  about: {en: "The first sighting of the Higgs boson produced together with two top quarks", fr: "La première observation du boson de Higgs produit avec deux quarks top", nl: "De eerste waarneming van het higgsboson samen met twee topquarks", ru: "Первое наблюдение бозона Хиггса, рождённого вместе с двумя топ-кварками"}
+
+- date: "2017-05-17"
+  title: "Search for top-Higgs FCNC at LHC"
+  event: "Belgian Physical Society general scientific meeting 2017"
+  place: "UMons, Mons, Belgium"
+  short: "BPS 2017"
+  about: {en: "Looking for a top quark that turns into a lighter quark and a Higgs boson, forbidden in the Standard Model", fr: "Chercher un quark top qui se transforme en un quark plus léger et un boson de Higgs, interdit dans le Modèle standard", nl: "Zoeken naar een topquark die verandert in een lichter quark en een higgsboson, verboden in het Standaardmodel", ru: "Поиск превращения топ-кварка в более лёгкий кварк и бозон Хиггса, запрещённого в Стандартной модели"}
+
+- date: "2016-12-21"
+  title: "FCNC with top quarks"
+  event: "IAP Winter Solstice Meeting 2016, invited talk"
+  place: "VUB, Brussels, Belgium"
+  short: "IAP Winter Solstice 2016"
+  about: {en: "Searching at the LHC for very rare changes of one quark type into another", fr: "Chercher au LHC des transformations très rares d'un type de quark en un autre", nl: "Zoeken aan de LHC naar zeer zeldzame veranderingen van het ene quarktype in het andere", ru: "Поиск на БАК очень редких превращений одного типа кварков в другой"}
+  slides: "https://indico.iihe.ac.be/event/1067/contributions/147/attachments/89/96/kskovpenIUAP20161221.pdf"
+  url: "https://indico.iihe.ac.be/event/1067/contributions/147/"
+
+- date: "2016-05-19"
+  title: "b-tagging, CMS overview"
+  event: "Top at LHC France 2016"
+  place: "Clermont-Ferrand, France"
+  short: "Top LHC France 2016"
+  about: {en: "How CMS recognises particle sprays coming from bottom quarks", fr: "Comment CMS reconnaît les gerbes de particules issues des quarks b", nl: "Hoe CMS deeltjesbundels van bottomquarks herkent", ru: "Как CMS распознаёт струи частиц от b-кварков"}
+  slides: "https://indico.in2p3.fr/event/12491/contributions/10040/attachments/8340/10362/kskovpenTopLHCFrance20160519.pdf"
+  url: "https://indico.in2p3.fr/event/12491/contributions/10040/"
+
+- date: "2014-04-08"
+  title: "Experimental review on single top BSM (FCNC and monotop)"
+  event: "Top LHC-France meeting"
+  place: "IPNL, Lyon, France"
+  short: "Top LHC France 2014"
+  about: {en: "A review of searches for single top quarks made by forbidden quark changes", fr: "Un bilan des recherches de quarks top isolés produits par des transformations interdites de quarks", nl: "Een overzicht van zoektochten naar losse topquarks die via verboden quarkveranderingen ontstaan", ru: "Обзор поисков одиночных топ-кварков, рождённых в запрещённых превращениях кварков"}
+  slides: "https://indico.in2p3.fr/event/9417/contributions/49167/attachments/39639/48960/kskovpenTOPLHC20140408.pdf"
+  url: "https://indico.in2p3.fr/event/9417/contributions/49167/"
+
+- title: "New physics searches at ATLAS and CMS"
+  event: "Conference-Session of the Nuclear Physics Section of the Russian Academy of Sciences (ICSSNP-2012), plenary talk"
+  place: "MEPhI, Moscow, Russia"
+  short: "ICSSNP 2012"
+  about: {en: "How the two big LHC experiments look for physics beyond what we know", fr: "Comment les deux grandes expériences du LHC cherchent une physique au-delà de ce que nous connaissons", nl: "Hoe de twee grote LHC-experimenten zoeken naar fysica voorbij wat we kennen", ru: "Как два больших эксперимента БАК ищут физику за пределами известного"}
+  year: "2012"
+
+- date: "2010-09-03"
+  title: "ATLAS Sensitivity to Left-Right Symmetry at 7 TeV"
+  event: "13th ISTC SAC Seminar \"New Perspectives of High Energy Physics\""
+  place: "BINP, Novosibirsk, Russia"
+  short: "ISTC SAC Seminar 2010"
+  about: {en: "Could ATLAS find a mirror symmetry between left and right in the first LHC data?", fr: "ATLAS pourrait-il trouver une symétrie miroir entre la gauche et la droite dans les premières données du LHC ?", nl: "Kan ATLAS in de eerste LHC-data een spiegelsymmetrie tussen links en rechts vinden?", ru: "Сможет ли ATLAS найти зеркальную симметрию между левым и правым в первых данных БАК?"}
+  url: "https://istc.int/events/13th-sac-seminar-new-perspectives-of-high-energy-physics-novosibirsk-01-05-september-2010"
+
+- date: "2008-02-28"
+  title: "The project of using the SND calorimeter as an antineutron detector"
+  event: "10th International Conference on Instrumentation for Colliding Beam Physics (INSTR08), poster"
+  place: "BINP, Novosibirsk, Russia"
+  short: "INSTR08 (poster)"
+  about: {en: "Using the SND detector to catch antineutrons, the antimatter partner of the neutron", fr: "Utiliser le détecteur SND pour capter des antineutrons, le partenaire d'antimatière du neutron", nl: "De SND-detector gebruiken om antineutronen te vangen, de antimateriepartner van het neutron", ru: "Как использовать детектор СНД для регистрации антинейтронов"}
+  proceedings: "https://doi.org/10.1016/j.nima.2008.08.093"
+  url: "http://instr08.inp.nsk.su/"
+
+- date: "2007-11-25"
+  title: "The project of using the SND calorimeter as an antineutron detector"
+  event: "Conference of the Nuclear Physics Department of the Russian Academy of Sciences \"Physics of Fundamental Interactions\""
+  place: "ITEP, Moscow, Russia"
+  short: "RAS Nuclear Physics 2007"
+  about: {en: "Using the SND detector to catch antineutrons", fr: "Utiliser le détecteur SND pour capter des antineutrons", nl: "De SND-detector gebruiken om antineutronen te vangen", ru: "Детектор СНД для регистрации антинейтронов"}
