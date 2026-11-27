@@ -291,3 +291,21 @@
   place: "ITEP, Moscow, Russia"
   short: "RAS Nuclear Physics 2007"
   about: {en: "Using the SND detector to catch antineutrons", fr: "Utiliser le détecteur SND pour capter des antineutrons", nl: "De SND-detector gebruiken om antineutronen te vangen", ru: "Детектор СНД для регистрации антинейтронов"}
+
+- date: "2026-03-04"
+  title: "WG4 Overview"
+  event: "SHARP 2026, annual meeting of the COST Action SHARP"
+  place: "Curia, Portugal"
+  short: "SHARP 2026"
+  about: {en: "What our European working group on new detectors is building, and what comes next", fr: "Ce que construit notre groupe de travail européen sur les nouveaux détecteurs, et la suite", nl: "Wat onze Europese werkgroep rond nieuwe detectoren bouwt, en wat er nog komt", ru: "Что строит наша европейская рабочая группа по новым детекторам и что будет дальше"}
+  slides: "https://indico.cern.ch/event/1642976/contributions/6958834/attachments/3231354/5760100/WG4Status.pdf"
+  url: "https://indico.cern.ch/event/1642976/contributions/6958834/"
+
+- date: "2025-02-05"
+  title: "SHiP"
+  event: "Belgian national meeting on the European Strategy for Particle Physics"
+  place: "University of Antwerp, Belgium"
+  short: "ESPP Belgium 2025"
+  about: {en: "Why Belgium should back SHiP, CERN's new experiment to hunt for hidden particles", fr: "Pourquoi la Belgique devrait soutenir SHiP, la nouvelle expérience du CERN à la recherche de particules cachées", nl: "Waarom België SHiP zou moeten steunen, het nieuwe CERN-experiment dat naar verborgen deeltjes zoekt", ru: "Почему Бельгии стоит поддержать SHiP — новый эксперимент ЦЕРНа по поиску скрытых частиц"}
+  slides: "https://indico.cern.ch/event/1473237/contributions/6313438/attachments/3008977/5304610/kskovpenSHiP.pdf"
+  url: "https://indico.cern.ch/event/1473237/contributions/6313438/"

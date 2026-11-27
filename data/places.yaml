@@ -35,3 +35,5 @@
 - {name: "Montpellier", lat: 43.61, lon: 3.88, kinds: [talk], what: "QCD 2018"}
 - {name: "Mons", lat: 50.45, lon: 3.95, kinds: [talk], what: "Belgian Physical Society meeting 2017"}
 - {name: "Moscow", lat: 55.76, lon: 37.62, kinds: [talk], what: "ICSSNP 2012 · RAS conference at ITEP, 2007"}
+- {name: "Antwerp", lat: 51.22, lon: 4.40, kinds: [talk], what: "Belgian meeting on the European Strategy for Particle Physics, 2025"}
+- {name: "Curia", lat: 40.43, lon: -8.46, kinds: [talk], what: "SHARP 2026"}
