@@ -1156,6 +1156,22 @@ h2[id] { scroll-margin-top: 80px; }
 .home-out .out-photo { max-width: 150px; aspect-ratio: 4 / 3; object-fit: cover; }
 
 // Research: CERN photo band and LHC map
+.det-band { margin: 40px 0 8px; }
+.det-steps { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: det; }
+.det-step { position: relative; display: flex; flex-direction: column; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 90ms); }
+.det-photo { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: color-mix(in srgb, var(--hue) 8%, var(--bg)); }
+.det-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
+.det-photo:hover img { transform: scale(1.05); }
+.det-ph { display: grid; place-items: center; height: 100%; }
+.det-ph .spot { width: 82%; height: auto; }
+.det-exp { position: absolute; left: 10px; top: 10px; padding: 3px 9px; border-radius: 6px; background: rgba(0,0,0,.62); color: #fff; font-weight: 700; font-size: 13px; letter-spacing: .02em; }
+.det-years { margin: 10px 0 0; font-size: 12.5px; color: var(--hue); font-weight: 700; font-variant-numeric: tabular-nums; }
+.det-step h3 { margin: 12px 0 4px; font-size: 1.02rem; color: var(--ink); }
+.det-step p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.det-credit { margin-top: 6px; font-size: 11px; color: var(--ink-3); }
+.det-credit a { color: inherit; }
+@media (max-width: 860px) { .det-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .det-steps { grid-template-columns: 1fr; } }
 .cern-band { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 10px 0 28px; }
 .cern-band figure { position: relative; margin: 0; overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 3; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 80ms); }
 .cern-band img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }

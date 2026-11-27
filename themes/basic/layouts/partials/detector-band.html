@@ -1,0 +1,21 @@
+{{- /* Detector technologies I work with: one tile per technology (data/detector_band.yaml). */ -}}
+{{- with site.Data.detector_band }}{{ $l := site.Language.Lang }}
+<section class="det-band">
+  <h2 id="detectors">{{ T "det_heading" }}</h2>
+  <p class="meta">{{ T "det_intro" }}</p>
+  <ul class="det-steps">
+    {{- range $i, $d := . }}
+    <li class="det-step" style="--i: {{ $i }}">
+      <div class="det-photo">
+        {{- with and $d.file (resources.Get $d.file) }}{{ $im := .Fill "640x480 Center webp q78" }}
+        <img src="{{ $im.RelPermalink }}" width="{{ $im.Width }}" height="{{ $im.Height }}" alt="{{ index $d.tech $l }}" loading="lazy">
+        {{- else }}<span class="det-ph">{{ partial "spot.html" $d.key }}</span>{{ end }}
+      </div>
+      <h3>{{ index $d.tech $l }}</h3>
+      <p>{{ index $d.text $l }}</p>
+      {{- with $d.author }}<small class="det-credit">{{ T "photo" }}: <a href="{{ $d.source }}">{{ . }}</a>, <a href="{{ $d.licence_url }}">{{ $d.licence }}</a></small>{{ end }}
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

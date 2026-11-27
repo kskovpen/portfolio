@@ -73,6 +73,47 @@
   <path class="s-meridian" d="M34 60 H126 M40 36 H120 M40 84 H120"/>
   <path class="d-track" pathLength="1" d="M52 40 Q 80 20 110 44 M110 44 Q 118 70 92 92 M92 92 Q 60 96 52 40 M52 40 L92 92"/>
   <circle class="d-burst" cx="52" cy="40" r="4"/><circle class="d-burst" cx="110" cy="44" r="4"/><circle class="d-burst" cx="92" cy="92" r="4"/><circle class="d-point" cx="70" cy="64" r="3"/>
+{{- else if eq $k "crystals" }}
+  {{- /* scintillating crystals: a particle hits one, it glows, a light sensor at the back sends a pulse */}}
+  <path class="d-ecal" d="M24 30 L58 24 L58 92 L24 86 Z"/>
+  <path class="d-ecal" d="M60 24 L94 24 L94 92 L60 92 Z"/>
+  <path class="d-ecal" d="M96 24 L130 30 L130 86 L96 92 Z"/>
+  <path class="d-cut" d="M58 24 L58 92 M96 24 L96 92"/>
+  <path class="d-track" pathLength="1" d="M4 58 L76 58"/>
+  <circle class="d-burst" cx="78" cy="58" r="7" opacity=".9"/>
+  <path class="d-photon" d="M84 52 L92 44 M86 58 L94 58 M84 64 L92 72"/>
+  <rect class="s-part" x="130" y="48" width="12" height="20" rx="2"/>
+  <path class="s-cable" d="M142 58 L148 58 L148 104"/>
+  <path class="d-track" pathLength="1" d="M108 104 L126 104 L130 96 L134 104 L152 104"/>
+{{- else if eq $k "lar" }}
+  {{- /* liquid-argon calorimeter: a cold vessel with accordion-shaped plates and a particle shower */}}
+  <rect class="d-vessel" x="12" y="16" width="136" height="88" rx="14"/>
+  <path class="s-wire" d="M30 28 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 M54 28 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 M78 28 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 M102 28 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8 l10 8 l-10 8"/>
+  <path class="d-track" pathLength="1" d="M0 60 L60 60"/>
+  <path class="d-jet" d="M60 60 L120 44 L120 76 Z"/>
+  <path class="d-jet-track" pathLength="1" d="M60 60 L118 48 M60 60 L120 60 M60 60 L118 72"/>
+  <text class="d-small" x="100" y="96">−186 °C</text>
+{{- else if eq $k "gas" }}
+  {{- /* a gas chamber: electrode plates with a thin gas gap, a muon crossing and an avalanche of charge */}}
+  <rect class="d-magnet" x="14" y="30" width="132" height="10" rx="2"/>
+  <rect class="d-muon-band" x="14" y="44" width="132" height="12" rx="1" opacity=".55"/>
+  <rect class="d-magnet" x="14" y="60" width="132" height="10" rx="2"/>
+  <rect class="d-muon-band" x="14" y="74" width="132" height="12" rx="1" opacity=".55"/>
+  <rect class="d-magnet" x="14" y="90" width="132" height="10" rx="2"/>
+  <path class="d-lepton" pathLength="1" d="M52 4 L100 116"/>
+  <path class="d-dep-e" d="M66 44 L74 56 L60 56 Z M79 74 L87 86 L73 86 Z"/>
+  <path class="s-cable" d="M146 80 L154 80 L154 110"/>
+  <path class="d-track" pathLength="1" d="M116 110 L134 110 L138 102 L142 110 L156 110"/>
+{{- else if eq $k "sipm" }}
+  {{- /* a scintillator tile with a light-guiding fibre read out by a tiny SiPM */}}
+  <rect class="d-snd" x="10" y="34" width="100" height="54" rx="3"/>
+  <path class="d-hidden" d="M18 61 C 40 46, 62 76, 84 61 S 104 56, 124 61"/>
+  <path class="d-track" pathLength="1" d="M46 6 L60 116"/>
+  <circle class="d-burst" cx="53" cy="61" r="5"/>
+  <path class="d-photon" d="M57 57 L66 52 M57 65 L66 70 M49 57 L40 52"/>
+  <rect class="s-part" x="124" y="53" width="14" height="16" rx="2"/>
+  <path class="s-cable" d="M138 61 L148 61 L148 100"/>
+  <path class="d-track" pathLength="1" d="M112 100 L130 100 L134 92 L138 100 L154 100"/>
 {{- else if eq $k "electronics" }}
   {{- /* a small amplifier circuit: transistor, resistors and a pulse */}}
   <path class="s-wire" d="M10 60 L40 60 M40 40 L40 80 M40 52 L58 40 L58 20 L150 20 M40 68 L58 80 L58 100 L150 100 M100 20 L100 34 M100 54 L100 100"/>
