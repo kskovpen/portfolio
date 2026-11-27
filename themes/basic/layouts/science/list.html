@@ -20,7 +20,7 @@
   {{- end }}
   {{- $exps := where .Sections "Params.layout" "experiment" }}
   {{- if $exps }}
-  <h2>{{ T "exp_heading" }}</h2>
+  <h2 id="experiments">{{ T "exp_heading" }}</h2>
   {{- range $st := slice "now" "past" }}
   {{- with where $exps "Params.status" $st }}
   <p class="exp-group">{{ T (printf "exp_%s" $st) }}</p>
