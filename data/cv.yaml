@@ -143,10 +143,10 @@ career:
       nl: "Straatsburg, Frankrijk"
       ru: "Страсбург, Франция"
     role:
-      en: "Researcher on a fixed-term contract (a \"postdoc\") at a French national research lab. Joined CMS and led the team that teaches the detector to recognise particles coming from bottom quarks."
-      fr: "Chercheur en contrat à durée déterminée (« postdoc ») dans un laboratoire du CNRS. A rejoint CMS et dirigé l'équipe qui apprend au détecteur à reconnaître les particules issues de quarks bottom."
-      nl: "Onderzoeker met een tijdelijk contract (een \"postdoc\") in een Frans nationaal onderzoekslab. Werd lid van CMS en leidde het team dat de detector leert deeltjes van bottom-quarks te herkennen."
-      ru: "Исследователь по срочному контракту («постдок») во французской национальной лаборатории. Присоединился к CMS и руководил группой, которая «учит» детектор распознавать частицы от b-кварков."
+      en: "Researcher on a fixed-term contract (a \"postdoc\") at a French national research lab. Joined CMS and led the team that teaches the detector to identify jets coming from bottom quarks."
+      fr: "Chercheur en contrat à durée déterminée (« postdoc ») dans un laboratoire du CNRS. A rejoint CMS et dirigé l'équipe qui apprend au détecteur à identifier les jets issus de quarks bottom."
+      nl: "Onderzoeker met een tijdelijk contract (een \"postdoc\") in een Frans nationaal onderzoekslab. Werd lid van CMS en leidde het team dat de detector leert jets van bottom-quarks te identificeren."
+      ru: "Исследователь по срочному контракту («постдок») во французской национальной лаборатории. Присоединился к CMS и руководил группой, которая «учит» детектор идентифицировать струи от b-кварков."
   - years: "2007–2013"
     short:
       en: "Junior researcher and PhD"
@@ -205,15 +205,15 @@ highlights:
   - year: "2018"
     link: /science/cms/
     title:
-      en: "Teaching the detector to spot bottom quarks"
-      fr: "Apprendre au détecteur à repérer les quarks bottom"
-      nl: "De detector bottom-quarks leren herkennen"
-      ru: "Как научить детектор узнавать b-кварки"
+      en: "Teaching the detector to identify bottom quarks"
+      fr: "Apprendre au détecteur à identifier les quarks bottom"
+      nl: "De detector bottom-quarks leren identificeren"
+      ru: "Как научить детектор идентифицировать b-кварки"
     text:
-      en: "Led the team and co-wrote the reference paper on how CMS recognises sprays of particles that come from bottom quarks, a tool used in about a third of all CMS publications."
-      fr: "A dirigé l'équipe et co-écrit l'article de référence sur la façon dont CMS reconnaît les gerbes de particules issues de quarks bottom, un outil utilisé dans environ un tiers des publications de CMS."
-      nl: "Leidde het team en schreef mee aan het referentieartikel over hoe CMS deeltjesbundels van bottom-quarks herkent, een techniek die in ongeveer een derde van alle CMS-publicaties wordt gebruikt."
-      ru: "Руководил группой и был соавтором основополагающей статьи о том, как CMS распознаёт струи частиц от b-кварков, — этот метод используется примерно в трети всех публикаций CMS."
+      en: "Led the team and co-wrote the reference paper on how CMS identifies jets that come from bottom quarks, a tool used in about a third of all CMS publications."
+      fr: "A dirigé l'équipe et co-écrit l'article de référence sur la façon dont CMS identifie les jets de particules issues de quarks bottom, un outil utilisé dans environ un tiers des publications de CMS."
+      nl: "Leidde het team en schreef mee aan het referentieartikel over hoe CMS jets van bottom-quarks identificeert, een techniek die in ongeveer een derde van alle CMS-publicaties wordt gebruikt."
+      ru: "Руководил группой и был соавтором основополагающей статьи о том, как CMS идентифицирует струи частиц от b-кварков, — этот метод используется примерно в трети всех публикаций CMS."
   - year: "2024"
     link: /science/ship/
     title:
@@ -347,7 +347,7 @@ roles:
       ru: "Контактное лицо по всем результатам CMS о топ-кварке, представляемым на конференциях."
   - years: "2015–2019"
     text:
-      en: "Coordinator of the CMS group that recognises particle sprays coming from bottom quarks, a key tool for finding the Higgs boson and the top quark."
-      fr: "Coordinateur du groupe de CMS qui reconnaît les gerbes de particules issues des quarks b, un outil clé pour trouver le boson de Higgs et le quark top."
-      nl: "Coördinator van de CMS-groep die deeltjesbundels van bottomquarks herkent, een sleutelinstrument om het higgsboson en de topquark te vinden."
-      ru: "Координатор группы CMS, распознающей струи частиц от b-кварков — ключевой инструмент для поиска бозона Хиггса и топ-кварка."
+      en: "Coordinator of the CMS group that identifies jets coming from bottom quarks, a key tool for finding the Higgs boson and the top quark."
+      fr: "Coordinateur du groupe de CMS qui identifie les jets de particules issues des quarks b, un outil clé pour trouver le boson de Higgs et le quark top."
+      nl: "Coördinator van de CMS-groep die jets van bottomquarks identificeert, een sleutelinstrument om het higgsboson en de topquark te vinden."
+      ru: "Координатор группы CMS, идентифицирующей струи частиц от b-кварков — ключевой инструмент для поиска бозона Хиггса и топ-кварка."

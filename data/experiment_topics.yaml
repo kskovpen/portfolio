@@ -13,7 +13,7 @@ cms:
   - f: 'N → ℓW'
     label: {en: "Heavy neutral leptons", fr: "Leptons neutres lourds", nl: "Zware neutrale leptonen", ru: "Тяжёлые нейтральные лептоны"}
   - f: 'b-tag'
-    label: {en: "Recognising bottom quarks", fr: "Reconnaître les quarks bottom", nl: "Bottom-quarks herkennen", ru: "Распознавание b-кварков"}
+    label: {en: "Identifying bottom quarks", fr: "Identifier les quarks bottom", nl: "Bottom-quarks identificeren", ru: "Идентификация b-кварков"}
 atlas:
   - f: 'LAr'
     label: {en: "Calorimeter ready for the first collisions", fr: "Calorimètre prêt pour les premières collisions", nl: "Calorimeter klaar voor de eerste botsingen", ru: "Калориметр к первым столкновениям"}

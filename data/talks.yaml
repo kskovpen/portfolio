@@ -162,7 +162,7 @@
   event: "To b or not to b: CMS BTV workshop 2023, invited talk"
   place: "VUB, Brussels, Belgium"
   short: "BTV workshop 2023"
-  about: {en: "How CMS checks that it recognises particle sprays from bottom and charm quarks correctly", fr: "Comment CMS vérifie qu'il reconnaît correctement les gerbes de particules issues des quarks b et c", nl: "Hoe CMS controleert dat het deeltjesbundels van bottom- en charmquarks juist herkent", ru: "Как CMS проверяет, что правильно распознаёт струи частиц от b- и c-кварков"}
+  about: {en: "How CMS checks that it identifies jets from bottom and charm quarks correctly", fr: "Comment CMS vérifie qu'il identifie correctement les jets de particules issues des quarks b et c", nl: "Hoe CMS controleert dat het jets van bottom- en charmquarks juist identificeert", ru: "Как CMS проверяет, что правильно идентифицирует струи частиц от b- и c-кварков"}
   slides: "https://indico.cern.ch/event/1274182/contributions/5458333/attachments/2690118/4668048/kskovpenBTV20230725.pdf"
   url: "https://indico.cern.ch/event/1274182/contributions/5458333/"
 
@@ -247,7 +247,7 @@
   event: "Top at LHC France 2016"
   place: "Clermont-Ferrand, France"
   short: "Top LHC France 2016"
-  about: {en: "How CMS recognises particle sprays coming from bottom quarks", fr: "Comment CMS reconnaît les gerbes de particules issues des quarks b", nl: "Hoe CMS deeltjesbundels van bottomquarks herkent", ru: "Как CMS распознаёт струи частиц от b-кварков"}
+  about: {en: "How CMS identifies jets coming from bottom quarks", fr: "Comment CMS identifie les jets de particules issues des quarks b", nl: "Hoe CMS jets van bottomquarks identificeert", ru: "Как CMS идентифицирует струи частиц от b-кварков"}
   slides: "https://indico.in2p3.fr/event/12491/contributions/10040/attachments/8340/10362/kskovpenTopLHCFrance20160519.pdf"
   url: "https://indico.in2p3.fr/event/12491/contributions/10040/"
 

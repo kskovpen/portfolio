@@ -20,4 +20,4 @@ Binnenin volgt een **binnendetector** in een solenoïdemagneet de geladen deeltj
 
 - **Klaar voor de eerste botsingen.** In 2009–2010 hielp ik de vloeibaar-argoncalorimeter voor te bereiden op de eerste botsingen in de LHC, met software die de elektronica bewaakt en een databank voor de triggergegevens.
 - **Zware neutrino's.** Voor mijn doctoraat (2013) zocht ik naar een zwaar "rechtshandig" W-boson en zware neutrino's, een van de eerste zoektochten in zijn soort bij de LHC, en coördineerde ik de analysegroep voor zware neutrino's.
-- **Bottom-quarks bij hoge energie.** Ik stelde een nieuwe methode voor om te controleren hoe goed ATLAS deeltjesbundels van bottom-quarks herkent.
+- **Bottom-quarks bij hoge energie.** Ik stelde een nieuwe methode voor om te controleren hoe goed ATLAS jets van bottom-quarks identificeert.

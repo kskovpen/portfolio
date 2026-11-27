@@ -40,7 +40,7 @@
   host: "Laboratoire d'Annecy de Physique des Particules (LAPP)"
   place: "Annecy-le-Vieux, France"
   title: "B-tagging and Higgs associated production with top quarks at ATLAS and CMS"
-  about: {en: "Recognising particles from bottom quarks, and the Higgs boson produced together with top quarks", fr: "Reconnaître les particules issues de quarks b, et le boson de Higgs produit avec des quarks top", nl: "Deeltjes van bottom-quarks herkennen, en het higgsboson dat samen met top-quarks ontstaat", ru: "Распознавание частиц от b-кварков и бозон Хиггса, рождённый вместе с топ-кварками"}
+  about: {en: "Identifying jets from bottom quarks, and the Higgs boson produced together with top quarks", fr: "Identifier les jets issus de quarks b, et le boson de Higgs produit avec des quarks top", nl: "Jets van bottom-quarks identificeren, en het higgsboson dat samen met top-quarks ontstaat", ru: "Идентификация струй от b-кварков и бозон Хиггса, рождённый вместе с топ-кварками"}
   url: "https://indico.in2p3.fr/event/12601/"
 - year: 2016
   host: "Laboratoire Leprince-Ringuet (LLR), École polytechnique"

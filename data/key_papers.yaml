@@ -65,7 +65,7 @@ cms:
     title: "Identification of heavy-flavour jets with the CMS detector in pp collisions at 13 TeV"
     ref: "JINST 13 (2018) P05011"
     url: "https://doi.org/10.1088/1748-0221/13/05/P05011"
-    about: {en: "How CMS recognises sprays of particles from bottom quarks, a tool used in about a third of CMS papers; written while I coordinated this team", fr: "Comment CMS reconnaît les gerbes de particules issues de quarks b, un outil utilisé dans environ un tiers des articles de CMS ; écrit quand je coordonnais cette équipe", nl: "Hoe CMS deeltjesbundels van bottom-quarks herkent, een hulpmiddel in ongeveer een derde van de CMS-artikelen; geschreven toen ik dit team coördineerde", ru: "Как CMS распознаёт струи частиц от b-кварков — инструмент примерно трети статей CMS; написано, когда я координировал эту группу"}
+    about: {en: "How CMS identifies jets from bottom quarks, a tool used in about a third of CMS papers; written while I coordinated this team", fr: "Comment CMS identifie les jets de particules issues de quarks b, un outil utilisé dans environ un tiers des articles de CMS ; écrit quand je coordonnais cette équipe", nl: "Hoe CMS jets van bottom-quarks identificeert, een hulpmiddel in ongeveer een derde van de CMS-artikelen; geschreven toen ik dit team coördineerde", ru: "Как CMS идентифицирует струи частиц от b-кварков — инструмент примерно трети статей CMS; написано, когда я координировал эту группу"}
 
 atlas:
   - year: 2012

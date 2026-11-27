@@ -20,4 +20,4 @@ ATLAS est le plus grand détecteur du Grand collisionneur de hadrons : 46 mètre
 
 - **Prêts pour les premières collisions.** En 2009–2010, j'ai aidé à préparer le calorimètre à argon liquide pour les premières collisions du LHC, en écrivant des logiciels qui surveillent son électronique et une base de données pour ses données de déclenchement.
 - **Neutrinos lourds.** Pour mon doctorat (2013), j'ai cherché un boson W lourd « droit » et des neutrinos lourds, parmi les premières recherches de ce type au LHC, et j'ai coordonné le groupe d'analyse sur les neutrinos lourds.
-- **Quarks bottom à haute énergie.** J'ai proposé une nouvelle méthode pour vérifier la capacité d'ATLAS à reconnaître les jets de particules issus de quarks bottom.
+- **Quarks bottom à haute énergie.** J'ai proposé une nouvelle méthode pour vérifier la capacité d'ATLAS à identifier les jets de particules issus de quarks bottom.

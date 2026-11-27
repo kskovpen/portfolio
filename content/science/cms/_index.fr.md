@@ -8,7 +8,7 @@ place = "CERN, Genève"
 years = "2013–"
 status = "now"
 website = "https://cms.cern"
-hint = "Une collision qui produit quatre quarks top. Chaque quark top se désintègre presque aussitôt : le détecteur voit donc des gerbes de particules appelées jets (en orange) et parfois un électron ou un muon (en bleu) ; le muon traverse tout le détecteur."
+hint = "Une collision qui produit quatre quarks top. Chaque quark top se désintègre presque aussitôt : le détecteur voit donc des jets de particules (en orange) et parfois un électron ou un muon (en bleu) ; le muon traverse tout le détecteur."
 summary = "Un détecteur géant du Grand collisionneur de hadrons du CERN qui photographie 40 millions de collisions par seconde. Il a codécouvert le boson de Higgs."
 +++
 
@@ -20,7 +20,7 @@ Chaque couche a son rôle. Près de la collision, un **trajectographe en siliciu
 
 - **Quark top et boson de Higgs.** J'étudie la particule la plus lourde connue, le [quark top]({{< relref "/science/cms/top-quark" >}}) : j'ai été l'un des principaux artisans de la [première observation de quatre quarks top produits en même temps]({{< relref "/science/cms/top-quark/four-tops" >}}), j'ai participé à la première observation du boson de Higgs produit avec des quarks top, et j'ai cherché des désintégrations du quark top que la théorie interdit presque.
 - **Leptons neutres lourds.** Je cherche d'hypothétiques cousins lourds du neutrino, qui pourraient expliquer pourquoi les neutrinos ont une masse.
-- **Faire fonctionner le détecteur.** J'ai dirigé les équipes qui apprennent à CMS à reconnaître les particules issues de quarks bottom (2015–2019), qui traitent les données et produisent les simulations (2021–2023), et qui mesurent la précision avec laquelle le trajectographe reconstruit les trajectoires (2023–2025).
+- **Faire fonctionner le détecteur.** J'ai dirigé les équipes qui apprennent à CMS à identifier les jets issus de quarks bottom (2015–2019), qui traitent les données et produisent les simulations (2021–2023), et qui mesurent la précision avec laquelle le trajectographe reconstruit les trajectoires (2023–2025).
 - **Construire le prochain CMS.** Pour le LHC à haute luminosité, qui fournira dix fois plus de collisions à partir de la fin de cette décennie, nous construisons et testons à Gand des modules en silicium pour le nouveau trajectographe et de nouveaux détecteurs à gaz pour le système à muons (voir plus bas).
 
 ## Dans notre labo à Gand : des détecteurs à gaz pour CMS

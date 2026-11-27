@@ -20,4 +20,4 @@ Inside, an **inner detector** in a solenoid magnet follows charged particles, a 
 
 - **Ready for the first collisions.** In 2009–2010 I helped prepare the liquid-argon calorimeter for the first collisions at the LHC, writing software that monitors its electronics and a database for its trigger data.
 - **Heavy neutrinos.** For my PhD (2013) I searched for a heavy "right-handed" W boson and heavy neutrinos, among the first searches of their kind at the LHC, and coordinated the heavy-neutrino analysis group.
-- **Bottom quarks at high energy.** I proposed a new method to check how well ATLAS recognises particle jets coming from bottom quarks.
+- **Bottom quarks at high energy.** I proposed a new method to check how well ATLAS identifies jets coming from bottom quarks.

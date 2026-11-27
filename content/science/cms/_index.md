@@ -8,7 +8,7 @@ place = "CERN, Geneva"
 years = "2013–"
 status = "now"
 website = "https://cms.cern"
-hint = "A collision that produces four top quarks. Each top quark decays almost instantly, so the detector sees sprays of particles called jets (orange) and sometimes an electron or a muon (blue); the muon crosses the whole detector."
+hint = "A collision that produces four top quarks. Each top quark decays almost instantly, so the detector sees jets of particles (orange) and sometimes an electron or a muon (blue); the muon crosses the whole detector."
 summary = "A giant detector at CERN's Large Hadron Collider that photographs 40 million collisions a second. It co-discovered the Higgs boson."
 +++
 
@@ -20,7 +20,7 @@ Each layer has its own job. Close to the collision, a **silicon tracker** follow
 
 - **Top quark and Higgs boson.** I study the heaviest known particle, the [top quark]({{< relref "/science/cms/top-quark" >}}): I was one of the main people behind the [first observation of four top quarks produced at once]({{< relref "/science/cms/top-quark/four-tops" >}}), took part in the first observation of the Higgs boson produced together with top quarks, and searched for top quark decays that the theory almost forbids.
 - **Heavy neutral leptons.** I search for hypothetical heavy cousins of the neutrino, which could explain why neutrinos have a mass at all.
-- **Making the detector work.** I have led the teams that teach CMS to recognise particles coming from bottom quarks (2015–2019), that process the data and produce the computer simulations (2021–2023), and that measure how well the tracker reconstructs particle paths (2023–2025).
+- **Making the detector work.** I have led the teams that teach CMS to identify jets coming from bottom quarks (2015–2019), that process the data and produce the computer simulations (2021–2023), and that measure how well the tracker reconstructs particle paths (2023–2025).
 - **Building the next CMS.** For the High-Luminosity LHC, which will deliver ten times more collisions from the end of this decade, we build and test silicon modules for the new tracker and, in Ghent, new gas detectors for the muon system (more below).
 
 ## In our lab in Ghent: gas detectors for CMS
