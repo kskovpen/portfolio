@@ -311,10 +311,10 @@ roles:
       ru: "Координатор рабочей группы по детекторам и сбору данных в SHARP — европейской исследовательской сети (EU COST Action) по изучению структуры частиц, состоящих из кварков, и представитель Бельгии в её руководящем комитете."
   - years: "2024–"
     text:
-      en: "Leads two detector projects for SHiP: the calorimeter of the neutrino detector, which measures the energy of particles, and the detector that tags unwanted particles coming in from outside."
-      fr: "Dirige deux projets de détecteurs pour SHiP : le calorimètre du détecteur de neutrinos, qui mesure l'énergie des particules, et le détecteur qui repère les particules indésirables venues de l'extérieur."
-      nl: "Leidt twee detectorprojecten voor SHiP: de calorimeter van de neutrinodetector, die de energie van deeltjes meet, en de detector die ongewenste deeltjes van buitenaf herkent."
-      ru: "Руководит двумя детекторными проектами SHiP: калориметром нейтринного детектора, который измеряет энергию частиц, и детектором, отмечающим посторонние частицы, приходящие извне."
+      en: "Leading two SHiP detector projects: the calorimeter of the neutrino detector and the background tagger."
+      fr: "Responsable de deux projets de détecteurs de SHiP : le calorimètre du détecteur de neutrinos et le détecteur de bruit de fond."
+      nl: "Leider van twee detectorprojecten van SHiP: de calorimeter van de neutrinodetector en de achtergronddetector."
+      ru: "Руководство двумя детекторными проектами SHiP: калориметром нейтринного детектора и детектором фона."
   - years: "2023–2025"
     text:
       en: "Coordinator of the CMS group that checks how well the detector reconstructs the paths of charged particles."
