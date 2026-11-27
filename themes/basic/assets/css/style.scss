@@ -1157,7 +1157,7 @@ h2[id] { scroll-margin-top: 80px; }
 
 // Research: CERN photo band and LHC map
 .det-band { margin: 40px 0 8px; }
-.det-steps { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: det; }
+.det-steps { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: det; }
 .det-step { position: relative; display: flex; flex-direction: column; animation: fade .9s var(--ease) both; animation-delay: calc(var(--i) * 90ms); }
 .det-photo { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: color-mix(in srgb, var(--hue) 8%, var(--bg)); }
 .det-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
