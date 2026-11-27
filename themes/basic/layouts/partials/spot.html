@@ -113,6 +113,32 @@
   <rect class="s-part" x="124" y="53" width="14" height="16" rx="2"/>
   <path class="s-cable" d="M138 61 L148 61 L148 100"/>
   <path class="d-track" pathLength="1" d="M112 100 L130 100 L134 92 L138 100 L154 100"/>
+{{- else if eq $k "calo" }}
+  {{- /* calorimetry: a particle showers in a stack of absorber and light-producing layers; a light sensor reads it out */}}
+  <rect class="d-snd" x="22" y="26" width="104" height="70" rx="3"/>
+  <path class="s-wire" d="M40 30 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7 M64 30 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7 M88 30 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7 l8 7 l-8 7"/>
+  <path class="d-track" pathLength="1" d="M0 61 L40 61"/>
+  <path class="d-jet" d="M40 61 L108 42 L108 80 Z"/>
+  <path class="d-jet-track" pathLength="1" d="M40 61 L106 46 M40 61 L108 61 M40 61 L106 76"/>
+  <circle class="d-burst" cx="72" cy="61" r="4"/>
+  <rect class="s-part" x="126" y="51" width="12" height="20" rx="2"/>
+  <path class="s-cable" d="M138 61 L148 61 L148 104"/>
+  <path class="d-track" pathLength="1" d="M110 104 L128 104 L132 96 L136 104 L154 104"/>
+{{- else if eq $k "silicon" }}
+  {{- /* silicon tracker: layers of strip sensors, a curved track leaving a hit in each */}}
+  <g class="d-tracker-line">
+    <path d="M30 20 L30 100 M62 20 L62 100 M94 20 L94 100 M126 20 L126 100"/>
+  </g>
+  <rect class="d-vessel" x="26" y="20" width="8" height="80" rx="1"/>
+  <rect class="d-vessel" x="58" y="20" width="8" height="80" rx="1"/>
+  <rect class="d-vessel" x="90" y="20" width="8" height="80" rx="1"/>
+  <rect class="d-vessel" x="122" y="20" width="8" height="80" rx="1"/>
+  <path class="d-tracker" d="M26 30 h8 M26 40 h8 M26 50 h8 M26 60 h8 M26 70 h8 M26 80 h8 M26 90 h8 M58 30 h8 M58 40 h8 M58 50 h8 M58 60 h8 M58 70 h8 M58 80 h8 M58 90 h8 M90 30 h8 M90 40 h8 M90 50 h8 M90 60 h8 M90 70 h8 M90 80 h8 M90 90 h8 M122 30 h8 M122 40 h8 M122 50 h8 M122 60 h8 M122 70 h8 M122 80 h8 M122 90 h8"/>
+  <path class="d-track" pathLength="1" d="M4 90 Q 80 78 156 30"/>
+  <circle class="d-burst" cx="30" cy="84.8" r="3.5"/>
+  <circle class="d-burst" cx="62" cy="75.6" r="3.5"/>
+  <circle class="d-burst" cx="94" cy="63.2" r="3.5"/>
+  <circle class="d-burst" cx="126" cy="47.5" r="3.5"/>
 {{- else if eq $k "electronics" }}
   {{- /* a small amplifier circuit: transistor, resistors and a pulse */}}
   <path class="s-wire" d="M10 60 L40 60 M40 40 L40 80 M40 52 L58 40 L58 20 L150 20 M40 68 L58 80 L58 100 L150 100 M100 20 L100 34 M100 54 L100 100"/>
