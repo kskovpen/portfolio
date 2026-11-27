@@ -293,3 +293,66 @@ publications_note:
   fr: "Comme membre de grandes collaborations internationales de plusieurs milliers de scientifiques, je cosigne tous leurs articles : plus de 1 100 au total. Les thèmes ci-dessus décrivent les résultats auxquels j'ai le plus contribué ; la liste complète est sur [INSPIRE](https://inspirehep.net/authors/1066490), la base de données publique des articles de physique."
   nl: "Als lid van grote internationale samenwerkingen van enkele duizenden wetenschappers ben ik medeauteur van al hun artikelen: in totaal meer dan 1.100. De onderwerpen hierboven beschrijven de resultaten waaraan ik het meest heb bijgedragen; de volledige lijst staat op [INSPIRE](https://inspirehep.net/authors/1066490), de openbare databank van natuurkundeartikelen."
   ru: "Как участник крупных международных коллабораций из нескольких тысяч учёных, я соавтор всех их статей — в сумме более 1100. Темы выше описывают результаты, в которые я внёс наибольший вклад; полный список — в [INSPIRE](https://inspirehep.net/authors/1066490), открытой базе статей по физике."
+
+# Leading roles, newest first (Research page, after Career). Plain words; years as text.
+roles:
+  - years: "2025–"
+    text:
+      en: "Leader of the Ghent team in SHiP, and member of the boards that steer the experiment and its technical design."
+      fr: "Responsable de l'équipe de Gand dans SHiP, et membre des comités qui pilotent l'expérience et sa conception technique."
+      nl: "Leider van het Gentse team in SHiP, en lid van de raden die het experiment en het technische ontwerp sturen."
+      ru: "Руководитель гентской группы в SHiP и член советов, которые управляют экспериментом и его технической разработкой."
+  - years: "2025–"
+    text:
+      en: "Deputy leader of the Ghent team in CMS."
+      fr: "Responsable adjoint de l'équipe de Gand dans CMS."
+      nl: "Adjunct-leider van het Gentse team in CMS."
+      ru: "Заместитель руководителя гентской группы в CMS."
+  - years: "2025–"
+    text:
+      en: "Coordinator of the working group on detectors and data taking in SHARP, a European research network (EU COST Action) on the structure of particles made of quarks, and Belgium's representative on its management committee."
+      fr: "Coordinateur du groupe de travail sur les détecteurs et l'acquisition de données de SHARP, un réseau de recherche européen (action COST de l'UE) sur la structure des particules faites de quarks, et représentant de la Belgique à son comité de gestion."
+      nl: "Coördinator van de werkgroep over detectoren en dataverzameling in SHARP, een Europees onderzoeksnetwerk (EU COST-actie) over de structuur van deeltjes die uit quarks bestaan, en vertegenwoordiger van België in het beheerscomité."
+      ru: "Координатор рабочей группы по детекторам и сбору данных в SHARP — европейской исследовательской сети (EU COST Action) по изучению структуры частиц, состоящих из кварков, и представитель Бельгии в её руководящем комитете."
+  - years: "2024–"
+    text:
+      en: "Leads two detector projects for SHiP: the calorimeter of the neutrino detector, which measures the energy of particles, and the detector that tags unwanted particles coming in from outside."
+      fr: "Dirige deux projets de détecteurs pour SHiP : le calorimètre du détecteur de neutrinos, qui mesure l'énergie des particules, et le détecteur qui repère les particules indésirables venues de l'extérieur."
+      nl: "Leidt twee detectorprojecten voor SHiP: de calorimeter van de neutrinodetector, die de energie van deeltjes meet, en de detector die ongewenste deeltjes van buitenaf herkent."
+      ru: "Руководит двумя детекторными проектами SHiP: калориметром нейтринного детектора, который измеряет энергию частиц, и детектором, отмечающим посторонние частицы, приходящие извне."
+  - years: "2023–2025"
+    text:
+      en: "Coordinator of the CMS group that checks how well the detector reconstructs the paths of charged particles."
+      fr: "Coordinateur du groupe de CMS qui vérifie la qualité avec laquelle le détecteur reconstruit les trajectoires des particules chargées."
+      nl: "Coördinator van de CMS-groep die controleert hoe goed de detector de banen van geladen deeltjes reconstrueert."
+      ru: "Координатор группы CMS, которая проверяет, насколько точно детектор восстанавливает траектории заряженных частиц."
+  - years: "2021–2023"
+    text:
+      en: "Coordinator of data processing, simulation and software checks for the whole CMS experiment: every data set and simulation that thousands of physicists use passed through this team."
+      fr: "Coordinateur du traitement des données, des simulations et de la validation des logiciels pour toute l'expérience CMS : chaque jeu de données et chaque simulation utilisés par des milliers de physiciens passaient par cette équipe."
+      nl: "Coördinator van dataverwerking, simulaties en softwarecontrole voor het hele CMS-experiment: elke dataset en simulatie die duizenden fysici gebruiken, ging door dit team."
+      ru: "Координатор обработки данных, моделирования и проверки программ для всего эксперимента CMS: через эту команду проходили все наборы данных и симуляции, которыми пользуются тысячи физиков."
+  - years: "2021–2024"
+    text:
+      en: "Belgium's representative in the early-career panel of ECFA, the committee that plans Europe's future particle accelerators."
+      fr: "Représentant de la Belgique au panel des jeunes chercheurs de l'ECFA, le comité qui prépare les futurs accélérateurs de particules en Europe."
+      nl: "Vertegenwoordiger van België in het panel van jonge onderzoekers van ECFA, het comité dat de toekomstige deeltjesversnellers in Europa plant."
+      ru: "Представитель Бельгии в панели молодых учёных ECFA — комитета, который планирует будущие ускорители частиц в Европе."
+  - years: "2020–2022"
+    text:
+      en: "Coordinator of the CMS group that uses the top quark to look for hints of new physics, and CMS contact for the first joint search of this kind with ATLAS."
+      fr: "Coordinateur du groupe de CMS qui utilise le quark top pour chercher des indices de nouvelle physique, et contact de CMS pour la première recherche commune de ce type avec ATLAS."
+      nl: "Coördinator van de CMS-groep die de topquark gebruikt om sporen van nieuwe fysica te zoeken, en CMS-contactpersoon voor de eerste gezamenlijke zoektocht van dit soort met ATLAS."
+      ru: "Координатор группы CMS, которая ищет признаки новой физики с помощью топ-кварка, и контактное лицо CMS в первом совместном с ATLAS поиске такого рода."
+  - years: "2019–2021"
+    text:
+      en: "Contact person for all CMS top quark results shown at conferences."
+      fr: "Personne de contact pour tous les résultats de CMS sur le quark top présentés en conférence."
+      nl: "Contactpersoon voor alle CMS-resultaten over de topquark die op conferenties worden getoond."
+      ru: "Контактное лицо по всем результатам CMS о топ-кварке, представляемым на конференциях."
+  - years: "2015–2019"
+    text:
+      en: "Coordinator of the CMS group that recognises particle sprays coming from bottom quarks, a key tool for finding the Higgs boson and the top quark."
+      fr: "Coordinateur du groupe de CMS qui reconnaît les gerbes de particules issues des quarks b, un outil clé pour trouver le boson de Higgs et le quark top."
+      nl: "Coördinator van de CMS-groep die deeltjesbundels van bottomquarks herkent, een sleutelinstrument om het higgsboson en de topquark te vinden."
+      ru: "Координатор группы CMS, распознающей струи частиц от b-кварков — ключевой инструмент для поиска бозона Хиггса и топ-кварка."

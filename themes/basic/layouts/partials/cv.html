@@ -46,6 +46,15 @@
 </ul>
 {{- end }}
 
+{{- else if eq $part "roles" }}{{ with .roles }}
+<h2>{{ T "cv_roles" }}</h2>
+<ul class="cv-compact">
+  {{- range . }}
+  <li><span class="cv-year">{{ .years }}</span><span>{{ index .text $l }}</span></li>
+  {{- end }}
+</ul>
+{{- end }}
+
 {{- else if eq $part "recognition_education" }}
 <div class="cv-cols">
   {{- with .recognition }}
