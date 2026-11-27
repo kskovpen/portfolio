@@ -7,14 +7,18 @@
   </nav>
 
   <div class="tt-head">{{ partial "spot.html" "courses" }}<h2 id="teaching">{{ T "tt_courses" }}</h2></div>
-  <ul class="cv-compact">
+  <ul class="talk-cards">
     {{- range .courses }}
-    <li><span class="cv-year">{{ if reflect.IsSlice .years }}{{ delimit .years "<br>" | safeHTML }}{{ else }}{{ .years }}{{ end }}</span><span><b>{{ index .title $l }}</b> · {{ index .kind $l }} · {{ .where }}</span></li>
+    <li class="tcard">
+      <div class="tcard-top"><b class="tcard-event">{{ .where }}</b><span class="tcard-date">{{ if reflect.IsSlice .years }}{{ delimit .years "<br>" | safeHTML }}{{ else }}{{ .years }}{{ end }}</span></div>
+      <span class="tcard-place">{{ index .kind $l }}</span>
+      <p class="tcard-topic">{{ index .title $l }}</p>
+    </li>
     {{- end }}
   </ul>
 
   <div class="tt-head">{{ partial "spot.html" "students" }}<h2 id="students">{{ T "tt_students" }}</h2></div>
-  <div class="cv-numbers">
+  <div class="cv-numbers tt-numbers">
     {{- range .supervision }}<p><b>{{ .count }}</b><span>{{ index .label $l }}</span></p>{{ end }}
   </div>
   {{- with index .thesis_topics $l }}
@@ -23,30 +27,21 @@
   {{- end }}
 
   <div class="tt-head">{{ partial "spot.html" "schools" }}<h2 id="schools">{{ T "tt_schools" }}</h2></div>
-  <div class="schools">
-    {{- range .schools }}{{ $sc := . }}
-    <section class="school">
-      <header class="school-head">
-        <span class="cv-year">{{ .year }}</span>
-        <div>
-          <h3>{{ with .url }}<a href="{{ . }}">{{ end }}{{ with .name }}{{ index . $l }}{{ end }}{{ with .url }} ↗</a>{{ end }}</h3>
-          <p class="meta">{{ .place }} · {{ index .text $l }}</p>
-        </div>
-      </header>
+  <ul class="talk-cards">
+    {{- range .schools }}
+    <li class="tcard">
+      <div class="tcard-top"><b class="tcard-event">{{ with .name }}{{ index . $l }}{{ end }}</b><span class="tcard-date">{{ .year }}</span></div>
+      <span class="tcard-place">{{ .place }}</span>
+      <p class="tcard-topic">{{ index .text $l }}</p>
       {{- with .lectures }}
-      <div class="lectures">
-        {{- range . }}
-        <a class="lecture" href="{{ .url }}">
-          <span class="lecture-img">{{ with .image }}{{ with resources.Get . }}{{ $im := .Resize "480x webp q80" }}<img src="{{ $im.RelPermalink }}" width="{{ $im.Width }}" height="{{ $im.Height }}" alt="" loading="lazy">{{ end }}{{ else }}<b>{{ .title }}</b>{{ end }}</span>
-          <span class="lecture-title">{{ .title }}</span>
-          <span class="lecture-about">{{ index .about $l }}</span>
-        </a>
-        {{- end }}
-      </div>
+      <ul class="tcard-lectures">
+        {{- range . }}<li><a href="{{ .url }}" title="{{ index .about $l }}">{{ .title }}</a></li>{{ end }}
+      </ul>
       {{- end }}
-    </section>
+      {{- with .url }}<p class="pub-links"><a href="{{ . }}">{{ T "event" }}</a></p>{{ end }}
+    </li>
     {{- end }}
-  </div>
+  </ul>
 
   {{- with site.GetPage "/outreach" }}
   <a class="tt-out" id="public" href="{{ .RelPermalink }}">{{ partial "spot.html" "cosmic" }}<span><b>{{ .Title }}</b><small>{{ index (index site.Data.outreach.featured 0).title $l }} · {{ index (index site.Data.outreach.featured 1).title $l }} · {{ index (index site.Data.outreach.featured 2).title $l }}</small></span><span class="out-more">→</span></a>
