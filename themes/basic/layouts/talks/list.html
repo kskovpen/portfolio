@@ -56,18 +56,17 @@
   {{- with site.Data.seminars }}{{ $l := site.Language.Lang }}
   <div class="tt-head">{{ partial "spot.html" "physics" }}<h2 id="seminars">{{ T "seminars" }}</h2></div>
   <p class="meta">{{ T "seminars_intro" }}</p>
-  <ul class="talk-list">
-    {{- range . }}
-    <li class="talk">
-      <div>
-        <span class="talk-title">{{ with .about }}{{ index . $l }}{{ else }}{{ T "seminar" }}{{ end }}</span><br>
-        <span class="meta">{{ .host }} · {{ .place }} · {{ .year }}</span>
-        {{- with .title }}<br><span class="talk-orig">“{{ . }}”</span>{{ end }}
-        {{- if or .slides .url }}<br><span class="pub-links">
-          {{- with .slides }}<a href="{{ cond (hasPrefix . "http") . (relURL .) }}">{{ T "slides" }}</a> {{ end }}
-          {{- with .url }}<a href="{{ . }}">{{ T "event" }}</a>{{ end -}}
-        </span>{{ end }}
-      </div>
+  <ul class="talk-cards">
+    {{- range sort . "year" "desc" }}
+    <li class="tcard">
+      <div class="tcard-top"><b class="tcard-event">{{ .host }}</b><span class="tcard-date">{{ .year }}</span></div>
+      <span class="tcard-place">{{ .place }}</span>
+      <p class="tcard-topic">{{ with .about }}{{ index . $l }}{{ else }}{{ T "seminar" }}{{ end }}</p>
+      {{- with .title }}<p class="talk-orig">“{{ . }}”</p>{{ end }}
+      {{- if or .slides .url }}<p class="pub-links">
+        {{- with .slides }}<a href="{{ cond (hasPrefix . "http") . (relURL .) }}">{{ T "slides" }}</a> {{ end }}
+        {{- with .url }}<a href="{{ . }}">{{ T "event" }}</a>{{ end -}}
+      </p>{{ end }}
     </li>
     {{- end }}
   </ul>
@@ -75,26 +74,19 @@
 
   <div class="tt-head">{{ partial "spot.html" "talks" }}<h2 id="talks">{{ T "conf_talks" }}</h2></div>
   {{ partial "glossary.html" . }}
-  <ul class="talk-list">
+  <ul class="talk-cards">
     {{- range sort site.Data.talks "date" "desc" }}
     {{- $t := . }}
-    <li class="talk">
-      {{- with .slides }}{{ if not (hasPrefix . "http") }}
-        {{- $png := replaceRE `\.pdf$` ".png" . }}
-        {{- if fileExists (printf "static/%s" $png) }}
-        <a href="{{ . | relURL }}"><img class="talk-thumb" src="{{ $png | relURL }}" alt=""></a>
-        {{- end }}
-      {{- end }}{{ end }}
-      <div>
-        <span class="talk-title">{{ with $t.about }}{{ index . site.Language.Lang }}{{ else }}{{ $t.title }}{{ end }}</span><br>
-        <span class="meta">{{ $t.short | default $t.event }}{{ with $t.place }} · {{ . }}{{ end }}{{ with $t.date }} · {{ (time.Format "January 2006" .) }}{{ else }}{{ with $t.year }} · {{ . }}{{ end }}{{ end }}</span><br>
-        {{- if and $t.about (ne $t.title "Seminar") }}<span class="talk-orig" title="{{ $t.event }}">“{{ $t.title }}”</span><br>{{ end }}
-        <span class="pub-links">
-          {{- with $t.slides }}<a href="{{ cond (hasPrefix . "http") . (relURL .) }}">{{ T "slides" }}</a> {{ end }}
-          {{- with $t.proceedings }}<a href="{{ . }}">{{ T "proceedings" }}</a> {{ end }}
-          {{- with $t.url }}<a href="{{ . }}">{{ T "event" }}</a>{{ end -}}
-        </span>
-      </div>
+    <li class="tcard">
+      <div class="tcard-top"><b class="tcard-event" title="{{ $t.event }}">{{ $t.short | default $t.event }}</b><span class="tcard-date">{{ with $t.date }}{{ time.Format "Jan 2006" . }}{{ else }}{{ $t.year }}{{ end }}</span></div>
+      {{- with $t.place }}<span class="tcard-place">{{ . }}</span>{{ end }}
+      <p class="tcard-topic">{{ with $t.about }}{{ index . site.Language.Lang }}{{ else }}{{ $t.title }}{{ end }}</p>
+      {{- if and $t.about (ne $t.title "Seminar") }}<p class="talk-orig">“{{ $t.title }}”</p>{{ end }}
+      <p class="pub-links">
+        {{- with $t.slides }}<a href="{{ cond (hasPrefix . "http") . (relURL .) }}">{{ T "slides" }}</a> {{ end }}
+        {{- with $t.proceedings }}<a href="{{ . }}">{{ T "proceedings" }}</a> {{ end }}
+        {{- with $t.url }}<a href="{{ . }}">{{ T "event" }}</a>{{ end -}}
+      </p>
     </li>
     {{- end }}
   </ul>

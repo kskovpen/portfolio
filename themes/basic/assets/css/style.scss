@@ -483,6 +483,17 @@ figcaption { margin-top: 8px; font-size: 0.9em; color: var(--ink-3); }
 .talk:hover { border-color: color-mix(in srgb, var(--hue) 45%, var(--line)); }
 .talk-thumb { width: 160px; height: auto; border-radius: 0; border: 1px solid var(--line); }
 @media (max-width: 600px) { .talk { flex-direction: column; } .talk-thumb { width: 100%; } }
+.talk-cards { list-style: none; padding: 0; margin: 16px 0 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.tcard { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 12px; border: 1px solid var(--line); border-top: 3px solid var(--hue); border-radius: 10px; background: var(--bg); transition: border-color .2s, transform .2s; }
+.tcard:hover { border-color: color-mix(in srgb, var(--hue) 45%, var(--line)); border-top-color: var(--hue); transform: translateY(-2px); }
+.tcard-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.tcard-event { color: var(--hue); font-size: 1.05rem; }
+.tcard-date { font-size: 12px; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tcard-place { font-size: 13px; color: var(--ink-2); }
+.tcard-topic { margin: 8px 0 0; color: var(--ink); font-weight: 600; line-height: 1.35; }
+.tcard .talk-orig { margin: 2px 0 0; }
+.tcard .pub-links { margin: auto 0 0; padding-top: 10px; }
+.tcard .pub-links:empty { display: none; }
 .projects { margin: 24px 0; }
 .project-item { display: flex; gap: 24px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .project-item img { width: 200px; height: auto; flex: 0 0 auto; border-radius: 0; }
