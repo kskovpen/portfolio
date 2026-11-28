@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- ParticleScope: a lens with a particle track curling inside it (a delta-ray spiral in a magnetic field) -->
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#16202c"/><stop offset="1" stop-color="#05070a"/></radialGradient>
+  </defs>
+  <circle cx="60" cy="60" r="52" fill="url(#g)" stroke="#8fc8ff" stroke-width="5"/>
+  <path class="trk" d="M14 82 C 38 72, 56 66, 66 58 C 80 47, 76 30, 62 32 C 50 34, 50 50, 61 51 C 69 52, 69 42, 63 42"
+        fill="none" stroke="#eaf4ff" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 5.2"/>
+  <path d="M30 104 L 92 18" fill="none" stroke="#eaf4ff" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 4.4" opacity="0.55"/>
+</svg>
